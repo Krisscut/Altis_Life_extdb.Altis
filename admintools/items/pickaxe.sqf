@@ -1,0 +1,1 @@
+life_inv_pickaxe = life_inv_pickaxe + 1;

@@ -1,0 +1,351 @@
+author = "Tonic";
+onLoadName = "Altis Life RPG v3.1.4";
+onLoadMission = "A RPG game mode developed by Tonic";
+joinUnassigned = 1;
+respawn = BASE;
+respawndelay = 5;
+disabledAI = true;
+disableChannels[]={0,1,2};
+enableDebugConsole = 1;
+loadScreen = "Textures\bienvenue.jpg";
+respawnDialog = 0;
+
+class Header
+{
+	gameType = RPG;
+	minPlayers = 1;
+	maxPlayers = 140;
+};
+
+wreckLimit = 3;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 320;
+corpseLimit = 150;
+corpseRemovalMinTime = 999;
+corpseRemovalMaxTime = 9999;
+
+#include "dialog\MasterHandler.h"
+#include "monitor\info.hpp"
+
+class RscTitles
+{
+	#include "dialog\ui.hpp"
+	#include "dialog\progress.hpp"
+#include "monitor\info.hpp"
+};
+
+class CfgFunctions
+{
+	#include "Functions.h"
+};
+
+class CfgSounds
+{
+  sounds[] = {};
+  
+	class defibrillateur {
+    name = "defibrillateur";
+    sound[] = {"\sounds\defibrillateur.ogg", 0.25, 1};
+    titles[] = {};
+  };
+
+  class alarm_ramp {
+    name = "alarm_ramp";
+    sound[] = {"usableCargoRamp\sounds\alarm-ramp.ogg", 1, 1};
+    titles[] = {0, ""};
+  };
+
+  class alarm_prepare {
+    name = "alarm_prepare";
+    sound[] = {"usableCargoRamp\sounds\alarm-prepare.ogg", 1, 1};
+    titles[] = {0, ""};
+  };
+
+  class alarm_go {
+    name = "alarm_go";
+    sound[] = {"usableCargoRamp\sounds\alarm-go.ogg", 1, 1};
+    titles[] = {0, ""};
+  };
+
+  class SirenLong
+  {
+    name = "SirenLong";
+    sound[] = {"\sounds\Siren_Long.ogg", 1.0, 1};
+    titles[] = {};
+  };
+  class SirenHorn
+  {
+    name = "SirenHorn";
+    sound[] = {"\sounds\Siren_HORN.ogg", 1.0, 1};
+    titles[] = {};
+  };
+  class News
+  {
+    name = "News";
+    sound[] = {"\sounds\News.ogg", 1.0, 1};
+    titles[] = {};
+  };
+  class SirenTrack
+  {
+    name = "SirenTrack";
+    sound[] = {"\sounds\Siren_Track.ogg", 1.0, 1};
+    titles[] = {};
+  };
+  class Bankalarm
+  {
+    name = "bankalarm";
+    sound[] = {"\sounds\bankalarm.ogg", 0.95, 1};
+    titles[] = {};
+  };
+  class reverse_truck
+  {
+    name = "reverse_truck";
+    sound[] = {"\sounds\truck_reverse.ogg", 1.0, 1};
+    titles[] = {};
+  };
+  class ambulance
+  {
+    name = "ambulance";
+    sound[] = {"\sounds\ambulance.ogg", 1.0, 1};
+    titles[] = {};
+  };
+  class tazersound
+  {
+    name = "Tazersound";
+    sound[] = {"\sounds\tazer.ogg", 0.25, 1};
+    titles[] = {};
+  };
+  class BeepBeep
+  {
+    name = "BeepBeep";
+    sound[] = {"\sounds\BeepBeep.ogg", 0.9, 1};
+    titles[] = {};
+  };
+  class Beep
+  {
+    name = "Beep";
+    sound[] = {"\sounds\Beep.ogg", 0.9, 1};
+    titles[] = {};
+  };
+  class Bag
+  {
+	name = "bag";
+	sound[] = {"\sounds\bag.ogg", 1, 1};
+	titles[] = {};
+  };
+  class Caching
+  {
+	name = "caching";
+	sound[] = {"\sounds\caching.ogg", 1, 1};
+	titles[] = {};
+  };
+  class Mining
+  {
+	name = "mining";
+    sound[] = {"\sounds\mining.ogg", 0.95, 0.95};
+    titles[] = {};
+  };
+  class Cuff
+  {
+    name = "cuff";
+    sound[] = {"\sounds\cuff.ogg", 0.95, 0.95};
+    titles[] = {};
+  };
+  class Eat
+  {
+    name = "eat";
+    sound[] = {"\sounds\eat.ogg", 0.95, 0.95};
+    titles[] = {};
+  };
+  class Intro
+  {
+    name = "Intro";
+    sound[] = {"\sounds\Intro.ogg", 0.10, 1};
+    titles[] = {};
+  };
+  class houselock
+  {
+    name = "houselock";
+    sound[] = {"\sounds\houselock.ogg", 0.10, 1};
+    titles[] = {};
+  };
+  class houseunlock
+  {
+    name = "houseunlock";
+    sound[] = {"\sounds\houseunlock.ogg", 0.10, 1};
+    titles[] = {};
+  };
+class flashbang
+{
+	name = "flashbang";
+	sound[] = {"\sounds\flashbang.ogg", 1.0, 1};
+	titles[] = {};
+};
+class fermeture
+{
+	name = "fermeture";
+	sound[] = {"\sounds\fermeture.ogg", 1.0, 1};
+	titles[] = {};
+};
+class ouverture
+{
+	name = "ouverture";
+	sound[] = {"\sounds\ouverture.ogg", 1.0, 1};
+	titles[] = {};
+};
+};
+
+class CfgDebriefing
+{
+	class NotWhitelisted
+	{
+		title = "Mission Terminé";
+		subtitle = "Tu n'es pas autorisé a utiliser ce slot";
+		description = "Tu n'es pas whitelisté sur ce slot !";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+
+	class Blacklisted
+	{
+		title = "Mission Terminé";
+		subtitle = "Tu as été blacklisté des forces de l'ordre";
+		description = "Tu n'es plus autorisé a être un gendarme suite à tes actions préalables les administrateurs t'ont retiré le droit de jouer gendarme.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+
+	class SpyGlass
+	{
+		title = "The SpyGlass t'as trouvé";
+		subTitle = "Tu as été détécté par spyGlass";
+		description = "Tu as été détécté par spyGlas pour hack et a été reporté aux administrateurs. Enjoy your day.";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+
+	class NotPremium
+	{
+		title = "Echec de la Mission";
+		subtitle = "Vous n'êtes pas autorisé a utiliser ce slot";
+		description = "Vous n'êtes pas autorisé à utiliser ce slot parce que vous n'êtes pas membre premium grade 2, essayez un autre emplacement";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+	class Nopapiers
+	{
+		title = "EXTRADITION";
+		subtitle = "Vous n'avez aucun papiers d'identité";
+		description = "Vous devez vous connecter sur le serveur Stratis Life d'Involved afin d'obtenir des papiers d'identité pour venir sur Altis";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+	class scriptKiddie
+	{
+		title = "No more cancer";
+		subtitle = "POWNED BY BLOOPIS SCRIPT KIDDIE ;)";
+		description = "TRY HARDER AND GET SOME PROGRAMMING SKILLZ, KID";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};
+	};
+  class papiers
+  {
+    title = "Direction Stratis !";
+    subtitle = "Vous êtes en train de voyager vers l'île de Stratis";
+    description = "Tu te dirige vers l'île de Stratis. Tu peux te déconnecter et rejoindre l'autre serveur";
+    pictureBackground = "";
+    picture = "";
+    pictureColor[] = {0,0.3,0.6,1};
+  };
+
+  class altis
+  {
+    title = "Impossible !";
+    subtitle = "Vous n'êtes pas passé par le bateau";
+    description = "Pour vous rendre sur Stratis, il vous faut prendre le large en bateau depuis Stratis";
+    pictureBackground = "";
+    picture = "";
+    pictureColor[] = {0,0.3,0.6,1};
+  };
+};
+
+class CfgNotifications
+{
+	class MedicalRequestEmerg
+	{
+		title = "Demande de Soin";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 5;
+		priority = 7;
+	};
+
+	class DeliveryAssigned
+	{
+		title = "Mission de Livraison";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 10;
+		priority = 7;
+	};
+
+	class DeliveryFailed
+	{
+		title = "Livraison Interrompue";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskiconfailed_ca.paa";
+		description = "%1";
+		duration = 7;
+		priority = 7;
+	};
+
+	class DeliverySucceeded
+	{
+		title = "Livraison Terminée";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcondone_ca.paa";
+		description = "%1";
+		duration = 6;
+		priority = 6;
+	};
+
+	class TextMessage
+	{
+		title = "Nouveau message";
+		iconPicture = "icons\messagenew.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+
+	class PoliceDispatch
+	{
+		title = "Centrale de Gendarmerie";
+		iconPicture = "icons\messagepolice.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+
+	class AdminDispatch
+	{
+		title = "Requête Administrative";
+		iconPicture = "icons\messageadmin.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+
+	class AdminMessage
+	{
+		title = "MESSAGE IMPORTANT";
+		iconPicture = "icons\messageadmin.paa";
+		description = "%1";
+		duration = 10;
+		priority = 5;
+	};
+};
