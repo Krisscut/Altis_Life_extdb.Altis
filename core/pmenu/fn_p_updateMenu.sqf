@@ -2,7 +2,7 @@
 /*
 	File: fn_p_updateMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Updates the player menu (Virtual Interaction Menu)
 */
@@ -67,7 +67,7 @@ ctrlSetText[2009,format["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
 
 if(_struct == "") then
 {
-	_struct = "No Licenses";
+	_struct = "Aucunes Licences";
 };
 
 _lic ctrlSetStructuredText parseText format["

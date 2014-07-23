@@ -3,7 +3,7 @@
 	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
 	File: fn_wantedList.sqf
 	Author: Bryan "Tonic" Boardwine"
-	
+
 	Description:
 	Displays wanted list information sent from the server.
 */
@@ -26,9 +26,9 @@ _units = [];
 	};
 } foreach _info;
 
-ctrlSetText[2404,"Connection Established"];
+ctrlSetText[2404,"Connection au seveur du central"];
 
 if(((lbSize _list)-1) == -1) then
 {
-	_list lbAdd "No criminals";
+	_list lbAdd "Aucun bandits";
 };

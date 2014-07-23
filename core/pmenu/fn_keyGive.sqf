@@ -1,7 +1,7 @@
 /*
 	File: fn_keyGive.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Gives a copy of the key for the selected vehicle to the selected player.
 	Player must be within range.
@@ -20,16 +20,16 @@ _vehicle = life_vehicles select parseNumber(_vehicle);
 _sel = lbCurSel _plist;
 _unit = _plist lbData _sel;
 _unit = call compile format["%1", _unit];
-if(isNull _unit OR isNil "_unit") exitWith {}; 
+if(isNull _unit OR isNil "_unit") exitWith {};
 
 _uid = getPlayerUID _unit;
 _owners = _vehicle getVariable "vehicle_info_owners";
 _index = [_uid,_owners] call fnc_index;
-if(_index == -1) then 
+if(_index == -1) then
 {
 	_owners set[count _owners,[_uid,_unit getVariable["realname",name _unit]]];
 	_vehicle setVariable["vehicle_info_owners",_owners,true];
 };
 
-hint format["You have given %1 keys to your %2",_unit getVariable["realname",name _unit],typeOf _vehicle];
+hint format["Tu as donné à %1 les clées de %2",_unit getVariable["realname",name _unit],typeOf _vehicle];
 [[_vehicle,_unit,profileName], "clientGetKey",_unit,false] spawn life_fnc_MP;

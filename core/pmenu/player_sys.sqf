@@ -11,7 +11,7 @@
 
 
 if(!alive player) exitWith {};
-#include "player_sys.sqf"; 
+#include "player_sys.sqf";
 if(isnil {waste_money}) then {waste_money = 0;};
 if(isNil {RogueVar}) then {RogueVar = false;};
 if(dialog) exitwith{};
@@ -36,7 +36,7 @@ _carry = _Dialog displayCtrl carry_weight;
 
 _foodtext ctrlSettext format["%1 / 100", round(life_hunger)];
 _watertext ctrlSetText format["%1 / 100", round(life_thirst)];
-_carry ctrlSetText format["Weight: %1 / %2", life_carryWeight, life_maxWeight];
+_carry ctrlSetText format["Poids: %1 / %2", life_carryWeight, life_maxWeight];
 _moneytext ctrlSetText format["%1", life_liquide];
 
 _iIndex = _ivalue lbadd "1"; _ivalue lbSetData [(lbSize _ivalue)-1, "1"];

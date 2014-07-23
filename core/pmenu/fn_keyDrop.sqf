@@ -1,7 +1,7 @@
 /*
 	File: fn_keyDrop.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Drops the key.
 */
@@ -11,10 +11,10 @@ disableSerialization;
 _dialog = findDisplay 2700;
 _list = _dialog displayCtrl 2701;
 _sel = lbCurSel _list;
-if(_sel == -1) exitWith {hint "No Data Selected";};
+if(_sel == -1) exitWith {hint "Rien sélectionné";};
 _index = (parseNumber(_list lbData _sel));
 _vehicle = life_vehicles select _index;
-if(_vehicle isKindOf "House_F") exitWith {hint "You can't remove the keys to your house!"};
+if(_vehicle isKindOf "House_F") exitWith {hint "Tu ne peux pas supprimer les clées de ta maison"};
 _owners = _vehicle getVariable "vehicle_info_owners";
 
 _index2 = [(getPlayerUID player),_owners] call fnc_index;

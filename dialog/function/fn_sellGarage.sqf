@@ -2,7 +2,7 @@
 /*
 	File: fn_sellGarage.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Sells a vehicle from the garage.
 */
@@ -15,7 +15,7 @@ _vid = lbValue[2802,(lbCurSel 2802)];
 _pid = getPlayerUID player;
 _unit = player;
 
-if(isNil "_vehicle") exitWith {hint "The selection had a error..."};
+if(isNil "_vehicle") exitWith {hint "ERREUR..."};
 
 _price = [_vehicle,__GETC__(life_garage_sell)] call fnc_index;
 if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_sell) select _price) select 1;};

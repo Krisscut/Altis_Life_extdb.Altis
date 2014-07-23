@@ -1,6 +1,6 @@
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Vehicle Garage, why did I spawn this in an action its self?
 */
@@ -13,4 +13,4 @@ life_garage_type = _type;
 [[getPlayerUID player,playerSide,_type,player],"TON_fnc_getVehicles",false,false] spawn life_fnc_MP;
 createDialog "Life_impound_menu";
 disableSerialization;
-ctrlSetText[2802,"Fetching Vehicles...."];
+ctrlSetText[2802,"Recherche de véhicules...."];

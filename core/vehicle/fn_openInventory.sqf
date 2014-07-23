@@ -1,7 +1,7 @@
 /*
 	File: fn_openInventory.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Starts the initialization of vehicle virtual inventory menu.
 */
@@ -10,15 +10,15 @@ if(dialog) exitWith {};
 _vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 if(isNull _vehicle OR !(_vehicle isKindOf "Car" OR _vehicle isKindOf "Air" OR _vehicle isKindOf "Ship" OR _vehicle isKindOf "House_F")) exitWith {}; //Either a null or invalid vehicle type.
 
-if((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint "This vehicle's trunk is in use, only one person can use it at a time."};
+if((_vehicle getVariable ["trunk_in_use",false])) exitWith {hint "L'inventaire est déjà utilisé."};
 _vehicle setVariable["trunk_in_use",true,true];
 if(!createDialog "TrunkMenu") exitWith {"Failed Creating Dialog";}; //Couldn't create the menu?
 disableSerialization;
 
 if(_vehicle isKindOf "House_F") then {
-	ctrlSetText[3501,format["House Storage - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
+	ctrlSetText[3501,format["Inventaire maison - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 } else {
-	ctrlSetText[3501,format["Vehicle Trunk - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
+	ctrlSetText[3501,format["Inventaire véhicule - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 };
 
 if(_vehicle isKindOf "House_F") then {
@@ -31,7 +31,7 @@ if(_vehicle isKindOf "House_F") then {
 };
 
 if(_vehicle isKindOf "House_F" && {count (_vehicle getVariable ["containers",[]]) == 0}) exitWith {hint "You need to install storage containers to have storing capabilities!"; closeDialog 0; _vehicle setVariable["trunk_in_use",false,true];};
-if(_veh_data select 0 == -1 && {!(_vehicle isKindOf "House_F")}) exitWith {closeDialog 0; _vehicle setVariable["trunk_in_use",false,true]; hint "This vehicle isn't capable of storing virtual items.";};
+if(_veh_data select 0 == -1 && {!(_vehicle isKindOf "House_F")}) exitWith {closeDialog 0; _vehicle setVariable["trunk_in_use",false,true]; hint "Impossible de mettre des objets virtuel dans ce véhicule.";};
 
 ctrlSetText[3504,format["Weight: %1/%2",_veh_data select 1,_veh_data select 0]];
 [_vehicle] call life_fnc_vehInventory;

@@ -1,7 +1,7 @@
 /*
 	File: fn_chopShopSell.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Sells the selected vehicle off.
 */
@@ -15,7 +15,7 @@ _nearVehicles = nearestObjects [getMarkerPos life_chopShop,["Car","Truck"],25];
 _vehicle = _nearVehicles select _vehicle;
 if(isNull _vehicle) exitWith {};
 
-hint "Selling vehicle please wait....";
+hint "Vente du véhicule....";
 life_action_inUse = true;
 _price2 = life_liquide + _price;
 [[player,_vehicle,_price,_price2],"TON_fnc_chopShopSell",false,false] spawn life_fnc_MP;

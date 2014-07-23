@@ -1,7 +1,7 @@
 /*
 	File: fn_vehicleShopMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Blah
 */
@@ -16,7 +16,7 @@ disableSerialization;
 //Long boring series of checks
 if(dialog) exitWith {};
 if(_shop == "") exitWith {};
-if(_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hint "You are not allowed to use this shop!"};
+if(_sideCheck != sideUnknown && {playerSide != _sideCheck}) exitWith {hint "Tu n'es pas autorisé a utiliser ce magasin!"};
 
 if(!createDialog "Life_Vehicle_Shop_v2") exitWith {};
 
@@ -41,7 +41,7 @@ ctrlShow [2304,false];
 {
 	_className = _x select 0;
 	_basePrice = _x select 1;
-	
+
 	_vehicleInfo = [_className] call life_fnc_fetchVehInfo;
 	_control lbAdd (_vehicleInfo select 3);
 	_control lbSetPicture [(lbSize _control)-1,(_vehicleInfo select 2)];

@@ -24,11 +24,11 @@ switch (true) do
 	default {_mine = "";};
 };
 //Mine check
-if(_mine == "") exitWith {hint "You are not near a mine!"};
-if(vehicle player != player) exitWith {hint "You can't mine from inside a car!";};
+if(_mine == "") exitWith {hint "Tu n'es pas proche d'une mine"};
+if(vehicle player != player) exitWith {hint "Tu ne peux pas miner a partir d'une voiture";};
 
 _diff = [_mine,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
-if(_diff == 0) exitWith {hint "Your inventory is full."};
+if(_diff == 0) exitWith {hint "Votre inventaire est remplis."};
 life_action_inUse = true;
 for "_i" from 0 to 2 do
 {
@@ -40,7 +40,7 @@ for "_i" from 0 to 2 do
 if(([true,_mine,_diff] call life_fnc_handleInv)) then
 {
 	_itemName = [([_mine,0] call life_fnc_varHandle)] call life_fnc_varToStr;
-	titleText[format["You have mined %2 %1",_itemName,_diff],"PLAIN"];
+	titleText[format["Tu as miné %2 %1",_itemName,_diff],"PLAIN"];
 };
 
 life_action_inUse = false;

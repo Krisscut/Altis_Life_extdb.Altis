@@ -1,7 +1,7 @@
 /*
 	File: fn_unimpound.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Unimpounds the car
 	*DUE TO BE REWROTE FOR NEW SYSTEM*
@@ -30,7 +30,7 @@ if(_veh distance impound_obj < 50) then
 				case (_veh isKindOf "Ship") : {_pos = getPos boat_impound;};
 			};
 		};
-		
+
 		case "cop":
 		{
 			switch (true) do
@@ -42,11 +42,11 @@ if(_veh distance impound_obj < 50) then
 		};
 	};
 	_check = nearestObjects[_pos,["LandVehicle","Air"],4];
-	if(count _check > 0) exitWith {hint "There is currently a car there.";};
+	if(count _check > 0) exitWith {hint "Il y a déja un véhicule.";};
 	if(_price > life_liquide) then
 	{
 		_price = _price + 200;
-		if(_price > life_dabliquide) exitWith {hint "You do not have enough money on you or in your bank to get your car back."};
+		if(_price > life_dabliquide) exitWith {hint "Tu n'as pas assez d'argent."};
 		life_dabliquide = life_dabliquide - _price;
 		life_liquide = life_liquide + _price;
 	};
@@ -66,7 +66,7 @@ if(_veh distance impound_obj < 50) then
 
 	hint format["You have unimpounded your %1 for $%3",_name,[_price] call life_fnc_numberText];
 	detach _veh;
-	if(_veh isKindOf "Air") then 
+	if(_veh isKindOf "Air") then
 	{
 		_veh setPos [_pos select 0, _pos select 1, 1];
 	}

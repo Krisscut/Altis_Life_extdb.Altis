@@ -1,7 +1,7 @@
 /*
 	File: fn_weaponShopMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Something
 */
@@ -19,7 +19,7 @@ ctrlSetText[38401,_config select 0];
 _filters = ((findDisplay 38400) displayCtrl 38402);
 lbClear _filters;
 
-_filters lbAdd "Shop Inventory";
-_filters lbAdd "Your Inventory";
+_filters lbAdd "Inventaire Magasin";
+_filters lbAdd "Votre inventaire";
 
 _filters lbSetCurSel 0;

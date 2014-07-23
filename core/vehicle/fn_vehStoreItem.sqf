@@ -2,7 +2,7 @@
 /*
 	File: fn_vehStoreItem.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Used in the vehicle trunk menu, stores the selected item and puts it in the vehicles virtual inventory
 	if the vehicle has room for the item.
@@ -12,7 +12,7 @@ disableSerialization;
 
 _ctrl = ctrlSelData(3503);
 _num = ctrlText 3506;
-if(!([_num] call fnc_isnumber)) exitWith {hint "Invalid Number format";};
+if(!([_num] call fnc_isnumber)) exitWith {hint "Format incorrect";};
 _num = parseNumber(_num);
 if(_num < 1) exitWith {hint "You can't enter anything below 1!";};
 
@@ -27,12 +27,12 @@ _itemWeight = ([_ctrl] call life_fnc_itemWeight) * _num;
 _veh_data = life_trunk_vehicle getVariable ["Trunk",[[],0]];
 _inv = _veh_data select 0;
 
-if(_ctrl == "goldbar" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_trunk_vehicle isKindOf "House_F")}) exitWith {hint "You cannot store that in anything but a land vehicle!"};
+if(_ctrl == "goldbar" && {!(life_trunk_vehicle isKindOf "LandVehicle" OR life_trunk_vehicle isKindOf "House_F")}) exitWith {hint "Tu peux juste mettre cette item dans un véhicule terrestre!"};
 
 if(_ctrl == "money") then
 {
 	_index = [_ctrl,_inv] call fnc_index;
-	if(life_liquide < _num) exitWith {hint "You don't have that much cash on you to store in the vehicle!"};
+	if(life_liquide < _num) exitWith {hint "Tu n'as pas assez d'argent pour ranger le véhicule!"};
 	if(_index == -1) then
 	{
 		_inv set[count _inv,[_ctrl,_num]];
@@ -42,16 +42,16 @@ if(_ctrl == "money") then
 		_val = _inv select _index select 1;
 		_inv set[_index,[_ctrl,_val + _num]];
 	};
-	
+
 	life_liquide = life_liquide - _num;
 	life_trunk_vehicle setVariable["Trunk",[_inv,(_veh_data select 1) + _itemWeight],true];
 	[life_trunk_vehicle] call life_fnc_vehInventory;
 }
 	else
 {
-	if(((_totalWeight select 1) + _itemWeight) > (_totalWeight select 0)) exitWith {hint "The vehicle is either full or cannot hold that much."};
+	if(((_totalWeight select 1) + _itemWeight) > (_totalWeight select 0)) exitWith {hint "Le véhicule est remplis."};
 
-	if(!([false,_ctrl,_num] call life_fnc_handleInv)) exitWith {hint "Couldn't remove the items from your inventory to put in the vehicle.";};
+	if(!([false,_ctrl,_num] call life_fnc_handleInv)) exitWith {hint "Impossible de supprimer l'item pour le mettre dans l'inventaire du véhicule.";};
 	_index = [_ctrl,_inv] call fnc_index;
 	if(_index == -1) then
 	{
@@ -62,7 +62,7 @@ if(_ctrl == "money") then
 		_val = _inv select _index select 1;
 		_inv set[_index,[_ctrl,_val + _num]];
 	};
-	
+
 	life_trunk_vehicle setVariable["Trunk",[_inv,(_veh_data select 1) + _itemWeight],true];
 	[life_trunk_vehicle] call life_fnc_vehInventory;
 };

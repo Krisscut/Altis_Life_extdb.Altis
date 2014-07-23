@@ -1,6 +1,6 @@
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Defuses blasting charges for the cops?
 */
@@ -8,12 +8,12 @@ private["_vault","_ui","_title","_progressBar","_cP","_titleText"];
 _vault = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _vault) exitWith {};
 if(typeOf _vault != "Land_CargoBox_V1_F") exitWith {};
-if(!(_vault getVariable["chargeplaced",false])) exitWith {hint "There is no charge on the vault?"};
+if(!(_vault getVariable["chargeplaced",false])) exitWith {hint "Il n'y a pas de charge sur le coffre?"};
 
 life_action_inUse = true;
 //Setup the progress bar
 disableSerialization;
-_title = "Defusing charge...";
+_title = "Désarmement de la bombe...";
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
@@ -50,4 +50,4 @@ if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cance
 
 life_action_inUse = false;
 _vault setVariable["chargeplaced",false,true];
-[[2,"The charge has been defused."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+[[2,"La charge a été désamorcé."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;

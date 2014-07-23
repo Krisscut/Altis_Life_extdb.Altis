@@ -1,7 +1,7 @@
 /*
 	File: fn_keyMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Initializes the key menu
 	Will be revised.
@@ -30,7 +30,7 @@ for "_i" from 0 to (count life_vehicles)-1 do
 		{
 			_text = "";
 		};
-		
+
 		_name = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
 		_pic = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "picture");
 		_vehicles lbAdd format["%1 %3 - [Distance: %2m]",_name,round(player distance _veh),_text];
@@ -51,6 +51,6 @@ for "_i" from 0 to (count life_vehicles)-1 do
 
 if(((lbSize _vehicles)-1) == -1) then
 {
-	_vehicles lbAdd "You don't own any vehicles";
+	_vehicles lbAdd "Tu n'as pas de véhicules";
 	_vehicles lbSetData [(lbSize _vehicles)-1,str(ObjNull)];
 };

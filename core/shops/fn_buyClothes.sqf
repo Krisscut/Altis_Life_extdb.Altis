@@ -1,12 +1,12 @@
 /*
 	File: fn_buyClothes.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Buys the current set of clothes and closes out of the shop interface.
 */
 private["_price"];
-if((lbCurSel 3101) == -1) exitWith {titleText["You didn't choose the clothes you wanted to buy.","PLAIN"];};
+if((lbCurSel 3101) == -1) exitWith {titleText["Tu n'as pas choisi de vêtements.","PLAIN"];};
 
 _price = 0;
 {
@@ -16,7 +16,7 @@ _price = 0;
 	};
 } foreach life_clothing_purchase;
 
-if(_price > life_liquide) exitWith {titleText["Sorry sir, you don't have enough money to buy those clothes.","PLAIN"];};
+if(_price > life_liquide) exitWith {titleText["Tu n'as pas assez d'argent !","PLAIN"];};
 life_liquide = life_liquide - _price;
 
 life_clothesPurchased = true;
