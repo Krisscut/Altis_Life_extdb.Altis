@@ -432,8 +432,7 @@ FAR_Check_achever =
 	&& _isPlayerUnconscious == 1
 	&& (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player)
 	&& currentWeapon player != ""
-	&& _target < 2
-	) then
+	/*&& _target < 2*/) then
 	{
 		_return = true;
 	};

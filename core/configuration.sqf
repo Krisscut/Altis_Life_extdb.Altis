@@ -24,6 +24,7 @@ life_bail_paid = false;
 life_impound_inuse = false;
 life_action_inUse = false;
 life_spikestrip = ObjNull;
+life_has_insurance = false;
 
 life_respawn_timer = .3; //Scaled in minutes
 
@@ -104,9 +105,11 @@ life_istazed = false;
 life_my_gang = ObjNull;
 
 life_inv_allowed = false;//added bloopis
-
+life_insure_val = 0;//added bloopis
+life_insure_veh = ObjNull;//added bloopis
 life_msg_cost = 0;//added bloopis
 life_msg_pub = "";//added bloopis
+
 
 life_vehicles = [];
 bank_robber = [];
@@ -492,3 +495,37 @@ life_garage_sell =
 ];
 __CONST__(life_garage_sell,life_garage_sell);
 
+life_price_insurance =
+[
+    ["B_Quadbike_01_F",500],
+    ["C_Hatchback_01_F",200],
+    ["C_Offroad_01_F", 2500],
+    ["B_G_Offroad_01_F",2500],
+    ["C_SUV_01_F",7500],
+    ["C_Van_01_transport_F",10000],
+    ["C_Hatchback_01_sport_F",5000],
+    ["C_Van_01_fuel_F",10000],
+    ["I_Heli_Transport_02_F",32500],
+    ["C_Van_01_box_F",12500],
+    ["I_Truck_02_transport_F",25000],
+    ["I_Truck_02_covered_F",30000],
+    ["B_Truck_01_transport_F",67500],
+    ["B_Truck_01_box_F", 77500],
+    ["O_MRAP_02_F",37500],
+    ["B_Heli_Light_01_F",50000],
+    ["O_Heli_Light_02_unarmed_F",150000],
+    ["B_Truck_01_ammo_F",37500],
+    ["O_Truck_03_transport_F",100000],
+    ["C_Rubberboat",500],
+    ["C_Boat_Civil_01_F",3400],
+    ["B_Boat_Transport_01_F",400],
+    ["C_Boat_Civil_01_police_F",2500],
+    ["B_Boat_Armed_01_minigun_F",10500],
+    ["B_SDV_01_F",22500],
+    ["B_MRAP_01_F",37500],
+    ["I_Truck_02_medical_F",18000],
+    ["O_Truck_03_medical_F",20000],
+    ["B_Truck_01_medical_F",22000],
+    ["O_Truck_03_device_F",80000]
+];
+__CONST__(life_price_insurance,life_price_insurance);

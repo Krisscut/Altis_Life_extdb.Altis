@@ -120,6 +120,7 @@ class Life_Client_Core
 		class sellTurtle {};
 		class sellGoldBars {};
 		class captureHideout {};
+		
 		class getLicensesAction {}; // ajout serrat
 		class surrender {};//asurion
 		// Interraction menu civil
@@ -135,6 +136,8 @@ class Life_Client_Core
 		class gatherArcheologie {};	
 		class packupBarriere {};
 		class packupBarriereStop {};	
+		class insureVehicle {};//added by asurion
+		class drawInsurance {};//added 05/28/2014
 
 	};
 	
@@ -328,6 +331,7 @@ class Life_Client_Core
 		class deviceMine {};
 		class addVehicle2Chain {};
 
+		class vehInsure {};//added bloopis
 	};
 	
 	class Cop
