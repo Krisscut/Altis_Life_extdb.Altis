@@ -57,3 +57,20 @@ _weedZones = ["weed_1"];
 	_zone setTriggerActivation["CIV","PRESENT",true];
 	_zone setTriggerStatements["player in thislist","LIFE_Action_Coke = player addAction['Cueillir de la Cocaine',life_fnc_gatherCocaine,'',0,false,false,'','!life_action_inUse'];","player removeAction LIFE_Action_Coke;"];
 } foreach _cocaineZones;
+
+//Create Radar Zone
+
+	_zone = createTrigger ["EmptyDetector",(getMarkerPos "RadarSud")];
+	_zone setTriggerArea[25,25,0,false];
+	_zone setTriggerActivation["ANY","PRESENT",true];
+	_zone setTriggerStatements["vehicle player != player","[50,'Kavala Sud'] call fnc_Radar","RadarOn=false"];
+
+	_zone = createTrigger ["EmptyDetector",(getMarkerPos "Radarcentre")];
+	_zone setTriggerArea[25,25,0,false];
+	_zone setTriggerActivation["ANY","PRESENT",true];
+	_zone setTriggerStatements["vehicle player != player","[50,'Kavala centre'] call fnc_Radar","RadarOn=false"];
+
+	_zone = createTrigger ["EmptyDetector",(getMarkerPos "RadarNord")];
+	_zone setTriggerArea[25,25,0,false];
+	_zone setTriggerActivation["ANY","PRESENT",true];
+	_zone setTriggerStatements["vehicle player != player","[130, 'Kavala Nord'] call fnc_Radar","RadarOn=false"];
