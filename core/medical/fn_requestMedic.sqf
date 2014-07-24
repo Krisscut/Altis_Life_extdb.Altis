@@ -1,7 +1,7 @@
 /*
 	File: fn_requestMedic.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	N/A
 */
@@ -17,9 +17,11 @@ if(_medicsOnline) then {
 };
 
 //Create a thread to monitor duration since last request (prevent spammage).
-[] spawn 
+[] spawn
 {
 	((findDisplay 7300) displayCtrl 7303) ctrlEnable false;
 	sleep (2 * 60);
 	((findDisplay 7300) displayCtrl 7303) ctrlEnable true;
 };
+
+this addAction ["Concessionnaire voitures",life_fnc_vehicleShopMenu,["civ_car",civilian,["civ_car_1","civ_car_1_1"],"civ","Bruce's New & Used Auto's"]]; this addAction["<t color='#ADFF2F'>ATM</t>",life_fnc_atmMenu,"",0,FALSE,FALSE,"",' vehicle player == player && player distance _target < 4 '];
