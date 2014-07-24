@@ -8,7 +8,7 @@
 private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl"];
 disableSerialization;
 if(isNull (findDisplay 2620)) then {
-	if(!(createDialog "Life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
+	if(!(createDialog "Life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
 };
 
 _ownerID = grpPlayer getVariable["gang_owner",""];
@@ -57,3 +57,6 @@ lbClear _ctrl; //Purge the list
 	_ctrl lbAdd format["%1",_x getVariable["realname",name _x]];
 	_ctrl lbSetData [(lbSize _ctrl)-1,str(_x)];
 } foreach _allUnits;
+
+
+(_oldItem == "kitmeth" OR _oldItem == "poudrehydroxyde" OR _oldItem == "crystalmeth" OR _oldItem == "cocaine" && playersNumber west > 5)
