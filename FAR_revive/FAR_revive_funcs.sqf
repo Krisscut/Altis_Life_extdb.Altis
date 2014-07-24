@@ -428,11 +428,11 @@ FAR_Check_achever =
 	_target = cursorTarget;
 	_isPlayerUnconscious = _target getVariable ["FAR_isUnconscious",0];
 
-	if (alive _target
+	if (alive _target && (_target distance player) < 2
 	&& _isPlayerUnconscious == 1
 	&& (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player)
 	&& currentWeapon player != ""
-	/*&& _target < 2*/) then
+	) then
 	{
 		_return = true;
 	};
