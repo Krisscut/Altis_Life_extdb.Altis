@@ -331,6 +331,7 @@ sell_array =
 	["goldbar",3500000],
 
 	["hamburger",25],//added by asurion
+	["crystalmeth",5700],
 	["frites",5],//added by asurion
 	["cheeseburger",30],//added by asurion
 	["barriere",1500],//added by asurion
