@@ -96,6 +96,3 @@ if(_mode) then {
 [] call SOCK_fnc_updateRequest; //Sync silently because it's obviously silently..
 closeDialog 0; //Exit the menu.
 true;
-
-/*
-this addAction["Concessionnaire aérien",life_fnc_vehicleShopMenu,["med_air_hs",independent,"medic_spawn_1","med","Kavala Hosptial",true]];
