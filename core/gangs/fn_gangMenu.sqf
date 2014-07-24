@@ -57,6 +57,3 @@ lbClear _ctrl; //Purge the list
 	_ctrl lbAdd format["%1",_x getVariable["realname",name _x]];
 	_ctrl lbSetData [(lbSize _ctrl)-1,str(_x)];
 } foreach _allUnits;
-
-
-(_oldItem == "kitmeth" OR _oldItem == "poudrehydroxyde" OR _oldItem == "crystalmeth" OR _oldItem == "cocaine" && playersNumber west > 5)
