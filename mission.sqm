@@ -24370,7 +24370,7 @@ class Mission
 			vehicle="Land_Runway_PAPI";
 			skill=0.60000002;
 			text="radar_Bloops_3";
-			init="this allowDamage false;[[this,-1,50,""Kavala 3"",""radar_3""],""TON_fnc_radar"",false,false] spawn life_fnc_MP;";
+			init="";
 		};
 		class Item1790
 		{
@@ -24381,7 +24381,7 @@ class Mission
 			vehicle="Land_Runway_PAPI";
 			skill=0.60000002;
 			text="radar_Bloops_2";
-			init="this allowDamage false;[[this,-1,50,""Kavala 2"",""radar_2""],""TON_fnc_radar"",false,false] spawn life_fnc_MP;";
+			init="";
 		};
 		class Item1791
 		{
@@ -24392,7 +24392,7 @@ class Mission
 			vehicle="Land_Runway_PAPI";
 			skill=0.60000002;
 			text="radar_Bloops_6";
-			init="this allowDamage false;[[this,-1,50,""Kavala 6"",""radar_6""],""TON_fnc_radar"",false,false] spawn life_fnc_MP;";
+			init="";
 		};
 		class Item1792
 		{

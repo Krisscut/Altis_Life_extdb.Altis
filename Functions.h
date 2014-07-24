@@ -269,10 +269,11 @@ class Life_Client_Core
 		class activateFrini {};//added 05/11/2014
 		class msgDelete {};//added 05/11/2014
 		class desactivateMsg {};//added 05/11/2014
-
 		class onDeath {};//added test
 		class onRespawn {};//added test
 		class CivpullOutVeh {};// ajout serrat
+		class RadarAuto {};// ajout serrat
+		
         
 
 		
