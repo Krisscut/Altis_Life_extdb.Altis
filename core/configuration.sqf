@@ -286,8 +286,7 @@ life_illegal_items = [
 ["cocainep",3500],
 ["marijuana",2000],
 ["turtle",3500],
-["hydrogenchloride",3000],
-["hydroxydesodiumanhydre",3300],
+["crystalmeth",3300],
 ["crystalmethpur",3600]
 ];
 
