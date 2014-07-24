@@ -65,9 +65,13 @@ if(playerSide == west) then {
 	_Btn5 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_impoundAction;";
 } else {
 	_Btn3 ctrlShow false;
-	_Btn6 ctrlShow false;//insurance buton
+	_Btn6 ctrlShow true;//insurance buton
+	_Btn6 ctrlSetText localize "STR_vInAct_Insure";
 
-
+	if(!(life_vInact_curTarget getVariable["insured",false]) && ([(getPlayerUID player),(cursorTarget getVariable["vehicle_info_owners", []])] call fnc_index) != -1 && !(life_vInact_curTarget getVariable["destroyed",false])) then {
+			_Btn6 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_insureVehicle;";
+			_Btn6 ctrlEnable true;
+	};
 
 	if(typeOf _curTarget == "O_Truck_03_device_F") then {
 		_Btn7 ctrlSetText localize "STR_vInAct_DeviceMine";

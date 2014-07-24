@@ -37,7 +37,7 @@ if((life_veh_shop select 0) == "med_air_hs") then {
 
 if(_spawnPoint == "") exitWith {hint "Il y a un véhicule qui bloque le point de spawn";};
 life_liquide = life_liquide - _basePrice;
-hint format["You bought a %1 for $%2",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_basePrice] call life_fnc_numberText];
+hint format["Tu as acheté %1 pour $%2",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_basePrice] call life_fnc_numberText];
 playSound "caching";
 
 //Spawn the vehicle and prep it.

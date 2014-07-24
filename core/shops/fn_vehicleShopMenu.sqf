@@ -24,10 +24,11 @@ life_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so oth
 
 ctrlSetText [2301,((_this select 3) select 4)];
 
+/*
 if(_disableBuy) then {
 	//Disable the buy button.
 	ctrlEnable [2309,false];
-};
+};*/
 
 //Fetch the shop config.
 _vehicleList = [_shop] call life_fnc_vehicleListCfg;
