@@ -31876,7 +31876,7 @@ class Mission
 		class Item286
 		{
 			position[]={3483.5085,5.9617782,12737.65};
-			name="radar";
+			name="RadarSud";
 			text="Radar (50km/h)";
 			type="mil_marker";
 			colorName="ColorRed";
@@ -31884,7 +31884,7 @@ class Mission
 		class Item287
 		{
 			position[]={4235.6489,26.447796,13888.285};
-			name="radar_1";
+			name="RadarNord";
 			text="Radar (130km/h)";
 			type="mil_marker";
 			colorName="ColorRed";
@@ -31892,7 +31892,7 @@ class Mission
 		class Item288
 		{
 			position[]={3947.4194,16.590527,13566.197};
-			name="radar_2";
+			name="RadarCentre";
 			text="Radar (50km/h)";
 			type="mil_marker";
 			colorName="ColorRed";
