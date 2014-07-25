@@ -272,7 +272,7 @@ class Life_Client_Core
 		class onDeath {};//added test
 		class onRespawn {};//added test
 		class CivpullOutVeh {};// ajout serrat
-		class RadarAuto {};// ajout serrat
+		class RadarAuto {};// ajout GreeFine
 		
         
 
