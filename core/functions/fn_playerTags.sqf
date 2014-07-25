@@ -68,7 +68,7 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 
 				if (!isnil {(group _x) getVariable "gang_name"}) Then {
 					_position2 = visiblePosition _x;
-					_position2 set[2,(getPosATL _x select 2) + 2.7];
+					_position2 set[2,(getPosATL _x select 2) + 2.4];
 					_GangName = format["%1", ((group _x) getVariable "gang_name")];
 					drawIcon3D ["",[0.3,0,0.8,1],_position2,_width,_height,0,_GangName,0,0.06];
 				};
