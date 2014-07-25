@@ -308,18 +308,18 @@ switch (_code) do
 			if(_veh isKindOf "House_F" && playerSide == civilian) then {
 				if(_veh in life_vehicles && player distance _veh < 8) then {
 					_door = [_veh] call life_fnc_nearestDoor;
-					if(_door == 0) exitWith {hint "You are not near a door!"};
+					if(_door == 0) exitWith {hint "Tu n'es pas porche d'une porte!"};
 					_locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
 					if(_locked == 0) then {
 						_veh setVariable[format["bis_disabled_Door_%1",_door],1,true];
 						_veh animate [format["door_%1_rot",_door],0];
-						systemChat "You have locked that door.";
-					[[player],"life_fnc_houseSoundClose",true,false] spawn life_fnc_MP;
+						systemChat "Tu as fermé la porte.";
+					///[[player],"life_fnc_houseSoundClose",true,false] spawn life_fnc_MP;
 					} else {
 						_veh setVariable[format["bis_disabled_Door_%1",_door],0,true];
 						_veh animate [format["door_%1_rot",_door],1];
-						systemChat "You have unlocked that door.";
-					[[player],"life_fnc_houseSoundOpen",true,false] spawn life_fnc_MP;
+						systemChat "Tu as ouvert la porte.";
+					///[[player],"life_fnc_houseSoundOpen",true,false] spawn life_fnc_MP;
 					//ouverture
 					};
 				};
@@ -332,7 +332,7 @@ switch (_code) do
 						} else {
 							[[_veh,0],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};
-						systemChat "You have unlocked your vehicle.";
+						systemChat "Tu as déverouillé le véhicule.";
 					[[_veh],"life_fnc_copBeep",true,false] spawn life_fnc_MP;
 					} else {
 						if(local _veh) then {
@@ -340,7 +340,7 @@ switch (_code) do
 						} else {
 							[[_veh,2],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
 						};
-						systemChat "You have locked your vehicle.";
+						systemChat "Tu as vérouillé le véhicule.";
 					[[_veh],"life_fnc_copBeep",true,false] spawn life_fnc_MP;
 					};
 				};
