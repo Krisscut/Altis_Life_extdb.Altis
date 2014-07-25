@@ -13,6 +13,9 @@ _unit = call compile format["%1",getSelData(2632)];
 if(isNull _unit) exitWith {}; //Bad unit?
 if(_unit == player) exitWith {hint "Tu ne peux pas te kick!"};
 
+//add by asurion for limit invitation
+if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["gang_maxMembers",8])) exitWith {hint "Tu dois augmenter les slots du gang pour inviter ce joueur."};
+
 _action = [
 	format["Vous êtes sur le point d'inviter %1 a votre gang, si il accepte, il aura acces au compte en banque du gang",_unit getVariable ["realname",name _unit]],
 	"Transfer Gang Leadership",

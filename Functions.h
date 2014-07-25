@@ -290,6 +290,9 @@ class Life_Client_Core
 		class jumpFnc {};
 		class soundDevice {};
 		class setFuel {};
+		class say3D {};
+		class setTexture {};
+
 	};
 	
 	class Civilian

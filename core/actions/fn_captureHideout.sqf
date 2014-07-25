@@ -11,7 +11,8 @@ _group = _hideout getVariable ["gangOwner",grpNull];
 
 if(isNil {grpPlayer getVariable "gang_name"}) exitWith {titleText["Tu dois déjà créer un gang avant de pouvoir capturer une planque!","PLAIN"];};
 if(_group == grpPlayer) exitWith {titleText["Ton gang a déjà capturé la zone!","PLAIN"]};
-
+	//ajout asurion
+if((_hideout getVariable ["inCapture",FALSE])) exitWith {hint"Une personne seulement peut capturer la zone !";};
 if(!isNull _group) then {
 	_gangName = _group getVariable ["gang_name",""];
 	_action = [
@@ -81,5 +82,6 @@ _flagTexture = [
 		"\A3\Data_F\Flags\flag_fd_orange_CO.paa"
 	] call BIS_fnc_selectRandom;
 _this select 0 setFlagTexture _flagTexture;
-
+//Added asurion for make global message
+[[[0,1],format["%1 et son gang nommé: %2 - ont capturé la zone de gang",name player,(group player) getVariable "gang_name" ]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 _hideout setVariable["gangOwner",grpPlayer,true];

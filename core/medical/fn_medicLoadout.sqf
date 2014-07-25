@@ -49,7 +49,9 @@ player addItem "FirstAidKit";
 player setObjectTextureGlobal [0,"textures\medic_uniform.jpg"];
 switch(uniform player) do
 	{
-		case "U_I_CombatUniform" : {player setObjectTextureGlobal [0,"textures\medic_uniform.jpg"]};
+		//case "U_I_CombatUniform" : {player setObjectTextureGlobal [0,"textures\medic_uniform.jpg"]};
+		case "U_I_CombatUniform" : {[[player,0,"textures\medic_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;};
+
 		default{};
 	};
 sleep 5;

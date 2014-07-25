@@ -18,7 +18,7 @@ life_action_inUse = true;
 
 //Setup the progress bar
 disableSerialization;
-_title = "Fouillage de la maison....";
+_title = "Fouille de la maison....";
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
