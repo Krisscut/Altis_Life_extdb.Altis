@@ -62,15 +62,15 @@ _weedZones = ["weed_1"];
 
 	_zone = createTrigger ["EmptyDetector",(getMarkerPos "RadarSud")];
 	_zone setTriggerArea[25,25,0,false];
-	_zone setTriggerActivation["ANY","PRESENT",true];
-	_zone setTriggerStatements["vehicle player != player","[50,'Kavala Sud'] call life_fnc_RadarAuto","RadarOn=true"];
+	_zone setTriggerActivation["VEHICLE","PRESENT",true];
+	_zone setTriggerStatements["true","[50,'Kavala Sud'] call life_fnc_RadarAuto","RadarOn=true"];
 
 	_zone = createTrigger ["EmptyDetector",(getMarkerPos "Radarcentre")];
 	_zone setTriggerArea[25,25,0,false];
-	_zone setTriggerActivation["ANY","PRESENT",true];
-	_zone setTriggerStatements["vehicle player != player","[50,'Kavala centre'] call life_fnc_RadarAuto","RadarOn=true"];
+	_zone setTriggerActivation["VEHICLE","PRESENT",true];
+	_zone setTriggerStatements["true","[50,'Kavala centre'] call life_fnc_RadarAuto","RadarOn=true"];
 
 	_zone = createTrigger ["EmptyDetector",(getMarkerPos "RadarNord")];
 	_zone setTriggerArea[25,25,0,false];
-	_zone setTriggerActivation["ANY","PRESENT",true];
-	_zone setTriggerStatements["vehicle player != player","[130, 'Kavala Nord'] call life_fnc_RadarAuto","RadarOn=true"];
+	_zone setTriggerActivation["VEHICLE","PRESENT",true];
+	_zone setTriggerStatements["true","[130, 'Kavala Nord'] call life_fnc_RadarAuto","RadarOn=true"];
