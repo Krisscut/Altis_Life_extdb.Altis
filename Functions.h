@@ -291,7 +291,7 @@ class Life_Client_Core
 		class CivpullOutVeh {};// ajout serrat
 		class RadarAuto {};// ajout GreeFine
 		class randomRound {}; //ajout Serrat
-		
+		class fatigueReset {}; //ajout Serrat rien
         
 
 		

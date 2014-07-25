@@ -108,7 +108,7 @@ life_fnc_moveIn = compileFinal
 ";
 
 [] execVM "core\init_survival.sqf";
-
+[] spawn life_fnc_fatigueReset;
 __CONST__(life_paycheck,life_paycheck); //Make the paycheck static.
 //remove weapons for all vehicles in map for the player
 {
