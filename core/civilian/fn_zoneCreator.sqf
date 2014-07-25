@@ -59,6 +59,7 @@ _weedZones = ["weed_1"];
 } foreach _cocaineZones;
 
 //Create Radar Zone
+	RadarOn=true;
 
 	_zone = createTrigger ["EmptyDetector",(getMarkerPos "RadarSud")];
 	_zone setTriggerArea [25,25,0,false];
