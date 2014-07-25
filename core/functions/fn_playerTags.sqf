@@ -64,6 +64,8 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 					_icon = [((_x getVariable["coplevel", 0]) - 1),"texture"] call BIS_fnc_rankParams;
 				};*/
 
+
+
 				drawIcon3D [_icon,[1,1,1,1],_position,_width,_height,0,_name,0,0.04];
 
 				if (!isnil {(group _x) getVariable "gang_name"}) Then {
