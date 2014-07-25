@@ -12,7 +12,7 @@ life_market_resources = [
 	//Schema: SHORTNAME, DEFAULT-WERT, MIN-WERT, MAX-WERT, VERÄNDERUNG BEI AKTION [VERKAUF Multipliziert mit 1, Kauf multipliziert um -1
 	//["gold", 1500, 450, 2300, 8, 5],
 
-	["oilp", 3700, 500, 6500, 20, 8,
+	["oilp", 3700, 500, 6500, 6, 2,
 		[
 			["diamondc",1],
 			["iron_r",1],
@@ -24,7 +24,7 @@ life_market_resources = [
 		]
 	],
 
-	["iron_r", 1800, 500, 5000, 20, 8,
+	["iron_r", 1800, 500, 5000, 6, 2,
 		[
 			["diamondc",1],
 			["oilp",1],
@@ -35,7 +35,7 @@ life_market_resources = [
 			["glass",1]
 		]
 	],
-	["archeologie", 3000, 500, 6000, 20, 8,
+	["archeologie", 3000, 500, 6000, 3, 1,
 		[
 			["diamondc",1],
 			["oilp",1],
@@ -46,7 +46,7 @@ life_market_resources = [
 			["glass",1]
 		]
 	],
-	["diamondc", 4000, 5000, 8000, 20, 12,
+	["diamondc", 4000, 5000, 8000, 6, 4,
 		[
 			["oilp",1],
 			["iron_r",1],
@@ -58,7 +58,7 @@ life_market_resources = [
 		]
 	],
 
-	["copper_r", 1900, 5000, 5000, 20, 8,
+	["copper_r", 1900, 5000, 5000, 6, 3,
 		[
 			["diamondc",1],
 			["oilp",1],
@@ -70,7 +70,7 @@ life_market_resources = [
 		]
 	],
 
-	["salt_r", 2100, 500, 5100, 20, 8,
+	["salt_r", 2100, 500, 5100, 6, 3,
 		[
 			["diamondc",1],
 			["oilp",1],
@@ -82,7 +82,7 @@ life_market_resources = [
 		]
 	],
 
-	["glass", 1400, 500, 5000, 20, 8,
+	["glass", 1400, 500, 5000, 3, 1,
 		[
 			["diamondc",1],
 			["oilp",1],
@@ -94,7 +94,7 @@ life_market_resources = [
 		]
 	],
 
-	["cement", 1050, 500, 4500, 20, 8,
+	["cement", 1050, 500, 4500, 5, 2,
 		[
 			["diamondc",1],
 			["oilp",1],

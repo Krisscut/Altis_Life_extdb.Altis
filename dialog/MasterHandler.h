@@ -33,3 +33,5 @@
 #include "restric_menu.hpp"
 #include "insureConfirm.hpp"
 
+#include "common_EditorWrapper.hpp"
+#include "market.hpp"

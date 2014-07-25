@@ -13,7 +13,13 @@ _index = [_type,__GETC__(sell_array)] call fnc_index;
 if(_index == -1) exitWith {};
 _price = (__GETC__(sell_array) select _index) select 1;
 _var = [_type,0] call life_fnc_varHandle;
-
+////Init des variable du marché////
+_marketprice = [_type] call life_fnc_marketGetSellPrice;
+if(_marketprice != -1) then
+{
+	_price = _marketprice;
+};
+////Fin de l'init marché////
 _amount = ctrlText 2405;
 if(!([_amount] call fnc_isnumber)) exitWith {hint "Format incorrect";};
 _amount = parseNumber (_amount);
@@ -27,7 +33,17 @@ if(([false,_type,_amount] call life_fnc_handleInv)) then
 	life_liquide = life_liquide + _price;
 	[] call life_fnc_virt_update;
 	playSound "caching";
-
+////Rentrée marché////
+	if(_marketprice != -1) then
+	{
+		[_type, _amount] spawn
+		{
+			sleep 120;
+			[_this select 0,_this select 1] call life_fnc_marketSell;
+		};
+	////Fin du script////
+		[] call life_fnc_virt_update;
+	};
 
 };
 
@@ -49,3 +65,4 @@ if(life_shop_type == "heroin") then
 		life_shop_npc setVariable["sellers",_array,true];
 	};
 };
+private["_marketprice"];

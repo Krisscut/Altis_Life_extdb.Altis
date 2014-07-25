@@ -45,7 +45,24 @@ class Life_Client_Core
 		class welcomeNotification_bluefor {};
 		class welcomeNotification_independant {};
 	};
-	
+	class Market
+	{
+		file = "core\market";
+		
+		class openMarketView;
+		class refreshMarketView;
+		class marketShortView;
+		class marketBuy;
+		class marketSell;
+		class marketGetBuyPrice;
+		class marketGetSellPrice;
+		class marketconfiguration;
+		class marketReset;
+		class marketChange;
+		class marketGetRow;
+		class marketGetPriceRow;
+		class marketSetPriceRow;
+	};
 	class Admin
 	{
 		file = "core\admin";
@@ -273,6 +290,7 @@ class Life_Client_Core
 		class onRespawn {};//added test
 		class CivpullOutVeh {};// ajout serrat
 		class RadarAuto {};// ajout GreeFine
+		class randomRound {}; //ajout Serrat
 		
         
 

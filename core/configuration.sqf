@@ -96,7 +96,7 @@ life_delivery_in_progress = false;
 life_action_in_use = false;
 life_thirst = 100;
 life_hunger = 100;
-__CONST__(life_paycheck_period,5); //Five minutes
+__CONST__(life_paycheck_period,15); //Five minutes
 life_liquide = 0;
 __CONST__(life_impound_car,350);
 __CONST__(life_impound_boat,250);
