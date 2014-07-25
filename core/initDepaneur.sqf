@@ -10,6 +10,13 @@ player addAction ["<t color='#B40404'>Dépaneuse : Attacher</t>",{[] spawn fnc_D
 
 player addAction ["<t color='#0F3F99'>Dépaneuse : Détacher</t>",{[] spawn fnc_DepaneuseD},0,0,true,true,'','(vehicle player) == player && count (nearestObjects [player, ["O_Truck_03_transport_F"], 7]) > 0 && cursorTarget isKindOf "CAR" && typeOf cursorTarget != "O_Truck_03_transport_F" && !isNull attachedTo cursorTarget'];
 
+player addAction ["Dépaneuse : Impound",{[cursorTarget] spawn life_fnc_impoundAction},0,0,true,true,'','(vehicle player) == player && cursorTarget isKindOf "CAR"'];
+
+        if (license_civ_depanneur) Then {
+        _Btn5 ctrlSetText localize "STR_vInAct_Impound";
+        _Btn5 buttonSetAction "";
+        };
+
 fnc_DepaneuseR = {
         _depanneuse = (nearestObjects [player, ["O_Truck_03_transport_F"], 7]) select 0;
         _veh = cursorTarget;

@@ -85,12 +85,6 @@ if(playerSide == west) then {
 		_Btn7 ctrlShow false;
 	};
 
-	//Dépaneur Impound
-	if (license_civ_depanneur) Then {
-	_Btn5 ctrlSetText localize "STR_vInAct_Impound";
-	_Btn5 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_impoundAction;";
-	};
-
 	if(__GETC__(life_adminlevel) == 0) then {
 		_Btn4 ctrlShow false;
 		_Btn5 ctrlShow false;
