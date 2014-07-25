@@ -14,3 +14,4 @@ if (__GETC__(life_adminlevel) != 0) then {
                 nil
    	};
 };
+[[format["%1 a désactivé l'ESP",name player]],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;

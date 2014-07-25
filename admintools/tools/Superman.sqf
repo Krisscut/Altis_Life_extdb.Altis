@@ -24,13 +24,13 @@ _Stxt = parseText format
 <t color='#FFFFFF' size='1.2' shadow='1' shadowColor='#000000' align='center'>---------------------------</t><br/>
 <t color='#FFFFFF' size='1' shadow='1' shadowColor='#000000' align='left'> F1	: Gravity PUSH</t><br/>
 <t color='#FFFFFF' size='1' shadow='1' shadowColor='#000000' align='left'> F2	: Gravity PULL</t><br/>
-<t color='#99EEFF' size='0.8' shadow='1' shadowColor='#000000' align='right'>Copyright 2014 by Ideo</t><br/>
+<t color='#99EEFF' size='0.8' shadow='1' shadowColor='#000000' align='right'>Copyright 2014 by Ideo and Serrat</t><br/>
 "];
-hintSilent _Stxt; 
+hintSilent _Stxt;
 
 if (isNull player) exitwith {} ;
 player allowDamage false;
-removeAllWeapons player; 
+removeAllWeapons player;
 removeUniform player;
 removeHeadgear player ;
 removeVest player;
@@ -38,7 +38,7 @@ player addUniform "U_I_G_resistanceLeader_F";
 player setObjectTextureGlobal [0,"admintools\blue.jpg"];
 activateSuperman = 1 ;
 speedPower = 5; // Puissance
-speedPowerTemp = speedPower;  
+speedPowerTemp = speedPower;
 dokeyUp={
      private ["_r","_key_delay","_max_height"] ;
 	 _keyCodeUp = 57; // Espace
@@ -55,43 +55,43 @@ dokeyUp={
 	 _keyCodePUSH = 19 ; // R
 	 _keyCodeFIREon = 59  ; // F1
 	 _keyCodeFIREoff = 60   ; // F2
-	 _keyCodeKill = 58   ; // CAPS
+	 //_keyCodeKill = 58   ; // CAPS
 
 //////////////////////////////////////////////////////////////////////////////      UP
-	if ((_this select 1)  == _keyCodeUp && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodeUp && activateSuperman == 1 ) then
 {
-       if  (player == vehicle player) then  
+       if  (player == vehicle player) then
 	   {
 		_vel = velocity player;
 		_dir = direction player;
-		player setVelocity [(_vel select 0),(_vel select 1),(_vel select 2)+speedPower];   
+		player setVelocity [(_vel select 0),(_vel select 1),(_vel select 2)+speedPower];
    };
 };
 //////////////////////////////////////////////////////////////////////////////      DOWN
-	if ((_this select 1)  == _keyCodeDown && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodeDown && activateSuperman == 1 ) then
 {
-       if  (player == vehicle player  && !isTouchingGround player) then  
+       if  (player == vehicle player  && !isTouchingGround player) then
 	   {
 		_vel = velocity player;
 		_dir = direction player;
-		player setVelocity [(_vel select 0),(_vel select 1),(_vel select 2)-speedPower];   
+		player setVelocity [(_vel select 0),(_vel select 1),(_vel select 2)-speedPower];
    };
 };
 //////////////////////////////////////////////////////////////////////////////      FORWARD
-	if ((_this select 1)  == _keyCodeForward && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodeForward && activateSuperman == 1 ) then
 {
-       if  (player == vehicle player && !isTouchingGround player) then  
+       if  (player == vehicle player && !isTouchingGround player) then
 	   {
-	   player playMove "AmovPpneMstpSnonWnonDnon"; 
+	   player playMove "AmovPpneMstpSnonWnonDnon";
 		_vel = velocity player;
 		_dir = direction player;
 		player setVelocity [(_vel select 0)+(sin _dir*speedPower),(_vel select 1)+(cos _dir*speedPower),(_vel select 2)];
    };
 };
 //////////////////////////////////////////////////////////////////////////////      BACK
-	if ((_this select 1)  == _keyCodeBackward && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodeBackward && activateSuperman == 1 ) then
 {
-       if  (player == vehicle player  && !isTouchingGround player) then  
+       if  (player == vehicle player  && !isTouchingGround player) then
 	   {
 		_vel = velocity player;
 		_dir = direction player;
@@ -99,15 +99,15 @@ dokeyUp={
    };
 };
 //////////////////////////////////////////////////////////////////////////////     Stop
-	if ((_this select 1)  == _keyCodeStop && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodeStop && activateSuperman == 1 ) then
 {
-       if  (player == vehicle player  && !isTouchingGround player) then  
+       if  (player == vehicle player  && !isTouchingGround player) then
 	    {
 
 		_vel = velocity player;
 		_dir = direction player;
 		_pos = position player;
-		if  (_pos select 2 < 1) then  
+		if  (_pos select 2 < 1) then
 	   {
 	   hint format ["%1", _pos];
 	   player switchMove "Stand" ;
@@ -117,20 +117,20 @@ dokeyUp={
 };
 
 //////////////////////////////////////////////////////////////////////////////     Switch OFF
-	if ((_this select 1)  == _keyCodeSwitchOFF  && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodeSwitchOFF  && activateSuperman == 1 ) then
 {
-       if  (player == vehicle player) then  
+       if  (player == vehicle player) then
 	    {
 			hint format["Superman désactivé"];
 			activateSuperman = 0;
 			speedPower = 0;
 		};
 };
-		
+
 //////////////////////////////////////////////////////////////////////////////     Switch ON
-	if ((_this select 1)  == _keyCodeSwitchON  && activateSuperman == 0 ) then 
+	if ((_this select 1)  == _keyCodeSwitchON  && activateSuperman == 0 ) then
 {
-       if  (player == vehicle player) then  
+       if  (player == vehicle player) then
 	    {
 			hint format["Superman activé"];
 			activateSuperman = 1;
@@ -139,9 +139,9 @@ dokeyUp={
 };
 
 //////////////////////////////////////////////////////////////////////////////     POWER UP
-	if ((_this select 1)  == _keyCodePowerUP && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodePowerUP && activateSuperman == 1 ) then
 {
-       //if  (player == vehicle player) then  
+       //if  (player == vehicle player) then
 	    //{
 		if ( speedPower < 20) then{
 			speedPower = speedPower + 1;};
@@ -150,18 +150,18 @@ dokeyUp={
 };
 
 //////////////////////////////////////////////////////////////////////////////     POWER DOWN
-	if ((_this select 1)  == _keyCodePowerDOWN && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodePowerDOWN && activateSuperman == 1 ) then
 {
-       if  (player == vehicle player) then  
+       if  (player == vehicle player) then
 	    {
-		if ( speedPower > 0) then{	
+		if ( speedPower > 0) then{
 			speedPower = speedPower - 1;};
 		cutText[format["Puissance =  %1",speedPower],"PLAIN"];
 		};
 };
 
 //////////////////////////////////////////////////////////////////////////////     PUSH
-	if ((_this select 1)  == _keyCodePUSH && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodePUSH && activateSuperman == 1 ) then
 {
 		_velC = velocity cursorTarget;
 		_dir = direction player;
@@ -169,7 +169,7 @@ dokeyUp={
 };
 
 //////////////////////////////////////////////////////////////////////////////     SUPERSAYEN ON
-	if ((_this select 1)  == _keyCodeFIREon && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodeFIREon && activateSuperman == 1 ) then
 {
 	{
 	if (_x != player) then {
@@ -183,7 +183,7 @@ dokeyUp={
 };
 
 //////////////////////////////////////////////////////////////////////////////     SUPERSAYEN OFF
-	if ((_this select 1)  == _keyCodeFIREoff && activateSuperman == 1 ) then 
+	if ((_this select 1)  == _keyCodeFIREoff && activateSuperman == 1 ) then
 {
 	{
 	if (_x != player) then {
@@ -192,17 +192,17 @@ dokeyUp={
 	};
 } forEach (position player nearObjects 100);
 //detach vfire;
-//{if (typeOf _x == "#particlesource") then {deleteVehicle _x}} forEach (vfire nearObjects 10);   
-//deleteVehicle vfire;  
+//{if (typeOf _x == "#particlesource") then {deleteVehicle _x}} forEach (vfire nearObjects 10);
+//deleteVehicle vfire;
 };
 
 //////////////////////////////////////////////////////////////////////////////     Explosion
-	if ((_this select 1)  == _keyCodeKill && activateSuperman == 1 ) then 
+/*	if ((_this select 1)  == _keyCodeKill && activateSuperman == 1 ) then
 {
 _cible = cursorTarget;
 _bomb1 = "HelicopterExploSmall" createVehicle(position _cible);
-};
+};*/
 };
 
 waituntil {!(IsNull (findDisplay 46))};
-SupermanHandler = (FindDisplay 46) displayAddEventHandler ["keydown","_this call dokeyUp"];  
+SupermanHandler = (FindDisplay 46) displayAddEventHandler ["keydown","_this call dokeyUp"];

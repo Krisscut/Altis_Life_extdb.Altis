@@ -35,7 +35,7 @@ _EXECscript3 = 'player execVM "'+_pathAlerts+'%1"';
 // croate : 76561198121816443
 
 	//if ((getPlayerUID player) in ["76561198121812116","76561198126618319","76561198071185106","76561198121816443","76561198087243419"]) then
-	if (__GETC__(life_adminlevel) != 0) then {
+	if (__GETC__(life_adminlevel) = 1) then {
 		admintools =
 		[
 			["Serrat Admin Menu",true],

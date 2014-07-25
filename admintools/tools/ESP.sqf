@@ -90,3 +90,4 @@ if (__GETC__(life_adminlevel) != 0) then {
         }foreach playableUnits;
     };
 };
+[[format["%1 a activer l'ESP",name player]],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;
