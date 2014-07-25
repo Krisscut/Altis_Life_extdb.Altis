@@ -12,7 +12,6 @@ _gangName = ctrlText (getControl(2520,2522));
 _length = count (toArray(_gangName));
 _chrByte = toArray (_gangName);
 _allowed = toArray("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_? ");
-<<<<<<< HEAD
 if(_length > 15) exitWith {hint "Vous ne pouvez pas avoir un nom de gang de plus de 15 caractères."};
 
 _badChar = false;
