@@ -11,7 +11,7 @@ disableSerialization;
 _gangName = ctrlText (getControl(2520,2522));
 _length = count (toArray(_gangName));
 _chrByte = toArray (_gangName);
-_allowed = toArray("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ ");
+_allowed = toArray("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_? ");
 if(_length > 32) exitWith {hint "Vous ne pouvez pas avoir un nom de gang de plus de 32 caractères."};
 _badChar = false;
 {if(!(_x in _allowed)) exitWith {_badChar = true;};} foreach _chrByte;
