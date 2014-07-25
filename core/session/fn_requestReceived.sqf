@@ -73,4 +73,184 @@ switch(playerSide) do {
 	};
 };
 
+switch(__GETC__(life_donator)) do
+{
+	case 1:
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				life_paycheck = life_paycheck + 7500;
+			};
+
+			case civilian:
+			{
+			// Housing initialization
+				life_houses = _this select 9;
+        		ife_houses_markers = [];
+				life_paycheck = life_paycheck * 2;
+			};
+
+			default {
+				life_paycheck = life_paycheck * 2;
+			};
+		};
+	};
+	case 2:
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				life_paycheck = life_paycheck + 10000;
+			};
+
+			case civilian:
+			{
+				life_paycheck = life_paycheck * 3;
+			};
+
+			default {
+				life_paycheck = life_paycheck * 3;
+			};
+		};
+	};
+	case 3:
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				life_paycheck = life_paycheck + 12500;
+			};
+
+			case civilian:
+			{
+				life_paycheck = life_paycheck * 4;
+			};
+
+			default {
+				life_paycheck = life_paycheck * 4;
+			};
+		};
+	};
+};
+
+
 life_session_completed = true;
+switch (__GETC__(life_coplevel)) do
+{
+	case 2 :
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				life_paycheck = life_paycheck + 2500;
+			};
+
+			default {
+
+				life_paycheck = life_paycheck + 0;
+					};
+
+		};
+	};
+	case 3 :
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				life_paycheck = life_paycheck + 5000;
+			};
+
+			default {
+
+				life_paycheck = life_paycheck + 0;
+					};
+
+		};
+	};
+	case 4 :
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				life_paycheck = life_paycheck + 7500;
+			};
+
+			default {
+
+				life_paycheck = life_paycheck + 0;
+					};
+
+		};
+	};
+	case 5 :
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				life_paycheck = life_paycheck + 9000;
+			};
+
+			default {
+
+				life_paycheck = life_paycheck + 0;
+					};
+
+		};
+	};
+	case 6 :
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				life_paycheck = life_paycheck + 11500;
+			};
+
+			default {
+
+				life_paycheck = life_paycheck + 0;
+					};
+
+		};
+	};
+	case 7 :
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				life_paycheck = life_paycheck + 14000;
+			};
+
+			default {
+
+				life_paycheck = life_paycheck + 0;
+					};
+
+		};
+	};
+	case 8 :
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				life_paycheck = life_paycheck + 16500;
+			};
+
+			default {
+
+				life_paycheck = life_paycheck + 0;
+					};
+
+		};
+	};
+};
