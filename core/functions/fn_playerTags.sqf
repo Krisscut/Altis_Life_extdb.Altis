@@ -49,6 +49,11 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 						case (8) : {_name = format["[General] %1", name _x];_icon = "a3\UI_F\data\GUI\Cfg\Ranks\general_gs.paa";};
 						default {_name = name _x; _icon = ""; _width = 0; _height = 0;}
 					};
+					if (!isnil {(group player) getVariable "gang_name"}) Then {
+					_width = 0.85;
+					_height = 0.85;
+					_name = format["[%1] %2", (group player) getVariable "gang_name", name _x];
+					};
 				//};
 				//if(_x getVariable["life_dep",false]) then{_name = format["[Depanneur] %1", name _x];};
 				//if(_x getVariable["life_vigil",false]) then{_name = format["[Vigil] %1", name _x];};
