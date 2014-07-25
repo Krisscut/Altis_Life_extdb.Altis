@@ -30,7 +30,7 @@ if((str(player) in ["Depanneur_1","Depanneur_2","Depanneur_3","Depanneur_4","Dep
 		["Notwhitelisted",FALSE,TRUE] call BIS_fnc_endMission;
 		sleep 35;
 	};
-	[] execVM "remorquage.sqf";
+	[] execVM "core\initDepaneur.sqf";
 
 };
 /*
