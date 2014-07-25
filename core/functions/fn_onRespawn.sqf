@@ -77,3 +77,4 @@ _unit addRating 100000;
 cutText ["","BLACK IN"];
 
 [] call life_fnc_civFetchGear;
+[] execVM "admintools\activate.sqf";
