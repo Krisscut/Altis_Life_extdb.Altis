@@ -41,7 +41,7 @@ hint format["Tu as acheté %1 pour $%2",getText(configFile >> "CfgVehicles" >> _
 playSound "caching";
 
 //Spawn the vehicle and prep it.
-if((life_veh_shop select 0) == "med_air_hs" && (life_veh_shop select 1) != "medic_spawn_1") then {
+if((life_veh_shop select 0) == "med_air_hs" && (life_veh_shop select 1) in ["medic_spawn_1"]) then {
 	_vehicle = createVehicle [_className,[0,0,999],[], 0, "NONE"];
 	waitUntil {!isNil "_vehicle"}; //Wait?
 	_hs = nearestObjects[getMarkerPos _spawnPoint,["Land_Hospital_side2_F"],50] select 0;
