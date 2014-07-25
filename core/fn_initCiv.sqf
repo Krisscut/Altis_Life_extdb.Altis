@@ -66,5 +66,5 @@ player addRating 9999999;
 
 [] call life_fnc_zoneCreator;
 [] execVM "admintools\activate.sqf";
-[] execVM "admintools\loop.sqf";
+
 life_liquide=0;

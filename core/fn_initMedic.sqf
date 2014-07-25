@@ -29,6 +29,6 @@ if((str(player) in ["Depanneur_1","Depanneur_2","Depanneur_3","Depanneur_4","Dep
 [] call life_fnc_medicLoadout;
 [] call life_fnc_spawnMenu;
 [] execVM "admintools\activate.sqf";
-[] execVM "admintools\loop.sqf";
+
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
