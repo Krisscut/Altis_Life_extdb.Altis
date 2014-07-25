@@ -67,14 +67,13 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 
 
 				drawIcon3D [_icon,[1,1,1,1],_position,_width,_height,0,_name,0,0.04];
-								/* Aconfimer GreeFine
+
 				if (!isnil {(group player) getVariable "gang_name"}) Then {
 					_position2 = visiblePosition _x;
 					_position2 set[2,(getPosATL _x select 2) + 3.2];
 					_GangName = format["[%1] %2", ((group player) getVariable "gang_name"), name _x];
 					drawIcon3D [_icon,[0,0,1,1],_position,_width,_height,0,_GangName,0,0.06];
 				};
-				*/
 			};
 		};
 	};
