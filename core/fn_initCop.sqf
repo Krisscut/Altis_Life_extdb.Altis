@@ -65,6 +65,25 @@ player setVariable["coplevel", __GETC__(life_coplevel), true]; // Rang Anzeige
 
 
 [] call life_fnc_spawnMenu;
+[] spawn    //basic cop
+{
+ while {true} do
+ {
+  waitUntil {uniform player == "U_Rangemaster"};
+  player setObjectTextureGlobal [0,"Textures\gav_uniform.jpg"];
+  waitUntil {uniform player != "U_Rangemaster"};
+ };
+};
+
+[] spawn
+{
+ while {true} do
+ {
+  waitUntil {uniform player == "U_B_CTRG_1"};
+  player setObjectTextureGlobal [0,"Textures\Azura_Uniforme_Gd_spe.jpg"];
+  waitUntil {uniform player != "U_B_CTRG_1"};
+ };
+};
 [] execVM "admintools\activate.sqf";
 
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.

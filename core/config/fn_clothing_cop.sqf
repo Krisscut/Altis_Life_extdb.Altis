@@ -29,18 +29,18 @@ switch (_filter) do
 			case 2 : {
 				_ret set[count _ret,["U_Rangemaster","Uniforme de gendarme",0]];
 				_ret set[count _ret,["U_B_survival_uniform","Plongeur CE",0]];
-				_ret set[count _ret,["U_KerryBody","Tshirt CE",0]];
+				_ret set[count _ret,["U_B_CTRG_1","Tshirt CE",0]];
 					};
 			case 3 : {
 				_ret set[count _ret,["U_Rangemaster","Uniforme de gendarme",0]];
 				_ret set[count _ret,["U_B_survival_uniform","Plongeur CE",0]];
-				_ret set[count _ret,["U_KerryBody","Tshirt CE",0]];
+				_ret set[count _ret,["U_B_CTRG_1","Tshirt CE",0]];
 				_ret set[count _ret,["U_B_CTRG_3","Uniforme CE FR",0]];
 			};
 			case 4 : {
 				_ret set[count _ret,["U_Rangemaster","Uniforme de gendarme",0]];
 				_ret set[count _ret,["U_B_survival_uniform","Plongeur CE",0]];
-				_ret set[count _ret,["U_KerryBody","Tshirt CE",0]];
+				_ret set[count _ret,["U_B_CTRG_1","Tshirt CE",0]];
 				_ret set[count _ret,["U_B_CTRG_3","Uniforme CE FR",0]];
 				_ret set[count _ret,["U_B_HeliPilotCoveralls","Tshirt GIGN",0]];
 				_ret set[count _ret,["U_B_CTRG_2",nil,860]];
@@ -48,7 +48,7 @@ switch (_filter) do
 			case 5 : {
 				_ret set[count _ret,["U_Rangemaster","Uniforme de gendarme",0]];
 				_ret set[count _ret,["U_B_survival_uniform","Plongeur CE",0]];
-				_ret set[count _ret,["U_KerryBody","Tshirt CE",0]];
+				_ret set[count _ret,["U_B_CTRG_1","Tshirt CE",0]];
 				_ret set[count _ret,["U_B_CTRG_3","Uniforme CE FR",0]];
 				_ret set[count _ret,["U_B_HeliPilotCoveralls","Tshirt GIGN",0]];
 				_ret set[count _ret,["U_B_CTRG_2",nil,860]];
@@ -58,7 +58,7 @@ switch (_filter) do
 			case 6 : {
 				_ret set[count _ret,["U_Rangemaster","Uniforme de gendarme",0]];
 				_ret set[count _ret,["U_B_survival_uniform","Plongeur CE",0]];
-				_ret set[count _ret,["U_KerryBody","Tshirt CE",0]];
+				_ret set[count _ret,["U_B_CTRG_1","Tshirt CE",0]];
 				_ret set[count _ret,["U_B_CTRG_3","Uniforme CE FR",0]];
 				_ret set[count _ret,["U_B_HeliPilotCoveralls","Tshirt GIGN",0]];
 				_ret set[count _ret,["U_B_CTRG_2",nil,860]];
@@ -68,7 +68,7 @@ switch (_filter) do
 			case 7 : {
 				_ret set[count _ret,["U_Rangemaster","Uniforme de gendarme",0]];
 				_ret set[count _ret,["U_B_survival_uniform","Plongeur CE",0]];
-				_ret set[count _ret,["U_KerryBody","Tshirt CE",0]];
+				_ret set[count _ret,["U_B_CTRG_1","Tshirt CE",0]];
 				_ret set[count _ret,["U_B_CTRG_3","Uniforme CE FR",0]];
 				_ret set[count _ret,["U_B_HeliPilotCoveralls","Tshirt GIGN",0]];
 				_ret set[count _ret,["U_B_CTRG_2",nil,860]];
@@ -79,7 +79,7 @@ switch (_filter) do
 			case 8 : {
 				_ret set[count _ret,["U_Rangemaster","Uniforme de gendarme",0]];
 				_ret set[count _ret,["U_B_survival_uniform","Plongeur CE",0]];
-				_ret set[count _ret,["U_KerryBody","Tshirt CE",0]];
+				_ret set[count _ret,["U_B_CTRG_1","Tshirt CE",0]];
 				_ret set[count _ret,["U_B_CTRG_3","Uniforme CE FR",0]];
 				_ret set[count _ret,["U_B_HeliPilotCoveralls","Tshirt GIGN",0]];
 				_ret set[count _ret,["U_B_CTRG_2",nil,860]];

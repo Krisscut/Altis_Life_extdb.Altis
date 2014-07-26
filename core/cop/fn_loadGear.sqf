@@ -67,5 +67,6 @@ if(primaryWeapon player != "") then
 switch(uniform player) do
 	{
 		case "U_Rangemaster" : {player setObjectTextureGlobal [0,"textures\gav_uniform.jpg"]};
+		case "U_B_CTRG_1" : {player setObjectTextureGlobal [0,"textures\Uniforme_Gd_spe_.jpg"]};
 		default{};
 	};
