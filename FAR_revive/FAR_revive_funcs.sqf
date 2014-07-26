@@ -15,6 +15,7 @@ FAR_Player_Actions =
 		player addAction ["<t color=""#C90000"">" + "Réanimer" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_revive"], 10, true, true, "", "call FAR_Check_Revive"];
 		player addAction ["<t color=""#C90000"">" + "Stabiliser" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_stabilize"], 10, true, true, "", "call FAR_Check_Stabilize"];
 		player addAction ["<t color=""#FF0000"">" + "Achever la personne" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_achever"], 9, false, true, "", "call FAR_Check_achever"];
+		player addAction ["<t color=""#FF0000"">" + "Rejoindre le canal ambulancier (120sec)" + "</t>", {[] spawn life_RadioAmbulancier}, ["action_Radio"], 9, false, true, "", "(player getVariable 'FAR_isUnconscious) && RadioAmbulancier'"];
 
 	};
 };
@@ -568,4 +569,16 @@ FAR_CheckFriendlies =
 	};
 
 	_hintMsg
+};
+////////////////////////////////////////////////
+// Entrer et sortir de canal ambu
+////////////////////////////////////////////////
+RadioAmbulancier = true;
+
+life_RadioAmbulancier = {
+RadioAmbulancier=false;
+3 radioChannelAdd player;
+sleep 120;
+3 radioChannelRemove [player];
+RadioAmbulancier=true;
 };
