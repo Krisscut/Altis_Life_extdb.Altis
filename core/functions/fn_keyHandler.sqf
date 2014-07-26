@@ -319,23 +319,20 @@ switch (_code) do
 			} else {
 				_locked = locked _veh;
 				if(_veh in life_vehicles && player distance _veh < 8) then {
-					if(_locked == 2) then {
-						if(local _veh) then {
-							_veh lock 0;
-						} else {
-							[[_veh,0],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
-						};
-						systemChat "Tu as déverouillé le véhicule.";
-					[[_veh],"life_fnc_copBeep",true,false] spawn life_fnc_MP;
-					} else {
-						if(local _veh) then {
-							_veh lock 2;
-						} else {
-							[[_veh,2],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
-						};
-						systemChat "Tu as vérouillé le véhicule.";
-					[[_veh],"life_fnc_copBeep",true,false] spawn life_fnc_MP;
-					};
+				if(_locked == 2) then
+				{
+					_veh lock 0;
+					[[_veh,0], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+					[[_veh, "Beep",10],"life_fnc_playSound",true,false] spawn Life_fnc_MP;
+					systemChat "Votre vehicule est OUVERT.";
+				}
+				else
+				{
+					_veh lock 2;
+					[[_veh,2], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+					[[_veh, "BeepBeep",10],"life_fnc_playSound",true,false] spawn Life_fnc_MP;
+					systemChat "Votre vehicule est FERME.";
+				};
 				};
 			};
 		};
