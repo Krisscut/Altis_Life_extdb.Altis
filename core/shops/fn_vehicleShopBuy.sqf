@@ -41,19 +41,6 @@ hint format["Tu as acheté %1 pour $%2",getText(configFile >> "CfgVehicles" >> _
 playSound "caching";
 
 //Spawn the vehicle and prep it.
-if((life_veh_shop select 0) == "med_air_hs" && (life_veh_shop select 1) in ["medic_spawn_1"]) then {
-	_vehicle = createVehicle [_className,[0,0,999],[], 0, "NONE"];
-	waitUntil {!isNil "_vehicle"}; //Wait?
-	_hs = nearestObjects[getMarkerPos _spawnPoint,["Land_Hospital_side2_F"],50] select 0;
-	_vehicle attachTo [_hs,[-0.4,-4,14]];
-	_vehicle lock 2;
-	[[_vehicle,_colorIndex],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
-	[_vehicle] call life_fnc_clearVehicleAmmo;
-	_vehicle setVariable["trunk_in_use",false,true];
-	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
-	_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
-	detach _vehicle;
-} else {
 	_vehicle = createVehicle [_className, (getMarkerPos _spawnPoint), [], 0, "NONE"];
 	waitUntil {!isNil "_vehicle"}; //Wait?
 	_vehicle allowDamage false; //Temp disable damage handling..
@@ -67,7 +54,6 @@ if((life_veh_shop select 0) == "med_air_hs" && (life_veh_shop select 1) in ["med
 	_vehicle setVariable["trunk_in_use",false,true];
 	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
 	_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
-};
 
 //Side Specific actions.
 switch(playerSide) do {
