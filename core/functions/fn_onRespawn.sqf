@@ -54,6 +54,7 @@ switch(playerSide) do
 		player setVariable ["FAR_isUnconscious", 0, true];//added 04/26/2014
 		life_istazed = false;//added 04/26/2014
 		[] spawn life_fnc_medicLoadout;
+		3 radioChannelAdd [player];
 	};
 };
 
