@@ -234,7 +234,8 @@ switch (_vehicle) do
 		_ret =
 		[
 			["\A3\soft_f_beta\mrap_03\data\mrap_03_ext_co.paa","cop"],
-			["#(argb,8,8,3)color(0.05,0.05,0.05,1)","reb"]
+			["#(argb,8,8,3)color(0.05,0.05,0.05,1)","reb"],
+			["textures\vehicules\strider-police.jpg","cop"]
 		];
 	};
 	case "O_MRAP_02_F":
