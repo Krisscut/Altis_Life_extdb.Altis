@@ -36,10 +36,12 @@ titleText[format["Vous avez été menotté par%1",_cop getVariable["realname",na
 [[player, "Cuff",10],"life_fnc_playSound",true,false] spawn BIS_fnc_mp;
 
 
+
 while {player getVariable "restrained"} do
 {
 	if(vehicle player == player) then {
 		player playMove "AmovPercMstpSnonWnonDnon_Ease";
+
 	};
 
 	_state = vehicle player;
@@ -51,17 +53,20 @@ while {player getVariable "restrained"} do
 		player setVariable ["Escorting",false,true];
 		player setVariable ["transporting",false,true];
 		detach _player;
+
 	};
 
 	if(!alive _cop) exitWith {
 		player setVariable ["Escorting",false,true];
 		detach player;
+
 	};
 
 	if(vehicle player != player) then
 	{
 		//disableUserInput true;
 		if(driver (vehicle player) == player) then {player action["eject",vehicle player];};
+
 	};
 };
 
