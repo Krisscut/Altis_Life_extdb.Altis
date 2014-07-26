@@ -5,6 +5,11 @@
                         Script : depanneur
         Droit d'utilisation : involved-gaming.com
 ///////////////////////////////////////////////*/
+
+
+removeUniform player;
+player forceAddUniform "U_Competitor";
+
 player addAction ["<t color='#B40404'>Dépaneuse : Attacher</t>",{[] spawn fnc_DepaneuseR}
 ,0,0,true,true,'','(vehicle player) == player && count (nearestObjects [player, ["O_Truck_03_transport_F"], 7]) > 0 && cursorTarget isKindOf "CAR" && typeOf cursorTarget != "O_Truck_03_transport_F" && (count attachedObjects ((nearestObjects [player, ["O_Truck_03_transport_F"], 7]) select 0) == 0)'];
 
@@ -12,11 +17,8 @@ player addAction ["<t color='#0F3F99'>Dépaneuse : Détacher</t>",{[] spawn fnc_
 
 player addAction ["Dépaneuse : Impound",{[cursorTarget] spawn life_fnc_impoundAction},0,0,true,true,'','(vehicle player) == player && cursorTarget isKindOf "CAR"'];
 
-        if (license_civ_depanneur) Then {
-        _Btn5 ctrlSetText localize "STR_vInAct_Impound";
-        _Btn5 buttonSetAction "";
-        };
 
+if (isNil {fnc_DepaneuseR}) Then {
 fnc_DepaneuseR = {
         _depanneuse = (nearestObjects [player, ["O_Truck_03_transport_F"], 7]) select 0;
         _veh = cursorTarget;
@@ -51,4 +53,5 @@ fnc_DepaneuseD = {
         };
         sleep 0.5;
         detach _veh;
+};
 };

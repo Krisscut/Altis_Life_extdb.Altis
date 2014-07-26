@@ -75,10 +75,3 @@ if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn lif
     [true,_item,1] call life_fnc_handleInv;
 } foreach (_yItems);
 
-if((str(player) in ["Depanneur_1","Depanneur_2","Depanneur_3","Depanneur_4","Depanneur_5"])) then {
-
-
-removeUniform player;
-player forceAddUniform "U_Competitor";
-
-};
