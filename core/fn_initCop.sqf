@@ -80,7 +80,7 @@ player setVariable["coplevel", __GETC__(life_coplevel), true]; // Rang Anzeige
  while {true} do
  {
   waitUntil {uniform player == "U_B_CTRG_1"};
-  player setObjectTextureGlobal [0,"Textures\Azura_Uniforme_Gd_spe.jpg"];
+  player setObjectTextureGlobal [0,"Textures\Uniforme_Gd_spe.jpg"];
   waitUntil {uniform player != "U_B_CTRG_1"};
  };
 };
