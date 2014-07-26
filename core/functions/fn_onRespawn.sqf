@@ -44,7 +44,7 @@ switch(playerSide) do
 		life_istazed = false;//added 04/26/2014
 		if(headGear player != "") then {removeHeadgear player;};
 		if(goggles player != "") then {removeGoggles player;};
-		if (license_civ_depanneur) Then {[] execVM "core\initDepaneur.sqf"};
+		if (license_civ_depanneur && (str player) in ["Depanneur_1","Depanneur_2","Depanneur_3","Depanneur_4","Depanneur_5"]) Then {[] execVM "core\initDepaneur.sqf"};
 	};
 	case independent:
 	{
