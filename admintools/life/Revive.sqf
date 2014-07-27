@@ -1,0 +1,1 @@
+[cursorTarget] spawn FAR_HandleRevive;

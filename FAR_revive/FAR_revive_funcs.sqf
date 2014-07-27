@@ -109,7 +109,7 @@ FAR_Player_Unconscious =
 		while { !isNull _unit && alive _unit && _unit getVariable "FAR_isUnconscious" == 1 && _unit getVariable "FAR_isStabilized" == 0 && (FAR_BleedOut <= 0 || time < _bleedOut) } do
 		{
 			_testbleedOut = round (_bleedOut - time);
-			hintSilent parsetext format["<t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>COMA</t><br/><t>Hémorragie, mort dans %1 secondes</t><br /><t>%2</t><br /><t>Vous allez avoir l'option suicide dans 5 min.</t><br /><t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>ATTENTION !!!!!!!</t><br /><t> VEUILLEZ REJOINDRE LE GANG AMBULANCIER SI IL EST PRESENT<t><br /><t>Si vous vous suicidez, vous recommencerez une nouvelle vie</t><br /><t>Si vous attendez les 10min, vous ne perdrez rien</t><br /><t color='#FF3B3E' size='1.5' shadow='1' shadowColor='#000000' align='center'>SI VOUS VOUS DECONNECTEZ ALORS QUE VOUS ETES DANS LE COMA, VOUS SEREZ MIS EN PRISON AUTOMATIQUEMENT</t><br /><t color='#FF3B3E' size='1' shadow='1' shadowColor='#000000' align='center'>Etant dans le coma, vos moyens de communications sont retiré, vous ne pouvez plus parler. Vous pouvez cependant atteindre votre telephone pour envoyer un message UNIQUEMENT aux Ambulancier</t>", round (_bleedOut - time), call FAR_CheckFriendlies];
+			hintSilent parsetext format["<t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>COMA</t><br/><t>Hémorragie, mort dans %1 secondes</t><br /><t>%2</t><br /><t>Vous allez avoir l'option suicide dans 5 min.</t><br /><t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>ATTENTION !!!!!!!</t><br /><t> VEUILLEZ REJOINDRE LE CANAL DES AMBULANCIER SI IL EST PRESENT<t><br /><t>Si vous vous suicidez, vous recommencerez une nouvelle vie</t><br /><t>Si vous attendez les 10min, vous ne perdrez rien</t><br /><t color='#FF3B3E' size='1.5' shadow='1' shadowColor='#000000' align='center'>SI VOUS VOUS DECONNECTEZ ALORS QUE VOUS ETES DANS LE COMA, VOUS SEREZ MIS EN PRISON AUTOMATIQUEMENT</t><br /><t color='#FF3B3E' size='1' shadow='1' shadowColor='#000000' align='center'>Etant dans le coma, vos moyens de communications sont retiré, vous ne pouvez plus parler. Vous pouvez cependant atteindre votre telephone pour envoyer un message UNIQUEMENT aux Ambulancier</t>", round (_bleedOut - time), call FAR_CheckFriendlies];
 			if(_testbleedOut == 300) then
 			{
 				player addAction ["<t color=""#C90000"">" + "Suicide" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_suicide"], 9, false, true, "", "call FAR_Check_Suicide"];
@@ -128,7 +128,7 @@ FAR_Player_Unconscious =
 
 			while { !isNull _unit && alive _unit && _unit getVariable "FAR_isUnconscious" == 1 } do
 			{
-				hintSilent parsetext format["<t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>COMA</t><br/><t>Inconscient</t><br /><t>%2</t><br /><t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>ATTENTION !!!!!!!</t><br /><t> VEUILLEZ REJOINDRE LE GANG AMBULANCIER SI IL EST PRESENT<t><br /><t>Si vous vous suicidez, vous recommencerez une nouvelle vie</t><br /><t>Si vous attendez les 10min, vous ne perdrez rien</t><br /><t color='#FF3B3E' size='1.5' shadow='1' shadowColor='#000000' align='center'>SI VOUS VOUS DECONNECTEZ ALORS QUE VOUS ETES DANS LE COMA, VOUS SEREZ MIS EN PRISON AUTOMATIQUEMENT</t><br /><t color='#FF3B3E' size='1' shadow='1' shadowColor='#000000' align='center'>Etant dans le coma, vos moyens de communications sont retiré, vous ne pouvez plus parler. Vous pouvez cependant atteindre votre telephone pour envoyer un message UNIQUEMENT aux Ambulancier</t>", call FAR_CheckFriendlies];
+				hintSilent parsetext format["<t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>COMA</t><br/><t>Inconscient</t><br /><t>%2</t><br /><t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>ATTENTION !!!!!!!</t><br /><t> VEUILLEZ REJOINDRE LE CANAL DES AMBULANCIER SI IL EST PRESENT<t><br /><t>Si vous vous suicidez, vous recommencerez une nouvelle vie</t><br /><t>Si vous attendez les 10min, vous ne perdrez rien</t><br /><t color='#FF3B3E' size='1.5' shadow='1' shadowColor='#000000' align='center'>SI VOUS VOUS DECONNECTEZ ALORS QUE VOUS ETES DANS LE COMA, VOUS SEREZ MIS EN PRISON AUTOMATIQUEMENT</t><br /><t color='#FF3B3E' size='1' shadow='1' shadowColor='#000000' align='center'>Etant dans le coma, vos moyens de communications sont retiré, vous ne pouvez plus parler. Vous pouvez cependant atteindre votre telephone pour envoyer un message UNIQUEMENT aux Ambulancier</t>", call FAR_CheckFriendlies];
 
 				sleep 0.5;
 			};
@@ -575,9 +575,11 @@ FAR_CheckFriendlies =
 ////////////////////////////////////////////////
 RadioAmbulancier = true;
 life_RadioAmbulancier = {
+PRadioAmbu = PRadioAmbu+[name player,player];publicVariable "PRadioAmbu";
 RadioAmbulancier=false;
 3 radioChannelAdd [player];
 sleep 120;
 3 radioChannelRemove [player];
+PRadioAmbu = PRadioAmbu-[name player,player];publicVariable "PRadioAmbu";
 RadioAmbulancier=true;
 };
