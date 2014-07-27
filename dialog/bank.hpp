@@ -108,7 +108,7 @@ class Life_atm_management {
 		class GangDeposit : TransferButton
 		{
 			idc = 2705;
-			text = "Deposit To Gang";
+			text = "Depot au Gang";
 			onButtonClick = "[] call life_fnc_gangDeposit";
 			y = .7; x = 0.365;
 			w = 0.275;
@@ -117,7 +117,7 @@ class Life_atm_management {
 		class GangWithdraw : TransferButton
 		{
 			idc = 2706;
-			text = "Withdraw To Gang";
+			text = "Retrait du Gang";
 			onButtonClick = "[] call life_fnc_gangWithdraw";
 			y = .75; x = 0.365;
 			w = 0.275;
