@@ -20,7 +20,7 @@ class Life_atm_management {
 			x = 0.35;
 			y = 0.2 + (11 / 250);
 			w = 0.3;
-			h = 0.6 - (22 / 250);
+			h = 0.8 - (22 / 250);
 		};
 	};
 
@@ -117,9 +117,9 @@ class Life_atm_management {
 		class GangWithdraw : TransferButton
 		{
 			idc = 2706;
-			text = "Deposit To Gang";
+			text = "Withdraw To Gang";
 			onButtonClick = "[] call life_fnc_gangWithdraw";
-			y = .8; x = 0.365;
+			y = .75; x = 0.365;
 			w = 0.275;
 		};
 
@@ -128,7 +128,7 @@ class Life_atm_management {
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = 0.35;
-			y = 0.8 - (1 / 25);
+			y = 0.9 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
