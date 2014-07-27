@@ -16,7 +16,7 @@ _container = _this select 1;
 		closeDialog 0;
 	};
 };
-*/
+
 if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {
 	_house = nearestBuilding (getPosATL player);
 	if(!(_house in life_vehicles) && {(_house getVariable ["locked",false])}) then {
@@ -27,3 +27,4 @@ if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) exitWith {
 		};
 	};
 };
+*/

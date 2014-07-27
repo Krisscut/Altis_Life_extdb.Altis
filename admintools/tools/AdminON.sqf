@@ -1,7 +1,7 @@
 cutText ["Admin God Mod ON", "PLAIN"];
 player setDamage 0;
 player allowDamage false;
-player addEventHandler ["Fired", { (_this select 0) setVehicleAmmo 1 }];
+//player addEventHandler ["Fired", { (_this select 0) setVehicleAmmo 1 }];
 
 //deleteVehicle sphereAdmin; je sais pas a quoi ca sert mais c'etait la, mais bon, ca bug, et comme ca bug
 sphereAdmin = "Sign_Sphere10cm_F" createVehicle (getPos player);

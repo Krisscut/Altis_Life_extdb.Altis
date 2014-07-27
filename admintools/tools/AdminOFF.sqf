@@ -3,4 +3,4 @@ player setDamage 0;
 player allowDamage true;
 detach sphereAdmin;
 deleteVehicle sphereAdmin;
-player removeEventHandler ["Fired", 0];
+//player removeEventHandler ["Fired", 0];
