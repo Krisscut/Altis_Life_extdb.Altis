@@ -45,4 +45,5 @@ lbSetCurSel [2703,0];
 
 if(isNil {(grpPlayer getVariable "gang_bank")}) then {
 	(getControl(2700,2705)) ctrlEnable false;
+	(getControl(2700,2706)) ctrlEnable false;
 };
