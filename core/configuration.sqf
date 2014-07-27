@@ -109,6 +109,7 @@ life_insure_val = 0;//added bloopis
 life_insure_veh = ObjNull;//added bloopis
 life_msg_cost = 0;//added bloopis
 life_msg_pub = "";//added bloopis
+Action_Revived = false;
 
 
 life_vehicles = [];

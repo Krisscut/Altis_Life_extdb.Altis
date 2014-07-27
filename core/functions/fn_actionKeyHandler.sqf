@@ -41,6 +41,7 @@ life_action_inUse = true;
 if(_curTarget isKindOf "Man" && {!alive _curTarget} && {playerSide == independent}) exitWith {
 		[_curTarget] call life_fnc_revivePlayer;
 		[] spawn life_fnc_defibrilateur;
+		Action_Revived = false;
 
 
 };
