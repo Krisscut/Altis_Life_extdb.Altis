@@ -19,7 +19,7 @@ waitUntil {!(isNull (findDisplay 46))};
 [] call life_fnc_spawnMenu;
 [] execVM "admintools\activate.sqf";
 
-
+player addAction ["<t color=""#C90000"">" + "Menu Radio" + "</t>", {[] call life_fnc_RadioKick}, [], 9, false, true, "", ""];
 3 radioChannelAdd [player];
 
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
