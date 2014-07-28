@@ -39,6 +39,7 @@ FAR_HandleDamage_EH =
 		_unit allowDamage false;
 		_amountOfDamage = 0;
 		life_istazed = false;//modified 04/22/2014
+		[[getPlayerUID _killer,name _killer,"187T"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
 
 		[_unit, _killer] spawn FAR_Player_Unconscious;
 	};
@@ -199,7 +200,7 @@ FAR_Kill =
 {
 private ["_target"];
 _target = _this select 0;
-[[getPlayerUID player,name player,"430"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
+[[getPlayerUID player,name player,"187"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
 player playMove "AinvPknlMstpSlayWrflDnon_medic";
 sleep 3;
 _target setDamage 1;

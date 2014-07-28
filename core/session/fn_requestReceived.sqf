@@ -39,7 +39,7 @@ if(count (_this select 6) > 0) then {
 switch(playerSide) do {
 	case west: {
 		__CONST__(life_coplevel,parseNumber(_this select 7));
-		__CONST__(life_serveur,parseNumber(_this select 10));
+		//__CONST__(life_serveur,parseNumber(_this select 10));
 		cop_gear = _this select 8;
 		[] spawn life_fnc_loadGear;
 		life_blacklisted = _this select 9;
@@ -52,15 +52,15 @@ switch(playerSide) do {
 		civ_gear = _this select 8;
 		__CONST__(life_coplevel,0);
 		__CONST__(life_medicLevel,0);
-		__CONST__(life_serveur,parseNumber(_this select 9));
+		//__CONST__(life_serveur,parseNumber(_this select 9));
 		[] spawn life_fnc_civLoadGear;
-		life_houses = _this select 10;
+		life_houses = _this select 9;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
 			life_vehicles set[count life_vehicles,_house];
 		} foreach life_houses;
 
-		life_gangData = _This select 11;
+		life_gangData = _This select 10;
 		if(count life_gangData != 0) then {
 			[] spawn life_fnc_initGang;
 		};
