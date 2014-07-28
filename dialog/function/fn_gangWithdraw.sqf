@@ -12,7 +12,8 @@ _value = parseNumber(ctrlText 2702);
 if(_value > 999999) exitWith {hint localize "STR_ATM_GreaterThan";};
 if(_value < 0) exitWith {};
 if(!([str(_value)] call life_fnc_isnumeric)) exitWith {hint localize "STR_AIM_notnumeric"};
-if(_value > (group player) getVariable "gang_bank") exitWith {hint "Il n'y as pas assez d'argent sur le compte du gang"};
+if (grpPlayer getVariable "gang_owner" != steamid) exitWith {};
+if(_value > grpPlayer getVariable "gang_bank") exitWith {hint "Il n'y as pas assez d'argent sur le compte du gang"};
 
 __ADD__(life_dabliquide,_value);
 _gFund = (group player) getVariable ["gang_bank",0];
