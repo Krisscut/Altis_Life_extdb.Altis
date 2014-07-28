@@ -1,56 +1,7 @@
-/*
-File: restric_check_inv.sqf
-Author: Bloopis
-Date : 04/27/2014
-Traduction : Skydred pour Involved-Gaming.Com
-Description:
-Blocks the opening of the inventory of other players or locked vehicles.
-The cop are not concerned.
-Rebels can open bags only if the target is :
-	- UNCOUSCIOUS
-	- RESTRAINED
-	- SURRENDED
-	- INCAPACITED
-
-Parameter(s) :
-	NULL
-
-Returns:
-	NULL
-*/
 waituntil {alive player};
 if (side player == west) exitWith {};
 
-/*fnc_RestricNullTarget = {
-		//here we check the target to avoid glitches
-		//if _val equals 00000, it's a null selection on items container display
-		//else it's a item so we restrict !
 
-		if((isNull cursortarget) && ((lbText [(_this select 0), (_this select 1)]) != "00000")) then {
-			//glitch time !
-			((findDisplay 602) displayCtrl 632) ctrlRemoveEventHandler ["LBDrag",0];
-			((findDisplay 602) displayCtrl 640) ctrlRemoveEventHandler ["LBDrag",0];
-			((findDisplay 602) displayCtrl 632) ctrlRemoveAllEventHandlers "LBDrag";
-			((findDisplay 602) displayCtrl 640) ctrlRemoveAllEventHandlers "LBDrag";
-			(FindDisplay 602) closeDisplay 1;
-			titleText["\n\n\n\n Voler c'est mal ! Systeme Anti-Vol !", "PLAIN",0];
-		};
-
-		//we have a target but it is the original target ?
-		//glitch who based on change target before check inventory to avoid most of verification !
-		//with this there is 98 % chances to block glitchers (but if the fake target is under the test so it's work ..)
-		//this condition is made for grounds item (if we only block with _val player can never loot grounds items ..)
-		//that why we can't restrict distance less than 1.2 meters (player must be very near of the target)
-		if((player distance cursortarget > 1.2) && ((lbText [(_this select 0), (_this select 1)]) != "00000")) then {
-			((findDisplay 602) displayCtrl 632) ctrlRemoveEventHandler ["LBDrag",0];
-			((findDisplay 602) displayCtrl 640) ctrlRemoveEventHandler ["LBDrag",0];
-			((findDisplay 602) displayCtrl 632) ctrlRemoveAllEventHandlers "LBDrag";
-			((findDisplay 602) displayCtrl 640) ctrlRemoveAllEventHandlers "LBDrag";
-			(FindDisplay 602) closeDisplay 1;
-			titleText["\n\n\n\n Voler c'est mal ! Systeme Anti-Vol !", "PLAIN",0];
-		};
-		false;
-};*/
 while {alive player} do
 {
 	WaitUntil {!isnull (findDisplay 602)};
