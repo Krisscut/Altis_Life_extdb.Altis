@@ -9,7 +9,7 @@ if(count _this == 1) exitWith {false};
 _unit = _this select 0;
 _container = _this select 1;
 
-if(_isPack == 1) && (playerSide == civilian) then {
+if ((_isPack == 1) && (playerSide == civilian)) then {
 	hint "You are not allowed to look into someone's backpack";
 	[] spawn {
 		waitUntil {!isNull (findDisplay 602)};
