@@ -42,12 +42,12 @@ if(!license_civ_papiers) exitwith
 	player enableSimulation false;
 	};
 
-*/
+
 if((__GETC__(life_serveur)) == 0) exitWith {
 	["altis",FALSE,TRUE] call BIS_fnc_endMission;
 	sleep 30;
 };
-
+*/
 if(life_is_arrested) then
 {
 	life_is_arrested = false;
