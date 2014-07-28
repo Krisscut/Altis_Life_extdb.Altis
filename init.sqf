@@ -25,6 +25,6 @@ if(isDedicated && isNil("life_market_prices")) then
 [] execVM "monitor\info.sqf";
 [] execVM "anti-hack.sqf";
 
-[] execVM "core\inventory\init.sqf";
+//[] execVM "core\inventory\init.sqf";
 
 StartProgress = true;
