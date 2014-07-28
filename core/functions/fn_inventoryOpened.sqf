@@ -11,7 +11,7 @@ _container = _this select 1;
 
 (license_civ_rebel) && (player distance cursortarget < 4) && (((cursortarget getVariable "FAR_isUnconscious") == 1) || ((cursortarget getVariable "isknocked")) || ((cursortarget getVariable "restrained")) || ((cursortarget getVariable "playerSurrender")))
 
-if(((_isPack == 1) && (playerSide == civilian)) OR ((_isPack == 1) && (playerSide == civilian) && !((license_civ_rebel) && (player distance cursortarget < 4) && (((cursortarget getVariable "FAR_isUnconscious") == 1) || ((cursortarget getVariable "isknocked")) || ((cursortarget getVariable "restrained")) || ((cursortarget getVariable "playerSurrender"))))) then {
+if(((_isPack == 1) && (playerSide == civilian)) OR ((_isPack == 1) && (playerSide == civilian) && !((license_civ_rebel) && (player distance cursortarget < 4) && (((cursortarget getVariable "FAR_isUnconscious") == 1) || ((cursortarget getVariable "isknocked")) || ((cursortarget getVariable "restrained")) || ((cursortarget getVariable "playerSurrender")))))) then {
 	hint "Impossible de voler dans les sacs !";
 	[] spawn {
 		waitUntil {!isNull (findDisplay 602)};
