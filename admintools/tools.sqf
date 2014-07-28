@@ -352,8 +352,9 @@ LifeMenu =
 		["Mettre en fourrière", [3],  "", -5, [["expression", format[_EXECscriptLife,"impoundAction.sqf"]]], "1", "1"],
 		["Placer vendeur perso", [4],  "", -5, [["expression", format[_EXECscriptLife,"spawnMarket.sqf"]]], "1", "1"],
 		["Reset prix marché", [5],  "", -5, [["expression", format[_EXECscriptLife,"resetmarche.sqf"]]], "1", "1"],
-		["Revive", [5],  "", -5, [["expression", format[_EXECscriptLife,"Revive.sqf"]]], "1", "1"],
-		["Objets inventaire", [6], "#USER:LifeItem", -5, [["expression", ""]], "1", "1"],
+		["Revive", [6],  "", -5, [["expression", format[_EXECscriptLife,"Revive.sqf"]]], "1", "1"],
+		["lock/Unlock", [7],  "", -5, [["expression", format[_EXECscriptLife,"Unlock.sqf"]]], "1", "1"],
+		["Objets inventaire", [8], "#USER:LifeItem", -5, [["expression", ""]], "1", "1"],
 		["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
 
