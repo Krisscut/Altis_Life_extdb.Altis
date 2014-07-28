@@ -37,7 +37,7 @@ while {true} do
 		hintSilent parseText format["Temps restant:<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>Peut payer la caution: %3<br/>Prix: $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if(isNil "life_canpay_bail") then {"Oui"} else {"Non"}];
 	};
 
-	if(player distance (getMarkerPos "jail_marker") > 60) exitWith {
+	if(player distance (getMarkerPos "jail_marker") > 100) exitWith {
 		_esc = true;
 	};
 
