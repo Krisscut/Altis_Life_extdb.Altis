@@ -575,11 +575,11 @@ FAR_CheckFriendlies =
 ////////////////////////////////////////////////
 RadioAmbulancier = true;
 life_RadioAmbulancier = {
-PRadioAmbu = PRadioAmbu+[name player,player];publicVariable "PRadioAmbu";
+PRadioAmbu = PRadioAmbu+[[name player,player]];publicVariable "PRadioAmbu";
 RadioAmbulancier=false;
 3 radioChannelAdd [player];
 sleep 120;
 3 radioChannelRemove [player];
-PRadioAmbu = PRadioAmbu-[name player,player];publicVariable "PRadioAmbu";
+PRadioAmbu = PRadioAmbu-[[name player,player]];publicVariable "PRadioAmbu";
 RadioAmbulancier=true;
 };

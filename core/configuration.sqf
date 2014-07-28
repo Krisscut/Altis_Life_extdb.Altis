@@ -329,7 +329,7 @@ sell_array =
 	["fuelF",500],
 	["cement",1050],
 	["spikeStrip",1500],
-	["goldbar",75000],
+	["goldbar",21000],
 
 	["hamburger",25],//added by asurion
 	["crystalmeth",5700],
