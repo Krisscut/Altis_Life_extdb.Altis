@@ -24,7 +24,6 @@ fnc_DepaneuseR = {
         _veh = cursorTarget;
         _dir = sqrt((direction _depanneuse - direction _veh)^2);
         if (_veh isKindOf "CAR" && (player distance _veh) < 5 && _dir < 12) then        {
-                        _depanneuse lockCargo true;
                         hint "Remorquage de la voiture ...";
                         player playMove "AinvPknlMstpSlayWrflDnon_healed";
                         sleep 7;
