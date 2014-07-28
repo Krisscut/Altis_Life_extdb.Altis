@@ -9,13 +9,13 @@ if(count _this == 1) exitWith {false};
 _unit = _this select 0;
 _container = _this select 1;
 
-/*if(_isPack == 1) then {
+if(_isPack == 1) && (playerSide == civilian) then {
 	hint "You are not allowed to look into someone's backpack";
 	[] spawn {
 		waitUntil {!isNull (findDisplay 602)};
 		closeDialog 0;
 	};
-};*/
+};
 
 if((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) && (playerSide == civilian) exitWith {
 	_house = nearestBuilding (getPosATL player);
