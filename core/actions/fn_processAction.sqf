@@ -85,13 +85,13 @@ if(_hasLicense) then
 	};
 
 _west = playersNumber west;
-	/*if((_oldItem == "kitmeth" OR _oldItem == "poudrehydroxyde" OR _oldItem == "crystalmeth" OR _oldItem == "cocaine") && _west < 4) exitWith
+	if((_oldItem == "kitmeth" OR _oldItem == "poudrehydroxyde" OR _oldItem == "crystalmeth" OR _oldItem == "cocaine") && _west < 4) exitWith
 	{
 		titleText[format["Il y a %1 flic connecté actuellement",_west],"PLAIN"];
 		hint "Les gendarmes en présence ne sont pas assez nombreux actuellement, il faut qu'ils soient 4 minimum, merci de bien vouloir réitérer plus tard cette tentative...";
 		5 cutText ["","PLAIN"];
 		life_is_processing = false;
-	};*/
+	};
 
 	if(player distance _vendor > 10) exitWith {hint "Tu dois rester dans un rayon de 10 mètres pour effectuer le traitement."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 	if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
