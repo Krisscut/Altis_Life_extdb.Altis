@@ -39,7 +39,7 @@ lbClear _members;
 		_members lbAdd format["%1",(_x getVariable["realname",name _x])];
 		_members lbSetData [(lbSize _members)-1,str(_x)];
 	};
-} foreach (grpPlayer getVariable["gang_owner",[]]);
+} foreach (units grpPlayer);
 
 _grpMembers = units grpPlayer;
 _allUnits = playableUnits;
