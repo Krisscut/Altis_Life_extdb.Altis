@@ -55,9 +55,9 @@ switch (_code) do
 	};
 
 	//Holster / recall weapon. OBLIGER DENLEVER SINOIN CONFLIT AVEC AVEC LA CLE INTERACTION
-	/*case 35:
+	case 35:
 	{
-		if(_shift && !_ctrlKey && currentWeapon player != "") then {
+		if(!_shift && _ctrlKey && currentWeapon player != "") then {
 			life_curWep_h = currentWeapon player;
 			player action ["SwitchWeapon", player, player, 100];
 			player switchcamera cameraView;
@@ -68,7 +68,7 @@ switch (_code) do
 				player selectWeapon life_curWep_h;
 			};
 		};
-	};*/
+	};
 	// ALT J Se rendre
 	case 36:
 	{
