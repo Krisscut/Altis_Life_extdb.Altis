@@ -14,7 +14,7 @@ FAR_Player_Actions =
 		player addAction ["<t color=""#C90000"">" + "Trainer" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_drag"], 9, false, true, "", "call FAR_Check_Dragging"];
 		player addAction ["<t color=""#C90000"">" + "Réanimer" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_revive"], 10, true, true, "", "call FAR_Check_Revive"];
 		player addAction ["<t color=""#C90000"">" + "Stabiliser" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_stabilize"], 10, true, true, "", "call FAR_Check_Stabilize"];
-		player addAction ["<t color=""#FF0000"">" + "Achever la personne" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_achever"], 9, false, true, "", "call FAR_Check_achever"];
+
 		player addAction ["<t color=""#FF0000"">" + "Rejoindre le canal ambulancier (120sec)" + "</t>", {[] spawn life_RadioAmbulancier}, ["action_Radio"], 9, false, true, "", "(player getVariable 'FAR_isUnconscious')==1 && RadioAmbulancier"];
 
 	};
@@ -129,7 +129,7 @@ FAR_Player_Unconscious =
 
 			while { !isNull _unit && alive _unit && _unit getVariable "FAR_isUnconscious" == 1 } do
 			{
-				hintSilent parsetext format["<t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>COMA</t><br/><t>Inconscient</t><br /><t>%2</t><br /><t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>ATTENTION !!!!!!!</t><br /><t> VEUILLEZ REJOINDRE LE CANAL DES AMBULANCIER SI IL EST PRESENT<t><br /><t>Si vous vous suicidez, vous recommencerez une nouvelle vie</t><br /><br /><t color='#FF3B3E' size='1.5' shadow='1' shadowColor='#000000' align='center'>SI VOUS VOUS DECONNECTEZ ALORS QUE VOUS ETES DANS LE COMA, VOUS SEREZ MIS EN PRISON AUTOMATIQUEMENT</t><br /><t color='#FF3B3E' size='1' shadow='1' shadowColor='#000000' align='center'>Etant dans le coma, vos moyens de communications sont retiré, vous ne pouvez plus parler. Vous pouvez cependant atteindre votre telephone pour envoyer un message UNIQUEMENT aux Ambulancier</t>", call FAR_CheckFriendlies];
+				hintSilent parsetext format["<t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>COMA</t><br/><t>Inconscient</t><br /><t>%2</t><br /><t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>ATTENTION !!!!!!!</t><br /><t> VEUILLEZ REJOINDRE LE CANAL DES AMBULANCIER SI IL EST PRESENT<t><br /><t>Si vous vous suicidez, vous recommencerez une nouvelle vie ET VOUS PERDEZ VOTRE LICENCE REBELLE !!!!</t><br /><br /><t color='#FF3B3E' size='1.5' shadow='1' shadowColor='#000000' align='center'>SI VOUS VOUS DECONNECTEZ ALORS QUE VOUS ETES DANS LE COMA, VOUS SEREZ MIS EN PRISON AUTOMATIQUEMENT</t><br /><t color='#FF3B3E' size='1' shadow='1' shadowColor='#000000' align='center'>Etant dans le coma, vos moyens de communications sont retiré, vous ne pouvez plus parler. Vous pouvez cependant atteindre votre telephone pour envoyer un message UNIQUEMENT aux Ambulancier</t>", call FAR_CheckFriendlies];
 
 				sleep 0.5;
 			};
@@ -193,21 +193,7 @@ FAR_Player_Unconscious =
 		}
 	};
 };
-////////////////////////////////////////////////
-// Achever
-////////////////////////////////////////////////
-FAR_Kill =
-{
-private ["_target"];
-_target = _this select 0;
-[[getPlayerUID player,name player,"187"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
-player playMove "AinvPknlMstpSlayWrflDnon_medic";
-sleep 3;
-_target setDamage 1;
 
-player playActionNow "stop";
-
-};
 
 ////////////////////////////////////////////////
 // Revive Player
@@ -421,26 +407,7 @@ FAR_Check_Stabilize =
 
 	_return
 };
-////////////////////////////////////////////////
-// Achever Action Check
-////////////////////////////////////////////////
-FAR_Check_achever =
-{
-	_return = false;
-	_target = cursorTarget;
-	_isPlayerUnconscious = _target getVariable ["FAR_isUnconscious",0];
 
-	if (alive _target && (_target distance player) < 2
-	&& _isPlayerUnconscious == 1
-	&& (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player)
-	&& currentWeapon player != ""
-	) then
-	{
-		_return = true;
-	};
-
-	_return
-};
 ////////////////////////////////////////////////
 // Suicide Action Check
 ////////////////////////////////////////////////
