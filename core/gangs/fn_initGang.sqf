@@ -8,20 +8,20 @@ if(count life_gangData == 0) exitWith {};
 
 sleep 10;
 
-_group = "ANY";
-_groupID = false;
-_groupMember = [];
+_group = true;
+_groupOwner = true;
+_groupMembers = true;
 {
 _groupName = _x getVariable "gang_name";
  if (!isNil "__groupName") then {
- 	if (_groupName == (life_gangData select 2)) then {_group = _x;_groupMembers = _x getVariable ["gang_members",true];_groupOwner = _x getVariable ["gang_owner",true];};
+ 	if (_groupName == (life_gangData select 2)) then {_group = _x;_groupMembers = _x getVariable ["gang_members",false];_groupOwner = _x getVariable ["gang_owner",false];};
  		sleep 0.2;
 };
 } foreach allGroups;
 
-if (isNil "_group" or _groupOwner) exitWith {hint "Eror Gang";GangEror=1};
+if (isNil "_group" or !_groupOwner or !_groupMembers) exitWith {hint "Eror Gang"};
 
-if ((getPlayerUID player) in _groupMember) Then {
+if ((getPlayerUID player) in _groupMembers) Then {
 	[player] join _group;
 	if(_groupOwner == (getPlayerUID player)) then {
 		_group selectLeader player;
@@ -29,7 +29,7 @@ if ((getPlayerUID player) in _groupMember) Then {
 	};
 };
 
-if (_group == "ANY") then {
+if (_group && _groupOwner && _groupMembers) then {
 	_group = group player;
 	_group setVariable["gang_id",(life_gangData select 0),true];
 	_group setVariable["gang_owner",(life_gangData select 1),true];
