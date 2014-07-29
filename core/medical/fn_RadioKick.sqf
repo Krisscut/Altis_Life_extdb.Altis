@@ -6,5 +6,5 @@ _playerN = (lbCurSel 7776);
 _name = (PRadioAmbu select _playerN) select 0;
 _player = (PRadioAmbu select _playerN) select 1;
 3 radioChannelRemove [_player];
-PRadioAmbu = PRadioAmbu - [[_name,_player]];publicVariable "PRadioAmbu";
 hint format ["Tu as Kicker %1 du canal radio ", _name];
+PRadioAmbu = PRadioAmbu - [[_name,_player]];publicVariable "PRadioAmbu";

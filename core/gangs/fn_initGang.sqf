@@ -11,7 +11,34 @@ _wait = round(random(8));
 sleep _wait;
 
 //Loop through to make sure there is not a group already created with the gang.
-_exitLoop = false;
+_group = 'ANY';
+_groupName = '';
+{
+_groupName = _x getVariable "gang_name";
+ if (!isNil "_groupName") then {
+ 	if (_groupName == (life_gangData select 2)) exitWith {_group = _x;_groupName = _x getVariable "gang_name";};
+ 		sleep 0.2;
+};
+} foreach allGroups;
+
+if (!isNil "_group") exitWith {GangEror=1};
+if (_group == 'ANY') exitWith {
+	_group = group player;
+	_group setVariable["gang_id",(life_gangData select 0),true];
+	_group setVariable["gang_owner",(life_gangData select 1),true];
+	_group setVariable["gang_name",(life_gangData select 2),true];
+	_group setVariable["gang_maxMembers",(life_gangData select 3),true];
+	_group setVariable["gang_bank",(life_gangData select 4),true];
+	_group setVariable["gang_members",(life_gangData select 5),true];
+};
+if (_groupName == (life_gangData select 2)) Then {
+	[player] join _group;
+	if((life_gangData select 1) == (getPlayerUID player)) then {
+		_group selectLeader player;
+		[[player,_group],"clientGangLeader",(units _group),false] spawn life_fnc_MP;
+	};
+};
+/*_exitLoop = false;
 {
 	_groupName = _x getVariable "gang_name";
 	if(!isNil "_groupName") then {
@@ -36,4 +63,4 @@ if(!isNil "_group") then {
 	_group setVariable["gang_maxMembers",(life_gangData select 3),true];
 	_group setVariable["gang_bank",(life_gangData select 4),true];
 	_group setVariable["gang_members",(life_gangData select 5),true];
-};
+};*/
