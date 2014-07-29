@@ -9,7 +9,7 @@ _action = _params select 0;
 ////////////////////////////////////////////////
 if (_action == "action_revive") then
 {
-	if (playersNumber independent > 2 or Action_Revived) exitWith {hint "Il y as plus de 3 ambulancier tu ne peut pas faire cette action"};
+	if (playersNumber independent > 2 && Action_Revived) exitWith {hint "Il y as plus de 3 ambulancier tu ne peut pas faire cette action"};
 	[cursorTarget] spawn FAR_HandleRevive;
 	Action_Revived = true;
 };
