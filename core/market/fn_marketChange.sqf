@@ -48,7 +48,7 @@ switch(true) do
 	};
 	case (_rand <= 36): //6% Drogenpreis erhöhen
 	{
-		[[0,"News: Interpol à arreter de nombreux dealer, les prix des drogues sont en hausses !"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+		[[0,"News: Interpol à arreté de nombreux dealers, les prix des drogues sont en hausses !"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		
 		//Erhöhe Marktpreis mit marketSell
 		["marijuana", [15,30] call life_fnc_randomRound, true] call life_fnc_marketBuy; 
@@ -62,7 +62,7 @@ switch(true) do
 	};
 	case (_rand <= 44): //8% Ölpreis erhöhen
 	{
-		[[0,"News: Pénurie de SP 95 !! Augmentation des prix du pétrole de 8% !"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+		[[0,"News: Pénurie de SP 95 !! Augmentation du prix du pétrole de 8% !"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		
 		["oilp", [20,40] call life_fnc_randomRound, true] call life_fnc_marketBuy; 
 		
@@ -70,7 +70,7 @@ switch(true) do
 	};
 	case (_rand <= 54): //10% Eisenpreis + zementpreis + glaspreis erhöhen
 	{
-		[[0,"News: Attentat sur le World-China-Center, augmentation des prix des matieres de constructions de 10% !"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+		[[0,"News: Attentat sur le World-China-Center, augmentation du prix des matières de construction de 10% !"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		
 		["cement", [20,40] call life_fnc_randomRound, true] call life_fnc_marketBuy; 
 		["iron_r", [20,30] call life_fnc_randomRound, true] call life_fnc_marketBuy; 
@@ -95,7 +95,7 @@ switch(true) do
 	};
 	case (_rand <= 90): //10% Schildkröten höher
 	{
-		[[0,"News: Suite à la création de casque a base de carapace, les prix de vente ont changé pour les tortues!"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+		[[0,"News: Suite à la création de casque à base de carapace, les prix de vente ont changés pour les tortues!"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		
 		//Erhöhe Marktpreis mit marketSell
 		["turtle", [4,10] call life_fnc_randomRound, true] call life_fnc_marketBuy; 	
