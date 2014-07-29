@@ -4,7 +4,7 @@
 */
 private["_cash"];
 _cash = [_this,0,0,[0]] call BIS_fnc_param;
-if(_cash == 0) exitWith {titleText["Il n'as pas d'argents ...","PLAIN"]};
+if(_cash == 0) exitWith {titleText["Il n'a pas un radis..","PLAIN"]};
 
 life_liquide = life_liquide + _cash;
-titleText[format["Tu as dérobé $%1",[_cash] call life_fnc_numberText],"PLAIN"];
+titleText[format["Tu as volé %1€",[_cash] call life_fnc_numberText],"PLAIN"];
