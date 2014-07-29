@@ -10,7 +10,7 @@ sleep 10;
 
 _group = true;
 _groupOwner = true;
-_groupMembers = true;
+_groupMembers = [];
 {
 _groupName = _x getVariable "gang_name";
  if (!isNil "__groupName") then {
@@ -19,7 +19,7 @@ _groupName = _x getVariable "gang_name";
 };
 } foreach allGroups;
 
-if (isNil "_group" or !_groupOwner or !_groupMembers) exitWith {hint "Eror Gang"};
+if (isNil "_group" or !_groupOwner) exitWith {hint "Eror Gang"};
 
 if ((getPlayerUID player) in _groupMembers) Then {
 	[player] join _group;
