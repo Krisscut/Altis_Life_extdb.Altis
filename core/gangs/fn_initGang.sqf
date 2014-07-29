@@ -12,17 +12,17 @@ sleep _wait;
 
 //Loop through to make sure there is not a group already created with the gang.
 _group = 'ANY';
-_groupName = '';
+_groupID = true;
 {
 _groupName = _x getVariable "gang_name";
  if (!isNil "_groupName") then {
- 	if (_groupName == (life_gangData select 2)) exitWith {_group = _x;_groupName = _x getVariable "gang_name";};
+ 	if (_groupName == (life_gangData select 2)) exitWith {_group = _x;_groupID = _x getVariable ["gang_id",true];};
  		sleep 0.2;
 };
 } foreach allGroups;
 
-if (!isNil "_group") exitWith {GangEror=1};
-if (_group == 'ANY') exitWith {
+if (!isNil "_group" or _groupID) exitWith {GangEror=1};
+if (_group == 'ANY') then {
 	_group = group player;
 	_group setVariable["gang_id",(life_gangData select 0),true];
 	_group setVariable["gang_owner",(life_gangData select 1),true];
@@ -31,7 +31,7 @@ if (_group == 'ANY') exitWith {
 	_group setVariable["gang_bank",(life_gangData select 4),true];
 	_group setVariable["gang_members",(life_gangData select 5),true];
 };
-if (_groupName == (life_gangData select 2)) Then {
+if (_groupID == (life_gangData select 0)) Then {
 	[player] join _group;
 	if((life_gangData select 1) == (getPlayerUID player)) then {
 		_group selectLeader player;
