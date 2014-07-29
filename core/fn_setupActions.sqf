@@ -24,7 +24,7 @@ switch (playerSide) do
 
 		//Archeology
 		life_actions set [count life_actions,player addAction["Cueillir Des Echantillons",life_fnc_gatherArcheologie,"",0,false,false,"",'
-		!life_action_in_use && (typeOf cursorTarget) == "Land_HumanSkull_F" && player distance cursorTarget < 3.5']];
+		!life_action_in_use && (typeOf cursorTarget) == "Land_HumanSkull_F" && player distance cursorTarget < 5']];
 
 	};
 };
