@@ -65,11 +65,7 @@ FAR_Player_Unconscious =
 		["FAR_deathMessage", [_unit, _killer]] call FAR_public_EH;
 	};
 
-	if (isPlayer _unit) then
-	{
-		disableUserInput true;
-		titleText ["", "BLACK FADED"];
-	};
+	titleText ["", "BLACK FADED"];
 
 	// Eject unit if inside vehicle
 	while {vehicle _unit != _unit} do
@@ -88,25 +84,13 @@ FAR_Player_Unconscious =
     _unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 
 	sleep 4;
-
-	if (isPlayer _unit) then
-	{
-		titleText ["", "BLACK IN", 1];
-		disableUserInput false;
-
-		// Mute ACRE
-		_unit setVariable ["ace_sys_wounds_uncon", true];
-	};
+	titleText ["", "BLACK IN", 1];
 
 	_unit switchMove "AinjPpneMstpSnonWrflDnon";
 	_unit enableSimulation false;
 	_unit setVariable ["FAR_isUnconscious", 1, true];
 
-	// Call this code only on players
-	if (isPlayer _unit) then
-	{
 		_bleedOut = time + FAR_BleedOut;
-
 
 		while { !isNull _unit && alive _unit && _unit getVariable "FAR_isUnconscious" == 1 && _unit getVariable "FAR_isStabilized" == 0 && (FAR_BleedOut <= 0 || time < _bleedOut) } do
 		{
@@ -153,12 +137,6 @@ FAR_Player_Unconscious =
 			// Clear the "medic nearby" hint
 			hintSilent "";
 
-			// Unmute ACRE
-			if (isPlayer _unit) then
-			{
-				_unit setVariable ["ace_sys_wounds_uncon", false];
-			};
-
 			_unit enableSimulation true;
 			_unit allowDamage true;
 			_unit setDamage 0;
@@ -167,32 +145,6 @@ FAR_Player_Unconscious =
 			_unit playMove "amovppnemstpsraswrfldnon";
 			_unit playMove "";
 		};
-	}
-	else
-	{
-		// [Debugging] Bleedout for AI
-		_bleedOut = time + FAR_BleedOut;
-
-		while { !isNull _unit && alive _unit && _unit getVariable "FAR_isUnconscious" == 1 && _unit getVariable "FAR_isStabilized" == 0 && (FAR_BleedOut <= 0 || time < _bleedOut) } do
-		{
-			sleep 0.5;
-		};
-
-		if (_unit getVariable "FAR_isStabilized" == 1) then {
-			while { !isNull _unit && alive _unit && _unit getVariable "FAR_isUnconscious" == 1 } do
-			{
-				sleep 0.5;
-			};
-		};
-
-		// AI bled out
-		if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then
-		{
-			_unit setDamage 1;
-			_unit setVariable ["FAR_isUnconscious", 0, true];
-			_unit setVariable ["FAR_isDragged", 0, true];
-		}
-	};
 };
 
 

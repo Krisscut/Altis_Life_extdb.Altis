@@ -9,7 +9,6 @@ _action = _params select 0;
 ////////////////////////////////////////////////
 if (_action == "action_revive") then
 {
-
 	[cursorTarget] spawn FAR_HandleRevive;
 	Action_Revived = true;
 };
