@@ -39,14 +39,8 @@ FAR_HandleDamage_EH =
 		_unit allowDamage false;
 		_amountOfDamage = 0;
 		life_istazed = false;//modified 04/22/2014
-		if ((side _killer == civilan) && (vehicle _killer isKindOf "LandVehicle")) then
-		 {
-		[[getPlayerUID _killer,name _killer,"187V"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
-		 };
-		else {
-
-		[[getPlayerUID _killer,name _killer,"187T"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
-			 };
+		if (side _killer == civilan) then {
+		[[getPlayerUID _killer,name _killer,"187T"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;};
 
 		[_unit, _killer] spawn FAR_Player_Unconscious;
 	};

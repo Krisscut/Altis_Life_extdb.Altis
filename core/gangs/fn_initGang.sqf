@@ -3,7 +3,7 @@
 
 	Description:
 	Main initialization for gangs?
-
+*/
 if(count life_gangData == 0) exitWith {};
 
 sleep 10;
@@ -38,7 +38,7 @@ if (_group && _groupOwner && _groupMembers) then {
 	_group setVariable["gang_bank",(life_gangData select 4),true];
 	_group setVariable["gang_members",(life_gangData select 5),true];
 };
-*/
+
 /*_exitLoop = false;
 {
 	__groupName = _x getVariable "gang_name";
