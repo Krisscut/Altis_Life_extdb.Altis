@@ -78,5 +78,6 @@ life_thirst = 100;
 life_hunger = 100;
 life_use_atm = true;
 life_liquide = 0;
-
+life_istazed = false;//added 04/22/2014
+player setVariable ["FAR_isUnconscious", 0, true];//added 04/26/2014
 [] call SOCK_fnc_updateRequest;

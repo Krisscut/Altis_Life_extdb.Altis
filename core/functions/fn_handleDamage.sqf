@@ -1,7 +1,7 @@
 /*
 	File: fn_handleDamage.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Handles damage, specifically for handling the 'tazer' pistol and nothing else.
 */
@@ -11,6 +11,7 @@ _part = _this select 1;
 _damage = _this select 2;
 _source = _this select 3;
 _projectile = _this select 4;
+_curWep = currentWeapon _source;
 
 //Internal Debugging.
 if(!isNil "TON_Debug") then {
@@ -20,14 +21,13 @@ if(!isNil "TON_Debug") then {
 //Handle the tazer first (Top-Priority).
 if(!isNull _source) then {
 	if(_source != _unit) then {
-		_curWep = currentWeapon _source;
 		if(_projectile in ["B_9x21_Ball","B_556x45_dual"] && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then {
 			if(side _source == west && playerSide != west) then {
 				private["_distance","_isVehicle","_isQuad"];
 				_distance = if(_projectile == "B_556x45_dual") then {100} else {35};
 				_isVehicle = if(vehicle player != player) then {true} else {false};
 				_isQuad = if(_isVehicle) then {if(typeOf (vehicle player) == "B_Quadbike_01_F") then {true} else {false}} else {false};
-				
+
 				_damage = false;
 				if(_unit distance _source < _distance) then {
 					if(!life_istazed && !(_unit getVariable["restrained",false])) then {
@@ -40,13 +40,29 @@ if(!isNull _source) then {
 					};
 				};
 			};
-			
+
 			//Temp fix for super tasers on cops.
 			if(playerSide == west && side _source == west) then {
 				_damage = false;
 			};
 		};
 	};
+};
+//Far_revive GreeFine
+_playerUncon = player getVariable "FAR_isUnconscious";
+
+if ((alive _unit) && (_damage >= 1) && (_playerUncon == 0) && (_curwep != "hgun_P07_snds_F")) then {
+		_unit setDamage 0;
+		_unit allowDamage false;
+		_damage = 0;
+		life_istazed = false;//modified 04/22/2014
+		if ((side _source == civilan) && (vehicle _source isKindOf "LandVehicle")) then {
+		[[getPlayerUID _source,name _source,"187V"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
+		} else {
+		[[getPlayerUID _source,name _source,"187T"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
+		};
+
+		[_unit, _source] spawn FAR_Player_Unconscious;
 };
 
 [] call life_fnc_hudUpdate;
