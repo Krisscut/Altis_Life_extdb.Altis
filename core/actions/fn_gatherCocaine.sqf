@@ -9,7 +9,6 @@ _sum = ["cocaine",1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff
 
 if(_sum > 0) then
 {
-	if (life_action_inUse) exitWith {titleText[format["Tu es dejà occupé à faire quelque chose"],"PLAIN"]; sleep 5; life_action_inUse = false; };
 	life_action_inUse = true;
 	titleText[format[localize "STR_NOTF_Gathering",localize "STR_Item_Cocaine"],"PLAIN"];
 	titleFadeOut 5;
