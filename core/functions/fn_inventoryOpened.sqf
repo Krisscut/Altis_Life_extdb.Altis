@@ -9,19 +9,14 @@ if(count _this == 1) exitWith {false};
 _unit = _this select 0;
 _container = _this select 1;
 
-if (((playerSide == civilian) && (license_civ_rebel)) && ((!cursortarget getVariable ["FAR_isUnconscious",0] == 1) or (cursortarget getVariable "isknocked") or (cursortarget getVariable "restrained") or (cursortarget getVariable "playerSurrender"))) then
- {
-
-		hint "Ouverture du sac"; };
-
-	else {
+if (((playerSide == civilian) && (license_civ_rebel)) && ((!cursortarget getVariable ["FAR_isUnconscious",0] == 1) or (cursortarget getVariable "isknocked") or (cursortarget getVariable "restrained") or (cursortarget getVariable "playerSurrender"))) then {
+hint "Ouverture du sac"; } else {
 		hint "Impossible de voler dans les sacs !";
 		[] spawn {
 			waitUntil {!isNull (findDisplay 602)};
 			closeDialog 0;
-
-				};
 		};
+	};
 
 if(((typeOf _container) in ["Box_IND_Grenades_F","B_supplyCrate_F"]) && (playerSide == civilian)) exitWith {
 	_house = nearestBuilding (getPosATL player);
