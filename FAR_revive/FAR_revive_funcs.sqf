@@ -39,15 +39,11 @@ FAR_HandleDamage_EH =
 		_unit allowDamage false;
 		_amountOfDamage = 0;
 		life_istazed = false;//modified 04/22/2014
-		if ((side _killer == civilan) && (vehicle _killer isKindOf "LandVehicle")) then
-		 {
+		if ((side _killer == civilan) && (vehicle _killer isKindOf "LandVehicle")) then {
 		[[getPlayerUID _killer,name _killer,"187V"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
-		 };
-
-		else {
-
+		 } else {
 		[[getPlayerUID _killer,name _killer,"187T"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
-			 };
+		};
 
 		[_unit, _killer] spawn FAR_Player_Unconscious;
 	};
@@ -58,15 +54,13 @@ FAR_HandleDamage_EH =
 ////////////////////////////////////////////////
 // Make Player Unconscious
 ////////////////////////////////////////////////
-FAR_Player_Unconscious =
-{
+FAR_Player_Unconscious = {
 	private["_unit", "_killer"];
 	_unit = _this select 0;
 	_killer = _this select 1;
 	_curWep = currentWeapon _killer;
 	// Death message
-	if (FAR_EnableDeathMessages && !isNil "_killer" && isPlayer _killer && _killer != _unit) then
-	{
+	if (FAR_EnableDeathMessages && !isNil "_killer" && isPlayer _killer && _killer != _unit) then {
 		FAR_deathMessage = [_unit, _killer];
 		publicVariable "FAR_deathMessage";
 		["FAR_deathMessage", [_unit, _killer]] call FAR_public_EH;
@@ -75,11 +69,9 @@ FAR_Player_Unconscious =
 	titleText ["", "BLACK FADED"];
 
 	// Eject unit if inside vehicle
-	while {vehicle _unit != _unit} do
-	{
+	while {vehicle _unit != _unit} do {
 		unAssignVehicle _unit;
 		_unit action ["eject", vehicle _unit];
-
 		sleep 2;
 	};
 
@@ -89,7 +81,6 @@ FAR_Player_Unconscious =
 	_unit setCaptive true;
 	life_is_arrested = true;
     _unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
-
 	sleep 4;
 	titleText ["", "BLACK IN", 1];
 
@@ -99,16 +90,13 @@ FAR_Player_Unconscious =
 
 		_bleedOut = time + FAR_BleedOut;
 
-		while { !isNull _unit && alive _unit && _unit getVariable "FAR_isUnconscious" == 1 && _unit getVariable "FAR_isStabilized" == 0 && (FAR_BleedOut <= 0 || time < _bleedOut) } do
-		{
+		while { !isNull _unit && alive _unit && _unit getVariable "FAR_isUnconscious" == 1 && _unit getVariable "FAR_isStabilized" == 0 && (FAR_BleedOut <= 0 || time < _bleedOut) } do {
 			_testbleedOut = round (_bleedOut - time);
 			hintSilent parsetext format["<t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>COMA</t><br/><t>Hémorragie, mort dans %1 secondes</t><br /><t>%2</t><br /><t>Vous allez avoir l'option suicide dans 5 min.</t><br /><t color='#ff0000' size='2' shadow='1' shadowColor='#000000' align='center'>ATTENTION !!!!!!!</t><br /><t> VEUILLEZ REJOINDRE LE CANAL DES AMBULANCIER VIA LE MENU MOLETTE<t><br /><t>Si vous vous suicidez, vous recommencerez une nouvelle vie</t><br /><br /><t color='#FF3B3E' size='1.5' shadow='1' shadowColor='#000000' align='center'>SI VOUS VOUS DECONNECTEZ ALORS QUE VOUS ETES DANS LE COMA, VOUS SEREZ MIS EN PRISON AUTOMATIQUEMENT</t><br /><t color='#FF3B3E' size='1' shadow='1' shadowColor='#000000' align='center'>Etant dans le coma, vos moyens de communications sont retiré, vous ne pouvez plus parler sauf aux ambulanciers</t>", round (_bleedOut - time), call FAR_CheckFriendlies];
-			if(_testbleedOut == 300) then
-			{
+			if(_testbleedOut == 300) then {
 				player addAction ["<t color=""#C90000"">" + "Suicide" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_suicide"], 9, false, true, "", "call FAR_Check_Suicide"];
 				sleep 0.5;
 			};
-
 
 			sleep 0.5;
 		};
@@ -128,14 +116,11 @@ FAR_Player_Unconscious =
 		};
 
 		// Player bled out
-		if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then
-		{
+		if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then {
 			life_is_arrested = false;
 			_unit setDamage 1;
 			_handle = [] spawn SOCK_fnc_updateRequest;
-		}
-		else
-		{
+		} else {
 			// Player got revived
 			_unit setVariable ["FAR_isStabilized", 0, true];
 			sleep 6;

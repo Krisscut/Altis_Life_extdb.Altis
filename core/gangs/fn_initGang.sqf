@@ -29,7 +29,7 @@ if ((getPlayerUID player) in _groupMembers) Then {
 	};
 };
 
-if (_group && _groupOwner && _groupMembers) then {
+if (_groupOwner && _groupMembers) then {
 	_group = group player;
 	_group setVariable["gang_id",(life_gangData select 0),true];
 	_group setVariable["gang_owner",(life_gangData select 1),true];
