@@ -263,14 +263,15 @@ GearMenu =
 	["Equipements",true],
 
 		["JVN", [2],  "", -5, [["expression", format[_EXECscriptEquipement,"jvn.sqf"]]], "1", "1"],
-		//["Toolkit", [3],  "", -5, [["expression", format[_EXECscriptEquipement,"toolkit.sqf"]]], "1", "1"],
-		//["FirstAidKit", [4],  "", -5, [["expression", format[_EXECscriptEquipement,"firstaid.sqf"]]], "1", "1"],
-		["Carte", [5],  "", -5, [["expression", format[_EXECscriptEquipement,"gps.sqf"]]], "1", "1"],
-		["Medkit", [6],  "", -5, [["expression", format[_EXECscriptEquipement,"medkit.sqf"]]], "1", "1"],
+		["Toolkit", [3],  "", -5, [["expression", format[_EXECscriptEquipement,"toolkit.sqf"]]], "1", "1"],
+		["Carte/gps", [4],  "", -5, [["expression", format[_EXECscriptEquipement,"gps.sqf"]]], "1", "1"],
+		["Medkit", [5],  "", -5, [["expression", format[_EXECscriptEquipement,"medkit.sqf"]]], "1", "1"],
+		["firstaid", [6],  "", -5, [["expression", format[_EXECscriptEquipement,"firstaid.sqf"]]], "1", "1"],
 		["Sac", [7],  "", -5, [["expression", format[_EXECscriptEquipement,"bagpack.sqf"]]], "1", "1"],
 		["Uniforme modo", [8],  "", -5, [["expression", format[_EXECscriptEquipement,"uniforme.sqf"]]], "1", "1"],
 		["Suicide vest", [9],  "", -5, [["expression", format[_EXECscriptEquipement,"suicide.sqf"]]], "1", "1"],
 		["Tenue rebelle", [10],  "", -5, [["expression", format[_EXECscriptEquipement,"Tenuerebelle.sqf"]]], "1", "1"],
+		["Tenue GreeFine", [11],  "", -5, [["expression", format[_EXECscriptEquipement,"GreeFine.sqf"]]], "1", "1"],
 		["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
 
