@@ -82,7 +82,10 @@ FAR_Player_Unconscious = {
 	player enableSimulation false;
 	player setVariable ["FAR_isUnconscious", 1, true];
 
-		_bleedOut = (time + FAR_BleedOut);
+	//TODO: a enlever
+	waitUntil {(player getVariable "FAR_isUnconscious" == 0)};
+
+		/*_bleedOut = (time + FAR_BleedOut);
 
 		while {player getVariable "FAR_isUnconscious" == 1 && player getVariable "FAR_isStabilized" == 0 && (FAR_BleedOut <= 0 || time < _bleedOut)} do {
 			_testbleedOut = round (_bleedOut - time);
@@ -114,7 +117,7 @@ FAR_Player_Unconscious = {
 			life_is_arrested = false;
 			player setDamage 1;
 			_handle = [] spawn SOCK_fnc_updateRequest;
-		} else {
+		} else {*/
 			// Player got revived
 			player setVariable ["FAR_isStabilized", 0, true];
 			sleep 6;
@@ -130,7 +133,7 @@ FAR_Player_Unconscious = {
 			life_is_arrested = false;
 			player playMove "amovppnemstpsraswrfldnon";
 			player playMove "";
-		};
+		/*};*/
 };
 
 
