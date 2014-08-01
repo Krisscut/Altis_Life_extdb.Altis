@@ -69,11 +69,12 @@ Teleportations =
 MoneyMenu =
 [
 	["Outil remboursements",true],
-        ["Donner 200.000$", [2],  "", -5, [["expression", format[_EXECscriptTools,"money200.sqf"]]], "1", "1"],
-		["Donner 400.000$", [3],  "", -5, [["expression", format[_EXECscriptTools,"money400.sqf"]]], "1", "1"],
-		["Donner 800.000$", [4],  "", -5, [["expression", format[_EXECscriptTools,"money800.sqf"]]], "1", "1"],
-		["ATM ON", [5],  "", -5, [["expression", format[_EXECscriptLife,"ATMadminON.sqf"]]], "1", "1"],
-		["ATM OFF", [6],  "", -5, [["expression", format[_EXECscriptLife,"ATMadminOFF.sqf"]]], "1", "1"],
+		["Reset liquide = 0€", [2],  "", -5, [["expression", format[_EXECscriptTools,"moneyReset.sqf"]]], "1", "1"],
+        ["Donner 200.000$", [3],  "", -5, [["expression", format[_EXECscriptTools,"money200.sqf"]]], "1", "1"],
+		["Donner 400.000$", [4],  "", -5, [["expression", format[_EXECscriptTools,"money400.sqf"]]], "1", "1"],
+		["Donner 800.000$", [5],  "", -5, [["expression", format[_EXECscriptTools,"money800.sqf"]]], "1", "1"],
+		["ATM ON", [6],  "", -5, [["expression", format[_EXECscriptLife,"ATMadminON.sqf"]]], "1", "1"],
+		["ATM OFF", [7],  "", -5, [["expression", format[_EXECscriptLife,"ATMadminOFF.sqf"]]], "1", "1"],
 		["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
 

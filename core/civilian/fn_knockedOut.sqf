@@ -12,7 +12,7 @@ if(isNull _target) exitWith {};
 if(_target != player) exitWith {};
 if(_who == "") exitWith {};
 
-titleText[format["%1 a été assommé par.",_who],"PLAIN"];
+titleText[format["Tu a été assommé par %1",_who],"PLAIN"];
 player playMoveNow "Incapacitated";
 _obj = "Land_ClutterCutter_small_F" createVehicle (getPosATL player);
 _obj setPosATL (getPosATL player);

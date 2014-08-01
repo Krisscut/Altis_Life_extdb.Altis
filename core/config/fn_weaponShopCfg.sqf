@@ -171,6 +171,7 @@ switch(_shop) do
 							["Chemlight_yellow",nil,300],
 							["Chemlight_green",nil,300],
 							["Chemlight_blue",nil,300],
+							["HandGrenade_Stone","Flash Bang",20000],
 							["acc_flashlight",nil,750],
 							["Rangefinder",nil,2000]
 						]
