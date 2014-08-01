@@ -87,13 +87,12 @@ FAR_Player_Unconscious =
     _unit allowDamage false;
 	_unit setCaptive true;
     _unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
-
 	sleep 4;
 	titleText ["", "BLACK IN", 1];
-
 	_unit switchMove "AinjPpneMstpSnonWrflDnon";
 	_unit enableSimulation false;
 	_unit setVariable ["FAR_isUnconscious", 1, true];
+	life_is_arrested = true;
 
 		_bleedOut = time + FAR_BleedOut;
 
@@ -130,11 +129,13 @@ FAR_Player_Unconscious =
 		{
 			_unit setDamage 1;
 			_handle = [] spawn SOCK_fnc_updateRequest;
+			life_is_arrested = false;
 		}
 		else
 		{
 			// Player got revived
 			_unit setVariable ["FAR_isStabilized", 0, true];
+			life_is_arrested = false;
 			sleep 6;
 
 			// Clear the "medic nearby" hint
