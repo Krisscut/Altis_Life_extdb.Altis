@@ -6,10 +6,10 @@
 */
 private["_sum"];
 _sum = ["cocaine",1,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
+if (life_action_inUse) exitWith {titleText[format["Tu es dejà occupé à faire quelque chose"],"PLAIN"]; sleep 5; life_action_inUse = false; };
 
 if(_sum > 0) then
 {
-	if (life_action_inUse) exitWith {titleText[format["Tu es dejà occupé à faire quelque chose"],"PLAIN"]; sleep 5; life_action_inUse = false; };
 	life_action_inUse = true;
 	titleText[format[localize "STR_NOTF_Gathering",localize "STR_Item_Cocaine"],"PLAIN"];
 	titleFadeOut 5;
@@ -17,6 +17,7 @@ if(_sum > 0) then
 	if(([true,"cocaine",1] call life_fnc_handleInv)) then
 	{
 		titleText[format[localize "STR_NOTF_Collected",localize "STR_Item_Cocaine"],"PLAIN"];
+		life_action_inUse = true;
 	};
 };
 
