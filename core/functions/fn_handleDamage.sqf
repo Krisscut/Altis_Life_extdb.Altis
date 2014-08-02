@@ -49,9 +49,9 @@ if(!isNull _source) then {
 	};
 };
 //Far_revive GreeFine
-_playerUncon = player getVariable "FAR_isUnconscious";
+_playerUncon = player getVariable ["FAR_isUnconscious", 0];
 
-if ((alive _unit) && (_damage < 3) && (_damage >= 1) && (_playerUncon == 0) && (_curwep != "hgun_P07_snds_F") && (_part != "head_hit")) then {
+if ((alive _unit) && (_damage >= 1) && (_damage < 2.5)  && (_playerUncon == 0) && (_curwep != "hgun_P07_snds_F") && (_part != "head_hit")) then {
 		_unit setDamage 0;
 		_unit allowDamage false;
 		_damage = 0;
