@@ -23,6 +23,7 @@ life_is_processing = false;
 life_bail_paid = false;
 life_impound_inuse = false;
 life_action_inUse = false;
+life_action_gather = false;
 life_spikestrip = ObjNull;
 life_has_insurance = false;
 life_fatigue = 0.5; //ajout Serrat
