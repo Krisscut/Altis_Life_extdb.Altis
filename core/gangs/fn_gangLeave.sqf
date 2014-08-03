@@ -12,11 +12,11 @@ if(steamid == (grpPlayer getVariable "gang_owner")) exitWith {hint "Tu dois d'ab
 
 _grp = grpPlayer;
 _grpMembers = grpPlayer getVariable "gang_members";
-_idj = GetplayerUID player
+_idj = GetplayerUID player;
 _grpMembers = _grpMembers - [_idj];
 _grp setVariable["gang_members",_grpMembers,true];
 
-//correction toujours dans le groupe meme aprés avoir quitter
+//correction toujours dans le groupe me<me aprés avoir quitter
 //[player] joinSilent (createGroup civilian);
 [player] joinSilent (createGroup civilian);
 
