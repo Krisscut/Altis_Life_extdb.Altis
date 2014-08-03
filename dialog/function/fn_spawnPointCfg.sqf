@@ -37,13 +37,13 @@ switch (_side) do
 
 		} else {
 			if(license_civ_rebel) then {
-           	 	_return  set [count _return, ["civ_spawn_5","EVENT #1","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 				_return  set [count _return, ["civ_spawn_6","Sira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 				_return  set [count _return, ["civ_spawn_8","Frini","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+           	 	_return  set [count _return, ["civ_spawn_5","AUTRE BASE 2","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
           	 	_return  set [count _return, ["civ_spawn_7","AUTRE BASE 3","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 			} else {
 
-           	 	_return  set [count _return, ["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+				_return  set [count _return, ["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 				_return  set [count _return, ["civ_spawn_2","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 				_return  set [count _return, ["civ_spawn_3","Athira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 				_return  set [count _return, ["civ_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
