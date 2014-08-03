@@ -174,7 +174,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=203;
+		items=202;
 		class Item0
 		{
 			side="WEST";
@@ -2162,7 +2162,7 @@ class Mission
 			side="GUER";
 			class Vehicles
 			{
-				items=84;
+				items=85;
 				class Item0
 				{
 					position[]={8353.9648,85.637505,24953.943};
@@ -2907,247 +2907,259 @@ class Mission
 				};
 				class Item62
 				{
+					position[]={12299.705,123.98701,8889.4492};
+					azimut=-60.048626;
+					special="NONE";
+					id=160;
+					side="EAST";
+					vehicle="O_Soldier_F";
+					skill=0.60000002;
+					text="reb_1_1";
+					init="removeallWeapons this;  this enableSimulation false;this allowDamage false;  this addAction[""Rebel Clothing Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];  this addAction[""Magasin d'armes rebelle"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];  this addAction[format[""%1 ($%2)"",[""license_civ_rebel""] call life_fnc_varToStr,[([""rebel""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,false,false,"""",' !license_civ_rebel && playerSide == civilian ']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu,"""",0,FALSE,FALSE,"""",' vehicle player == player && player distance _target < 4 ']; this addAction[""Assurance bancaire (1000€)"",{if(life_dabliquide > 1000) then {life_has_insurance = true; life_dabliquide = life_dabliquide - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
+				};
+				class Item63
+				{
 					position[]={13947.292,22.983816,18664.738};
 					azimut=48.980495;
 					offsetY=0.5;
 					special="NONE";
-					id=160;
+					id=161;
 					side="GUER";
 					vehicle="C_man_p_fugitive_F_asia";
 					skill=0.60000002;
 					text="carshop1_3_1";
 					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Magasin général"",life_fnc_weaponShopMenu,""genstore""];";
 				};
-				class Item63
+				class Item64
 				{
 					position[]={25723.586,18.272123,21278.367};
 					azimut=220.388;
-					special="NONE";
-					id=161;
-					side="GUER";
-					vehicle="C_man_1";
-					skill=0.60000002;
-					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;  life_garage_type = ""Car""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""car_g_2"";  }]; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
-				};
-				class Item64
-				{
-					position[]={14026.649,26.111679,18737.969};
-					azimut=-207.707;
 					special="NONE";
 					id=162;
 					side="GUER";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""car_g_3"";  }]; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;  life_garage_type = ""Car""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""car_g_2"";  }]; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item65
 				{
-					position[]={14258.943,19.362129,16303.479};
-					azimut=160.008;
+					position[]={14026.649,26.111679,18737.969};
+					azimut=-207.707;
 					special="NONE";
 					id=163;
 					side="GUER";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;  life_garage_type = ""Air""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""air_g_1"";  }]; this addAction[""Ranger un véhicule au garage"",  {   private[""_nearVehicle""];   _nearVehicle = nearestObjects[(getPos (_this select 0)),[""Car"",""Ship"",""Air""],35] select 0;   if(isNil ""_nearVehicle"") exitWith {hint ""There isn't a vehicle near this NPC."";};   [[_nearVehicle,false,(_this select 1)],""TON_fnc_vehicleStore"",false,false] spawn life_fnc_MP;   hint ""The server is trying to store the vehicle please wait...."";   life_garage_store = true;  },"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""car_g_3"";  }]; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item66
+				{
+					position[]={14258.943,19.362129,16303.479};
+					azimut=160.008;
+					special="NONE";
+					id=164;
+					side="GUER";
+					vehicle="C_man_1";
+					skill=0.60000002;
+					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;  life_garage_type = ""Air""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""air_g_1"";  }]; this addAction[""Ranger un véhicule au garage"",  {   private[""_nearVehicle""];   _nearVehicle = nearestObjects[(getPos (_this select 0)),[""Car"",""Ship"",""Air""],35] select 0;   if(isNil ""_nearVehicle"") exitWith {hint ""There isn't a vehicle near this NPC."";};   [[_nearVehicle,false,(_this select 1)],""TON_fnc_vehicleStore"",false,false] spawn life_fnc_MP;   hint ""The server is trying to store the vehicle please wait...."";   life_garage_store = true;  },"""",0,false,false,"""",'!life_garage_store'];";
+				};
+				class Item67
 				{
 					position[]={23479.041,12.624396,19807.34};
 					azimut=220;
 					special="NONE";
-					id=164;
+					id=165;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
 					text="h1_3_3";
 					init="this enableSimulation false; removeAllWeapons this; this addAction[""Consommables gendarmerie"",life_fnc_virt_menu,""cop""];  this allowDamage false;  this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""];  this addAction[""Armurerie"",life_fnc_weaponShopMenu,""cop_shop""]; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west '];";
 				};
-				class Item67
+				class Item68
 				{
 					position[]={23478.365,12.629172,19808.186};
 					azimut=245;
 					special="NONE";
-					id=165;
+					id=166;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
 					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false;  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_5"",""cop"",""APD - Highway Patrol""]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""cop_car_5""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == west'];  this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  ";
 				};
-				class Item68
+				class Item69
 				{
 					position[]={17541.48,2.8636451,18941.635};
 					azimut=-34.819;
 					special="NONE";
-					id=166;
+					id=167;
 					side="GUER";
 					vehicle="C_man_shorts_3_F_euro";
 					skill=0.60000002;
 					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false;  this addAction[""Boat Shop"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_3"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""civ_ship_3""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian'];  this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
-				class Item69
+				class Item70
 				{
 					position[]={11849.569,4.2852149,13611.438};
 					azimut=-39.431999;
 					special="NONE";
-					id=167;
+					id=168;
 					side="WEST";
 					vehicle="B_diver_F";
 					skill=0.60000002;
 					init="this allowDamage false; removeallWeapons this; this enableSimulation false; this addAction[""Diving Shop"",life_fnc_clothingMenu,""dive""]; this addAction[format[""%1 ($%2)"",[""license_civ_dive""] call life_fnc_varToStr,[([""dive""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""dive"",0,false,false,"""",' !license_civ_dive && playerSide == civilian '];";
 				};
-				class Item70
+				class Item71
 				{
 					position[]={16340.433,24.995359,17267.16};
 					azimut=16.134399;
 					offsetY=0.1;
 					special="NONE";
-					id=168;
+					id=169;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
 					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Gun Store"",life_fnc_weaponShopMenu,""gun"",0,false,false,"""",' license_civ_gun && playerSide == civilian']; this addAction[format[""%1 ($%2)"",[""license_civ_gun""] call life_fnc_varToStr,[([""gun""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""gun"",0,false,false,"""",' !license_civ_gun && playerSide == civilian '];";
 				};
-				class Item71
+				class Item72
 				{
 					position[]={8448.1846,49.501381,12760.339};
 					azimut=-119.75647;
 					special="NONE";
-					id=169;
+					id=170;
 					side="GUER";
 					vehicle="C_man_1";
 					skill=0.60000002;
 					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Sell Turtles"",life_fnc_sellTurtle];";
 				};
-				class Item72
+				class Item73
 				{
 					position[]={18159.199,26.504875,12839.116};
 					azimut=-401.827;
 					offsetY=0.1;
 					special="NONE";
-					id=170;
+					id=171;
 					side="GUER";
 					vehicle="C_man_p_shorts_1_F_afro";
 					skill=0.60000002;
 					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Magasin de poids lourd"",life_fnc_vehicleShopMenu,[""civ_truck"",civilian,[""civ_truck_2"",""civ_truck_2_1""],""civ"",""Bruce's New & Used Trucks""]];";
 				};
-				class Item73
+				class Item74
 				{
 					position[]={8953.9805,69.265625,15503.834};
 					azimut=53.4109;
-					special="NONE";
-					id=171;
-					side="GUER";
-					vehicle="C_man_1";
-					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; removeAllWeapons this; this addAction[""Chop Shop"",life_fnc_chopShopMenu,""chop_shop_1""];";
-				};
-				class Item74
-				{
-					position[]={19028.348,23.669811,14555.255};
-					azimut=193.478;
 					special="NONE";
 					id=172;
 					side="GUER";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; removeAllWeapons this; this addAction[""Chop Shop"",life_fnc_chopShopMenu,""chop_shop_4""];";
+					init="this allowDamage false; this enableSimulation false; removeAllWeapons this; this addAction[""Chop Shop"",life_fnc_chopShopMenu,""chop_shop_1""];";
 				};
 				class Item75
 				{
-					position[]={24655.592,17.882324,23161.814};
-					azimut=152.80099;
+					position[]={19028.348,23.669811,14555.255};
+					azimut=193.478;
 					special="NONE";
 					id=173;
 					side="GUER";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; removeAllWeapons this; this addAction[""Chop Shop"",life_fnc_chopShopMenu,""chop_shop_2""];";
+					init="this allowDamage false; this enableSimulation false; removeAllWeapons this; this addAction[""Chop Shop"",life_fnc_chopShopMenu,""chop_shop_4""];";
 				};
 				class Item76
 				{
-					position[]={14314.929,97.378967,21837.527};
-					azimut=168.89799;
+					position[]={24655.592,17.882324,23161.814};
+					azimut=152.80099;
 					special="NONE";
 					id=174;
 					side="GUER";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; removeAllWeapons this; this addAction[""Chop Shop"",life_fnc_chopShopMenu,""chop_shop_3""];";
+					init="this allowDamage false; this enableSimulation false; removeAllWeapons this; this addAction[""Chop Shop"",life_fnc_chopShopMenu,""chop_shop_2""];";
 				};
 				class Item77
 				{
-					position[]={3736.186,18.862541,12980.594};
+					position[]={14314.929,97.378967,21837.527};
+					azimut=168.89799;
 					special="NONE";
 					id=175;
-					side="WEST";
-					vehicle="B_RangeMaster_F";
+					side="GUER";
+					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false; this addAction[format[""%1 ($%2)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent ']; this addAction[""EMS Item Shop"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_1"",""med"",""Kavala Hosptial""]];  this addAction[""Concessionnaire aérien"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_1"",""med"",""Kavala Hosptial""]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""med_car_1""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent']; this addAction[""Garage véhicule aérien"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;  life_garage_type = ""Air""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""medic_spawn_1_1"";  }]; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this setObjectTexture [0,""textures\medic_uniform.jpg""]; this allowDamage false; this enableSimulation false; removeAllWeapons this; this addAction[""Magasin de vêtement"",life_fnc_clothingMenu,""med""];";
+					init="this allowDamage false; this enableSimulation false; removeAllWeapons this; this addAction[""Chop Shop"",life_fnc_chopShopMenu,""chop_shop_3""];";
 				};
 				class Item78
 				{
-					position[]={17486.461,12.865115,13272.563};
-					azimut=-39.210499;
+					position[]={3736.186,18.862541,12980.594};
 					special="NONE";
 					id=176;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false; this addAction[format[""%1 ($%2)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];   this addAction[""EMS Item Shop"",life_fnc_weaponShopMenu,""med_basic""]; this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_2"",""med"",""Kavala Hosptial""]];  this addAction[""Concessionnaire aérien"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_3"",""med"",""Kavala Hosptial"",true]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""med_car_2""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent']; this addAction[""Garage véhicule aérien"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""med_car_2""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent']; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this setObjectTexture [0,""textures\medic_uniform.jpg""]; this addAction[""Medical Assistance"",life_fnc_healHospital];";
+					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false; this addAction[format[""%1 ($%2)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent ']; this addAction[""EMS Item Shop"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_1"",""med"",""Kavala Hosptial""]];  this addAction[""Concessionnaire aérien"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_1"",""med"",""Kavala Hosptial""]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""med_car_1""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent']; this addAction[""Garage véhicule aérien"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;  life_garage_type = ""Air""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""medic_spawn_1_1"";  }]; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this setObjectTexture [0,""textures\medic_uniform.jpg""]; this allowDamage false; this enableSimulation false; removeAllWeapons this; this addAction[""Magasin de vêtement"",life_fnc_clothingMenu,""med""];";
 				};
 				class Item79
 				{
-					position[]={15590.619,18.536488,17192.25};
+					position[]={17486.461,12.865115,13272.563};
 					azimut=-39.210499;
 					special="NONE";
 					id=177;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false; this addAction[format[""%1 ($%2)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];   this addAction[""EMS Item Shop"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_3"",""med"",""Kavala Hosptial""]];  this addAction[""Concessionnaire aérien"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_2"",""med"",""Kavala Hosptial"",true]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""med_car_3""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent']; this addAction[""Garage véhicule aérien"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""med_car_3""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent']; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this setObjectTexture [0,""textures\medic_uniform.jpg""]; this addAction[""Medical Assistance"",life_fnc_healHospital];";
+					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false; this addAction[format[""%1 ($%2)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];   this addAction[""EMS Item Shop"",life_fnc_weaponShopMenu,""med_basic""]; this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_2"",""med"",""Kavala Hosptial""]];  this addAction[""Concessionnaire aérien"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_3"",""med"",""Kavala Hosptial"",true]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""med_car_2""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent']; this addAction[""Garage véhicule aérien"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""med_car_2""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent']; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this setObjectTexture [0,""textures\medic_uniform.jpg""]; this addAction[""Medical Assistance"",life_fnc_healHospital];";
 				};
 				class Item80
+				{
+					position[]={15590.619,18.536488,17192.25};
+					azimut=-39.210499;
+					special="NONE";
+					id=178;
+					side="WEST";
+					vehicle="B_RangeMaster_F";
+					skill=0.60000002;
+					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false; this addAction[format[""%1 ($%2)"",[""license_med_air""] call life_fnc_varToStr,[([""mair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""mair"",0,false,false,"""",' !license_med_air && playerSide == independent '];   this addAction[""EMS Item Shop"",life_fnc_weaponShopMenu,""med_basic""];  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_3"",""med"",""Kavala Hosptial""]];  this addAction[""Concessionnaire aérien"",life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_2"",""med"",""Kavala Hosptial"",true]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""med_car_3""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == independent']; this addAction[""Garage véhicule aérien"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""med_car_3""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == independent']; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this setObjectTexture [0,""textures\medic_uniform.jpg""]; this addAction[""Medical Assistance"",life_fnc_healHospital];";
+				};
+				class Item81
 				{
 					position[]={28281.186,15.842272,25764.088};
 					azimut=239.258;
 					special="NONE";
-					id=178;
+					id=179;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					skill=0.60000002;
 					text="reb_1_3";
 					init="removeallWeapons this;  this enableSimulation false; this allowDamage false;  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""reb_car"",civilian,""reb_v_1_1"",""reb"",""Rebel Motorpool - Western Side""],0,false,false,"""",'license_civ_rebel']; this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""reb_v_1"";  }]; this addAction[""Garage véhicule aérien"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""reb_v_1"";  }];this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu];";
 				};
-				class Item81
+				class Item82
 				{
-					position[]={10766.672,4.6958485,10897.294};
-					azimut=130;
+					position[]={12292.5,123.55542,8931.4971};
+					azimut=198.868;
 					special="NONE";
-					id=179;
+					id=180;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					skill=0.60000002;
 					text="reb_1_3_1";
 					init="removeallWeapons this;  this enableSimulation false; this allowDamage false;  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""reb_car"",civilian,""reb_v_2"",""reb"",""Rebel Motorpool - Western Side""],0,false,false,"""",'license_civ_rebel']; this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""reb_v_2"";  }]; this addAction[""Garage véhicule aérien"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""reb_v_2"";  }];this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu];";
 				};
-				class Item82
+				class Item83
 				{
 					position[]={14167.007,16.724127,16520.877};
 					azimut=-44.9058;
 					special="NONE";
-					id=180;
+					id=181;
 					side="GUER";
 					vehicle="C_man_1";
 					skill=0.60000002;
 					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Go-kart  Shop"",life_fnc_vehicleShopMenu,[""kart_shop"",civilian,""kart_shop_1"",""civ"",""Bobby's Kart Shack""]]; this addAction[""Magasin de vêtement"",life_fnc_clothingMenu,""kart""];";
 				};
-				class Item83
+				class Item84
 				{
 					position[]={16574.502,11,12721.884};
 					azimut=45;
 					special="NONE";
-					id=181;
+					id=182;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
@@ -3166,7 +3178,7 @@ class Mission
 					position[]={12682.571,1.9675891,14215.602};
 					azimut=-34.819;
 					special="NONE";
-					id=182;
+					id=183;
 					side="GUER";
 					vehicle="C_man_shorts_3_F_euro";
 					leader=1;
@@ -3187,7 +3199,7 @@ class Mission
 					azimut=-46.62635;
 					offsetY=0.60000002;
 					special="NONE";
-					id=183;
+					id=184;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3206,7 +3218,7 @@ class Mission
 				{
 					position[]={8437.2002,105.64852,25149.426};
 					azimut=182.302;
-					id=184;
+					id=185;
 					side="GUER";
 					vehicle="I_Story_Colonel_F";
 					player="PLAY CDG";
@@ -3229,7 +3241,7 @@ class Mission
 					position[]={8424.2217,100.72849,25174.488};
 					azimut=185.11099;
 					special="NONE";
-					id=185;
+					id=186;
 					side="GUER";
 					vehicle="I_soldier_F";
 					player="PLAY CDG";
@@ -3244,7 +3256,7 @@ class Mission
 					position[]={8425.2324,99.418427,25179.02};
 					azimut=185.11099;
 					special="NONE";
-					id=186;
+					id=187;
 					side="GUER";
 					vehicle="I_soldier_F";
 					player="PLAY CDG";
@@ -3258,7 +3270,7 @@ class Mission
 					position[]={8426.9355,99.459343,25178.395};
 					azimut=185.11099;
 					special="NONE";
-					id=187;
+					id=188;
 					side="GUER";
 					vehicle="I_soldier_F";
 					player="PLAY CDG";
@@ -3272,7 +3284,7 @@ class Mission
 					position[]={8428.5342,99.613426,25177.381};
 					azimut=185.11099;
 					special="NONE";
-					id=188;
+					id=189;
 					side="GUER";
 					vehicle="I_soldier_F";
 					player="PLAY CDG";
@@ -3286,7 +3298,7 @@ class Mission
 					position[]={8429.7754,99.935478,25175.857};
 					azimut=185.11099;
 					special="NONE";
-					id=189;
+					id=190;
 					side="GUER";
 					vehicle="I_soldier_F";
 					player="PLAY CDG";
@@ -3300,7 +3312,7 @@ class Mission
 					position[]={8426.334,98.843643,25180.826};
 					azimut=185.11099;
 					special="NONE";
-					id=190;
+					id=191;
 					side="GUER";
 					vehicle="I_soldier_F";
 					player="PLAY CDG";
@@ -3314,7 +3326,7 @@ class Mission
 					position[]={8428.1328,98.9506,25179.965};
 					azimut=185.11099;
 					special="NONE";
-					id=191;
+					id=192;
 					side="GUER";
 					vehicle="I_soldier_F";
 					player="PLAY CDG";
@@ -3328,7 +3340,7 @@ class Mission
 					position[]={8429.8506,99.167709,25178.715};
 					azimut=185.11099;
 					special="NONE";
-					id=192;
+					id=193;
 					side="GUER";
 					vehicle="I_soldier_F";
 					player="PLAY CDG";
@@ -3342,7 +3354,7 @@ class Mission
 					position[]={8431.457,99.345245,25177.111};
 					azimut=185.11099;
 					special="NONE";
-					id=193;
+					id=194;
 					side="GUER";
 					vehicle="I_soldier_F";
 					player="PLAY CDG";
@@ -3362,7 +3374,7 @@ class Mission
 				class Item0
 				{
 					position[]={3673.2112,6.5849552,13291.712};
-					id=194;
+					id=195;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -3380,7 +3392,7 @@ class Mission
 				class Item0
 				{
 					position[]={3671.7751,6.8787031,13289.456};
-					id=195;
+					id=196;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -3400,7 +3412,7 @@ class Mission
 					position[]={16564.846,11,12730.642};
 					azimut=50;
 					special="NONE";
-					id=196;
+					id=197;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					leader=1;
@@ -3420,7 +3432,7 @@ class Mission
 					position[]={12703.343,19.201674,14453.245};
 					azimut=-188.17;
 					special="NONE";
-					id=197;
+					id=198;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					leader=1;
@@ -3440,7 +3452,7 @@ class Mission
 					position[]={23710.734,5.3432713,16301.517};
 					azimut=-203.28644;
 					special="NONE";
-					id=198;
+					id=199;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					leader=1;
@@ -3460,7 +3472,7 @@ class Mission
 					position[]={23655.244,5.2768579,16270.867};
 					azimut=139.82137;
 					special="NONE";
-					id=199;
+					id=200;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					leader=1;
@@ -3480,7 +3492,7 @@ class Mission
 					position[]={3629.5505,10.266961,13077.303};
 					azimut=20;
 					special="NONE";
-					id=200;
+					id=201;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3500,7 +3512,7 @@ class Mission
 					position[]={3637.2197,10.136985,13100.3};
 					azimut=355;
 					special="NONE";
-					id=201;
+					id=202;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3521,7 +3533,7 @@ class Mission
 					azimut=255;
 					offsetY=0.5;
 					special="NONE";
-					id=202;
+					id=203;
 					side="GUER";
 					vehicle="I_soldier_F";
 					leader=1;
@@ -3541,7 +3553,7 @@ class Mission
 					position[]={3686.0898,10.510522,13103.197};
 					azimut=275;
 					special="NONE";
-					id=203;
+					id=204;
 					side="GUER";
 					vehicle="C_man_p_fugitive_F_asia";
 					leader=1;
@@ -3562,7 +3574,7 @@ class Mission
 					position[]={3645.6907,10.248187,13078.736};
 					offsetY=0.1;
 					special="NONE";
-					id=204;
+					id=205;
 					side="GUER";
 					vehicle="I_soldier_F";
 					leader=1;
@@ -3583,7 +3595,7 @@ class Mission
 					position[]={3020.0073,6.4018607,12204.142};
 					azimut=70;
 					special="NONE";
-					id=205;
+					id=206;
 					side="GUER";
 					vehicle="C_man_w_worker_F";
 					leader=1;
@@ -3595,7 +3607,7 @@ class Mission
 					position[]={3017.7854,6.3941507,12208.681};
 					azimut=70;
 					special="NONE";
-					id=206;
+					id=207;
 					side="GUER";
 					vehicle="C_man_1";
 					skill=0.60000002;
@@ -3614,7 +3626,7 @@ class Mission
 					position[]={3111.2463,2.6567607,12500.206};
 					azimut=130.69901;
 					special="NONE";
-					id=207;
+					id=208;
 					side="GUER";
 					vehicle="I_soldier_F";
 					leader=1;
@@ -3635,7 +3647,7 @@ class Mission
 					azimut=305;
 					offsetY=0.5;
 					special="NONE";
-					id=208;
+					id=209;
 					side="GUER";
 					vehicle="C_man_polo_3_F";
 					leader=1;
@@ -3655,7 +3667,7 @@ class Mission
 					position[]={23520.572,90.732895,21162.486};
 					azimut=230;
 					special="NONE";
-					id=209;
+					id=210;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3675,7 +3687,7 @@ class Mission
 					position[]={21288.125,20.903681,16304.188};
 					azimut=265;
 					special="NONE";
-					id=210;
+					id=211;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3695,7 +3707,7 @@ class Mission
 					position[]={7557.2021,132.40936,18357.586};
 					azimut=85;
 					special="NONE";
-					id=211;
+					id=212;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3715,7 +3727,7 @@ class Mission
 					position[]={12347.823,7.7689161,14345.185};
 					azimut=35;
 					special="NONE";
-					id=212;
+					id=213;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3735,7 +3747,7 @@ class Mission
 					position[]={20470.604,36.315918,8867.332};
 					azimut=125;
 					special="NONE";
-					id=213;
+					id=214;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3755,7 +3767,7 @@ class Mission
 					position[]={3270.0254,8.8910351,14125.256};
 					azimut=45;
 					special="NONE";
-					id=214;
+					id=215;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3775,7 +3787,7 @@ class Mission
 					position[]={17531.678,15.05385,19046.684};
 					azimut=155;
 					special="NONE";
-					id=215;
+					id=216;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3795,7 +3807,7 @@ class Mission
 					position[]={6473.8848,124.42414,13780.794};
 					azimut=250;
 					special="NONE";
-					id=216;
+					id=217;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3815,7 +3827,7 @@ class Mission
 					position[]={6243.5654,43,16281.483};
 					azimut=180;
 					special="NONE";
-					id=217;
+					id=218;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3835,7 +3847,7 @@ class Mission
 					position[]={3973.0266,23.344313,17529.551};
 					azimut=215;
 					special="NONE";
-					id=218;
+					id=219;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3855,7 +3867,7 @@ class Mission
 					position[]={9311.9316,95.831482,20232.715};
 					azimut=90;
 					special="NONE";
-					id=219;
+					id=220;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3875,7 +3887,7 @@ class Mission
 					position[]={24431.688,28.526634,23051.305};
 					azimut=285;
 					special="NONE";
-					id=220;
+					id=221;
 					side="GUER";
 					vehicle="I_soldier_F";
 					leader=1;
@@ -3896,7 +3908,7 @@ class Mission
 					azimut=205;
 					offsetY=5;
 					special="NONE";
-					id=221;
+					id=222;
 					side="GUER";
 					vehicle="C_man_polo_6_F";
 					leader=1;
@@ -3918,7 +3930,7 @@ class Mission
 					azimut=200;
 					offsetY=4.5;
 					special="NONE";
-					id=222;
+					id=223;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3938,7 +3950,7 @@ class Mission
 					position[]={7266.3022,128.68816,16501.789};
 					azimut=215;
 					special="NONE";
-					id=223;
+					id=224;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3959,7 +3971,7 @@ class Mission
 					azimut=320;
 					offsetY=0.1;
 					special="NONE";
-					id=224;
+					id=225;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -3979,7 +3991,7 @@ class Mission
 					position[]={11730.439,54.010067,18285.844};
 					azimut=320;
 					special="NONE";
-					id=225;
+					id=226;
 					side="GUER";
 					vehicle="C_man_polo_6_F";
 					leader=1;
@@ -4000,7 +4012,7 @@ class Mission
 					position[]={17873.561,2.6039209,18205.148};
 					azimut=210;
 					special="NONE";
-					id=226;
+					id=227;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -4020,7 +4032,7 @@ class Mission
 					position[]={19419.414,32.859844,13379.99};
 					azimut=165;
 					special="NONE";
-					id=227;
+					id=228;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -4040,7 +4052,7 @@ class Mission
 					position[]={12830.398,86.830292,16702.072};
 					azimut=20;
 					special="NONE";
-					id=228;
+					id=229;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -4060,7 +4072,7 @@ class Mission
 					position[]={5044.7759,56.295834,11365.506};
 					azimut=160;
 					special="NONE";
-					id=229;
+					id=230;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -4080,7 +4092,7 @@ class Mission
 					position[]={9536.2559,127.11501,15096.358};
 					azimut=340;
 					special="NONE";
-					id=230;
+					id=231;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -4100,7 +4112,7 @@ class Mission
 					position[]={8432.6758,85.939651,25214.725};
 					azimut=16.975599;
 					special="NONE";
-					id=231;
+					id=232;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -4122,7 +4134,7 @@ class Mission
 					position[]={8434.8262,86.825829,25213.85};
 					azimut=29.242399;
 					special="NONE";
-					id=232;
+					id=233;
 					side="CIV";
 					vehicle="C_man_polo_6_F";
 					player="PLAY CDG";
@@ -4144,7 +4156,7 @@ class Mission
 					position[]={8437.0117,88.03241,25212.396};
 					azimut=16.975401;
 					special="NONE";
-					id=233;
+					id=234;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -4166,7 +4178,7 @@ class Mission
 					position[]={8439.0605,88.73275,25210.924};
 					azimut=29.242399;
 					special="NONE";
-					id=234;
+					id=235;
 					side="CIV";
 					vehicle="C_man_polo_6_F";
 					player="PLAY CDG";
@@ -4188,7 +4200,7 @@ class Mission
 					position[]={8441.2461,89.252663,25209.471};
 					azimut=16.975401;
 					special="NONE";
-					id=235;
+					id=236;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -4210,7 +4222,7 @@ class Mission
 					position[]={8431.1201,87.010544,25212.434};
 					azimut=16.975599;
 					special="NONE";
-					id=236;
+					id=237;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -4232,7 +4244,7 @@ class Mission
 					position[]={8433.2705,87.789597,25211.559};
 					azimut=29.242399;
 					special="NONE";
-					id=237;
+					id=238;
 					side="CIV";
 					vehicle="C_man_polo_6_F";
 					player="PLAY CDG";
@@ -4254,7 +4266,7 @@ class Mission
 					position[]={8435.4561,88.981941,25210.105};
 					azimut=16.975401;
 					special="NONE";
-					id=238;
+					id=239;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -4276,7 +4288,7 @@ class Mission
 					position[]={8437.5049,90.172737,25208.633};
 					azimut=29.242399;
 					special="NONE";
-					id=239;
+					id=240;
 					side="CIV";
 					vehicle="C_man_polo_6_F";
 					player="PLAY CDG";
@@ -4298,7 +4310,7 @@ class Mission
 					position[]={8439.6904,90.609665,25207.18};
 					azimut=16.975401;
 					special="NONE";
-					id=240;
+					id=241;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -4320,7 +4332,7 @@ class Mission
 					position[]={8428.8281,88.311935,25209.814};
 					azimut=16.975599;
 					special="NONE";
-					id=241;
+					id=242;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -4342,7 +4354,7 @@ class Mission
 					position[]={8430.9785,89.189415,25208.939};
 					azimut=29.242399;
 					special="NONE";
-					id=242;
+					id=243;
 					side="CIV";
 					vehicle="C_man_polo_6_F";
 					player="PLAY CDG";
@@ -4364,7 +4376,7 @@ class Mission
 					position[]={8433.1641,90.331787,25207.486};
 					azimut=16.975401;
 					special="NONE";
-					id=243;
+					id=244;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -4386,7 +4398,7 @@ class Mission
 					position[]={8435.2129,91.04303,25206.014};
 					azimut=29.242399;
 					special="NONE";
-					id=244;
+					id=245;
 					side="CIV";
 					vehicle="C_man_polo_6_F";
 					player="PLAY CDG";
@@ -4408,7 +4420,7 @@ class Mission
 					position[]={8437.3984,91.762794,25204.561};
 					azimut=16.975401;
 					special="NONE";
-					id=245;
+					id=246;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -4430,7 +4442,7 @@ class Mission
 					position[]={18867.336,23.037296,18135.561};
 					azimut=240;
 					special="NONE";
-					id=246;
+					id=247;
 					side="GUER";
 					vehicle="I_soldier_F";
 					leader=1;
@@ -4450,7 +4462,7 @@ class Mission
 					position[]={20381.797,63.953514,11686.681};
 					azimut=225;
 					special="NONE";
-					id=247;
+					id=248;
 					side="GUER";
 					vehicle="C_man_polo_3_F";
 					leader=1;
@@ -4470,7 +4482,7 @@ class Mission
 					position[]={18506.621,26.063324,14302.478};
 					azimut=-482.44699;
 					special="NONE";
-					id=248;
+					id=249;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -4490,7 +4502,7 @@ class Mission
 					position[]={8456.8398,85.393784,25229.932};
 					azimut=29.242399;
 					special="NONE";
-					id=249;
+					id=250;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4512,7 +4524,7 @@ class Mission
 					position[]={8454.1641,85.121613,25231.389};
 					azimut=29.242399;
 					special="NONE";
-					id=250;
+					id=251;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4534,7 +4546,7 @@ class Mission
 					position[]={8452.2188,84.873238,25232.768};
 					azimut=29.242399;
 					special="NONE";
-					id=251;
+					id=252;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4556,7 +4568,7 @@ class Mission
 					position[]={8449.6797,84.238373,25233.9};
 					azimut=29.242399;
 					special="NONE";
-					id=252;
+					id=253;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4578,7 +4590,7 @@ class Mission
 					position[]={8446.4395,83.470947,25235.713};
 					azimut=29.242399;
 					special="NONE";
-					id=253;
+					id=254;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4600,7 +4612,7 @@ class Mission
 					position[]={8454.4629,85.378998,25238.439};
 					azimut=29.242399;
 					special="NONE";
-					id=254;
+					id=255;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4622,7 +4634,7 @@ class Mission
 					position[]={8451.2207,84.34568,25240.248};
 					azimut=29.242399;
 					special="NONE";
-					id=255;
+					id=256;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4644,7 +4656,7 @@ class Mission
 					position[]={8455.7695,85.514488,25235.611};
 					azimut=29.242399;
 					special="NONE";
-					id=256;
+					id=257;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4666,7 +4678,7 @@ class Mission
 					position[]={8453.2305,85.027893,25236.744};
 					azimut=29.242399;
 					special="NONE";
-					id=257;
+					id=258;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4688,7 +4700,7 @@ class Mission
 					position[]={8449.9902,84.198189,25238.557};
 					azimut=29.242399;
 					special="NONE";
-					id=258;
+					id=259;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4710,7 +4722,7 @@ class Mission
 					position[]={8455.1436,84.735985,25227.787};
 					azimut=29.242399;
 					special="NONE";
-					id=259;
+					id=260;
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					player="PLAY CDG";
@@ -4731,7 +4743,7 @@ class Mission
 				{
 					position[]={3775.1257,11.922023,13297.132};
 					azimut=220;
-					id=260;
+					id=261;
 					side="GUER";
 					vehicle="I_helicrew_F";
 					leader=1;
@@ -4750,7 +4762,7 @@ class Mission
 				{
 					position[]={3738.7717,12.744959,13268.058};
 					azimut=55;
-					id=261;
+					id=262;
 					side="GUER";
 					vehicle="I_helicrew_F";
 					leader=1;
@@ -4770,7 +4782,7 @@ class Mission
 					position[]={20895.5,15.123376,19300.863};
 					azimut=80;
 					special="NONE";
-					id=262;
+					id=263;
 					side="EAST";
 					vehicle="O_sniper_F";
 					leader=1;
@@ -4791,7 +4803,7 @@ class Mission
 					position[]={20897.908,15.196921,19306.428};
 					azimut=145;
 					special="NONE";
-					id=263;
+					id=264;
 					side="EAST";
 					vehicle="O_sniper_F";
 					leader=1;
@@ -4812,7 +4824,7 @@ class Mission
 					position[]={20901.979,15.384206,19306.693};
 					azimut=195;
 					special="NONE";
-					id=264;
+					id=265;
 					side="EAST";
 					vehicle="O_sniper_F";
 					leader=1;
@@ -4833,7 +4845,7 @@ class Mission
 					position[]={20896.273,15.101159,19303.861};
 					azimut=120;
 					special="NONE";
-					id=265;
+					id=266;
 					side="EAST";
 					vehicle="O_sniper_F";
 					leader=1;
@@ -4854,7 +4866,7 @@ class Mission
 					position[]={20977.309,16.85,19194.299};
 					azimut=110;
 					special="NONE";
-					id=266;
+					id=267;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					leader=1;
@@ -4875,7 +4887,7 @@ class Mission
 					position[]={25800.629,22.213448,21490.139};
 					azimut=130.69901;
 					special="NONE";
-					id=267;
+					id=268;
 					side="GUER";
 					vehicle="I_soldier_F";
 					leader=1;
@@ -4895,7 +4907,7 @@ class Mission
 					position[]={20949.494,16.657984,19189.363};
 					azimut=130.69901;
 					special="NONE";
-					id=268;
+					id=269;
 					side="GUER";
 					vehicle="I_soldier_F";
 					leader=1;
@@ -4915,7 +4927,7 @@ class Mission
 					position[]={20933.041,12.6129,19247.635};
 					azimut=60;
 					special="NONE";
-					id=269;
+					id=270;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					leader=1;
@@ -4936,7 +4948,7 @@ class Mission
 					position[]={9208.5889,118.16792,15989.616};
 					azimut=-207.707;
 					special="NONE";
-					id=270;
+					id=271;
 					side="CIV";
 					vehicle="C_man_1";
 					leader=1;
@@ -4956,7 +4968,7 @@ class Mission
 					position[]={16993.43,16.344391,12869.387};
 					azimut=135;
 					special="NONE";
-					id=271;
+					id=272;
 					side="CIV";
 					vehicle="C_man_1";
 					leader=1;
@@ -4974,7 +4986,7 @@ class Mission
 				class Item0
 				{
 					position[]={3779.8931,10.942777,13395.347};
-					id=272;
+					id=273;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -4992,7 +5004,7 @@ class Mission
 				class Item0
 				{
 					position[]={3366.7195,4.9234486,13065.23};
-					id=273;
+					id=274;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5010,7 +5022,7 @@ class Mission
 				class Item0
 				{
 					position[]={3645.8247,10.247945,13079.129};
-					id=274;
+					id=275;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5028,7 +5040,7 @@ class Mission
 				class Item0
 				{
 					position[]={3757.5168,12.232337,13485.894};
-					id=275;
+					id=276;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5046,7 +5058,7 @@ class Mission
 				class Item0
 				{
 					position[]={3757.1587,12.120921,13477.819};
-					id=276;
+					id=277;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5064,7 +5076,7 @@ class Mission
 				class Item0
 				{
 					position[]={5020.2051,16.926394,14436.141};
-					id=277;
+					id=278;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5082,7 +5094,7 @@ class Mission
 				class Item0
 				{
 					position[]={5023.7744,16.921635,14428.761};
-					id=278;
+					id=279;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5100,7 +5112,7 @@ class Mission
 				class Item0
 				{
 					position[]={6798.0527,40.971981,15560.617};
-					id=279;
+					id=280;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5118,7 +5130,7 @@ class Mission
 				class Item0
 				{
 					position[]={6199.2026,27.032959,15081.345};
-					id=280;
+					id=281;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5136,7 +5148,7 @@ class Mission
 				class Item0
 				{
 					position[]={9023.4893,111.79247,15728.963};
-					id=281;
+					id=282;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5154,7 +5166,7 @@ class Mission
 				class Item0
 				{
 					position[]={12026.725,27.63225,15829.861};
-					id=282;
+					id=283;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5172,7 +5184,7 @@ class Mission
 				class Item0
 				{
 					position[]={14173.292,16.334522,16541.617};
-					id=283;
+					id=284;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5190,7 +5202,7 @@ class Mission
 				class Item0
 				{
 					position[]={15297.089,16.39245,17565.934};
-					id=284;
+					id=285;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5208,7 +5220,7 @@ class Mission
 				class Item0
 				{
 					position[]={15297.679,16.388813,17565.66};
-					id=285;
+					id=286;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5226,7 +5238,7 @@ class Mission
 				class Item0
 				{
 					position[]={15781.904,14.28541,17452.086};
-					id=286;
+					id=287;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5244,7 +5256,7 @@ class Mission
 				class Item0
 				{
 					position[]={15781.004,14.286208,17452.91};
-					id=287;
+					id=288;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5262,7 +5274,7 @@ class Mission
 				class Item0
 				{
 					position[]={3802.4248,11.806155,13423.255};
-					id=288;
+					id=289;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5280,7 +5292,7 @@ class Mission
 				class Item0
 				{
 					position[]={3638.0186,10.171911,13078.645};
-					id=289;
+					id=290;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5298,7 +5310,7 @@ class Mission
 				class Item0
 				{
 					position[]={3628.5815,10.276005,13077.626};
-					id=290;
+					id=291;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5316,7 +5328,7 @@ class Mission
 				class Item0
 				{
 					position[]={3685.2981,10.501939,13100.932};
-					id=291;
+					id=292;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5334,7 +5346,7 @@ class Mission
 				class Item0
 				{
 					position[]={3684.282,10.586632,13110.413};
-					id=292;
+					id=293;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5352,7 +5364,7 @@ class Mission
 				class Item0
 				{
 					position[]={3680.7615,10.531989,13111.474};
-					id=293;
+					id=294;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5370,7 +5382,7 @@ class Mission
 				class Item0
 				{
 					position[]={3684.7515,10.750967,13119.224};
-					id=294;
+					id=295;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5388,7 +5400,7 @@ class Mission
 				class Item0
 				{
 					position[]={3603.6978,9.9211712,13117.38};
-					id=295;
+					id=296;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -5408,7 +5420,7 @@ class Mission
 					position[]={20858.082,32.182247,6808.7437};
 					azimut=135;
 					special="NONE";
-					id=296;
+					id=297;
 					side="CIV";
 					vehicle="C_man_1";
 					leader=1;
@@ -5429,7 +5441,7 @@ class Mission
 					azimut=268.629;
 					offsetY=0.64999998;
 					special="NONE";
-					id=297;
+					id=298;
 					side="GUER";
 					vehicle="C_man_1";
 					leader=1;
@@ -5450,7 +5462,7 @@ class Mission
 					position[]={14311.926,2.7182763,13059.758};
 					azimut=201.82683;
 					special="NONE";
-					id=298;
+					id=299;
 					side="CIV";
 					vehicle="C_man_p_fugitive_F";
 					leader=1;
@@ -5470,7 +5482,7 @@ class Mission
 					position[]={8407.6748,89.084557,25201.234};
 					azimut=16.975401;
 					special="NONE";
-					id=299;
+					id=300;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -5484,7 +5496,7 @@ class Mission
 					position[]={8408.0508,86.5028,25206.045};
 					azimut=16.975599;
 					special="NONE";
-					id=300;
+					id=301;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -5497,7 +5509,7 @@ class Mission
 					position[]={8410.2012,87.46756,25205.17};
 					azimut=29.242399;
 					special="NONE";
-					id=301;
+					id=302;
 					side="CIV";
 					vehicle="C_man_polo_6_F";
 					player="PLAY CDG";
@@ -5510,7 +5522,7 @@ class Mission
 					position[]={8412.3867,88.74675,25203.717};
 					azimut=16.975401;
 					special="NONE";
-					id=302;
+					id=303;
 					side="CIV";
 					vehicle="C_man_1";
 					player="PLAY CDG";
@@ -5523,7 +5535,7 @@ class Mission
 					position[]={8414.4355,90.012749,25202.244};
 					azimut=29.242399;
 					special="NONE";
-					id=303;
+					id=304;
 					side="CIV";
 					vehicle="C_man_polo_6_F";
 					player="PLAY CDG";
@@ -5543,7 +5555,7 @@ class Mission
 				{
 					position[]={3762.9746,11.007806,13355.029};
 					azimut=220;
-					id=304;
+					id=305;
 					side="GUER";
 					vehicle="I_helicrew_F";
 					leader=1;
@@ -5563,7 +5575,7 @@ class Mission
 					position[]={14161.043,19.153349,16300.415};
 					azimut=140;
 					special="NONE";
-					id=305;
+					id=306;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					leader=1;
@@ -5583,7 +5595,7 @@ class Mission
 					position[]={14516.521,48.083218,20869.535};
 					azimut=-245.22903;
 					special="NONE";
-					id=306;
+					id=307;
 					side="CIV";
 					vehicle="C_man_polo_3_F";
 					leader=1;
@@ -5604,7 +5616,7 @@ class Mission
 					position[]={14738.248,47.525745,20741.807};
 					azimut=265;
 					special="NONE";
-					id=307;
+					id=308;
 					side="CIV";
 					vehicle="C_man_1";
 					leader=1;
@@ -5624,7 +5636,7 @@ class Mission
 					position[]={14640.665,45.811977,20758.369};
 					azimut=75;
 					special="NONE";
-					id=308;
+					id=309;
 					side="CIV";
 					vehicle="C_man_1";
 					leader=1;
@@ -5644,7 +5656,7 @@ class Mission
 					position[]={14652.082,48.888458,20791.135};
 					azimut=255;
 					special="NONE";
-					id=309;
+					id=310;
 					side="CIV";
 					vehicle="C_man_1";
 					leader=1;
@@ -5664,7 +5676,7 @@ class Mission
 					position[]={14684.096,51.115883,20804.045};
 					azimut=190;
 					special="NONE";
-					id=310;
+					id=311;
 					side="EAST";
 					vehicle="O_sniper_F";
 					leader=1;
@@ -5685,7 +5697,7 @@ class Mission
 					position[]={14617.709,48.716072,20802.035};
 					azimut=65;
 					special="NONE";
-					id=311;
+					id=312;
 					side="EAST";
 					vehicle="O_sniper_F";
 					leader=1;
@@ -5706,7 +5718,7 @@ class Mission
 					position[]={14641.754,48.917099,20805.02};
 					azimut=160;
 					special="NONE";
-					id=312;
+					id=313;
 					side="EAST";
 					vehicle="O_sniper_F";
 					leader=1;
@@ -5727,7 +5739,7 @@ class Mission
 					position[]={14702.598,45.201351,20712.988};
 					azimut=110;
 					special="NONE";
-					id=313;
+					id=314;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					leader=1;
@@ -5749,7 +5761,7 @@ class Mission
 					azimut=330;
 					offsetY=2;
 					special="NONE";
-					id=314;
+					id=315;
 					side="GUER";
 					vehicle="I_soldier_F";
 					leader=1;
@@ -5769,7 +5781,7 @@ class Mission
 					position[]={14160.18,19.155319,16299.772};
 					azimut=140;
 					special="NONE";
-					id=315;
+					id=316;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					leader=1;
@@ -5789,7 +5801,7 @@ class Mission
 					position[]={3737.4551,18.862431,12980.678};
 					azimut=-0.00075132097;
 					special="NONE";
-					id=316;
+					id=317;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					leader=1;
@@ -5798,31 +5810,10 @@ class Mission
 				};
 			};
 		};
-		class Item202
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={10767.367,4.787611,10898.23};
-					azimut=140;
-					special="NONE";
-					id=317;
-					side="EAST";
-					vehicle="O_Soldier_F";
-					leader=1;
-					skill=0.60000002;
-					text="reb_1_1";
-					init="removeallWeapons this;  this enableSimulation false;this allowDamage false;  this addAction[""Rebel Clothing Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];  this addAction[""Magasin d'armes rebelle"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];  this addAction[format[""%1 ($%2)"",[""license_civ_rebel""] call life_fnc_varToStr,[([""rebel""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,false,false,"""",' !license_civ_rebel && playerSide == civilian ']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu,"""",0,FALSE,FALSE,"""",' vehicle player == player && player distance _target < 4 ']; this addAction[""Assurance bancaire (1000€)"",{if(life_dabliquide > 1000) then {life_has_insurance = true; life_dabliquide = life_dabliquide - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
-				};
-			};
-		};
 	};
 	class Vehicles
 	{
-		items=3026;
+		items=2647;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -32397,3842 +32388,10 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 		};
-		class Item2647
-		{
-			position[]={10763.768,7.5083346,10931.622};
-			azimut=473.30655;
-			id=2965;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2648
-		{
-			position[]={10763.828,7.6584811,10934.096};
-			azimut=473.30655;
-			id=2966;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2649
-		{
-			position[]={10777.806,7.846602,10937.255};
-			azimut=473.30655;
-			id=2967;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2650
-		{
-			position[]={10777.729,7.5909915,10934.362};
-			azimut=473.30655;
-			id=2968;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2651
-		{
-			position[]={10777.854,7.3635082,10931.479};
-			azimut=473.30655;
-			id=2969;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2652
-		{
-			position[]={10763.912,7.8503342,10936.937};
-			azimut=473.30655;
-			id=2970;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2653
-		{
-			position[]={10764.116,8.0482664,10939.958};
-			azimut=473.30655;
-			id=2971;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2654
-		{
-			position[]={10766.881,8.0548582,10939.909};
-			azimut=473.30655;
-			id=2972;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2655
-		{
-			position[]={10769.582,8.0716429,10939.999};
-			azimut=473.30655;
-			id=2973;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2656
-		{
-			position[]={10772.371,8.0385351,10939.999};
-			azimut=473.30655;
-			id=2974;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2657
-		{
-			position[]={10775.319,8.0381966,10940.114};
-			azimut=473.30655;
-			id=2975;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2658
-		{
-			position[]={10777.686,8.0623674,10940.193};
-			azimut=473.30655;
-			id=2976;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2659
-		{
-			position[]={10763.758,7.364336,10929.166};
-			azimut=473.30655;
-			id=2977;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2660
-		{
-			position[]={10766.599,7.337256,10929.221};
-			azimut=473.30655;
-			id=2978;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2661
-		{
-			position[]={10769.572,7.3209395,10929.195};
-			azimut=473.30655;
-			id=2979;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2662
-		{
-			position[]={10772.243,7.2709274,10929.232};
-			azimut=473.30655;
-			id=2980;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2663
-		{
-			position[]={10775.114,7.1990552,10929.191};
-			azimut=473.30655;
-			id=2981;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2664
-		{
-			position[]={10777.675,7.1863647,10929.424};
-			azimut=473.30655;
-			id=2982;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight_blue_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2665
-		{
-			position[]={10774.635,2.8712866,10851.1};
-			azimut=180;
-			id=2983;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2666
-		{
-			position[]={10765.448,2.7156153,10851.114};
-			azimut=180;
-			id=2984;
-			side="EMPTY";
-			vehicle="Land_BarGate_F";
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2667
-		{
-			position[]={10773.71,2.8987694,10852.647};
-			azimut=285;
-			id=2985;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2668
-		{
-			position[]={10765.039,2.6989698,10852.495};
-			azimut=285;
-			id=2986;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2669
-		{
-			position[]={10773.631,2.8721607,10854.593};
-			azimut=285;
-			id=2987;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2670
-		{
-			position[]={10765.041,2.7281189,10854.478};
-			azimut=285;
-			id=2988;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2671
-		{
-			position[]={10773.825,2.8637733,10856.539};
-			azimut=285;
-			id=2989;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2672
-		{
-			position[]={10765.234,2.7748206,10856.89};
-			azimut=285;
-			id=2990;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2673
-		{
-			position[]={10765.391,2.7602112,10858.949};
-			azimut=285;
-			id=2991;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2674
-		{
-			position[]={10774.021,3.0113184,10859.145};
-			azimut=285;
-			id=2992;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2675
-		{
-			position[]={10761.979,2.4297509,10851.089};
-			azimut=180;
-			id=2993;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2676
-		{
-			position[]={10757.43,1.429076,10851.129};
-			azimut=180;
-			id=2994;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2677
-		{
-			position[]={10753.933,0.73628294,10851.093};
-			azimut=180;
-			id=2995;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2678
-		{
-			position[]={10750.318,0,10851.089};
-			azimut=180;
-			id=2996;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2679
-		{
-			position[]={10747.092,0,10851.129};
-			azimut=180;
-			id=2997;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2680
-		{
-			position[]={10743.595,0,10851.093};
-			azimut=180;
-			id=2998;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2681
-		{
-			position[]={10795.717,4.8630834,10851.167};
-			azimut=180;
-			id=2999;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2682
-		{
-			position[]={10792.49,4.7206764,10851.207};
-			azimut=180;
-			id=3000;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2683
-		{
-			position[]={10788.993,4.1833744,10851.171};
-			azimut=180;
-			id=3001;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2684
-		{
-			position[]={10785.379,3.7281616,10851.167};
-			azimut=180;
-			id=3002;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2685
-		{
-			position[]={10782.843,3.4858103,10851.081};
-			azimut=180;
-			id=3003;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2686
-		{
-			position[]={10778.567,3.0014794,10851.039};
-			azimut=180;
-			id=3004;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2687
-		{
-			position[]={10816.901,6.084414,10851.167};
-			azimut=180;
-			id=3005;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2688
-		{
-			position[]={10813.675,5.8978076,10851.207};
-			azimut=180;
-			id=3006;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2689
-		{
-			position[]={10810.178,5.6550417,10851.171};
-			azimut=180;
-			id=3007;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2690
-		{
-			position[]={10806.563,5.4228024,10851.167};
-			azimut=180;
-			id=3008;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2691
-		{
-			position[]={10803.337,5.2378798,10851.207};
-			azimut=180;
-			id=3009;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2692
-		{
-			position[]={10799.84,5.0225854,10851.171};
-			azimut=180;
-			id=3010;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2693
-		{
-			position[]={10837.808,7.9657578,10851.154};
-			azimut=180;
-			id=3011;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2694
-		{
-			position[]={10834.581,7.5675368,10851.194};
-			azimut=180;
-			id=3012;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2695
-		{
-			position[]={10831.084,7.1488404,10851.158};
-			azimut=180;
-			id=3013;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2696
-		{
-			position[]={10827.47,6.7911038,10851.154};
-			azimut=180;
-			id=3014;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2697
-		{
-			position[]={10824.243,6.5170503,10851.194};
-			azimut=180;
-			id=3015;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2698
-		{
-			position[]={10820.746,6.2944851,10851.158};
-			azimut=180;
-			id=3016;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2699
-		{
-			position[]={10858.992,10.267281,10851.154};
-			azimut=180;
-			id=3017;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2700
-		{
-			position[]={10855.766,10.328135,10851.194};
-			azimut=180;
-			id=3018;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2701
-		{
-			position[]={10852.269,10.282684,10851.158};
-			azimut=180;
-			id=3019;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2702
-		{
-			position[]={10848.654,10.108871,10851.154};
-			azimut=180;
-			id=3020;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2703
-		{
-			position[]={10845.428,9.918829,10851.194};
-			azimut=180;
-			id=3021;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2704
-		{
-			position[]={10841.931,9.0113745,10851.158};
-			azimut=180;
-			id=3022;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2705
-		{
-			position[]={10880.018,13.053929,10851.151};
-			azimut=180;
-			id=3023;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2706
-		{
-			position[]={10876.791,12.939147,10851.191};
-			azimut=180;
-			id=3024;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2707
-		{
-			position[]={10873.294,12.555161,10851.155};
-			azimut=180;
-			id=3025;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2708
-		{
-			position[]={10869.68,11.89958,10851.151};
-			azimut=180;
-			id=3026;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2709
-		{
-			position[]={10866.453,11.336402,10851.191};
-			azimut=180;
-			id=3027;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2710
-		{
-			position[]={10862.956,10.733673,10851.155};
-			azimut=180;
-			id=3028;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2711
-		{
-			position[]={10901.202,12.225904,10851.151};
-			azimut=180;
-			id=3029;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2712
-		{
-			position[]={10897.976,11.943022,10851.191};
-			azimut=180;
-			id=3030;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2713
-		{
-			position[]={10894.479,12.300615,10851.155};
-			azimut=180;
-			id=3031;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2714
-		{
-			position[]={10890.864,12.714654,10851.151};
-			azimut=180;
-			id=3032;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2715
-		{
-			position[]={10887.638,12.940145,10851.191};
-			azimut=180;
-			id=3033;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2716
-		{
-			position[]={10884.141,13.11758,10851.155};
-			azimut=180;
-			id=3034;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2717
-		{
-			position[]={10922.154,12.970032,10851.147};
-			azimut=180;
-			id=3035;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2718
-		{
-			position[]={10918.928,13.124097,10851.188};
-			azimut=180;
-			id=3036;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2719
-		{
-			position[]={10915.431,13.365422,10851.151};
-			azimut=180;
-			id=3037;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2720
-		{
-			position[]={10911.816,13.467423,10851.147};
-			azimut=180;
-			id=3038;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2721
-		{
-			position[]={10908.59,13.258522,10851.188};
-			azimut=180;
-			id=3039;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2722
-		{
-			position[]={10905.093,12.754207,10851.151};
-			azimut=180;
-			id=3040;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2723
-		{
-			position[]={10943.339,11.785851,10851.147};
-			azimut=180;
-			id=3041;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2724
-		{
-			position[]={10940.112,12.092121,10851.188};
-			azimut=180;
-			id=3042;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2725
-		{
-			position[]={10936.615,12.479968,10851.151};
-			azimut=180;
-			id=3043;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2726
-		{
-			position[]={10933.001,12.662741,10851.147};
-			azimut=180;
-			id=3044;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2727
-		{
-			position[]={10929.774,12.757169,10851.188};
-			azimut=180;
-			id=3045;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2728
-		{
-			position[]={10926.277,12.837706,10851.151};
-			azimut=180;
-			id=3046;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2729
-		{
-			position[]={10964.245,11.125981,10851.135};
-			azimut=180;
-			id=3047;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2730
-		{
-			position[]={10961.019,11.169813,10851.175};
-			azimut=180;
-			id=3048;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2731
-		{
-			position[]={10957.521,11.268367,10851.139};
-			azimut=180;
-			id=3049;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2732
-		{
-			position[]={10953.907,11.361321,10851.135};
-			azimut=180;
-			id=3050;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2733
-		{
-			position[]={10950.681,11.392144,10851.175};
-			azimut=180;
-			id=3051;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2734
-		{
-			position[]={10947.184,11.546899,10851.139};
-			azimut=180;
-			id=3052;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2735
-		{
-			position[]={10985.43,11.005714,10851.135};
-			azimut=180;
-			id=3053;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2736
-		{
-			position[]={10982.203,11.098054,10851.175};
-			azimut=180;
-			id=3054;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2737
-		{
-			position[]={10978.706,11.150726,10851.139};
-			azimut=180;
-			id=3055;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2738
-		{
-			position[]={10975.092,11.070064,10851.135};
-			azimut=180;
-			id=3056;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2739
-		{
-			position[]={10971.865,10.991607,10851.175};
-			azimut=180;
-			id=3057;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2740
-		{
-			position[]={10968.368,11.098504,10851.139};
-			azimut=180;
-			id=3058;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2741
-		{
-			position[]={11006.455,10.490819,10851.132};
-			azimut=180;
-			id=3059;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2742
-		{
-			position[]={11003.229,10.606345,10851.172};
-			azimut=180;
-			id=3060;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2743
-		{
-			position[]={10999.731,10.705822,10851.136};
-			azimut=180;
-			id=3061;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2744
-		{
-			position[]={10996.117,10.748965,10851.132};
-			azimut=180;
-			id=3062;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2745
-		{
-			position[]={10992.891,10.855657,10851.172};
-			azimut=180;
-			id=3063;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2746
-		{
-			position[]={10989.394,10.91215,10851.136};
-			azimut=180;
-			id=3064;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2747
-		{
-			position[]={11027.64,10.035842,10851.132};
-			azimut=180;
-			id=3065;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2748
-		{
-			position[]={11024.413,9.9454222,10851.172};
-			azimut=180;
-			id=3066;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2749
-		{
-			position[]={11020.916,9.9917116,10851.136};
-			azimut=180;
-			id=3067;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2750
-		{
-			position[]={11017.302,10.115458,10851.132};
-			azimut=180;
-			id=3068;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2751
-		{
-			position[]={11014.075,10.199719,10851.172};
-			azimut=180;
-			id=3069;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2752
-		{
-			position[]={11010.578,10.352198,10851.136};
-			azimut=180;
-			id=3070;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2753
-		{
-			position[]={11048.789,8.6851521,10851.16};
-			azimut=180;
-			id=3071;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2754
-		{
-			position[]={11045.563,9.3068266,10851.2};
-			azimut=180;
-			id=3072;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2755
-		{
-			position[]={11042.065,9.8161669,10851.164};
-			azimut=180;
-			id=3073;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2756
-		{
-			position[]={11038.451,10.093989,10851.16};
-			azimut=180;
-			id=3074;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2757
-		{
-			position[]={11035.225,10.10561,10851.2};
-			azimut=180;
-			id=3075;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2758
-		{
-			position[]={11031.728,10.028298,10851.164};
-			azimut=180;
-			id=3076;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2759
-		{
-			position[]={11069.974,6.1460485,10851.16};
-			azimut=180;
-			id=3077;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2760
-		{
-			position[]={11066.747,6.3210778,10851.2};
-			azimut=180;
-			id=3078;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2761
-		{
-			position[]={11063.25,6.5368862,10851.164};
-			azimut=180;
-			id=3079;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2762
-		{
-			position[]={11059.636,6.9633312,10851.16};
-			azimut=180;
-			id=3080;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2763
-		{
-			position[]={11056.409,7.3604407,10851.2};
-			azimut=180;
-			id=3081;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2764
-		{
-			position[]={11052.912,7.9220371,10851.164};
-			azimut=180;
-			id=3082;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2765
-		{
-			position[]={11090.88,5.6944237,10851.147};
-			azimut=180;
-			id=3083;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2766
-		{
-			position[]={11087.653,5.9193459,10851.188};
-			azimut=180;
-			id=3084;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2767
-		{
-			position[]={11084.156,6.0470595,10851.151};
-			azimut=180;
-			id=3085;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2768
-		{
-			position[]={11080.542,5.9644046,10851.147};
-			azimut=180;
-			id=3086;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2769
-		{
-			position[]={11077.315,6.0432825,10851.188};
-			azimut=180;
-			id=3087;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2770
-		{
-			position[]={11073.818,6.0368104,10851.151};
-			azimut=180;
-			id=3088;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2771
-		{
-			position[]={11112.064,5.7490067,10851.147};
-			azimut=180;
-			id=3089;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2772
-		{
-			position[]={11108.838,5.7552419,10851.188};
-			azimut=180;
-			id=3090;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2773
-		{
-			position[]={11105.341,5.7041311,10851.151};
-			azimut=180;
-			id=3091;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2774
-		{
-			position[]={11101.727,5.4921169,10851.147};
-			azimut=180;
-			id=3092;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2775
-		{
-			position[]={11098.5,5.4124999,10851.188};
-			azimut=180;
-			id=3093;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2776
-		{
-			position[]={11095.003,5.593123,10851.151};
-			azimut=180;
-			id=3094;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2777
-		{
-			position[]={11133.09,5.0755954,10851.145};
-			azimut=180;
-			id=3095;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2778
-		{
-			position[]={11129.863,5.0464773,10851.185};
-			azimut=180;
-			id=3096;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2779
-		{
-			position[]={11126.366,5.220552,10851.148};
-			azimut=180;
-			id=3097;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2780
-		{
-			position[]={11122.752,5.4606986,10851.145};
-			azimut=180;
-			id=3098;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2781
-		{
-			position[]={11119.525,5.5989451,10851.185};
-			azimut=180;
-			id=3099;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2782
-		{
-			position[]={11116.028,5.7231836,10851.148};
-			azimut=180;
-			id=3100;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2783
-		{
-			position[]={11154.274,3.6263733,10851.145};
-			azimut=180;
-			id=3101;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2784
-		{
-			position[]={11151.048,3.6780055,10851.185};
-			azimut=180;
-			id=3102;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2785
-		{
-			position[]={11147.551,3.7419214,10851.148};
-			azimut=180;
-			id=3103;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2786
-		{
-			position[]={11143.937,3.9944787,10851.145};
-			azimut=180;
-			id=3104;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2787
-		{
-			position[]={11140.71,4.4633703,10851.185};
-			azimut=180;
-			id=3105;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2788
-		{
-			position[]={11137.213,4.9546213,10851.148};
-			azimut=180;
-			id=3106;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2789
-		{
-			position[]={11174.894,2.9521241,10851.119};
-			azimut=180;
-			id=3107;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2790
-		{
-			position[]={11171.667,3.0166504,10851.159};
-			azimut=180;
-			id=3108;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2791
-		{
-			position[]={11168.17,3.094126,10851.123};
-			azimut=180;
-			id=3109;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2792
-		{
-			position[]={11164.556,3.2520862,10851.119};
-			azimut=180;
-			id=3110;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2793
-		{
-			position[]={11161.329,3.4020264,10851.159};
-			azimut=180;
-			id=3111;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2794
-		{
-			position[]={11157.832,3.5075574,10851.123};
-			azimut=180;
-			id=3112;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2795
-		{
-			position[]={11196.078,3.8578174,10851.119};
-			azimut=180;
-			id=3113;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2796
-		{
-			position[]={11192.852,3.762018,10851.159};
-			azimut=180;
-			id=3114;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2797
-		{
-			position[]={11189.354,3.654237,10851.123};
-			azimut=180;
-			id=3115;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2798
-		{
-			position[]={11185.74,3.4322608,10851.119};
-			azimut=180;
-			id=3116;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2799
-		{
-			position[]={11182.514,3.2227638,10851.159};
-			azimut=180;
-			id=3117;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2800
-		{
-			position[]={11179.017,3.0472789,10851.123};
-			azimut=180;
-			id=3118;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2801
-		{
-			position[]={11216.984,2.0063109,10851.106};
-			azimut=180;
-			id=3119;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2802
-		{
-			position[]={11213.758,2.3226757,10851.146};
-			azimut=180;
-			id=3120;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2803
-		{
-			position[]={11210.261,2.7774208,10851.11};
-			azimut=180;
-			id=3121;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2804
-		{
-			position[]={11206.646,3.3547828,10851.106};
-			azimut=180;
-			id=3122;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2805
-		{
-			position[]={11203.42,3.6117139,10851.146};
-			azimut=180;
-			id=3123;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2806
-		{
-			position[]={11199.923,3.6499183,10851.11};
-			azimut=180;
-			id=3124;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2807
-		{
-			position[]={11238.169,0,10851.106};
-			azimut=180;
-			id=3125;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2808
-		{
-			position[]={11234.942,0.30753672,10851.146};
-			azimut=180;
-			id=3126;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2809
-		{
-			position[]={11231.445,0.67244256,10851.11};
-			azimut=180;
-			id=3127;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2810
-		{
-			position[]={11227.831,1.075354,10851.106};
-			azimut=180;
-			id=3128;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2811
-		{
-			position[]={11224.604,1.3488085,10851.146};
-			azimut=180;
-			id=3129;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2812
-		{
-			position[]={11221.107,1.6158679,10851.11};
-			azimut=180;
-			id=3130;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2813
-		{
-			position[]={11259.194,0.00023845138,10851.104};
-			azimut=180;
-			id=3131;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2814
-		{
-			position[]={11255.968,0.00019010769,10851.144};
-			azimut=180;
-			id=3132;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2815
-		{
-			position[]={11252.471,9.4794384e-005,10851.107};
-			azimut=180;
-			id=3133;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2816
-		{
-			position[]={11248.856,1.9777174e-007,10851.104};
-			azimut=180;
-			id=3134;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2817
-		{
-			position[]={11245.63,0,10851.144};
-			azimut=180;
-			id=3135;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2818
-		{
-			position[]={11242.133,0,10851.107};
-			azimut=180;
-			id=3136;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2819
-		{
-			position[]={11280.379,0.00074129767,10851.104};
-			azimut=180;
-			id=3137;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2820
-		{
-			position[]={11277.152,0.00016864215,10851.144};
-			azimut=180;
-			id=3138;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2821
-		{
-			position[]={11273.655,-0.00020054313,10851.107};
-			azimut=180;
-			id=3139;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2822
-		{
-			position[]={11270.041,-0.0002373879,10851.104};
-			azimut=180;
-			id=3140;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2823
-		{
-			position[]={11266.814,-8.1191749e-005,10851.144};
-			azimut=180;
-			id=3141;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2824
-		{
-			position[]={11263.317,0.00012177669,10851.107};
-			azimut=180;
-			id=3142;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2825
-		{
-			position[]={11301.384,-0.0051615122,10851.098};
-			azimut=180;
-			id=3143;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2826
-		{
-			position[]={11298.157,-0.0020965203,10851.138};
-			azimut=180;
-			id=3144;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2827
-		{
-			position[]={11294.66,0.00031522021,10851.102};
-			azimut=180;
-			id=3145;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2828
-		{
-			position[]={11291.046,0.0016504343,10851.098};
-			azimut=180;
-			id=3146;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2829
-		{
-			position[]={11287.819,0.0019161435,10851.138};
-			azimut=180;
-			id=3147;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2830
-		{
-			position[]={11284.322,0.0015371604,10851.102};
-			azimut=180;
-			id=3148;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2831
-		{
-			position[]={11322.568,-0.0095276665,10851.098};
-			azimut=180;
-			id=3149;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2832
-		{
-			position[]={11319.342,-0.013940683,10851.138};
-			azimut=180;
-			id=3150;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2833
-		{
-			position[]={11315.845,-0.016349079,10851.102};
-			azimut=180;
-			id=3151;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2834
-		{
-			position[]={11312.23,-0.015922511,10851.098};
-			azimut=180;
-			id=3152;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2835
-		{
-			position[]={11309.004,-0.013554232,10851.138};
-			azimut=180;
-			id=3153;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2836
-		{
-			position[]={11305.507,-0.0098841256,10851.102};
-			azimut=180;
-			id=3154;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2837
-		{
-			position[]={11343.475,0.022283502,10851.085};
-			azimut=180;
-			id=3155;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2838
-		{
-			position[]={11340.248,0.022655437,10851.125};
-			azimut=180;
-			id=3156;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2839
-		{
-			position[]={11336.751,0.019934198,10851.089};
-			azimut=180;
-			id=3157;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2840
-		{
-			position[]={11333.137,0.013730242,10851.085};
-			azimut=180;
-			id=3158;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2841
-		{
-			position[]={11329.91,0.0065274588,10851.125};
-			azimut=180;
-			id=3159;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2842
-		{
-			position[]={11326.413,-0.0017314602,10851.089};
-			azimut=180;
-			id=3160;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2843
-		{
-			position[]={11364.659,0.0069667273,10851.085};
-			azimut=180;
-			id=3161;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2844
-		{
-			position[]={11361.433,0.00084907451,10851.125};
-			azimut=180;
-			id=3162;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2845
-		{
-			position[]={11357.936,0.00073549006,10851.089};
-			azimut=180;
-			id=3163;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2846
-		{
-			position[]={11354.321,0.0055459053,10851.085};
-			azimut=180;
-			id=3164;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2847
-		{
-			position[]={11351.095,0.011044212,10851.125};
-			azimut=180;
-			id=3165;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2848
-		{
-			position[]={11347.598,0.017388862,10851.089};
-			azimut=180;
-			id=3166;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2849
-		{
-			position[]={11385.685,0.049999189,10851.082};
-			azimut=180;
-			id=3167;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2850
-		{
-			position[]={11382.458,0.069043644,10851.122};
-			azimut=180;
-			id=3168;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2851
-		{
-			position[]={11378.961,0.074660018,10851.086};
-			azimut=180;
-			id=3169;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2852
-		{
-			position[]={11375.347,0.06379547,10851.082};
-			azimut=180;
-			id=3170;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2853
-		{
-			position[]={11372.12,0.044554003,10851.122};
-			azimut=180;
-			id=3171;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2854
-		{
-			position[]={11368.623,0.023486726,10851.086};
-			azimut=180;
-			id=3172;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2855
-		{
-			position[]={11406.869,-0.10922422,10851.082};
-			azimut=180;
-			id=3173;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2856
-		{
-			position[]={11403.643,-0.11515135,10851.122};
-			azimut=180;
-			id=3174;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2857
-		{
-			position[]={11400.146,-0.10217455,10851.086};
-			azimut=180;
-			id=3175;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2858
-		{
-			position[]={11396.531,-0.070456326,10851.082};
-			azimut=180;
-			id=3176;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2859
-		{
-			position[]={11393.305,-0.033196036,10851.122};
-			azimut=180;
-			id=3177;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2860
-		{
-			position[]={11389.808,0.009401679,10851.086};
-			azimut=180;
-			id=3178;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2861
-		{
-			position[]={10634.534,0,10851.086};
-			azimut=180;
-			id=3179;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2862
-		{
-			position[]={10631.308,0,10851.126};
-			azimut=180;
-			id=3180;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2863
-		{
-			position[]={10627.811,0,10851.09};
-			azimut=180;
-			id=3181;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2864
-		{
-			position[]={10624.196,0,10851.086};
-			azimut=180;
-			id=3182;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2865
-		{
-			position[]={10620.97,0,10851.126};
-			azimut=180;
-			id=3183;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2866
-		{
-			position[]={10617.473,0,10851.09};
-			azimut=180;
-			id=3184;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2867
-		{
-			position[]={10655.719,-0.00011783935,10851.086};
-			azimut=180;
-			id=3185;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2868
-		{
-			position[]={10652.492,-3.0348997e-006,10851.126};
-			azimut=180;
-			id=3186;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2869
-		{
-			position[]={10648.995,-1.708743e-006,10851.09};
-			azimut=180;
-			id=3187;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2870
-		{
-			position[]={10645.381,-3.1615819e-009,10851.086};
-			azimut=180;
-			id=3188;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2871
-		{
-			position[]={10642.154,0,10851.126};
-			azimut=180;
-			id=3189;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2872
-		{
-			position[]={10638.657,0,10851.09};
-			azimut=180;
-			id=3190;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2873
-		{
-			position[]={10676.625,0.0015371148,10851.073};
-			azimut=180;
-			id=3191;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2874
-		{
-			position[]={10673.398,-0.0013354451,10851.113};
-			azimut=180;
-			id=3192;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2875
-		{
-			position[]={10669.901,-0.0028599864,10851.077};
-			azimut=180;
-			id=3193;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2876
-		{
-			position[]={10666.287,-0.0026879204,10851.073};
-			azimut=180;
-			id=3194;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2877
-		{
-			position[]={10663.061,-0.0017451213,10851.113};
-			azimut=180;
-			id=3195;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2878
-		{
-			position[]={10659.563,-0.00070931716,10851.077};
-			azimut=180;
-			id=3196;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2879
-		{
-			position[]={10697.81,-0.0013817257,10851.073};
-			azimut=180;
-			id=3197;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2880
-		{
-			position[]={10694.583,0.00047514742,10851.113};
-			azimut=180;
-			id=3198;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2881
-		{
-			position[]={10691.086,0.0046032057,10851.077};
-			azimut=180;
-			id=3199;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2882
-		{
-			position[]={10687.472,0.007822901,10851.073};
-			azimut=180;
-			id=3200;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2883
-		{
-			position[]={10684.245,0.008148618,10851.113};
-			azimut=180;
-			id=3201;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2884
-		{
-			position[]={10680.748,0.0058983071,10851.077};
-			azimut=180;
-			id=3202;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2885
-		{
-			position[]={10718.835,0.0055945851,10851.07};
-			azimut=180;
-			id=3203;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2886
-		{
-			position[]={10715.608,0.0089288019,10851.11};
-			azimut=180;
-			id=3204;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2887
-		{
-			position[]={10712.111,0.011251085,10851.074};
-			azimut=180;
-			id=3205;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2888
-		{
-			position[]={10708.497,0.010531352,10851.07};
-			azimut=180;
-			id=3206;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2889
-		{
-			position[]={10705.271,0.0070385397,10851.11};
-			azimut=180;
-			id=3207;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2890
-		{
-			position[]={10701.773,0.0017472788,10851.074};
-			azimut=180;
-			id=3208;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2891
-		{
-			position[]={10740.02,0,10851.07};
-			azimut=180;
-			id=3209;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2892
-		{
-			position[]={10736.793,-2.6462725e-005,10851.11};
-			azimut=180;
-			id=3210;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2893
-		{
-			position[]={10733.296,-0.00022303987,10851.074};
-			azimut=180;
-			id=3211;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2894
-		{
-			position[]={10729.682,-0.00038406573,10851.07};
-			azimut=180;
-			id=3212;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2895
-		{
-			position[]={10726.455,5.6238536e-005,10851.11};
-			azimut=180;
-			id=3213;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2896
-		{
-			position[]={10722.958,0.0017964741,10851.074};
-			azimut=180;
-			id=3214;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2897
-		{
-			position[]={10508.879,-0.061897103,10851.113};
-			azimut=180;
-			id=3215;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2898
-		{
-			position[]={10505.652,-0.066722147,10851.153};
-			azimut=180;
-			id=3216;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2899
-		{
-			position[]={10502.155,-0.051998436,10851.117};
-			azimut=180;
-			id=3217;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2900
-		{
-			position[]={10498.541,-0.01189639,10851.113};
-			azimut=180;
-			id=3218;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2901
-		{
-			position[]={10495.314,0.029458664,10851.153};
-			azimut=180;
-			id=3219;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2902
-		{
-			position[]={10491.817,0.067013912,10851.117};
-			azimut=180;
-			id=3220;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2903
-		{
-			position[]={10530.063,-0.0038045198,10851.113};
-			azimut=180;
-			id=3221;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2904
-		{
-			position[]={10526.837,-0.00079466193,10851.153};
-			azimut=180;
-			id=3222;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2905
-		{
-			position[]={10523.34,-9.6433294e-005,10851.117};
-			azimut=180;
-			id=3223;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2906
-		{
-			position[]={10519.726,-0.0065972898,10851.113};
-			azimut=180;
-			id=3224;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2907
-		{
-			position[]={10516.499,-0.019943459,10851.153};
-			azimut=180;
-			id=3225;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2908
-		{
-			position[]={10513.002,-0.040471416,10851.117};
-			azimut=180;
-			id=3226;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2909
-		{
-			position[]={10550.97,0,10851.101};
-			azimut=180;
-			id=3227;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2910
-		{
-			position[]={10547.743,-7.2660667e-005,10851.141};
-			azimut=180;
-			id=3228;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2911
-		{
-			position[]={10544.246,-0.0010692028,10851.104};
-			azimut=180;
-			id=3229;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2912
-		{
-			position[]={10540.632,-0.0034289442,10851.101};
-			azimut=180;
-			id=3230;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2913
-		{
-			position[]={10537.405,-0.0056459582,10851.141};
-			azimut=180;
-			id=3231;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2914
-		{
-			position[]={10533.908,-0.0061945096,10851.104};
-			azimut=180;
-			id=3232;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2915
-		{
-			position[]={10572.154,0.99736321,10851.101};
-			azimut=180;
-			id=3233;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2916
-		{
-			position[]={10568.928,0.78110349,10851.141};
-			azimut=180;
-			id=3234;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2917
-		{
-			position[]={10565.431,0.5406152,10851.104};
-			azimut=180;
-			id=3235;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2918
-		{
-			position[]={10561.816,0.093678117,10851.101};
-			azimut=180;
-			id=3236;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2919
-		{
-			position[]={10558.59,0,10851.141};
-			azimut=180;
-			id=3237;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2920
-		{
-			position[]={10555.093,0,10851.104};
-			azimut=180;
-			id=3238;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2921
-		{
-			position[]={10593.18,0.72970945,10851.098};
-			azimut=180;
-			id=3239;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2922
-		{
-			position[]={10589.953,0.77355957,10851.138};
-			azimut=180;
-			id=3240;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2923
-		{
-			position[]={10586.456,0.86784798,10851.102};
-			azimut=180;
-			id=3241;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2924
-		{
-			position[]={10582.842,1.0065942,10851.098};
-			azimut=180;
-			id=3242;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2925
-		{
-			position[]={10579.615,1.0568848,10851.138};
-			azimut=180;
-			id=3243;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2926
-		{
-			position[]={10576.118,1.1180907,10851.102};
-			azimut=180;
-			id=3244;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2927
-		{
-			position[]={10614.364,0,10851.098};
-			azimut=180;
-			id=3245;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2928
-		{
-			position[]={10611.138,0.13052857,10851.138};
-			azimut=180;
-			id=3246;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2929
-		{
-			position[]={10607.641,0.3305285,10851.102};
-			azimut=180;
-			id=3247;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2930
-		{
-			position[]={10604.026,0.49894041,10851.098};
-			azimut=180;
-			id=3248;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2931
-		{
-			position[]={10600.8,0.6109522,10851.138};
-			azimut=180;
-			id=3249;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2932
-		{
-			position[]={10597.303,0.74578977,10851.102};
-			azimut=180;
-			id=3250;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2933
-		{
-			position[]={10776.003,2.8425817,10852.728};
-			azimut=285;
-			id=3251;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2934
-		{
-			position[]={10775.924,2.8565905,10854.673};
-			azimut=285;
-			id=3252;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2935
-		{
-			position[]={10776.118,2.9689391,10856.619};
-			azimut=285;
-			id=3253;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2936
-		{
-			position[]={10776.313,3.1165247,10859.225};
-			azimut=285;
-			id=3254;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2937
-		{
-			position[]={10773.36,2.9205589,10843.079};
-			azimut=285;
-			id=3255;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2938
-		{
-			position[]={10764.689,2.6731935,10842.927};
-			azimut=285;
-			id=3256;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2939
-		{
-			position[]={10773.281,2.8713598,10845.024};
-			azimut=285;
-			id=3257;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2940
-		{
-			position[]={10764.691,2.6468701,10844.909};
-			azimut=285;
-			id=3258;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2941
-		{
-			position[]={10773.476,2.8770823,10846.971};
-			azimut=285;
-			id=3259;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2942
-		{
-			position[]={10764.885,2.6660242,10847.321};
-			azimut=285;
-			id=3260;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2943
-		{
-			position[]={10765.041,2.6832397,10849.381};
-			azimut=285;
-			id=3261;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2944
-		{
-			position[]={10773.671,2.8862987,10849.576};
-			azimut=285;
-			id=3262;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2945
-		{
-			position[]={10775.653,2.8633692,10843.159};
-			azimut=285;
-			id=3263;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2946
-		{
-			position[]={10775.574,2.8167701,10845.104};
-			azimut=285;
-			id=3264;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2947
-		{
-			position[]={10775.769,2.8224928,10847.051};
-			azimut=285;
-			id=3265;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2948
-		{
-			position[]={10775.964,2.831682,10849.656};
-			azimut=285;
-			id=3266;
-			side="EMPTY";
-			vehicle="Land_runway_edgelight";
-			leader=1;
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2949
-		{
-			position[]={10770.822,8.1521225,10941.362};
-			azimut=180;
-			id=3267;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2950
-		{
-			position[]={10767.208,8.1527843,10941.358};
-			azimut=180;
-			id=3268;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2951
-		{
-			position[]={10764.672,8.1369028,10941.272};
-			azimut=180;
-			id=3269;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2952
-		{
-			position[]={10777.008,8.1414394,10941.484};
-			azimut=180;
-			id=3270;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2953
-		{
-			position[]={10774.472,8.1413593,10941.397};
-			azimut=180;
-			id=3271;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2954
-		{
-			position[]={10762.417,7.9884286,10939.095};
-			azimut=90;
-			id=3272;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2955
-		{
-			position[]={10762.416,7.7098703,10934.815};
-			azimut=90;
-			id=3273;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2956
-		{
-			position[]={10762.418,7.4499488,10930.385};
-			azimut=90;
-			id=3274;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2957
-		{
-			position[]={10767.093,7.2570019,10927.942};
-			azimut=180;
-			id=3275;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2958
-		{
-			position[]={10764.557,7.2790575,10927.857};
-			azimut=180;
-			id=3276;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2959
-		{
-			position[]={10776.893,7.0755029,10928.068};
-			azimut=180;
-			id=3277;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2960
-		{
-			position[]={10774.356,7.1302366,10927.982};
-			azimut=180;
-			id=3278;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2961
-		{
-			position[]={10779.014,8.1492214,10939.136};
-			azimut=90;
-			id=3279;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2962
-		{
-			position[]={10779.013,7.8019519,10934.857};
-			azimut=90;
-			id=3280;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2963
-		{
-			position[]={10779.015,7.3428345,10930.426};
-			azimut=90;
-			id=3281;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2964
-		{
-			position[]={10770.758,7.2154245,10927.967};
-			azimut=180;
-			id=3282;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2965
-		{
-			position[]={10770.758,7.1296873,10926.414};
-			azimut=180;
-			id=3283;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2966
-		{
-			position[]={10770.758,7.0605617,10924.974};
-			azimut=180;
-			id=3284;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2967
-		{
-			position[]={10770.758,6.9860306,10923.421};
-			azimut=180;
-			id=3285;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2968
-		{
-			position[]={10770.759,6.9131031,10921.902};
-			azimut=180;
-			id=3286;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2969
-		{
-			position[]={10770.759,6.838572,10920.35};
-			azimut=180;
-			id=3287;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2970
-		{
-			position[]={10770.759,6.7332988,10918.909};
-			azimut=180;
-			id=3288;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2971
-		{
-			position[]={10770.759,6.5843239,10917.357};
-			azimut=180;
-			id=3289;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2972
-		{
-			position[]={10770.797,6.4344554,10915.797};
-			azimut=180;
-			id=3290;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2973
-		{
-			position[]={10770.797,6.2962031,10914.357};
-			azimut=180;
-			id=3291;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2974
-		{
-			position[]={10770.797,6.1470528,10912.804};
-			azimut=180;
-			id=3292;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2975
-		{
-			position[]={10770.798,6.0131249,10911.285};
-			azimut=180;
-			id=3293;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2976
-		{
-			position[]={10770.798,5.8723435,10909.732};
-			azimut=180;
-			id=3294;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2977
-		{
-			position[]={10770.798,5.7416892,10908.292};
-			azimut=180;
-			id=3295;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2978
-		{
-			position[]={10770.798,5.6009083,10906.739};
-			azimut=180;
-			id=3296;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2979
-		{
-			position[]={10766.801,5.4810991,10906.039};
-			azimut=180;
-			id=3297;
-			side="EMPTY";
-			vehicle="Land_BarGate_F";
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item2980
-		{
-			position[]={10767.041,5.7176185,10908.104};
-			azimut=180;
-			id=3298;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2981
-		{
-			position[]={10764.786,5.4199967,10905.927};
-			azimut=90;
-			id=3299;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2982
-		{
-			position[]={10764.734,5.0760436,10902.266};
-			azimut=90;
-			id=3300;
-			side="EMPTY";
-			vehicle="Land_CncShelter_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item2983
-		{
-			position[]={10767.12,4.8904357,10899.47};
-			azimut=180;
-			id=3301;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2984
-		{
-			position[]={10774.612,5.0410976,10899.475};
-			azimut=180;
-			id=3302;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2985
-		{
-			position[]={10777.074,5.3989468,10904.054};
-			azimut=90;
-			id=3303;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2986
-		{
-			position[]={10777.117,5.0391173,10899.145};
-			azimut=90;
-			id=3304;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2987
-		{
-			position[]={10777.119,4.7146716,10894.188};
-			azimut=90;
-			id=3305;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2988
-		{
-			position[]={10777.162,4.423955,10889.278};
-			azimut=90;
-			id=3306;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2989
-		{
-			position[]={10777.206,4.1337132,10884.542};
-			azimut=90;
-			id=3307;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2990
-		{
-			position[]={10777.24,3.3283458,10862.964};
-			azimut=90;
-			id=3308;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2991
-		{
-			position[]={10777.242,3.1018054,10858.183};
-			azimut=90;
-			id=3309;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2992
-		{
-			position[]={10777.285,2.8418334,10853.273};
-			azimut=90;
-			id=3310;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2993
-		{
-			position[]={10764.146,4.5048242,10894.889};
-			azimut=90;
-			id=3311;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2994
-		{
-			position[]={10764.189,4.2118335,10889.979};
-			azimut=90;
-			id=3312;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2995
-		{
-			position[]={10764.233,4.0295105,10885.243};
-			azimut=90;
-			id=3313;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2996
-		{
-			position[]={10764.268,2.9709058,10863.665};
-			azimut=90;
-			id=3314;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2997
-		{
-			position[]={10764.27,2.7282801,10858.884};
-			azimut=90;
-			id=3315;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2998
-		{
-			position[]={10764.313,2.6779797,10853.975};
-			azimut=90;
-			id=3316;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item2999
-		{
-			position[]={10764.224,4.7287512,10898.466};
-			azimut=90;
-			id=3317;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3000
-		{
-			position[]={10766.955,4.9304919,10899.973};
-			azimut=180;
-			id=3318;
-			side="EMPTY";
-			vehicle="Land_BarGate_F";
-			skill=0.60000002;
-			init="this allowDammage false;";
-		};
-		class Item3001
-		{
-			position[]={10772.371,5.5860329,10906.506};
-			azimut=90;
-			id=3319;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3002
-		{
-			position[]={10772.414,5.1869187,10901.597};
-			azimut=90;
-			id=3320;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3003
-		{
-			position[]={10769.723,5.4128137,10904.763};
-			azimut=90;
-			id=3321;
-			side="EMPTY";
-			vehicle="Land_CncBarrier_F";
-			skill=0.60000002;
-		};
-		class Item3004
-		{
-			position[]={10769.723,5.1871548,10902.158};
-			azimut=90;
-			id=3322;
-			side="EMPTY";
-			vehicle="Land_CncBarrier_F";
-			skill=0.60000002;
-		};
-		class Item3005
-		{
-			position[]={10769.685,5.0345225,10900.408};
-			azimut=90;
-			id=3323;
-			side="EMPTY";
-			vehicle="Land_CncBarrier_F";
-			skill=0.60000002;
-		};
-		class Item3006
-		{
-			position[]={10764.212,3.8243055,10880.229};
-			azimut=90;
-			id=3324;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3007
-		{
-			position[]={10764.255,3.6332483,10875.32};
-			azimut=90;
-			id=3325;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3008
-		{
-			position[]={10764.299,3.3874025,10870.584};
-			azimut=90;
-			id=3326;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3009
-		{
-			position[]={10777.29,3.9097621,10880.028};
-			azimut=90;
-			id=3327;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3010
-		{
-			position[]={10777.333,3.7124414,10875.119};
-			azimut=90;
-			id=3328;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3011
-		{
-			position[]={10777.377,3.6012585,10870.383};
-			azimut=90;
-			id=3329;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3012
-		{
-			position[]={10777.377,3.5416796,10867.754};
-			azimut=90;
-			id=3330;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3013
-		{
-			position[]={10764.299,3.2064064,10867.756};
-			azimut=90;
-			id=3331;
-			side="EMPTY";
-			vehicle="Land_CncWall4_F";
-			skill=0.60000002;
-			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addEventHandler[""handleDamage"",{false}]; this setVectorUp [0,0,1];";
-		};
-		class Item3014
-		{
-			position[]={10334.64,68.018112,8715.5547};
-			azimut=130;
-			id=3332;
-			side="EMPTY";
-			vehicle="Land_BagBunker_Tower_F";
-			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false";
-		};
-		class Item3015
-		{
-			position[]={10288.717,90.325294,8291.7314};
-			azimut=75;
-			id=3333;
-			side="EMPTY";
-			vehicle="Land_BagBunker_Tower_F";
-			skill=0.60000002;
-			init="this allowDamage false; this enableSimulation false";
-		};
-		class Item3016
-		{
-			position[]={10469.894,93.194221,8170.3545};
-			azimut=79.785347;
-			id=3334;
-			side="EMPTY";
-			vehicle="Land_Airport_Tower_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item3017
-		{
-			position[]={11107.465,152.44238,8262.5625};
-			azimut=186.54776;
-			id=3335;
-			side="EMPTY";
-			vehicle="Land_Offices_01_V1_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item3018
-		{
-			position[]={10324.968,88.553635,8304.8584};
-			azimut=137.52921;
-			id=3336;
-			side="EMPTY";
-			vehicle="Land_Medevac_HQ_V1_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item3019
-		{
-			position[]={11226.178,177.22565,8662.0732};
-			azimut=122.775;
-			id=3337;
-			side="EMPTY";
-			vehicle="Land_Medevac_house_V1_F";
-			skill=0.60000002;
-			init="this setpos[(getpos this select 0),(getpos this select 1),1.0]";
-		};
-		class Item3020
-		{
-			position[]={10605.598,52.374939,8461.166};
-			azimut=122.775;
-			id=3338;
-			side="EMPTY";
-			vehicle="Land_Medevac_house_V1_F";
-			skill=0.60000002;
-			init="this setpos[(getpos this select 0),(getpos this select 1),1.0]";
-		};
-		class Item3021
-		{
-			position[]={10352.91,67.888718,8723.5518};
-			azimut=79.785347;
-			id=3339;
-			side="EMPTY";
-			vehicle="Land_Airport_Tower_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item3022
-		{
-			position[]={11203.533,182.41,8716.7939};
-			azimut=79.785347;
-			id=3340;
-			side="EMPTY";
-			vehicle="Land_Airport_Tower_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item3023
-		{
-			position[]={10932.591,136.78746,7918.02};
-			azimut=122.775;
-			id=3341;
-			side="EMPTY";
-			vehicle="Land_Medevac_house_V1_F";
-			skill=0.60000002;
-			init="this setpos[(getpos this select 0),(getpos this select 1),1.0]";
-		};
-		class Item3024
-		{
-			position[]={10679.903,72.561401,8180.4058};
-			azimut=79.785347;
-			id=3342;
-			side="EMPTY";
-			vehicle="Land_Airport_Tower_F";
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
-		class Item3025
-		{
-			position[]={10616.953,62.171848,8620.5527};
-			azimut=137.52921;
-			id=3343;
-			side="EMPTY";
-			vehicle="Land_Medevac_HQ_V1_F";
-			leader=1;
-			skill=0.60000002;
-			init="this allowdamage false;";
-		};
 	};
 	class Markers
 	{
-		items=335;
+		items=310;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -37045,10 +33204,10 @@ class Mission
 		};
 		class Item103
 		{
-			position[]={10770.472,7.7041049,10934.644};
+			position[]={12290.406,123.8956,8899.7314};
 			name="civ_spawn_5";
-			text="SPAWN EVENT #1";
-			type="mil_warning";
+			text="Camp Rebelle";
+			type="mil_triangle";
 			colorName="Color1_FD_F";
 		};
 		class Item104
@@ -37177,10 +33336,10 @@ class Mission
 		};
 		class Item120
 		{
-			position[]={10771.023,4.4328198,10889.956};
+			position[]={12279.263,123.48949,8913.249};
 			name="reb_v_2";
 			type="Empty";
-			angle=-180;
+			angle=-74.833801;
 		};
 		class Item121
 		{
@@ -38724,292 +34883,6 @@ class Mission
 			text="Magasin donateur";
 			type="loc_ViewTower";
 			colorName="ColorRed";
-		};
-		class Item310
-		{
-			position[]={10948.622,11.52312,10850.71};
-			name="ss6_3_3_1";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=180;
-		};
-		class Item311
-		{
-			position[]={11689.889,37.632957,15924.242};
-			name="turtle_2_1";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			a=500;
-			b=500;
-		};
-		class Item312
-		{
-			position[]={4888.0542,17.030001,14422.852};
-			name="turtle_2_1_1";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			a=500;
-			b=500;
-		};
-		class Item313
-		{
-			position[]={18403.555,26.983559,15245.171};
-			name="turtle_2_1_2";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			a=500;
-			b=500;
-		};
-		class Item314
-		{
-			position[]={12555.676,0.052529451,10682.157};
-			name="ss6_3_3_1_1";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=200;
-		};
-		class Item315
-		{
-			position[]={11591.443,0.027573479,10853.305};
-			name="ss6_3_3_1_2";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=180;
-		};
-		class Item316
-		{
-			position[]={13270.159,-0.030655591,10081.485};
-			name="ss6_3_3_1_1_1";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=240;
-		};
-		class Item317
-		{
-			position[]={13763.314,0.00013421103,9224.9805};
-			name="ss6_3_3_1_1_1_1";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=240;
-		};
-		class Item318
-		{
-			position[]={14259.784,-0.072818145,8366.3994};
-			name="ss6_3_3_1_1_1_2";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=240;
-		};
-		class Item319
-		{
-			position[]={14754.861,-0.043172188,7508.0591};
-			name="ss6_3_3_1_1_1_3";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=240;
-		};
-		class Item320
-		{
-			position[]={15249.939,0.057201199,6649.7173};
-			name="ss6_3_3_1_1_1_4";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=240;
-		};
-		class Item321
-		{
-			position[]={10015.546,-0.025466971,10602.177};
-			name="ss6_3_3_1_1_1_5";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=-30;
-		};
-		class Item322
-		{
-			position[]={9268.8027,-0.075690746,9973.4844};
-			name="ss6_3_3_1_1_1_6";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=-50;
-		};
-		class Item323
-		{
-			position[]={8770.1963,0.023629326,9123.9941};
-			name="ss6_3_3_1_1_1_7";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=-70;
-		};
-		class Item324
-		{
-			position[]={8354.8359,0.056480631,8223.6465};
-			name="ss6_3_3_1_1_1_7_1";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=-60;
-		};
-		class Item325
-		{
-			position[]={8104.5537,0.0010398366,7294.3535};
-			name="ss6_3_3_1_1_1_7_1_1";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=-90;
-		};
-		class Item326
-		{
-			position[]={8346.4932,0.070740886,6378.7339};
-			name="ss6_3_3_1_1_1_7_1_2";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=60;
-		};
-		class Item327
-		{
-			position[]={11599.076,-0.028167982,5943.3184};
-			name="ss6_3_3_1_2_1";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=3000;
-			b=5;
-			angle=180;
-		};
-		class Item328
-		{
-			position[]={15055.529,0.094963804,6112.374};
-			name="ss6_3_3_1_1_1_4_1";
-			text="Barrière";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidFull";
-			a=500;
-			b=5;
-			angle=-200;
-		};
-		class Item329
-		{
-			position[]={8915.4609,67.21669,7478.103};
-			name="civ_spawn_5_1";
-			text="EQUIPE #5";
-			type="mil_join";
-			colorName="ColorOrange";
-		};
-		class Item330
-		{
-			position[]={10256.861,9.4156933,6675.6689};
-			name="civ_spawn_5_1_1";
-			text="EQUIPE #4";
-			type="mil_join";
-			colorName="ColorOrange";
-		};
-		class Item331
-		{
-			position[]={9782.1797,60.479984,9388.9707};
-			name="civ_spawn_5_1_2";
-			text="EQUIPE #6";
-			type="mil_join";
-			colorName="ColorOrange";
-		};
-		class Item332
-		{
-			position[]={12090.571,55.478447,9509.2021};
-			name="civ_spawn_5_1_3";
-			text="EQUIPE #1";
-			type="mil_join";
-			colorName="ColorOrange";
-		};
-		class Item333
-		{
-			position[]={12690.464,161.98924,6960.4971};
-			name="civ_spawn_5_1_1_1";
-			text="EQUIPE #3";
-			type="mil_join";
-			colorName="ColorOrange";
-		};
-		class Item334
-		{
-			position[]={12573.384,6.3664622,8468.9873};
-			name="civ_spawn_5_1_1_2";
-			text="EQUIPE #2";
-			type="mil_join";
-			colorName="ColorOrange";
 		};
 	};
 	class Sensors
