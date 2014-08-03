@@ -13,7 +13,6 @@ _unit = call compile format["%1",getSelData(2632)];
 if(isNull _unit) exitWith {}; //Bad unit?
 if(_unit == player) exitWith {hint "Tu ne peux pas te kick!"};
 
-//add by asurion for limit invitation
 if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["gang_maxMembers",8])) exitWith {hint "Tu dois augmenter les slots du gang pour inviter ce joueur."};
 
 _action = [
@@ -25,7 +24,10 @@ _action = [
 
 if(_action) then {
 	[[profileName,grpPlayer],"life_fnc_gangInvite",_unit,false] spawn life_fnc_MP;
+	_members = grpPlayer getVariable "gang_members";
+	_members set[count _members,getPlayerUID _unit];
+	grpPlayer setVariable["gang_members",_members,true];
 	hint format["Tu as envoyé une invitation a %1",_unit getVariable["realname",name _unit]];
 } else {
-	hint "Invitation annulé";
+	hint localize "Invitation annulé";
 };
