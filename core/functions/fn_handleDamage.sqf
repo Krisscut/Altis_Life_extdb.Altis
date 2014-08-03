@@ -1,7 +1,7 @@
 /*
 	File: fn_handleDamage.sqf
 	Author: Bryan "Tonic" Boardwine
-
+	
 	Description:
 	Handles damage, specifically for handling the 'tazer' pistol and nothing else.
 */
@@ -11,7 +11,6 @@ _part = _this select 1;
 _damage = _this select 2;
 _source = _this select 3;
 _projectile = _this select 4;
-_curWep = currentWeapon _source;
 
 //Internal Debugging.
 if(!isNil "TON_Debug") then {
@@ -21,13 +20,14 @@ if(!isNil "TON_Debug") then {
 //Handle the tazer first (Top-Priority).
 if(!isNull _source) then {
 	if(_source != _unit) then {
+		_curWep = currentWeapon _source;
 		if(_projectile in ["B_9x21_Ball","B_556x45_dual"] && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then {
 			if(side _source == west && playerSide != west) then {
 				private["_distance","_isVehicle","_isQuad"];
 				_distance = if(_projectile == "B_556x45_dual") then {100} else {35};
 				_isVehicle = if(vehicle player != player) then {true} else {false};
 				_isQuad = if(_isVehicle) then {if(typeOf (vehicle player) == "B_Quadbike_01_F") then {true} else {false}} else {false};
-
+				
 				_damage = false;
 				if(_unit distance _source < _distance) then {
 					if(!life_istazed && !(_unit getVariable["restrained",false])) then {
@@ -40,7 +40,7 @@ if(!isNull _source) then {
 					};
 				};
 			};
-
+			
 			//Temp fix for super tasers on cops.
 			if(playerSide == west && side _source == west) then {
 				_damage = false;
@@ -48,6 +48,7 @@ if(!isNull _source) then {
 		};
 	};
 };
+<<<<<<< HEAD
 //Far_revive GreeFine
 _playerUncon = player getVariable ["FAR_isUnconscious", 0];
 
@@ -64,6 +65,8 @@ if ((alive _unit) && (_damage >= 1) && (_damage < 2.5)  && (_playerUncon == 0) &
 
 		[_unit, _source] spawn FAR_Player_Unconscious;
 };
+=======
+>>>>>>> parent of f8809d0... GROSSE FIX EVENT HANDLER STACKER !
 
 [] call life_fnc_hudUpdate;
 _damage;
