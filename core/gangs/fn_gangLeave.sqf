@@ -20,7 +20,7 @@ _grp setVariable["gang_members",_grpMembers,true];
 //[player] joinSilent (createGroup civilian);
 [player] joinSilent (createGroup civilian);
 
-
+[[player,grpPlayer],"clientGangKick",_unit,false] spawn life_fnc_MP; //Boot that bitch!
 [[4,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
-
+[] call life_fnc_gangMenu;
 closeDialog 0;
