@@ -16,23 +16,23 @@ life_market_resources = [
 		[
 			["diamondc",1],
 			["iron_r",1],
-
+			["copper_r",1],
 			["salt_r",1],
-
-
+			["cement",1],
+			["archeologie",1],
 			["glass",1]
 		]
 	],
 
 	["iron_r", 1800, 500, 5000, 6, 1,
 		[
-
+			["diamondc",1],
 			["oilp",1],
 			["copper_r",1],
-
+			["salt_r",1],
 			["archeologie",1],
-			["cement",1]
-
+			["cement",1],
+			["glass",1]
 		]
 	],
 	["archeologie", 3000, 500, 6000, 10, 1,
@@ -49,8 +49,8 @@ life_market_resources = [
 	["diamondc", 4000, 5000, 8000, 6, 1,
 		[
 			["oilp",1],
-
-
+			["iron_r",1],
+			["copper_r",1],
 			["salt_r",1],
 			["archeologie",1],
 			["cement",1],
@@ -60,10 +60,10 @@ life_market_resources = [
 
 	["copper_r", 1900, 5000, 5000, 6, 1,
 		[
-
+			["diamondc",1],
 			["oilp",1],
-
-
+			["iron_r",1],
+			["archeologie",1],
 			["salt_r",1],
 			["cement",1],
 			["glass",1]
@@ -84,7 +84,9 @@ life_market_resources = [
 
 	["glass", 1400, 500, 5000, 5, 1,
 		[
-
+			["diamondc",1],
+			["oilp",1],
+			["archeologie",1],
 			["iron_r",1],
 			["copper_r",1],
 			["salt_r",1],
@@ -98,8 +100,9 @@ life_market_resources = [
 			["oilp",1],
 			["archeologie",1],
 			["iron_r",1],
-			["copper_r",1]
-
+			["copper_r",1],
+			["salt_r",1],
+			["glass",1]
 		]
 	],
 
