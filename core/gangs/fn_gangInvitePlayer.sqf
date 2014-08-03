@@ -14,7 +14,7 @@ if(isNull _unit) exitWith {}; //Bad unit?
 if(_unit == player) exitWith {hint "Tu ne peux pas te kick!"};
 
 if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["gang_maxMembers",8])) exitWith {hint "Tu dois augmenter les slots du gang pour inviter ce joueur."};
-if (!isnil (group _unit) exitWith {hint "Cette personne est déjà dans un gang"};
+if (!isnil (group _unit)) exitWith {hint "Cette personne est déjà dans un gang"};
 _action = [
 	format["Vous êtes sur le point d'inviter %1 a votre gang, si il accepte, il aura acces au compte en banque du gang",_unit getVariable ["realname",name _unit]],
 	"Transfer Gang Leadership",
