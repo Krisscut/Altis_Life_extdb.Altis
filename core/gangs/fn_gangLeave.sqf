@@ -6,6 +6,7 @@
 	32 hours later...
 */
 private["_grp","_grpMembers","_unitID"];
+disableSerialization;
 //correction glitch
 //if(steamid == (grpPlayer getVariable "gang_owner")) exitWith {hint "You cannot leave the gang without appointing a new leader first!"};
 if(steamid == (grpPlayer getVariable "gang_owner")) exitWith {hint "Tu dois d'abord donner le grade de leader a un joueur pour quitter le gang!"};
