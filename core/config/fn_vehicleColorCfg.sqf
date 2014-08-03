@@ -166,7 +166,8 @@ switch (_vehicle) do
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_digital_co.paa","reb"],
 			["textures\vehicules\little_rebel.jpg","reb"],
 			["textures\vehicules\little_rebel_2.jpg","reb"],
-			["textures\vehicules\heli_medic_light.jpg","med"]
+			["textures\vehicules\heli_medic_light.jpg","med"],
+			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_wasp_co.paa","civ"]
 		];
 	};
 

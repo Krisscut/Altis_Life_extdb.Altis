@@ -159,6 +159,7 @@ switch (_vehicle) do
 			case 14: {_color = "Rebel Army"};
 			case 15: {_color = "Rebel Camo"};
 			case 16: {_color = "Medic"};
+			case 17: {_color = "Tigre"};
 		};
 	};
 
