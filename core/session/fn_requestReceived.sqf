@@ -52,9 +52,10 @@ switch(playerSide) do {
 		civ_gear = _this select 8;
 		__CONST__(life_coplevel,0);
 		__CONST__(life_medicLevel,0);
+		life_houses = _this select 9;
 		//__CONST__(life_serveur,parseNumber(_this select 9));
 		[] spawn life_fnc_civLoadGear;
-		life_houses = _this select 9;
+
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
 			life_vehicles set[count life_vehicles,_house];
@@ -91,10 +92,12 @@ switch(__GETC__(life_donator)) do
 				life_houses = _this select 10;
         		ife_houses_markers = [];*/
 				life_paycheck = life_paycheck * 2;
+
 			};
 
 			default {
 				life_paycheck = life_paycheck * 2;
+
 			};
 		};
 	};
@@ -110,6 +113,7 @@ switch(__GETC__(life_donator)) do
 			case civilian:
 			{
 				life_paycheck = life_paycheck * 3;
+
 			};
 
 			default {
@@ -129,6 +133,7 @@ switch(__GETC__(life_donator)) do
 			case civilian:
 			{
 				life_paycheck = life_paycheck * 4;
+
 			};
 
 			default {

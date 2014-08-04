@@ -2,7 +2,7 @@
     File: fn_civFetchGear.sqf
     Author: Bryan "Tonic" Boardwine
     Full Gear/Y-Menu Save by Vampire
-    
+
     Description:
     Saves the players gear for syncing to the database for persistence.
 */
@@ -142,7 +142,7 @@ if(count (handGunItems player) > 0) then
     ["life_inv_mackerel",life_inv_mackerel],["life_inv_tuna",life_inv_tuna],["life_inv_mullet",life_inv_mullet],["life_inv_catshark",life_inv_catshark],
     ["life_inv_fishingpoles",life_inv_fishingpoles],["life_inv_water",life_inv_water],["life_inv_donuts",life_inv_donuts],["life_inv_turtlesoup",life_inv_turtlesoup],
     ["life_inv_coffee",life_inv_coffee],["life_inv_fuelF",life_inv_fuelF],["life_inv_fuelE",life_inv_fuelE],["life_inv_pickaxe",life_inv_pickaxe],
-    ["life_inv_tbacon",life_inv_tbacon],["life_inv_lockpick",life_inv_lockpick],["life_inv_redgull",life_inv_redgull],["life_inv_peach",life_inv_peach]
+    ["life_inv_tbacon",life_inv_tbacon],["life_inv_lockpick",life_inv_lockpick],["life_inv_redgull",life_inv_redgull],["life_inv_peach",life_inv_peach],["life_inv_storagesmall",life_inv_storagesmall],["life_inv_storagebig",life_inv_storagebig],["life_inv_ziptie",life_inv_ziptie]
 ];
 
 _ret set[count _ret,_uItems];

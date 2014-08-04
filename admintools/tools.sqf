@@ -47,7 +47,7 @@ _EXECscript3 = 'player execVM "'+_pathAlerts+'%1"';
 				["Armes", [7], "#USER:WeaponMenu", -5, [["expression", ""]], "1", "1"],
 				["Equipements", [8], "#USER:GearMenu", -5, [["expression", ""]], "1", "1"],
 				["Events", [9], "#USER:EventMenu", -5, [["expression", ""]], "1", "1"],
-				//["Construction", [10], "#USER:ConstructionMenu", -5, [["expression", ""]], "1", "1"],
+				["Construction", [10], "#USER:ConstructionMenu", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 		];
@@ -295,7 +295,7 @@ ConstructionMenu =
 [
 	["Construction",true],
 		["Déplacer cible", [2],  "", -5, [["expression", format[_EXECscriptObjet,"Deplacer.sqf"]]], "1", "1"],
-		["Construction", [3],  "", -5, [["expression", format[_EXECscriptConstruction,"menu.sqf"]]], "1", "1"],
+		//["Construction", [3],  "", -5, [["expression", format[_EXECscriptConstruction,"menu.sqf"]]], "1", "1"],
 		["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
 

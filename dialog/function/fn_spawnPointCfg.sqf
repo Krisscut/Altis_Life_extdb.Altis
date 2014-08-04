@@ -50,7 +50,7 @@ switch (_side) do
 			};
 		};
 
-		if(count life_houses > 0) then {
+		if((count life_houses > 0) && ((__GETC__(life_donator) != 0))) then {
 			{
 				_pos = call compile format["%1",_x select 0];
 				_house = nearestBuilding _pos;
