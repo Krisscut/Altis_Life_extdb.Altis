@@ -557,6 +557,10 @@
 		</Key>
 		<Key ID="STR_pInAct_RestricLicen">
 			<Original>Confis. licences</Original>
+			
+		</Key>
+		<Key ID="STR_pInAct_Breathalyzer">
+		<Original>Ethylotest</Original>
 		</Key>
 	</Package>
 	<Package name="Vehicle_Interaction">
