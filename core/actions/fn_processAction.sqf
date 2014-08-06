@@ -33,7 +33,7 @@ _itemInfo = switch (_type) do
 	case "beer": {["yeast","beerp",1500,"Fermentation biere",true,"hops"]};
 	case "moonshine": {["yeast","moonshine",250,"Alcool de contrebande",true,"mash"]};
 	case "bottledshine": {["moonshine","bottledshine",500,"Bouteille d'alcool illégale",true,"bottles"]};
-	case "bottledbeer": {["beerp","bottledbeer",500,"Bouteille de Biere",true,"bottles"]};/
+	case "bottledbeer": {["beerp","bottledbeer",500,"Bouteille de Biere",true,"bottles"]};
 	case "bottledwhiskey": {["whiskey","bottledwhiskey",500,"Bouteille de Whisky",true,"bottles"]};
 	default {[]};
 };
