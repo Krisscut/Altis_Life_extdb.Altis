@@ -159,6 +159,7 @@ class Life_Client_Core
 		class gatherRye {};
 		class gatherHops {};
 		class gatherYeast {};
+		class med {};
 
 		
 		
@@ -332,6 +333,7 @@ class Life_Client_Core
 		class knockoutAction {};
 		class robReceive {};
 		class robPerson {};
+		
 		class removeLicenses {};
 		class zoneCreator {};
 		class demoChargeTimer {};

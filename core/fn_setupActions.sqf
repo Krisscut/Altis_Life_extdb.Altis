@@ -27,6 +27,10 @@ switch (playerSide) do
 		!life_action_in_use && (typeOf cursorTarget) == "Land_HumanSkull_F" && player distance cursorTarget < 5']];
 
 	};
+	case independent:
+	{
+	life_actions = life_actions + [player addAction["Voir les inconscient",life_fnc_med,"",0,false,false,"",' playerside == independent ']];
+};
 };
 
 /*
