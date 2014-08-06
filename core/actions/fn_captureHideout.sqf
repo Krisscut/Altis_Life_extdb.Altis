@@ -5,7 +5,7 @@
 	Description:
 	Blah blah.
 */
-private["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_titleText","_ui","_flagTexture"];
+private["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_titleText","_ui","_flagTexture","_markername","_gangname2"];
 _hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
 _group = _hideout getVariable ["gangOwner",grpNull];
 
@@ -84,4 +84,21 @@ _flagTexture = [
 _this select 0 setFlagTexture _flagTexture;
 //Added asurion for make global message
 [[[0,1],format["%1 et son gang nommé: %2 - ont capturé la zone de gang",name player,(group player) getVariable "gang_name" ]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+// Merci Pictureglass > On se crée un marker TROLOL
+
+_markername = str(getPos _hideout);
+_gangname2 = formatText["Captured by: %1",(group player) getVariable "gang_name"];
+if (getMarkerColor _markername == "") then
+{
+	gang_owner_marker = createMarker [_markername, position player];
+	_markername setMarkerShape "ICON";
+	_markername setMarkerType "hd_warning";
+	_markername setMarkerColor "ColorBlue";
+	_markername setMarkerText str(_gangname2);
+	gang_owner_marker = "";
+}
+else
+{
+	_markername setMarkerText str(_gangname2);
+};
 _hideout setVariable["gangOwner",grpPlayer,true];
