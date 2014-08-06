@@ -352,7 +352,9 @@ switch (_filter) do
 			["B_TacticalPack_blk",nil,0],
 			["B_TacticalPack_rgr",nil,0],
 			["B_Carryall_mcamo",nil,0],
-			["B_Carryall_khk",nil,0]
+			["B_Carryall_khk",nil,0],
+			["B_AssaultPack_Kerry",nil,0],
+			["B_Kitbag_rgr",nil,0]
 
 		];
 	};

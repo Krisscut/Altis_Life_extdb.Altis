@@ -116,9 +116,11 @@ switch (_filter) do
 			["B_AssaultPack_khk","30 places",2000],
 			["B_AssaultPack_sgg","30 places",2000],
 			["B_AssaultPack_rgr","30 places",2000],
+			["B_AssaultPack_Kerry","30 places",2000],
 
 			["B_FieldPack_cbr","40 places",4000],
 			["B_FieldPack_blk","40 places",4000],
+			["B_Kitbag_rgr","40 places",4000],
 			["B_Kitbag_mcamo","40 places",4000],
 
 			["B_Kitbag_sgg","55 places",7000],

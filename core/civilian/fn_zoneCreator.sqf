@@ -66,21 +66,21 @@ _hopsZones = ["hops_1"];
 	_zone = createTrigger ["EmptyDetector",(getMarkerPos _x)];
 	_zone setTriggerArea[50,50,0,false];
 	_zone setTriggerActivation["CIV","PRESENT",true];
-	_zone setTriggerStatements["player in thislist","LIFE_Action_Rye = player addAction[(localize ""STR_Gather_Rye""),life_fnc_gatherRye,'',0,false,false,'','!life_action_gather'];","player removeAction LIFE_Action_Rye;"];
+	_zone setTriggerStatements["player in thislist","LIFE_Action_Rye = player addAction['Ramasser Seigle',life_fnc_gatherRye,'',0,false,false,'','!life_action_gather'];","player removeAction LIFE_Action_Rye;"];
 } foreach _ryeZones;
 //Create zones
 {
 	_zone = createTrigger ["EmptyDetector",(getMarkerPos _x)];
 	_zone setTriggerArea[50,50,0,false];
 	_zone setTriggerActivation["CIV","PRESENT",true];
-	_zone setTriggerStatements["player in thislist","LIFE_Action_Hops = player addAction[(localize ""STR_Gather_Hops""),life_fnc_gatherHops,'',0,false,false,'','!life_action_gather'];","player removeAction LIFE_Action_Hops;"];
+	_zone setTriggerStatements["player in thislist","LIFE_Action_Hops = player addAction['Ramasser Houblon',life_fnc_gatherHops,'',0,false,false,'','!life_action_gather'];","player removeAction LIFE_Action_Hops;"];
 } foreach _hopsZones;
 //Create zones
 {
 	_zone = createTrigger ["EmptyDetector",(getMarkerPos _x)];
 	_zone setTriggerArea[50,50,0,false];
 	_zone setTriggerActivation["CIV","PRESENT",true];
-	_zone setTriggerStatements["player in thislist","LIFE_Action_Yeast = player addAction[(localize ""STR_Gather_Yeast""),life_fnc_gatherYeast,'',0,false,false,'','!life_action_gather'];","player removeAction LIFE_Action_Yeast;"];
+	_zone setTriggerStatements["player in thislist","LIFE_Action_Yeast = player addAction['Ramasser Levure',life_fnc_gatherYeast,'',0,false,false,'','!life_action_gather'];","player removeAction LIFE_Action_Yeast;"];
 } foreach _yeastZones;
 
 //Create Radar Zone

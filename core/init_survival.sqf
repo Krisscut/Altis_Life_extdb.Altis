@@ -70,11 +70,16 @@
 	if(_bp == 'B_AssaultPack_rgr') then {
             _load = 30;
         };
-
+	if(_bp == 'B_AssaultPack_Kerry') then {
+            _load = 30;
+        };
 	if(_bp == 'B_FieldPack_cbr') then {
             _load = 40;
         };
 	if(_bp == 'B_FieldPack_blk') then {
+            _load = 40;
+        };
+    if(_bp == 'B_Kitbag_rgr') then {
             _load = 40;
         };
 	if(_bp == 'B_Kitbag_mcamo') then {
