@@ -6,7 +6,7 @@
 	Description:
 	Initializes the civilian.
 */
-private["_spawnPos"];
+private["_spawnPos","_allVeh","_pUID"];
 civ_spawn_1 = nearestObjects[getMarkerPos  "civ_spawn_1", ["Land_i_Shop_01_V1_F","Land_i_Shop_02_V1_F","Land_i_Shop_03_V1_F","Land_i_Stone_HouseBig_V1_F"],250];
 civ_spawn_2 = nearestObjects[getMarkerPos  "civ_spawn_2", ["Land_i_Shop_01_V1_F","Land_i_Shop_02_V1_F","Land_i_Shop_03_V1_F","Land_i_Stone_HouseBig_V1_F"],250];
 civ_spawn_3 = nearestObjects[getMarkerPos  "civ_spawn_3", ["Land_i_Shop_01_V1_F","Land_i_Shop_02_V1_F","Land_i_Shop_03_V1_F","Land_i_Stone_HouseBig_V1_F"],250];
@@ -68,3 +68,15 @@ player addRating 9999999;
 [] execVM "admintools\activate.sqf";
 
 life_liquide=0;
+
+_allVeh = allMissionObjects "Car" + allMissionObjects "Air" + allMissionObjects "Ship";
+_name = name player;
+
+{
+	_owners = _x getVariable ["vehicle_info_owners",[]];
+	_index = [_name,_owners] call fnc_index;
+
+	if(!(_index == -1)) then {
+		life_vehicles set[count life_vehicles, _x];
+	};
+} foreach _allVeh;
