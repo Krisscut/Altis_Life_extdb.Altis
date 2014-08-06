@@ -22,6 +22,7 @@ _itemInfo = switch (_type) do
 	case "sand": {["sand","glass",650,"Traitement du Sable","Sable"]};
 	case "salt": {["salt","salt_r",450,"Raffinage du Sel","Sel"]};
 	case "cocaine": {["cocaine","cocainep",1500,"Traitement de la Cocaïne","Feuille de Coca"]};
+	case "glassbottle":{["glass","bottles",650,"Fabrication de bouteille de verre",false]};//new
 	case "marijuana": {["cannabis","marijuana",500,"Traitement de la Marijuana","Feuille de Cannabis"]};
 	case "heroin": {["heroinu","heroinp",1720,"Traitement de l'Héroïne","Héroïne"]};
 	case "cement": {["rock","cement",350,"Mélange pour Ciment","Ciment"]};
