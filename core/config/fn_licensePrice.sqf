@@ -39,5 +39,9 @@ switch (_type) do
 	case "depanneur": {40000};
 	case "home": {100000}; // license proprietaire
 	case "papiers": {50000}; //papiers
+	case "stiller":{50000};
+	case "liquor":{100000};
+	case "bottler":{100000};
+	case "mash":{100000};
 
 };

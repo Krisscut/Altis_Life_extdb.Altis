@@ -86,6 +86,18 @@ switch (_var) do
 	case "life_inv_crystalmethpur": {"Cristal Meth Purifie"};
 	case "life_inv_poudrehydroxyde": {"Poudre d'Hydroxyde De Sodium Anhydre"};
 	case "life_inv_archeologie": {"Echantillon d'Archeologie"};
+	case "life_inv_mash": {"Mix de grain d'ethanol"};
+	case "life_inv_yeast": {"Levure"};
+	case "life_inv_rye": {"Seigle"};
+	case "life_inv_hops": {"Houblon"};
+	case "life_inv_whiskey": {"Whisky distillé"};
+	case "life_inv_beerp": {"Biere fermenté"};
+	case "life_inv_bottles": {"Bouteille de verre"};
+	case "life_inv_cornmeal": {"Grains de Mais"};
+	case "life_inv_bottledwhiskey": {"Whisky en bouteille"};
+	case "life_inv_bottledbeer": {"Biere en bouteille"};
+	case "life_inv_bottledshine": {"Moonshine en bouteille"};
+	case "life_inv_moonshine": {"Moonshine Distillé"};
 
 
 	//License Block
@@ -117,5 +129,9 @@ switch (_var) do
 	case "license_civ_depanneur": {"Brevet de Dépanneur"};
 	case "license_civ_archeologie": {"License D'Archeologie"};
 	case "license_civ_papiers": {"Papiers d'identitées"};
+
+	case "license_civ_stiller": {"Licence de distilleur"};
+	case "license_civ_liquor": {"Fabriquant de liqueur"};
+	case "license_civ_bottler": {"Licence de mise en bouteille"};
 
 };

@@ -47,6 +47,17 @@ switch (_mode) do
 			case "mair": {_var = "license_med_air"};
 			case "home": {_var = "license_civ_home"};
 			case "papiers": {_var = "license_civ_papiers"};
+			case "liquor": {_var = "license_civ_liquor"};
+			case "beer": {_var = "license_civ_liquor"};
+			case "stiller": {_var = "license_civ_stiller"};
+			case "whiskey": {_var = "license_civ_stiller"};
+			case "moonshine": {_var = "license_civ_stiller"};
+			case "mash": {_var = "license_civ_stiller"};
+			case "bottledshine": {_var = "license_civ_bottler"};
+			case "bottledbeer": {_var = "license_civ_bottler"};
+			case "bottledwhiskey": {_var = "license_civ_bottler"};
+			case "bottler": {_var = "license_civ_bottler"};
+			case "glassbottle": {_var = "license_civ_bottler"};
 
 
 			default {_var = ""};

@@ -154,8 +154,14 @@ class Life_Client_Core
 		class gatherArcheologie {};	
 		class packupBarriere {};
 		class packupBarriereStop {};	
-		class insureVehicle {};//added by asurion
-		class drawInsurance {};//added 05/28/2014
+		//class insureVehicle {};//added by asurion
+		//class drawInsurance {};//added 05/28/2014
+		class gatherRye {};
+		class gatherHops {};
+		class gatherYeast {};
+
+		
+		
 
 	};
 	
@@ -389,6 +395,8 @@ class Life_Client_Core
 
 		class seizePlayerWeaponAction {};//added 05/02/2014
 		class seizePlayerStuffAction {};//added 05/02/2014
+		
+		class breathalyzer {};
 	};
 	
 	class Gangs
@@ -447,6 +455,10 @@ class Life_Client_Core
 
 		class barriere {};
 		class barrierestop {};
+		
+		class drinkbeer {};
+		class drinkmoonshine {};
+		class drinkwhiskey {};
 
 
 	};

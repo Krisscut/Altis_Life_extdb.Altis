@@ -28,7 +28,7 @@ life_spikestrip = ObjNull;
 life_has_insurance = false;
 life_fatigue = 0.5; //ajout Serrat
 life_respawn_timer = .3; //Scaled in minutes
-
+life_drink = 0;
 life_knockout = false;
 life_interrupted = false;
 life_respawned = false;
@@ -226,7 +226,18 @@ life_inv_items =
 	"life_inv_defusekit",
 	"life_inv_storagesmall",
 	"life_inv_storagebig",
-
+	"life_inv_cornmeal",
+	"life_inv_beerp",
+	"life_inv_whiskey",
+	"life_inv_rye",
+	"life_inv_hops",
+	"life_inv_yeast",
+	"life_inv_bottles",
+	"life_inv_bottledshine",
+	"life_inv_bottledbeer",
+	"life_inv_bottledwhiskey",
+	"life_inv_moonshine",
+	"life_inv_mash",
 	"life_inv_barriere",//added by asurion
 	"life_inv_barriereStop",//added by asurion
 	"life_inv_ziptie",//added by asurion
@@ -273,6 +284,9 @@ life_licenses =
   	["license_civ_home","civ"],//added by asurion
 	["license_civ_meth","civ"],//added by asurion
 	["license_civ_archeologie","civ"],//added by asurion
+	["license_civ_stiller","civ"],
+	["license_civ_liquor","civ"],
+	["license_civ_bottler","civ"],
 	["license_civ_papiers","civ"]
 ];
 
@@ -289,6 +303,9 @@ life_illegal_items = [
 ["marijuana",2000],
 ["turtle",3500],
 ["crystalmeth",3300],
+["moonshine",9000],
+["bottledshine",11000],
+["mash",5000],
 ["crystalmethpur",3600]
 ];
 
@@ -331,7 +348,18 @@ sell_array =
 	["cement",1050],
 	["spikeStrip",1500],
 	["goldbar",21000],
-
+	["bottledshine",15000],
+	["bottledwhiskey",11000],
+	["bottledbeer",10000],
+	["moonshine",7000],
+	["whiskey",5000],
+	["beerp",4500],
+	["mash",2500],
+	["rye",2000],
+	["hops",1800],
+	["yeast",2000],
+	["cornmeal",200],
+	["bottles",75],
 	["hamburger",25],//added by asurion
 	["crystalmeth",5700],
 	["frites",5],//added by asurion
@@ -373,7 +401,15 @@ buy_array =
 	["fuelF",850],
 	["peach",68],
 	["spikeStrip",2500],
-
+	["bottledshine",12500],
+	["bottledwhiskey",8000],
+	["bottledbeer",8000],
+	["moonshine",7500],
+	["whiskey",5500],
+	["beerp",5000],
+	["cornmeal",500],
+	["mash",2500],
+	["bottles",100],
 	["blastingcharge",35000],
 	["boltcutter",7500],
 	["defusekit",2500],
