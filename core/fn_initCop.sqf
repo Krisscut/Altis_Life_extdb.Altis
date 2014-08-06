@@ -85,6 +85,7 @@ player setVariable["coplevel", __GETC__(life_coplevel), true]; // Rang Anzeige
  };
 };
 [] execVM "admintools\activate.sqf";
+"Start_addAction" execVM "Speed_Limiter.sqf";
 
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.

@@ -66,7 +66,7 @@ player addRating 9999999;
 
 [] call life_fnc_zoneCreator;
 [] execVM "admintools\activate.sqf";
-
+"Start_addAction" execVM "Speed_Limiter.sqf";
 life_liquide=0;
 
 _allVeh = allMissionObjects "Car" + allMissionObjects "Air" + allMissionObjects "Ship";

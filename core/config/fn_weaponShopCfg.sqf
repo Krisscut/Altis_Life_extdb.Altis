@@ -55,7 +55,7 @@ switch(_shop) do
 						["ToolKit",nil, 2000],
 						["NVGoggles",nil,2000],
 						["Chemlight_red",nil,300],
-						["Chemlight_yellow",nil,300],
+
 						["Chemlight_green",nil,300],
 						["Chemlight_blue",nil,300],
 						["acc_flashlight",nil,750],
@@ -97,7 +97,7 @@ switch(_shop) do
 							["ToolKit",nil, 2000],
 							["NVGoggles",nil,2000],
 							["Chemlight_red",nil,300],
-							["Chemlight_yellow",nil,300],
+
 							["Chemlight_green",nil,300],
 							["Chemlight_blue",nil,300],
 							["acc_flashlight",nil,750],
@@ -170,7 +170,7 @@ switch(_shop) do
 							["muzzle_snds_M",nil,10000],
 							["muzzle_snds_H_MG",nil,10000],
 							["Chemlight_red",nil,300],
-							["Chemlight_yellow",nil,300],
+
 							["Chemlight_green",nil,300],
 							["Chemlight_blue",nil,300],
 							["HandGrenade_Stone","Flash Bang",20000],
@@ -199,7 +199,7 @@ switch(_shop) do
 						["NVGoggles",nil,2000],
 						["ToolKit",nil, 2000],
 						["Chemlight_red",nil,300],
-						["Chemlight_yellow",nil,300],
+
 						["Chemlight_green",nil,300],
 						["Chemlight_blue",nil,300],
 						["Rangefinder",nil,2000]
@@ -224,6 +224,7 @@ switch(_shop) do
 						["FirstAidKit",nil,150],
 						//["Medikit",nil,500],
 						["NVGoggles",nil,1200],
+						["Chemlight_yellow",nil,255],
 						["B_Bergen_blk",nil,3000]
 					]
 				];
@@ -291,7 +292,7 @@ switch(_shop) do
 						["optic_Hamr",nil,6800],
 						["optic_MRCO",nil,8500],
 						["Chemlight_red",nil,255],
-						["Chemlight_yellow",nil,255],
+
 						["Chemlight_green",nil,255],
 						["Chemlight_blue",nil,255],
 						["ToolKit",nil,200],
@@ -358,7 +359,7 @@ switch(_shop) do
 						["muzzle_snds_M",nil,5000],
 						["acc_flashlight",nil,800],
 						["Chemlight_red",nil,240],
-						["Chemlight_yellow",nil,240],
+
 						["Chemlight_green",nil,240],
 						["Chemlight_blue",nil,240],
 						["ToolKit",nil,200],
@@ -423,7 +424,7 @@ switch(_shop) do
 						["muzzle_snds_M",nil,5000],
 						["acc_flashlight",nil,750],
 						["Chemlight_red",nil,225],
-						["Chemlight_yellow",nil,225],
+
 						["Chemlight_green",nil,225],
 						["Chemlight_blue",nil,225],
 						["ToolKit",nil,200],
@@ -480,7 +481,7 @@ switch(_shop) do
 						["muzzle_snds_M",nil,5000],
 						["acc_flashlight",nil,1000],
 						["Chemlight_red",nil,300],
-						["Chemlight_yellow",nil,300],
+
 						["Chemlight_green",nil,300],
 						["Chemlight_blue",nil,300],
 						["Rangefinder",nil,10000],

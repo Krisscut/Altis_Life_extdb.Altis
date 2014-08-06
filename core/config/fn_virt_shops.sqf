@@ -24,7 +24,7 @@ switch (_shop) do
 	case "salt": {["Marchand de sel",["salt_r"]]};
 	case "cop": {["Magasin poulet",["donuts","coffee","spikeStrip","barriere","barriereStop","water","rabbit","apple","redgull","fuelF","defusekit"]]};
 	case "cement": {["Marchand de ciment",["cement"]]};
-
+	case "med": {["Marché medecin",["barriere","barriereStop"]]};
 	case "pharmacie": {["Pharmacie d'Altis",["kitmeth"]]};
 	case "meth": {["Tuco",["crystalmeth","crystalmethpur"]]};
 	case "archeologie": {["Vendeur d'archeologie",["archeologie"]]};
