@@ -54,6 +54,10 @@ __CONST__(life_houseLimit,6); //Maximum amount of houses a player can buy (TODO:
 __CONST__(life_gangPrice,1000000); //Price for creating a gang (They're all persistent so keep it high to avoid 345345345 gangs).
 __CONST__(life_gangUpgradeBase,500000); //MASDASDASD
 __CONST__(life_gangUpgradeMultipler,2.5); //BLAH
+player setVariable ["FAR_isUnconscious", 0, true];
+player setVariable ["FAR_isStabilized", 0, true];
+player setVariable ["FAR_isDragged", 0, true];
+player setVariable ["ace_sys_wounds_uncon", false];
 
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
 life_clothing_purchase = [-1,-1,-1,-1,-1];
@@ -156,10 +160,10 @@ switch (playerSide) do
 
 		if((str(player) in ["Depanneur_1","Depanneur_2","Depanneur_3","Depanneur_4","Depanneur_5"])) then {
 			life_dabliquide = 15000; //Starting Bank Money
-			life_paycheck = 5000;
+			life_paycheck = 5750;
 		}else{
 			life_dabliquide = 15000; //Starting Bank Money
-			life_paycheck = 3000;
+			life_paycheck = 3750;
 		};
 	};
 

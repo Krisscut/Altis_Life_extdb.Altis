@@ -9,7 +9,7 @@ if(count _this == 1) exitWith {false};
 _unit = _this select 0;
 _container = _this select 1;
 
-if (((playerSide == civilian) && (license_civ_rebel)) && (cursortarget getVariable "isknocked") or (cursortarget getVariable "restrained") or (cursortarget getVariable "playerSurrender")) then {
+if (((playerSide == civilian) && (license_civ_rebel)) && (cursortarget getVariable "FAR_isUnconscious" == 1) or (cursortarget getVariable "restrained") or (cursortarget getVariable "playerSurrender")) then {
 hint "Ouverture du sac"; } else {
 		hint "Impossible de voler dans les sacs !";
 		[] spawn {
