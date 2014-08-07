@@ -51,7 +51,7 @@ switch (_code) do
 		{
 			case west: {if(!visibleMap) then {[] spawn life_fnc_copMarkers;}};
 			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
-			case civilian : if ((isPlayer player) && (alive player)) then
+			case civilian : if (playerSide == civilian) then
 			{
 				deleteMarkerLocal ("Player" + (str o));
 				yo = o + 1;
