@@ -51,6 +51,23 @@ switch (_code) do
 		{
 			case west: {if(!visibleMap) then {[] spawn life_fnc_copMarkers;}};
 			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
+			case civilian : if ((isPlayer player) && (alive player)) then
+			{
+				deleteMarkerLocal ("Player" + (str o));
+				yo = o + 1;
+				deleteMarkerLocal ("Player" + (str yo));
+
+				namePlayer = "";
+				namePlayer = name player;
+
+				mark_player = "Player" + (str o); //Player0, Player1, Player2
+				mark_player = createMarkerLocal [mark_player,(getPos player)];
+				mark_player setMarkerTypeLocal "waypoint";
+				mark_player setMarkerPosLocal (getPos player);
+				mark_player setMarkerColorLocal "ColorBlue";
+				mark_player setMarkerTextLocal format ["%1",namePlayer];
+				o = o +1;
+			};
 		};
 	};
 
