@@ -53,6 +53,10 @@ switch (_code) do
 			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
 			case civilian : if (playerSide == civilian) then
 			{
+			onEachFrame {
+        //_l49 = nearestobjects[player, ["CAManBase"], 1400];
+        		yo = 0;
+       		 o = 0;
 				deleteMarkerLocal ("Player" + (str o));
 				yo = o + 1;
 				deleteMarkerLocal ("Player" + (str yo));
@@ -67,6 +71,7 @@ switch (_code) do
 				mark_player setMarkerColorLocal "ColorBlue";
 				mark_player setMarkerTextLocal format ["%1",namePlayer];
 				o = o +1;
+						};
 			};
 		};
 	};
