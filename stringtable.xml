@@ -394,6 +394,14 @@
 		<Key ID="STR_NOTF_Gathering">
 			<Original>Collecte en cours %1...</Original>
 		</Key>
+		<Key ID="STR_NOTF_Gather_Success">
++			<Original>Tu as collecté %2 %1(s)</Original>
++			
++		</Key>
++		<Key ID="STR_NOTF_GatherVeh">
++			<Original>Tu ne peux pas collecter à l'interieur d'une voiture!</Original>
++			
++		</Key>
 		<Key ID="STR_NOTF_ChopSoldCar">
 			<Original>Vous avez vendu un %1 pour %2€</Original>
 		</Key>

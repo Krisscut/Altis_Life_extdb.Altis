@@ -107,10 +107,7 @@ class Life_Client_Core
 		class catchTurtle {};
 		class dpFinish {};
 		class dropFishingNet {};
-		class gatherApples {};
-		class gatherCannabis {};
-		class gatherHeroin {};
-		class gatherOil {};
+
 		class getDPMission {};
 		class postBail {};
 		class processAction {};
@@ -129,8 +126,7 @@ class Life_Client_Core
 		class pickupItem {};
 		class pickupMoney {};
 		class ticketAction {};
-		class gatherPeaches {};
-		class gatherCocaine {};
+
 		class pumpRepair {};
 		class packupSpikes {};
 		class storeVehicle {};
@@ -160,7 +156,7 @@ class Life_Client_Core
 		class gatherHops {};
 		class gatherYeast {};
 		class med {};
-
+		class gather {};
 		
 		
 
