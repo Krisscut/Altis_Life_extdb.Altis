@@ -29,7 +29,7 @@ switch (playerSide) do
 	};
 	case independent:
 	{
-	//life_actions = life_actions + [player addAction["Voir les inconscient",life_fnc_med,"",0,false,false,"",' playerside == independent ']];
+	life_actions = life_actions + [player addAction["Voir les inconscient",life_fnc_med,"",0,false,false,"",' playerside == independent ']];
 };
 };
 

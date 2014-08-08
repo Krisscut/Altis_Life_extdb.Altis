@@ -53,6 +53,7 @@ switch (_code) do
 			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
 
 	};
+	};
 
 
 	// ALT J Se rendre
