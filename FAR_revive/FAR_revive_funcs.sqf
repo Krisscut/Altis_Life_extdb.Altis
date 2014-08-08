@@ -15,7 +15,7 @@ FAR_Player_Actions =
 		player addAction ["<t color=""#C90000"">" + "Réanimer" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_revive"], 10, true, true, "", "call FAR_Check_Revive"];
 		player addAction ["<t color=""#C90000"">" + "Stabiliser" + "</t>", "FAR_revive\FAR_handleAction.sqf", ["action_stabilize"], 10, true, true, "", "call FAR_Check_Stabilize"];
 
-		player addAction ["<t color=""#FF0000"">" + "Rejoindre le canal ambulancier (120sec)" + "</t>", {[] spawn life_RadioAmbulancier}, ["action_Radio"], 9, false, true, "", "(player getVariable 'FAR_isUnconscious')==1 && RadioAmbulancier"];
+		//player addAction ["<t color=""#FF0000"">" + "Rejoindre le canal ambulancier (120sec)" + "</t>", {[] spawn life_RadioAmbulancier}, ["action_Radio"], 9, false, true, "", "(player getVariable 'FAR_isUnconscious')==1 && RadioAmbulancier"];
 
 	};
 };

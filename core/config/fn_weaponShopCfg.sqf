@@ -214,7 +214,7 @@ switch(_shop) do
 	{
 		switch (true) do
 		{
-			case (playerSide != independent): {"You are not an EMS Medic"};
+			case (playerSide != independent): {"Tu n'es pas ambuluancier"};
 			default {
 				["Hospital EMS Shop",
 					[
@@ -237,7 +237,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != civilian): {"Interdit aux civils !"};
-			case (!license_civ_rebel): {"Tu n'as pas ta licence d'entrainement Rebel!"};
+			case (!license_civ_rebel): {"Tu n'as pas ta licence d'entrainement Rebelle!"};
 			case (__GETC__(life_donator) == 1) :
 			{
 				["Mohammed's Jihadi Shop 1",
@@ -246,24 +246,29 @@ switch(_shop) do
 						["hgun_Pistol_Signal_F","Pistolet Lumière",10000],
 						["hgun_PDW2000_F",nil,14000],
 						["hgun_Pistol_heavy_02_F","Pistolet Zbur",500000],
+						["LMG_Zafir_F",nil,722000],
+						["srifle_GM6_F",nil,1020000],
+
 						["arifle_SDAR_F",nil,12750],
-						["arifle_TRG20_F",nil,16000],
-						["arifle_TRG21_GL_F",nil,25000],
+						["arifle_TRG20_F",nil,30000],
+						["arifle_TRG21_GL_F",nil,55000],
 						["arifle_Mk20_F",nil,85000],
 						["arifle_Katiba_F",nil,106250],
 						["arifle_Katiba_GL_F",nil,150000],
 						["arifle_Mk20_GL_F",nil,150000],
-						//["srifle_EBR_F",nil,136000],
-						//["srifle_DMR_01_F",nil,212500],
+						["srifle_EBR_F",nil,637000],
+						["srifle_DMR_01_F",nil,425000],
 						["16Rnd_9x21_Mag",nil,25],
 						["30Rnd_9x21_Mag",nil,75],
 						["30Rnd_556x45_Stanag",nil,125],
-						//["20Rnd_762x51_Mag","Munition MK18",425],
+						["150Rnd_762x51_Box","Munition Zafir",500],
+						["5Rnd_127x108_Mag","Munition sniper",3000],
+						["20Rnd_762x51_Mag","Munition MK18",425],
 						["30Rnd_65x39_caseless_green","Munition Katiba",425],
 						["30Rnd_556x45_Stanag","Munition MK20",425],
 						["30Rnd_556x45_Stanag","Munition SDAR",720],
 						["100Rnd_65x39_caseless_mag","Munition MX",835],
-						//["10Rnd_762x51_Mag","Munition DMR",1060],
+						["10Rnd_762x51_Mag","Munition DMR",1060],
 						["hgun_Pistol_heavy_01_F","Pistolet",7200],
 						["hgun_Pistol_heavy_01_snds_F","Pistolet silencieux",12750],
 						["hgun_Pistol_heavy_01_MRD_F","Pistolet + viseur",17000],
@@ -315,15 +320,17 @@ switch(_shop) do
 						["hgun_Pistol_heavy_01_snds_F","Pistolet silencieux",12000],
 						["hgun_Pistol_heavy_01_MRD_F","Pistolet + viseur",16000],
 						["hgun_Pistol_heavy_02_F","Pistolet Zbur",50000],
+						["LMG_Zafir_F",nil,680000],
+						["srifle_GM6_F",nil,960000],
 						["arifle_SDAR_F",nil,12000],
-						["arifle_TRG20_F",nil,14000],
-						["arifle_TRG21_GL_F",nil,25000],
+						["arifle_TRG20_F",nil,33000],
+						["arifle_TRG21_GL_F",nil,40000],
 						["arifle_Mk20_F",nil,80000],
 						["arifle_Katiba_F",nil,100000],
-						//["srifle_EBR_F",nil,128000],
+						["srifle_EBR_F",nil,600000],
 						["arifle_Katiba_GL_F",nil,150000],
 						["arifle_Mk20_GL_F",nil,150000],
-						//["srifle_DMR_01_F",nil,200000],
+						["srifle_DMR_01_F",nil,562000],
 						["16Rnd_9x21_Mag",nil,25],
 						["30Rnd_9x21_Mag",nil,75],
 						["30Rnd_556x45_Stanag",nil,125],
@@ -331,13 +338,15 @@ switch(_shop) do
 						["6Rnd_RedSignal_F","Munitions rouge",250],
 						["30Rnd_9x21_Mag",nil,400],
 						["11Rnd_45ACP_Mag","Munition pistolet",400],
-						//["20Rnd_762x51_Mag","Munition MK18",400],
+						["20Rnd_762x51_Mag","Munition MK18",400],
 						["30Rnd_65x39_caseless_green","Munition Katiba",400],
 						["30Rnd_556x45_Stanag","Munition MK20",400],
 						["6Rnd_45ACP_Cylinder","Munition Zbur",500],
 						["100Rnd_65x39_caseless_mag","Munition MX",800],
 						["30Rnd_556x45_Stanag","Munition SDAR",800],
-						//["10Rnd_762x51_Mag","Munition DMR",1000],
+						["10Rnd_762x51_Mag","Munition DMR",1000],
+						["150Rnd_762x51_Box","Munition Zafir",500],
+						["5Rnd_127x108_Mag","Munition sniper",3000],
 						["UGL_FlareWhite_F","Grenade Blanche",2000],
 						["UGL_FlareGreen_F","Grenade Verte",2000],
 						["UGL_FlareRed_F","Grenade Rouge",2000],
@@ -382,29 +391,33 @@ switch(_shop) do
 						["hgun_Pistol_heavy_01_snds_F","Pistolet silencieux",15000],
 						["hgun_Pistol_heavy_01_MRD_F","Pistolet + viseur",20000],
 						["hgun_Pistol_heavy_02_F","Pistolet Zbur",50000],
+						["LMG_Zafir_F",nil,637000],
+						["srifle_GM6_F",nil,900000],
 						["arifle_SDAR_F",nil,11250],
-						["arifle_TRG20_F",nil,12000],
-						["arifle_TRG21_GL_F",nil,25000],
+						["arifle_TRG20_F",nil,28000],
+						["arifle_TRG21_GL_F",nil,35000],
 						["arifle_Mk20_F",nil,75000],
 						["arifle_Katiba_F",nil,93500],
 						["arifle_Katiba_GL_F",nil,150000],
 						["arifle_Mk20_GL_F",nil,150000],
-						//["srifle_EBR_F",nil,120000],
-						//["srifle_DMR_01_F",nil,187500],
+						["srifle_EBR_F",nil,562000],
+						["srifle_DMR_01_F",nil,375000],
 						["16Rnd_9x21_Mag",nil,25],
 						["30Rnd_9x21_Mag",nil,75],
 						["30Rnd_556x45_Stanag",nil,125],
 						["6Rnd_GreenSignal_F","Munitions verte",250],
 						["6Rnd_RedSignal_F","Munitions rouge",250],
 						["30Rnd_9x21_Mag",nil,375],
-						//["20Rnd_762x51_Mag","Munition MK18",375],
+						["20Rnd_762x51_Mag","Munition MK18",375],
 						["30Rnd_65x39_caseless_green","Munition Katiba",375],
 						["30Rnd_556x45_Stanag","Munition MK20",375],
 						["11Rnd_45ACP_Mag","Munition pistolet",375],
 						["6Rnd_45ACP_Cylinder","Munition Zbur",500],
 						["30Rnd_556x45_Stanag","Munition SDAR",750],
 						["100Rnd_65x39_caseless_mag","Munition MX",750],
-						//["10Rnd_762x51_Mag","Munition DMR",935],
+						["10Rnd_762x51_Mag","Munition DMR",935],
+						["150Rnd_762x51_Box","Munition Zafir",500],
+						["5Rnd_127x108_Mag","Munition sniper",3000],
 						["UGL_FlareWhite_F","Grenade Blanche",2000],
 						["UGL_FlareGreen_F","Grenade Verte",2000],
 						["UGL_FlareRed_F","Grenade Rouge",2000],
@@ -443,7 +456,9 @@ switch(_shop) do
 							["hgun_Pistol_Signal_F","Pistolet Lumière",10000],
 							["6Rnd_GreenSignal_F","Munitions verte",250],
 							["6Rnd_RedSignal_F","Munitions rouge",250],
-						["arifle_Mk20_F",nil,100000],
+						["LMG_Zafir_F",nil,850000],
+						["srifle_GM6_F",nil,1200000],
+						["arifle_Mk20_F",nil,150000],
 						["arifle_Katiba_F",nil,125000],
 						["arifle_Katiba_GL_F",nil,150000],
 						["arifle_Mk20_GL_F",nil,150000],
@@ -452,13 +467,15 @@ switch(_shop) do
 						["UGL_FlareRed_F","Grenade Rouge",2000],
 						["UGL_FlareYellow_F","Grenade Jaune",2000],
 						["UGL_FlareCIR_F","Grenade Infrarouge",2000],
-						//["srifle_EBR_F",nil,160000],
-						//["srifle_DMR_01_F",nil,250000],
+						["srifle_EBR_F",nil,750000],
+						["srifle_DMR_01_F",nil,500000],
 						["arifle_SDAR_F",nil,15000],
-						//["10Rnd_762x51_Mag","Munition DMR",1250],
+						["10Rnd_762x51_Mag","Munition DMR",1250],
 						["100Rnd_65x39_caseless_mag","Munition MX",1000],
 						["30Rnd_9x21_Mag",nil,500],
-						//["20Rnd_762x51_Mag","Munition MK18",500],
+						["20Rnd_762x51_Mag","Munition MK18",500],
+						["150Rnd_762x51_Box","Munition Zafir",500],
+						["5Rnd_127x108_Mag","Munition sniper",3000],
 						["30Rnd_65x39_caseless_green","Munition Katiba",500],
 						["30Rnd_556x45_Stanag","Munition MK20",500],
 						["30Rnd_556x45_Stanag","Munition SDAR",1000],
@@ -504,6 +521,7 @@ switch(_shop) do
 		{
 			case (playerSide != civilian): {"Interdit aux civils !"};
 			case (!license_civ_gun): {"Tu n'a pas le Permis de Port d'Armes !"};
+
 			default
 			{
 				["Armes a Feu De Billy Joe",
@@ -530,7 +548,91 @@ switch(_shop) do
 	{
 		switch(true) do
 		{
-			case (playerSide != civilian): {"You are not a civilian!"};
+			case (playerSide != civilian): {"Vous n'etes pas un civil !"};
+			case (__GETC__(life_donator) == 1) :
+			{
+
+
+			["Hideout Armament",
+					[
+						["LMG_Zafir_F",nil,552000],
+						["srifle_GM6_F",nil,680000],
+						["srifle_EBR_F",nil,425000],
+						["srifle_DMR_01_F",nil,340000],
+						["srifle_GM6_camo_F",nil,552000],
+						["150Rnd_762x51_Box","Munition Zafir",500],
+						["5Rnd_127x108_Mag","Munition sniper",3000],
+						["hgun_Rook40_F",nil,1500],
+						["hgun_Pistol_heavy_02_F",nil,2500],
+						["hgun_ACPC2_F",nil,4500],
+						["hgun_PDW2000_F",nil,9500],
+						["optic_ACO_grn_smg",nil,950],
+						["V_Rangemaster_belt",nil,1900],
+						["16Rnd_9x21_Mag",nil,25],
+						["9Rnd_45ACP_Mag",nil,45],
+						["6Rnd_45ACP_Cylinder",nil,50],
+						["20Rnd_762x51_Mag","Munition MK18",500],
+						["10Rnd_762x51_Mag","Munition DMR",1250],
+						["30Rnd_9x21_Mag",nil,75]
+					]
+				];
+			};
+			case (__GETC__(life_donator) == 2) :
+			{
+
+
+			["Hideout Armament",
+					[
+						["LMG_Zafir_F",nil,520000],
+						["srifle_GM6_F",nil,640000],
+						["srifle_EBR_F",nil,400000],
+						["srifle_DMR_01_F",nil,320000],
+						["srifle_GM6_camo_F",nil,520000],
+						["150Rnd_762x51_Box","Munition Zafir",500],
+						["5Rnd_127x108_Mag","Munition sniper",3000],
+						["hgun_Rook40_F",nil,1500],
+						["hgun_Pistol_heavy_02_F",nil,2500],
+						["hgun_ACPC2_F",nil,4500],
+						["hgun_PDW2000_F",nil,9500],
+						["optic_ACO_grn_smg",nil,950],
+						["V_Rangemaster_belt",nil,1900],
+						["16Rnd_9x21_Mag",nil,25],
+						["9Rnd_45ACP_Mag",nil,45],
+						["6Rnd_45ACP_Cylinder",nil,50],
+						["20Rnd_762x51_Mag","Munition MK18",500],
+						["10Rnd_762x51_Mag","Munition DMR",1250],
+						["30Rnd_9x21_Mag",nil,75]
+					]
+				];
+			};
+			case (__GETC__(life_donator) == 3) :
+			{
+
+
+			["Hideout Armament",
+					[
+						["LMG_Zafir_F",nil,487000],
+						["srifle_GM6_F",nil,600000],
+						["srifle_EBR_F",nil,375000],
+						["srifle_DMR_01_F",nil,300000],
+						["srifle_GM6_camo_F",nil,600000],
+						["150Rnd_762x51_Box","Munition Zafir",500],
+						["5Rnd_127x108_Mag","Munition sniper",3000],
+						["hgun_Rook40_F",nil,1500],
+						["hgun_Pistol_heavy_02_F",nil,2500],
+						["hgun_ACPC2_F",nil,4500],
+						["hgun_PDW2000_F",nil,9500],
+						["optic_ACO_grn_smg",nil,950],
+						["V_Rangemaster_belt",nil,1900],
+						["16Rnd_9x21_Mag",nil,25],
+						["9Rnd_45ACP_Mag",nil,45],
+						["6Rnd_45ACP_Cylinder",nil,50],
+						["20Rnd_762x51_Mag","Munition MK18",500],
+						["10Rnd_762x51_Mag","Munition DMR",1250],
+						["30Rnd_9x21_Mag",nil,75]
+					]
+				];
+			};
 			default
 			{
 				["Hideout Armament",
