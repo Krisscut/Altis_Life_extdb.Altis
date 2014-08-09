@@ -120,7 +120,7 @@ switch (_filter) do
 
 			["B_FieldPack_cbr","40 places",4000],
 			["B_FieldPack_blk","40 places",4000],
-			["B_Kitbag_rgr","40 places",4000],
+
 			["B_Kitbag_mcamo","40 places",4000],
 
 			["B_Kitbag_sgg","55 places",7000],
