@@ -420,7 +420,7 @@ buy_array =
 	["defusekit",2500],
 	["storagesmall",75000],
 	["storagebig",150000],
-	["goldbar",30000],
+	["goldbar",60000],
 	["ziptie",3000],//added by asurion
 	["hamburger",75],//added by asurion
 	["frites",60],//added by asurion
