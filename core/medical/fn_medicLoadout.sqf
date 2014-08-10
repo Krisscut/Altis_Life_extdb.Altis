@@ -40,10 +40,9 @@ removeHeadGear player;
 player addBackpack "B_Bergen_blk";
 player addUniform "U_I_CombatUniform";
 player addItem "FirstAidKit";
-player addItem "FirstAidKit";
-player addItem "FirstAidKit";
-player addItem "FirstAidKit";
-player addItem "FirstAidKit";
+player addMagazine "16Rnd_9x21_Mag";
+player addMagazine "16Rnd_9x21_Mag";
+player addWeapon "hgun_P07_snds_F";
 
 
 player setObjectTextureGlobal [0,"textures\medic_uniform.jpg"];
@@ -54,6 +53,6 @@ switch(uniform player) do
 
 		default{};
 	};
-sleep 5;
-RemoveAllWeapons player;//au cas ou
+
+
 

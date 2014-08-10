@@ -74,7 +74,8 @@ class Mission
 		"A3_Structures_F_Households_House_Shop01",
 		"A3_Structures_F_Ind_DieselPowerPlant",
 		"A3_Structures_F_Ind_Shed",
-		"A3_Structures_F_Ind_Pipes"
+		"A3_Structures_F_Ind_Pipes",
+		"A3_Data_F_Curator_Characters"
 	};
 	addOnsAuto[]=
 	{
@@ -83,6 +84,7 @@ class Mission
 		"A3_Characters_F_Civil",
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_INDEP",
+		"A3_Data_F_Curator_Characters",
 		"A3_Characters_F_Gamma",
 		"A3_Modules_F",
 		"A3_Structures_F_Civ_Garbage",
@@ -2677,7 +2679,7 @@ class Mission
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false; removeAllWeapons this; this allowDamage false;  this addAction[""Boat Shop"",life_fnc_vehicleShopMenu,[""cop_ship"",west,""cop_ship_1"",""cop"",""APD - Kavala District - Boat Store""]]; his addAction[""Garage bateau"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""cop_ship_1""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == west']; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; removeAllWeapons this; this allowDamage false;  this addAction[""Boat Shop"",life_fnc_vehicleShopMenu,[""cop_ship"",west,""cop_ship_1"",""cop"",""APD - Kavala District - Boat Store""]]; this addAction[""Garage bateau"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""cop_ship_1""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == west']; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item43
 				{
@@ -2972,7 +2974,7 @@ class Mission
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false;  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_5"",""cop"",""APD - Highway Patrol""]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""cop_car_5""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == west'];  this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  ";
+					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false;  this addAction[""Concessionnaire"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_5"",""cop"",""APD - Highway Patrol""]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""cop_car_5""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide == west']; this addAction[""Concessionnaire aérien"",life_fnc_vehicleShopMenu,[""cop_airhq"",west,""cop_car_5"",""cop"",""APD - Air HQ""]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""cop_car_5""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide == west'];  this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  ";
 				};
 				class Item68
 				{
@@ -3156,10 +3158,10 @@ class Mission
 					special="NONE";
 					id=181;
 					side="GUER";
-					vehicle="C_man_shorts_3_F_euro";
+					vehicle="i_survivor_F";
 					leader=1;
 					skill=0.60000002;
-					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false;  this addAction[""Boat Shop"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_2"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""civ_ship_2""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian'];  this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; removeAllWeapons this;  this allowDamage false;  this addAction[""Boat Shop"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_2"",""civ"",""Billy's Boat Rentals & Ownership""]];  this addAction[""Garage véhicule"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""civ_ship_2""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == civilian']; this addAction[""Garage bateau"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Recherche de véhicules....""];   life_garage_sp = ""cop_ship_2""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide == west']; this addAction[""Ranger un véhicule au garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 			};
 		};
@@ -5769,7 +5771,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=2646;
+		items=2647;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -32335,10 +32337,22 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 		};
+		class Item2646
+		{
+			position[]={23483.012,12.600684,19790.705};
+			azimut=315.48499;
+			offsetY=0.46926299;
+			id=2961;
+			side="EMPTY";
+			vehicle="Land_Atm_01_F";
+			skill=0.60000002;
+			text="a1_1";
+			init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu,"""",0,FALSE,FALSE,"""",' vehicle player == player && player distance _target < 4 ']; this addAction[""Assurance bancaire (1000€)"",{if(life_dabliquide > 1000) then {life_has_insurance = true; life_dabliquide = life_dabliquide - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
+		};
 	};
 	class Markers
 	{
-		items=311;
+		items=312;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -34845,6 +34859,14 @@ class Mission
 			colorName="ColorRed";
 			a=500;
 			b=500;
+		};
+		class Item311
+		{
+			position[]={23482.977,12.600637,19790.705};
+			name="atm_marker_4_1_1";
+			type="loc_Tourism";
+			colorName="ColorGreen";
+			angle=317.89035;
 		};
 	};
 	class Sensors

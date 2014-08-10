@@ -310,7 +310,8 @@ life_illegal_items = [
 ["moonshine",9000],
 ["bottledshine",11000],
 ["mash",5000],
-["crystalmethpur",3600]
+["crystalmethpur",3600],
+["goldbar",21000]
 ];
 
 /*
@@ -419,7 +420,7 @@ buy_array =
 	["defusekit",2500],
 	["storagesmall",75000],
 	["storagebig",150000],
-
+	["goldbar",30000],
 	["ziptie",3000],//added by asurion
 	["hamburger",75],//added by asurion
 	["frites",60],//added by asurion
@@ -431,6 +432,7 @@ buy_array =
 	["hydrogenchloride",250],//added by asurion
 	["hydroxydesodiumanhydre",100],//added by asurion
 	["kitmeth",2000]//added by asurion
+
 ];
 __CONST__(buy_array,buy_array);
 
