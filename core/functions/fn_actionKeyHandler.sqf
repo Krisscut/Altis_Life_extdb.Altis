@@ -56,8 +56,8 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 		[_curTarget] call life_fnc_copInteractionMenu;
 	};*/
 	if(((_curTarget getVariable["restrained",false]) || (_curTarget getVariable["civrestrained",false]))  && !dialog) then {
-
-		if((playerSide == west) || (__GETC__(life_adminlevel) != 0)) then {
+		//AJOUT SKY LE 10/08/2014 pour rajouter les actions médic
+		if((playerSide in [west,independent]) || (__GETC__(life_adminlevel) != 0)) then {
 			[_curTarget] call life_fnc_copInteractionMenu;
 		}
 		else

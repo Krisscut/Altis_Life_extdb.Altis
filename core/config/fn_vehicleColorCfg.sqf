@@ -170,6 +170,15 @@ switch (_vehicle) do
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_wasp_co.paa","civ"]
 		];
 	};
+	
+	case "B_Heli_Transport_01_F":
+	{
+		_ret =
+		[
+			["textures\vehicules\ghost_bleu_clair.jpg","cop","textures\vehicules\ghost_bleu_clair_arriere.jpg"],
+			["textures\vehicules\ghost_bleu_sombre.jpg","cop","textures\vehicules\ghost_bleu_sombre_arriere.jpg"]
+		];
+	};
 
 	case "O_Heli_Light_02_unarmed_F":
 	{

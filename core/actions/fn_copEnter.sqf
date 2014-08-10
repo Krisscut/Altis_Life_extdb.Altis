@@ -1,11 +1,11 @@
 /*
         File: fn_copEnter.sqf
         Author: Skalicon
-        Traduction : Skydred pour Involved-Gaming.Com	
+        Traduction : Skydred pour Involved-Gaming.Com
         Description:
         Allows Cops to enter locked Vehicles
 */
-if(playerSide != west) exitWith {};
+if(playerSide == civilian) exitWith {};
 private ["_position","_veh"];
 _position = _this select 3;
 

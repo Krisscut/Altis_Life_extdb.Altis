@@ -162,6 +162,15 @@ switch (_vehicle) do
 			case 17: {_color = "Tigre"};
 		};
 	};
+	
+	case "B_Heli_Transport_01_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Gendarmerie clair"};
+			case 0: {_color = "Gendarmerie sombre"};
+		};
+	};
 
 	case "O_Heli_Light_02_unarmed_F":
 	{

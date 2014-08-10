@@ -105,7 +105,7 @@ life_market_resources = [
 
 	///////////////////////////////////
 
-	["turtle", 12500, 0, 70000, 50, 12,
+	["turtle", 12500, 0, 30000, 50, 12,
 		[
 			["marijuana",1],
 			["cocainep",1],
@@ -131,7 +131,7 @@ life_market_resources = [
 			["heroinp",1]
 		]
 	],
-	["crystalmethpur", 10750, 0, 75000, 100, 30,
+	["crystalmethpur", 10750, 0, 26000, 100, 30,
 		[
 			["marijuana",1],
 			["turtle",1],

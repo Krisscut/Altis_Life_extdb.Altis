@@ -125,20 +125,18 @@ switch (_code) do
 		if(_shift) then {_handled = true;};
 		if(_shift && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && !(cursorTarget getVariable "civrestrained")/*&& speed cursorTarget < 1*/) then
 		{
-			if(playerSide != west && (__GETC__(life_adminlevel) == 0)) then {
-				//we check if the civilian have enough items to do this action !
-				if(cursorTarget getVariable["playerSurrender",false] || ((cursorTarget getVariable["FAR_isUnconscious",false] == 1) && (license_civ_rebel))) then {
-					[] call life_fnc_CivrestrainAction;
-
-
-				};
+			//AJOUT SKY LE 10/08/2014 pour rajouter les actions médic
+			if(playerSide in [west,independent] || (__GETC__(life_adminlevel) > 0)) then {
+				//cop & admin & medic 
+				[] call life_fnc_restrainAction;	
 			}
 			else
 			{
-				//cop & admin
-				[] call life_fnc_restrainAction;
-
-
+				
+				//we check if the civilian have enough items to do this action !
+				if(cursorTarget getVariable["playerSurrender",false] || ((cursorTarget getVariable["FAR_isUnconscious",false] == 1) && (license_civ_rebel))) then {
+					[] call life_fnc_CivrestrainAction;
+				};
 			};
 		};
 	};
@@ -259,12 +257,12 @@ switch (_code) do
 			if(isNil {_veh getVariable "siren"}) then {_veh setVariable["siren",false,true];};
 			if((_veh getVariable "siren")) then
 			{
-				titleText ["Sirens Off","PLAIN"];
+				titleText ["Sirenes Off","PLAIN"];
 				_veh setVariable["siren",false,true];
 			}
 				else
 			{
-				titleText ["Sirens On","PLAIN"];
+				titleText ["Sirenes On","PLAIN"];
 				_veh setVariable["siren",true,true];
 				if(playerSide == west) then {
 					[[_veh],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;

@@ -32,4 +32,12 @@ if(!isPlayer _unit) exitWith {};
 _unit setVariable["playerSurrender",false,true];
 _unit setVariable["restrained",true,true];
 [[player], "life_fnc_restrain", _unit, false] spawn life_fnc_MP;
-[[0,format["%1 a été menotté par %2", name _unit, name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+//AJOUT SKY LE 10/08/2014 pour rajouter les actions médic
+//Si la personne est côté BLUEFOR alors :
+if((playerSide == west) {
+	[[0,format["%1 a été menotté par %2", name _unit, name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+	}
+//sinon (médic ou admin)
+else{
+	[[0,format["%1 a été mis sous camisole par %2 au vu de l'urgence psychiatrique", name _unit, name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+	};

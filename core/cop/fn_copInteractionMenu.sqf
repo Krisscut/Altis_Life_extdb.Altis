@@ -40,14 +40,20 @@ life_pInact_curTarget = _curTarget;
 _Btn1 ctrlSetText localize "STR_pInAct_Unrestrain";
 _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDialog 0;";
 
+if (playerSide == west) then {
 //Set Check Licenses Button
 _Btn2 ctrlSetText localize "STR_pInAct_checkLicenses";
 _Btn2 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_pInact_curTarget,FALSE] spawn life_fnc_MP";
-
+} else {
+_Btn2 ctrlEnable false;
+};
+if (playerSide == west) then {
 //Set Search Button
 _Btn3 ctrlSetText localize "STR_pInAct_SearchPlayer";
 _Btn3 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_searchAction; closeDialog 0;";
-
+} else {
+_Btn3 ctrlEnable false;
+};
 //Set Escort Button
 if((_curTarget getVariable["Escorting",false])) then {
 	_Btn4 ctrlSetText localize "STR_pInAct_StopEscort";
@@ -57,6 +63,7 @@ if((_curTarget getVariable["Escorting",false])) then {
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
 };
 
+if (playerSide == west) then {
 //Set Ticket Button
 _Btn5 ctrlSetText localize "STR_pInAct_TicketBtn";
 _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
@@ -72,6 +79,13 @@ _Btn8 buttonSetAction "[life_pInact_curTarget] call life_fnc_delStuff;";
 
 _Btn9 ctrlSetText localize "STR_pInAct_Breathalyzer";
 _Btn9 buttonSetAction "[[player],""life_fnc_breathalyzer"",life_pInact_curTarget,FALSE] spawn life_fnc_MP;closeDialog 0";
+} else {
+_Btn5 ctrlEnable false;
+_Btn6 ctrlEnable false;
+
+_Btn8 ctrlEnable false;
+_Btn9 ctrlEnable false;
+};
 
 //Check that you are near a place to jail them.
 if(!((player distance (getMarkerPos "cop_spawn_1") < 30) OR  (player distance (getMarkerPos "cop_spawn_2") < 30) OR (player distance (getMarkerPos "cop_spawn_3") < 30) OR (player distance (getMarkerPos "cop_spawn_4") < 30) OR (player distance (getMarkerPos "cop_spawn_5") < 30))) then
