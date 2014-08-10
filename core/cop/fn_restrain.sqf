@@ -31,9 +31,13 @@ if(isNull _cop) exitWith {};
 		};
 	};
 };
-
-titleText[format["Vous avez été menotté par%1",_cop getVariable["realname",name _cop]],"PLAIN"];
+if (side _cop == west) then {
+titleText[format["Vous avez été menotté par %1",_cop getVariable["realname",name _cop]],"PLAIN"];
 [[player, "Cuff",10],"life_fnc_playSound",true,false] spawn BIS_fnc_mp;
+} else {
+titleText[format["Vous avez été mise sous camisole par %1",_cop getVariable["realname",name _cop]],"PLAIN"];
+[[player, "Cuff",10],"life_fnc_playSound",true,false] spawn BIS_fnc_mp;
+};
 
 
 

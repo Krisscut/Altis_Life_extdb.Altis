@@ -82,7 +82,8 @@ _Btn9 buttonSetAction "[[player],""life_fnc_breathalyzer"",life_pInact_curTarget
 } else {
 _Btn5 ctrlEnable false;
 _Btn6 ctrlEnable false;
-
+_Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
+_Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";
 _Btn8 ctrlEnable false;
 _Btn9 ctrlEnable false;
 };

@@ -126,13 +126,13 @@ switch (_code) do
 		if(_shift && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && !(cursorTarget getVariable "civrestrained")/*&& speed cursorTarget < 1*/) then
 		{
 			//AJOUT SKY LE 10/08/2014 pour rajouter les actions médic
-			if(playerSide in [west,independent] || (__GETC__(life_adminlevel) > 0)) then {
-				//cop & admin & medic 
-				[] call life_fnc_restrainAction;	
+			if((playerSide != civilian) OR (__GETC__(life_adminlevel) != 0)) then {
+				//cop & admin & medic
+				[] call life_fnc_restrainAction;
 			}
 			else
 			{
-				
+
 				//we check if the civilian have enough items to do this action !
 				if(cursorTarget getVariable["playerSurrender",false] || ((cursorTarget getVariable["FAR_isUnconscious",false] == 1) && (license_civ_rebel))) then {
 					[] call life_fnc_CivrestrainAction;

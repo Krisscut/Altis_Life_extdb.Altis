@@ -45,7 +45,7 @@ if(_curTarget isKindOf "Man" && {!alive _curTarget} && {playerSide == independen
 
 
 };
-if(_curTarget isKindOf "Man" && {alive _curTarget} && {playerSide == independent}) exitWith {
+if(_curTarget isKindOf "Man" && {alive _curTarget} && {playerSide == independent} && _curtarget getVariable "FAR_isUnconscious" == 1) exitWith {
 
 		[] spawn life_fnc_defibrilateur;
 };
