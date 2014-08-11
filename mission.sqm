@@ -3550,7 +3550,7 @@ class Mission
 				class Item0
 				{
 					position[]={3645.6907,10.248187,13078.736};
-					offsetY=0.1;
+					offsetY=0.5;
 					special="NONE";
 					id=203;
 					side="GUER";
@@ -27831,7 +27831,7 @@ class Mission
 			azimut=148.19266;
 			id=2463;
 			side="EMPTY";
-			vehicle="Land_TetBox_F";
+			vehicle="Land_ToiletBox_F";
 			skill=0.60000002;
 		};
 		class Item2149
