@@ -111,7 +111,7 @@ class Life_Client_Core
 		class getDPMission {};
 		class postBail {};
 		class processAction {};
-		class sellOil {};
+		
 		class suicideBomb {};
 		class arrestAction {};
 		class escortAction {};
