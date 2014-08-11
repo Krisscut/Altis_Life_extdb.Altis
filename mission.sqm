@@ -3019,7 +3019,7 @@ class Mission
 					side="GUER";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; removeAllWeapons this; this allowDamage false; this addAction[""Sell Turtles"",life_fnc_sellTurtle];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Marchand Chinois"",life_fnc_virt_menu,""turtle""];";
 				};
 				class Item72
 				{
@@ -5445,7 +5445,7 @@ class Mission
 					vehicle="C_man_p_fugitive_F";
 					leader=1;
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction[""Sell Gold Bars"",life_fnc_sellGoldBars];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Acheteur d'or"",life_fnc_virt_menu,""gold""];";
 				};
 			};
 		};
@@ -27831,7 +27831,7 @@ class Mission
 			azimut=148.19266;
 			id=2463;
 			side="EMPTY";
-			vehicle="Land_ToiletBox_F";
+			vehicle="Land_TetBox_F";
 			skill=0.60000002;
 		};
 		class Item2149

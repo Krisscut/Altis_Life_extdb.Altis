@@ -770,6 +770,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != civilian): {"You are not a civilian!"};
+			case (!license_civ_depanneur): {"Tu n'es pas un dépanneur!"};
 			default
 			{
 				["Magasin dépanneur",

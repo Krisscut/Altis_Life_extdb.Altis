@@ -131,8 +131,7 @@ class Life_Client_Core
 		class packupSpikes {};
 		class storeVehicle {};
 		class robAction {};
-		class sellTurtle {};
-		class sellGoldBars {};
+
 		class captureHideout {};
 		
 		class getLicensesAction {}; // ajout serrat

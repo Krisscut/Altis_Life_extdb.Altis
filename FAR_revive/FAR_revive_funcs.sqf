@@ -38,6 +38,7 @@ FAR_HandleDamage_EH =
 		_unit setDamage 0;
 		_unit allowDamage false;
 		_amountOfDamage = 0;
+		player action ["Eject", vehicle player];
 		life_istazed = false;//modified 04/22/2014
 		if ((side _killer == civilan) && (vehicle _killer isKindOf "LandVehicle")) then
 		 	{
@@ -84,6 +85,7 @@ FAR_Player_Unconscious =
     _unit setVelocity [0,0,0];
     _unit allowDamage false;
 	_unit setCaptive true;
+	player action ["Eject", vehicle player];
     _unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 	sleep 4;
 	titleText ["", "BLACK IN", 1];

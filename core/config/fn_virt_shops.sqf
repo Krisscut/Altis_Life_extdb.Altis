@@ -31,4 +31,5 @@ switch (_shop) do
 	case "redburger": {["RedBurger",["hamburger", "frites", "cheeseburger"]]};
 	case "bar": {["The Lounge",["bottledbeer","bottledwhiskey"]]};
 	case "speakeasy": {["Speakeasy's",["bottledwhiskey","bottledshine","bottledbeer","moonshine"]]};
+	case "turtle": {["Marchand Chinois",["turtle"]]};
 };

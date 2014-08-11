@@ -39,8 +39,8 @@ switch (_side) do
 			if(license_civ_rebel) then {
 				_return  set [count _return, ["civ_spawn_6","Sira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 				_return  set [count _return, ["civ_spawn_8","Frini","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
-           	 	_return  set [count _return, ["civ_spawn_5","AUTRE BASE 2","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
-          	 	_return  set [count _return, ["civ_spawn_7","AUTRE BASE 3","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+           	 	//_return  set [count _return, ["civ_spawn_5","AUTRE BASE 2","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+          	 	//_return  set [count _return, ["civ_spawn_7","AUTRE BASE 3","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 			} else {
 
 				_return  set [count _return, ["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
