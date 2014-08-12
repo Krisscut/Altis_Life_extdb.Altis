@@ -118,22 +118,10 @@
 			<Original>Augmenter Slots</Original>
 		</Key>
 		<Key ID="STR_Gang_Kick">
-			<Original>Ejecter</Original>
-		</Key>
-		<Key ID="STR_Gang_GestionKick">
-			<Original>Ejecter le joueur selectionne</Original>
+			<Original>Kick</Original>
 		</Key>
 		<Key ID="STR_Gang_SetLeader">
-			<Original>Mettre Chef de Gang</Original>
-		</Key>
-		<Key ID="STR_Gang_GroupGestion">
-			<Original>Gerer le groupe</Original>
-		</Key>
-		<Key ID="STR_Gang_SetGroupLeader">
-			<Original>Passer Chef de Groupe</Original>
-		</Key>
-		<Key ID="STR_Gang_GangGestion">
-			<Original>Gerer le gang</Original>
+			<Original>Mettre Chef</Original>
 		</Key>
 		<Key ID="STR_Gang_PriceTxt">
 			<Original>Il faut $%1 pour créer un gang</Original>
@@ -155,12 +143,6 @@
 		</Key>
 		<Key ID="STR_Disband_Gang">
 			<Original>Dissoudre Gang</Original>
-		</Key>
-		<Key ID="STR_Gang_Promote">
-			<Original>Promouvoir</Original>
-		</Key>
-		<Key ID="STR_Gang_Demote">
-			<Original>Retrograder</Original>
 		</Key>
 	</Package>
 		<Package name="Garage_Menu">

@@ -11,7 +11,7 @@ disableSerialization;
 if((lbCurSel 2632) == -1) exitWith {hint "Tu dois déja séléctionné un joueur"};
 _unit = call compile format["%1",getSelData(2632)];
 if(isNull _unit) exitWith {}; //Bad unit?
-if(_unit == player) exitWith {hint "Tu ne peux pas t'inviter !"};
+if(_unit == player) exitWith {hint "Tu ne peux pas te kick!"};
 
 if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["gang_maxMembers",8])) exitWith {hint "Tu dois augmenter les slots du gang pour inviter ce joueur."};
 if (!isnil {(group _unit) getVariable "gang_name"}) exitWith {hint "Ce joueur a déjà un gang"};
