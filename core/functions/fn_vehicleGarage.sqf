@@ -14,7 +14,7 @@ if (cursorTarget isKindOf "House") then
 	_marker = format["%1", [cursorTarget] call life_fnc_getBuildID];
 	if ((getMarkerPos _marker) select 0 == 0) then
 	{
-		_position = [15, position cursorTarget, direction cursorTarget, 270] call life_fnc_calcGarageSpawn;
+		_position = [10, position cursorTarget, direction cursorTarget, 270] call life_fnc_calcGarageSpawn;
 		_marker = createMarker [_marker, _position];
 		_marker setMarkerShape "ICON";
 		_marker setMarkerType "hd_arrow";
