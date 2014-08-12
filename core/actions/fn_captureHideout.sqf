@@ -29,7 +29,7 @@ if(!isNull _group) then {
 
 if(!isNil "_action" && {!_action}) exitWith {titleText["Capture annulé","PLAIN"];};
 life_action_inUse = true;
-
+[[[0,1],format["%1 et son gang nommé: %2 - sont en train de capturer une zone de gang",name player,(group player) getVariable "gang_name" ]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 //Setup the progress bar
 disableSerialization;
 _title = "Capture de la zone...";

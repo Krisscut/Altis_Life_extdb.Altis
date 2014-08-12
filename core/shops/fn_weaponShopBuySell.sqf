@@ -30,6 +30,7 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 	[_item,false] call life_fnc_handleItem;
 	hint parseText format["Tu as vendu %1 pour <t color='#8cff9b'>$%2</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
 	[nil,(uiNamespace getVariable["Weapon_Shop_Filter",0])] call life_fnc_weaponShopFilter; //Update the menu.
+	[[format["%1 a vendu un %2 pour %3",name player,_itemInfo select 1,[_price] call life_fnc_numberText];]],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;
 }
 	else
 {
@@ -46,6 +47,7 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 		] call BIS_fnc_guiMessage;
 		if(_action) then {
 			hint parseText format["Tu as acheter %1 pour <t color='#8cff9b'>$%2</t> avec le compte du gang.",_itemInfo select 1,[_price] call life_fnc_numberText];
+			[[format["%1 a acheter un %2 pour %3 avec l'argent de son gang",name player,_itemInfo select 1,[_price] call life_fnc_numberText];]],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;
 			_funds = grpPlayer getVariable "gang_bank";
 			_funds = _funds - _price;
 			grpPlayer setVariable["gang_bank",_funds,true];
@@ -54,12 +56,14 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 		} else {
 			if(_price > life_liquide) exitWith {hint "Tu n'as pas assez d'argent!"};
 			hint parseText format["Tu as acheté %1 pour <t color='#8cff9b'>$%2</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
+
 			__SUB__(life_liquide,_price);
 			[_item,true] spawn life_fnc_handleItem;
 		};
 	} else {
 		if(_price > life_liquide) exitWith {hint "Tu n'as pas assez d'argent !"};
 		hint parseText format["Tu as acheté %1 pour <t color='#8cff9b'>$%2</t>",_itemInfo select 1,[_price] call life_fnc_numberText];
+
 		life_liquide = life_liquide - _price;
 		[_item,true] spawn life_fnc_handleItem;
 	};

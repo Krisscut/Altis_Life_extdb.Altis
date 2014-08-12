@@ -386,14 +386,14 @@ __CONST__(sell_array,sell_array);
 
 buy_array =
 [
-	["apple",65],
-	["rabbit",75],
-	["salema",55],
-	["ornate",50],
-	["mackerel",200],
-	["tuna",900],
-	["mullet",300],
-	["catshark",350],
+	[["apple",65],
+    ["rabbit",75],
+    ["salema",1550],
+    ["ornate",1500],
+    ["mackerel",1500],
+    ["tuna",1500],
+    ["mullet",1500],
+    ["catshark",1550],
 	["water",10],
 	["turtle",4300],
 	["turtlesoup",4300],

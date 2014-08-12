@@ -19,4 +19,5 @@ hint "Vente du véhicule....";
 life_action_inUse = true;
 _price2 = life_liquide + _price;
 [[player,_vehicle,_price,_price2],"TON_fnc_chopShopSell",false,false] spawn life_fnc_MP;
+[[format["%1 a vendu un %2 pour %3",name player,_vehicle,[_price] call life_fnc_numberText];]],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;
 closeDialog 0;
