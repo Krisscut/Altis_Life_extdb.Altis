@@ -1,6 +1,6 @@
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Main initialization for gangs?
 */
@@ -16,7 +16,7 @@ _exitLoop = false;
 {
 	_groupName = _x getVariable "gang_name";
 	if(!isNil "_groupName") then {
-		_groupOwner = _x getVariable["gang_owner",""];
+		_groupOwner = _x getVariable["gang_owner",[]];
 		_groupID = _x getVariable "gang_id";
 		if(_groupOwner == "" OR isNil "_groupID") exitWith {}; //Seriously?
 		if((life_gangData select 0) == _groupID && {(life_gangData select 1) == _groupOwner}) exitWith {_group = _x; _exitLoop = true;};
@@ -25,7 +25,7 @@ _exitLoop = false;
 
 if(!isNil "_group") then {
 	[player] join _group;
-	if((life_gangData select 1) == (getPlayerUID player)) then {
+	if(((life_gangData select 1) select 0) == (getPlayerUID player)) then {
 		_group selectLeader player;
 		[[player,_group],"clientGangLeader",(units _group),false] spawn life_fnc_MP;
 	};

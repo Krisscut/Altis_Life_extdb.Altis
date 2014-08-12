@@ -11,18 +11,21 @@ if(isNull (findDisplay 2620)) then {
 	if(!(createDialog "Life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
 };
 
-_ownerID = grpPlayer getVariable["gang_owner",""];
+_ownerID = grpPlayer getVariable["gang_owner",[]];
 if(_ownerID == "") exitWith {closeDialog 0;}; //Bad juju
 _gangName = grpPlayer getVariable "gang_name";
 _gangBank = grpPlayer getVariable "gang_bank";
 _gangMax = grpPlayer getVariable "gang_maxMembers";
 
-if(_ownerID != steamid) then {
+if(_ownerID select 0 != steamid) then {
 	(getControl(2620,2622)) ctrlEnable false; //Upgrade
-	(getControl(2620,2624)) ctrlEnable false; // Kick
 	(getControl(2620,2625)) ctrlEnable false; //Set New Leader
-	(getControl(2620,2630)) ctrlEnable false; //Invite Player
 	(getControl(2620,2631)) ctrlEnable false; //Disband Gang
+};
+
+if!(_ownerID in steamid) then {
+	(getControl(2620,2624)) ctrlEnable false; // Kick
+	(getControl(2620,2630)) ctrlEnable false; //Invite Player
 };
 
 (getControl(2620,2629)) ctrlSetText _gangName;
@@ -32,8 +35,8 @@ if(_ownerID != steamid) then {
 _members = getControl(2620,2621);
 lbClear _members;
 {
-	if((getPlayerUID _x) == _ownerID) then {
-		_members lbAdd format["%1 (Gang Leader)",(_x getVariable["realname",name _x])];
+	if((getPlayerUID _x) in _ownerID) then {
+		_members lbAdd format["%1 (Gang Controler)",(_x getVariable["realname",name _x])];
 		_members lbSetData [(lbSize _members)-1,str(_x)];
 	} else {
 		_members lbAdd format["%1",(_x getVariable["realname",name _x])];
