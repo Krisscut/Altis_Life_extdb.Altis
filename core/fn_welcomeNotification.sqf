@@ -9,7 +9,7 @@ format["Bienvenue %1",name player] hintC
 	"Bienvenue sur Involved-Gaming ! Plusieurs modifications ont été apportées dont tu dois avoir connaissance !",
 	"La touche d'interraction H a été introduite permettant de remplacer la plupart des actions molettes, cela augmentera les performances. Comme :",
 	"Ramasser des éléments: argent, pêche, réparation véhicule, interragir avec les joueurs, les véhicules",
-	"STAFF ARMA3: Asuri0n, Skydred, Creeps, Bloopis, Drey, Atomix, DoubleKaige, HeadNoiZ, Lambert, Graincheux, Serrat, Dada",
+	"STAFF ARMA3: Asuri0n, Skydred, Creeps, Atomix, DoubleKaige, HeadNoiZ, Lambert, Graincheux, Serrat, Jogau",
 	"NOUVEAUTES MISE A JOUR: Gang permanent, nouveau systeme de banque, cachette de gangs, ...",
 	"SITE WEB: www.involved-gaming.com",
 	"TEAMSPEAK: ts.involved-gaming.com",

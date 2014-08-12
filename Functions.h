@@ -99,6 +99,7 @@ class Life_Client_Core
 		class chemlightUse {};
 		class heal {};
 		class healHospital {};
+		class heal_target {}; //ajout serrat
 		class pushVehicle {};
 		class repairTruck {};
 		class serviceChopper {};

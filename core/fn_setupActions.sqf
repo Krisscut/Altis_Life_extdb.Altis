@@ -11,6 +11,7 @@ switch (playerSide) do
 		life_actions = [player addAction["Monter en tant que conducteur",life_fnc_copEnter,"driver",200,false,false,"",'!isNull cursorTarget && ((cursorTarget isKindOf "Car")||(cursorTarget isKindOf "Air")||(cursorTarget isKindOf "Ship")) && (locked cursorTarget) != 0 && cursorTarget distance player < 3.5']];
 		life_actions set [count life_actions,player addAction["Monter en tant que passager",life_fnc_copEnter,"passenger",100,false,false,"",'!isNull cursorTarget && ((cursorTarget isKindOf "Car")||(cursorTarget isKindOf "Air")||(cursorTarget isKindOf "Ship")) && (locked cursorTarget) != 0 && cursorTarget distance player < 3.5']];
 		life_actions set [count life_actions,player addAction["Sortir",life_fnc_copEnter,"exit",100,false,false,"",'(vehicle player != player) && (locked(vehicle player)==2)']];
+		life_actions = life_actions + [player addAction["<t color='#FF0000'>Se soigner</t>",life_fnc_heal,"",99,false,false,"",' vehicle player == player && (damage player) > 0 && ("Medikit" in (items player)) ']];
 	};
 
 	case civilian:
@@ -30,6 +31,8 @@ switch (playerSide) do
 	case independent:
 	{
 	life_actions = life_actions + [player addAction["Voir les inconscient",life_fnc_med,"",0,false,false,"",' playerside == independent ']];
+	life_actions = life_actions + [player addAction["<t color='#FF0000'>Se soigner</t>",life_fnc_heal,"",99,false,false,"",' vehicle player == player && (damage player) > 0 && ("Medikit" in (items player)) ']];
+	life_actions = life_actions + [player addAction["<t color='#FF0000'>Soigner la personne</t>",life_fnc_heal_target,"",99,false,false,"",' !isNull cursorTarget && player distance cursorTarget < 3.5 && vehicle player == player && (damage cursorTarget) > 0 && ("Medikit" in (items player)) ']];
 };
 };
 
