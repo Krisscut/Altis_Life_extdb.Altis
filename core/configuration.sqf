@@ -311,6 +311,8 @@ life_illegal_items = [
 ["bottledshine",11000],
 ["mash",5000],
 ["crystalmethpur",3600],
+["poudrehydroxyde",3600],
+["kitmeth",3600],
 ["goldbar",21000]
 ];
 
