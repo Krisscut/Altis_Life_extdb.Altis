@@ -39,7 +39,7 @@ if(_spawnPoint == "") exitWith {hint "Il y a un véhicule qui bloque le point de
 life_liquide = life_liquide - _basePrice;
 hint format["Tu as acheté %1 pour $%2",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_basePrice] call life_fnc_numberText];
 playSound "caching";
-[[format["%1 a acheter un %2 pour %3",name player,getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_basePrice] call life_fnc_numberText];]],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;
+[[format["%1 a acheter un %2 pour %3",name player,getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_basePrice] call life_fnc_numberText]],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;
 //Spawn the vehicle and prep it.
 	_vehicle = createVehicle [_className, (getMarkerPos _spawnPoint), [], 0, "NONE"];
 	waitUntil {!isNil "_vehicle"}; //Wait?
@@ -54,7 +54,8 @@ playSound "caching";
 	_vehicle setVariable["trunk_in_use",false,true];
 	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
 	_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
-
+	sleep 3;
+	_vehicle setdamage 0;
 //Side Specific actions.
 switch(playerSide) do {
 	case west: {
