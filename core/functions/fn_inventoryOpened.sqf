@@ -8,6 +8,18 @@ private["_container","_unit"];
 if(count _this == 1) exitWith {false};
 _unit = _this select 0;
 _container = _this select 1;
+_veh = vehicle player;
+
+if (_veh == player) Then {_veh = cursorTarget};
+if (locked _veh > 1) Then
+	{
+		hint "Impossible, vehicule fermé à clef !";
+		[] spawn {
+			waitUntil {!isNull (findDisplay 602)};
+			closeDialog 0;
+		};
+
+	};
 
 if (((playerSide == civilian) && (license_civ_rebel)) && (cursortarget getVariable "FAR_isUnconscious" == 1) or (cursortarget getVariable "restrained") or (cursortarget getVariable "playerSurrender")) then {
 hint "Ouverture du sac"; } else {

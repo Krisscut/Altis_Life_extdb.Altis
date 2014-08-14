@@ -43,6 +43,8 @@ FAR_HandleDamage_EH =
 		if ((side _killer == civilan) && (vehicle _killer isKindOf "LandVehicle")) then
 		 	{
 		[[getPlayerUID _killer,name _killer,"187V"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
+		systemChat format["%1 a été écrasé par %2", name _killed, name _killer];
+
 		 } else {
 		[[getPlayerUID _killer,name _killer,"187T"],"life_fnc_wantedAdd",false,false] spawn BIS_fnc_MP;
 		 };
@@ -69,7 +71,22 @@ FAR_Player_Unconscious =
 		publicVariable "FAR_deathMessage";
 		["FAR_deathMessage", [_unit, _killer]] call FAR_public_EH;
 	};
-
+		_curWep2 = currentWeapon player;
+		_curMags2 = magazines player;
+		_attach = if(primaryWeapon player != "") then {primaryWeaponItems _unit} else {[]};
+		{player removeMagazine _x} foreach _curMags2;
+		player removeWeapon _curWep2;
+		player addWeapon _curWep2;
+		if(count _attach != 0 && primaryWeapon _unit != "") then
+		{
+			{
+				_unit addPrimaryWeaponItem _x;
+			} foreach _attach;
+		};
+		if(count _curMags2 != 0) then
+		{
+			{player addMagazine _x;} foreach _curMags2;
+		};
 	titleText ["", "BLACK FADED"];
 
 	// Eject unit if inside vehicle
