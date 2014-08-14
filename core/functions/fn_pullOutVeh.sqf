@@ -2,7 +2,7 @@
 	File: fn_pullOutVeh.sqf
 	Author: Bryan "Tonic" Boardwine
 */
-if(playerSide == west) exitWith {};
+if(playerSide == west OR (vehicle player == player)) exitWith {};
 if(player getVariable "restrained") then
 {
 	detach player;
