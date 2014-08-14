@@ -36,6 +36,7 @@ switch (_className) do
 	case "B_Truck_01_box_F": {500};
 	case "B_Truck_01_transport_F": {325};
 	case "O_Truck_03_device_F": {350};
+	case "O_Truck_02_Ammo_F": {500}; //Zamak Labo au même niveau que le HEMTT Cargaison.
 	
 	case "B_Boat_Transport_01_F": {145};
 	case "B_G_Boat_Transport_01_F": {145};
