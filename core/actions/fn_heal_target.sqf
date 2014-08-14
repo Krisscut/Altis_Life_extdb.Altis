@@ -1,7 +1,7 @@
 /*
 	Serrat was here
 */
-if(!isNull cursorTarget) exitWith {};
+if(isNull cursorTarget) exitWith {};
 
 if(!("Medikit" in (items player))) exitWith {};
 if(playerSide == Civilian) then {player removeItem "Medikit"};
