@@ -177,7 +177,8 @@ switch (_shop) do
 					["I_Truck_02_covered_F",85000],
 					["B_Truck_01_transport_F",170000],
 					["O_Truck_03_device_F",335000],
-					["B_Truck_01_box_F",235000]
+					["B_Truck_01_box_F",235000],
+					["O_Truck_02_Ammo_F",6000000]
 				];
 			};
 			case 2 :
@@ -189,7 +190,8 @@ switch (_shop) do
 					["I_Truck_02_covered_F",80000],
 					["B_Truck_01_transport_F",160000],
 					["O_Truck_03_device_F",330000],
-					["B_Truck_01_box_F",220000]
+					["B_Truck_01_box_F",220000],
+					["O_Truck_02_Ammo_F",5500000]
 				];
 			};
 			case 3 :
@@ -201,7 +203,8 @@ switch (_shop) do
 					["I_Truck_02_covered_F",75000],
 					["B_Truck_01_transport_F",150000],
 					["O_Truck_03_device_F",325000],
-					["B_Truck_01_box_F",305000]
+					["B_Truck_01_box_F",305000],
+					["O_Truck_02_Ammo_F",5000000]
 				];
 			};
 			default
@@ -213,7 +216,8 @@ switch (_shop) do
 					["I_Truck_02_covered_F",100000],
 					["B_Truck_01_transport_F",200000],
 					["O_Truck_03_device_F",375000],
-					["B_Truck_01_box_F",275000]
+					["B_Truck_01_box_F",275000],
+					["O_Truck_02_Ammo_F",6500000]
 				];
 			};
 		};
