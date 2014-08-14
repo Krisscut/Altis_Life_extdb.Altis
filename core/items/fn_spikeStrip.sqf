@@ -16,6 +16,7 @@ life_spikestrip = _spikeStrip;
 waitUntil {isNull life_spikeStrip};
 if(!isNil "life_action_spikeStripDeploy") then {player removeAction life_action_spikeStripDeploy;};
 if(isNull _spikeStrip) exitWith {life_spikestrip = ObjNull;};
+sleep 5; //rajout serrat
 _spikeStrip setPos [(getPos _spikeStrip select 0),(getPos _spikeStrip select 1),0];
 _spikeStrip setDamage 1;
 life_action_spikeStripPickup = player addAction["Ramasser herse",life_fnc_packupSpikes,"",0,false,false,"",
