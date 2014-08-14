@@ -23,7 +23,7 @@ if(parseNumber(_amount) > life_liquide) exitWith {hint "Tu n'as pas assez d'obje
 if(isNull _unit) exitWith {ctrlShow[2001,true];};
 if(isNil "_unit") exitWith {ctrlShow[2001,true]; hint "Le joueur est hors de porter";};
 hint format["Tu as donné $%1 a %2",[(parseNumber(_amount))] call life_fnc_numberText,_unit getVariable["realname",name _unit]];
-[[format["%1 a donné %2 à %3",name player,[(parseNumber(_amount))] call life_fnc_numberText,_unit getVariable["realname",name _unit]];],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;
+[[format["%1 a donné %2 à %3",name player,[(parseNumber(_amount))] call life_fnc_numberText,_unit getVariable["realname",name _unit]]],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;
 life_liquide = life_liquide - (parseNumber(_amount));
 [] call SOCK_fnc_updateRequest;
 [[_unit,_amount,player],"life_fnc_receiveMoney",_unit,false] spawn life_fnc_MP;
