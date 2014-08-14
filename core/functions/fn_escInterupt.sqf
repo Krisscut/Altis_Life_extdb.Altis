@@ -44,7 +44,7 @@ _escSync = {
 };
 
 _canUseControls = {
-	if(playerSide == west) exitWith {true};
+
 	if((player getVariable["restrained",FALSE]) OR (player getVariable["Escorting",FALSE]) OR (player getVariable["transporting",FALSE]) OR (life_is_arrested) OR (life_istazed)) then {false} else {true};
 };
 
