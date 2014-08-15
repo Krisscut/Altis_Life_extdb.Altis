@@ -14,7 +14,7 @@
 #define Btn6 37455
 #define Btn7 37456
 #define Title 37401
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
+private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };
@@ -31,6 +31,7 @@ _Btn4 = _display displayCtrl Btn4;
 _Btn5 = _display displayCtrl Btn5;
 _Btn6 = _display displayCtrl Btn6;
 _Btn7 = _display displayCtrl Btn7;
+_Btn8 = _display displayCtrl Btn8;
 life_vInact_curTarget = _curTarget;
 
 //Set Repair Action
@@ -53,6 +54,7 @@ if(playerSide == west) then {
 
 	_Btn6 ctrlShow false;//insurance buton
 	_Btn7 ctrlShow false;//device mine
+	_Btn8 ctrlShow false;//Zamak Labo Process
 
 	_Btn3 ctrlSetText localize "STR_vInAct_SearchVehicle";
 	_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_vehInvSearch;";
@@ -83,6 +85,20 @@ if(playerSide == west) then {
 		};
 	} else {
 		_Btn7 ctrlShow false;
+	};
+	
+	//Zamak Labo
+	if(typeOf _curTarget == "O_Truck_02_Ammo_F") then {
+		_Btn8 ctrlSetText "Process";
+		_Btn8 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_vehProcessIllega";
+		/* Komodo: Commenté, aucune idée de ce que ça fait!
+		if(!isNil {(_curTarget getVariable "mining")} OR !local _curTarget && {_curTarget in life_vehicles}) then {
+			_Btn8 ctrlEnable false;
+		} else {
+		*/
+		_Btn8 ctrlEnable true;
+	} else {
+		_Btn8 ctrlShow false;
 	};
 
 	if(__GETC__(life_adminlevel) == 0) then {
