@@ -7,7 +7,7 @@
 	Here I assume that transformation doesn't increases the weight taken by items to simplify code.
 */
 
-private["_vehicle","_zone","_weight","_vInv","_items","_space","_itemInfo","_itemIndex","_value","_oldItem","_oldItemName","_newItem","_objectsInVehicle","_playersInVehicle","_upp","_itemIndex","_ui","_progress","_pgText","_progress","_cP"];
+private["_vehicle","_zone","_weight","_vInv","_items","_space","_itemInfo","_itemIndex","_value","_oldItem","_oldItemName","_newItem","_objectsInVehicle","_playersInVehicle","_upp","_itemIndex","_ui","_progress","_pgText","_progress","_cP","_smoke"];
 _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 //-------- Section to check if process is feasible.
@@ -67,13 +67,14 @@ _cP = 0.01;
 hint "Les laborantins sont en action, attention aux fumées nocives!";
 
 //Might need here a better method for controling process time.
+_smoke = "test_EmptyObjectForSmoke" createVehicle getPos _vehicle;
 while{true} do
 	{
-		if(!alive _vehicle OR isNull _vehicle) exitWith {};
-		if(isEngineOn _vehicle) exitWith {hint "Allumer le moteur a arrêté le travail en cours.";};
+		if(!alive _vehicle OR isNull _vehicle) exitWith {deleteVehicle _smoke;};
+		if(isEngineOn _vehicle) exitWith {hint "Allumer le moteur a arrêté le travail en cours."; deleteVehicle _smoke;};
 		_objectsInVehicle = attachedObjects _vehicle;
 		_playersInVehicle = "Man" countType _objectsInVehicle;
-		if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites."; life_action_inUse = false;};
+		if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites."; deleteVehicle _smoke;};
 		
 		sleep  0.3;
 		_cP = _cP + 0.01;
@@ -94,5 +95,6 @@ if(local _vehicle) then {
 } else {
 	[[_vehicle,(fuel _vehicle)-0.5],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
 };
-
+//Might need to delete this smoke at another time in case script ends before end.
+deleteVehicle _smoke;
 _vehicle setVariable["process",nil,true];
