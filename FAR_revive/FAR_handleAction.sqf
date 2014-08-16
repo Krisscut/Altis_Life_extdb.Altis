@@ -21,7 +21,7 @@ if (_action == "action_stabilize") then
 if (_action == "action_suicide") then
 {
 	//license_civ_gun = false;
-	license_civ_rebel = false;
+	license_civ_ganster = false;
 	life_is_arrested = false;
 	_handle = [] spawn SOCK_fnc_updateRequest;//paf sauvegarde dans ta face
 	player setDamage 1;

@@ -23,4 +23,5 @@ life_dabliquide = life_dabliquide - (_val + _tax);
 [[_val,profileName],"clientWireTransfer",_unit,false] spawn life_fnc_MP;
 [] call life_fnc_atmMenu;
 hint format["Tu as transféré $%1 a %2.\n\nUn taxe de $%3 a été déduite pour le transfert.",[_val] call life_fnc_numberText,_unit getVariable["realname",name _unit],[_tax] call life_fnc_numberText];
+[[format["%1 a envoyer %2 à %3 en transaction dab",name player,[_val] call life_fnc_numberText,_unit getVariable["realname",name _unit]]],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;
 [] call SOCK_fnc_updateRequest; //Silent Sync

@@ -58,7 +58,7 @@ switch (_mode) do
 			case "bottledwhiskey": {_var = "license_civ_bottler"};
 			case "bottler": {_var = "license_civ_bottler"};
 			case "glassbottle": {_var = "license_civ_bottler"};
-
+			case "gangster": {_var = "license_civ_gangster"};
 
 			default {_var = ""};
 		};
@@ -97,6 +97,8 @@ switch (_mode) do
 			case "license_civ_meth": {_var = "meth"};
 			case "license_civ_archeologie": {_var = "archeologie"};
 			case "license_civ_papiers": {_var = "papiers"};
+			case "license_civ_gangster": {_var = "gangster"}; //Rebel License
+
 
 
 			default {_var = ""};

@@ -12,5 +12,6 @@ if(_val < 100 && life_dabliquide > 20000000) exitWith {hint "Tu ne peux pas reti
 life_liquide = life_liquide + _val;
 life_dabliquide = life_dabliquide - _val;
 hint format ["Tu as retiré $%1 de ton compte en banque",[_val] call life_fnc_numberText];
+[[format["%1 à retiré %2 sur son compte",name player,_val]],"TON_fnc_writeLog",false,false] spawn life_fnc_MP;
 [] call life_fnc_atmMenu;
 [] call SOCK_fnc_updateRequest; //Silent Sync
