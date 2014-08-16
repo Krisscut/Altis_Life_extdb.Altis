@@ -19,20 +19,45 @@ _containers = nearestObjects[getPosATL _corpse,["WeaponHolderSimulated"],5]; //F
 _unit setVariable["restrained",FALSE,TRUE];
 _unit setVariable["Escorting",FALSE,TRUE];
 _unit setVariable["transporting",FALSE,TRUE]; //Again why the fuck am I setting this? Can anyone tell me?
-_unit setVariable["steam64id",(getPlayerUID player),true]; //Reset the UID.
-_unit setVariable["realname",profileName,true]; //Reset the players name.
-_unit setVariable ["FAR_isUnconscious", 0, true];
-_unit setVariable ["saveContact",ObjNull,true];
-_unit setVariable ["invisible",false,true];
-_unit setVariable ["lockRadar",0,true];
-_unit setVariable ["isknocked",false,true];
-_unit setVariable ["saveContact",ObjNull,true];
-_unit setVariable ["playerSurrender", false, true];
-_unit setVariable ["civrestrained",false,true];
-life_istazed = false;//added 04/26/2014
+life_is_arrested = false; // ajout
+//Load our gear as a cop incase something horrible happens
+
+/*if(playerSide == west) then {
+	[] spawn life_fnc_loadGear;
+};*/
+switch(playerSide) do
+{
+	case west:
+	{
+
+		player setVariable ["FAR_isUnconscious", 0, true];//added 04/26/2014
+	};
+
+	case civilian:
+	{
+		_unit setVariable["restrained",false,true];
+		_unit setVariable["Escorting",false,true];
+		_unit setVariable["transporting",false,true];
+		_unit setVariable ["FAR_isUnconscious", 0, true];//added 04/26/2014
+		life_istazed = false;//added 04/26/2014
+		if(headGear player != "") then {removeHeadgear player;};
+		if(goggles player != "") then {removeGoggles player;};
+	};
+	case independent:
+	{
+		_unit setVariable["restrained",false,true];
+		_unit setVariable["Escorting",false,true];
+		_unit setVariable["transporting",false,true];
+		player setVariable ["FAR_isUnconscious", 0, true];//added 04/26/2014
+		life_istazed = false;//added 04/26/2014
+		[] spawn life_fnc_loadGearm;
+	};
+};
 
 _unit addRating 9999999999999999; //Set our rating to a high value, this is for a ARMA engine thing.
 player playMoveNow "amovppnemstpsraswrfldnon";
 
 [] call life_fnc_setupActions;
 [[_unit,life_sidechat,playerSide],"TON_fnc_managesc",false,false] spawn life_fnc_MP;
+
+[] execVM "admintools\tools.sqf";
