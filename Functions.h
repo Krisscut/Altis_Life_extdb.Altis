@@ -368,7 +368,8 @@ class Life_Client_Core
 		file = "core\cop";
 		class copMarkers {};
 		class copLights {};
-		
+		class loadGear {};
+		class saveGear {};
 		class vehInvSearch {};
 		class copSearch {};
 		class bountyReceive {};
