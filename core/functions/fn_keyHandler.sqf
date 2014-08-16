@@ -322,6 +322,16 @@ switch (_code) do
 			};
 		};
 	};
+
+	//FIN // End Key
+	case 207:
+	{
+		if(__GETC__(life_adminlevel) != 0 && player getVariable["usingAdminMenu",0] != 0) then {
+			//Launch Admin menu
+			createDialog "life_admin_tools_main";
+			player setVariable ["am_usingAdminMenu", true, false];
+		};
+	};
 };
 
 _handled;
