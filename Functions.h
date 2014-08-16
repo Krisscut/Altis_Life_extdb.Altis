@@ -325,8 +325,8 @@ class Life_Client_Core
 		class jailMe {};
 		class jail {};
 		class tazed {};
-
-
+		class civFetchGear {};
+		class civLoadGear {};
 		class knockedOut {};
 		class knockoutAction {};
 		class robReceive {};
