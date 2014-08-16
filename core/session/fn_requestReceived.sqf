@@ -34,15 +34,14 @@ if(count (_this select 6) > 0) then {
 		missionNamespace setVariable [(_x select 0),(_x select 1)];
 	} foreach (_this select 6);
 };
-life_gear = _this select 8;
-[] call life_fnc_loadGear;
+
 //Parse side specific information.
 switch(playerSide) do {
 	case west: {
-		__CONST__(life_coplevel, parseNumber(_this select 7));
+		__CONST__(life_coplevel,parseNumber(_this select 7));
 		//__CONST__(life_serveur,parseNumber(_this select 10));
 		cop_gear = _this select 8;
-
+		[] spawn life_fnc_loadGear;
 		life_blacklisted = _this select 9;
 		__CONST__(life_medicLevel,0);
 	};
@@ -70,7 +69,7 @@ switch(playerSide) do {
 	};
 
 	case independent: {
-		__CONST__(life_medicLevel, parseNumber(_this select 7));
+		__CONST__(life_medicLevel,parseNumber(_this select 7));
 		__CONST__(life_copLevel,0);
 	};
 };

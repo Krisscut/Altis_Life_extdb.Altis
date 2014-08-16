@@ -164,6 +164,8 @@ if((life_clothing_purchase select 4) == -1) then
 };
 
 life_clothing_purchase = [-1,-1,-1,-1,-1];
-
-
-[] call life_fnc_saveGear;
+//Hotfix in for cop gear
+if(playerSide == west) then
+{
+	[] call life_fnc_saveGear;
+};
