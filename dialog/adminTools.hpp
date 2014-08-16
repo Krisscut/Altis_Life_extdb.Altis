@@ -814,7 +814,7 @@ class life_admin_tools_advancedMenu {
 			text = "";
 			sizeEx = 0.035;
 			//colorBackground[] = {0,0,0,0};
-			onLBSelChanged = "[_this] spawn life_am_fnc_queryPlayerInfo";
+			onLBSelChanged = "[_this] spawn life_fnc_queryPlayerInfo";
 			
 			x = -0.29; y = -0.22;
 			w = 0.39; h = 0.7;
@@ -877,7 +877,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9010;
 			text = "Observer";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn life_am_fnc_spectator;";
+			onButtonClick = "[] spawn life_fnc_spectator;";
 			x = 0.61; y = -0.22;
 			w = 0.17;
 			h = 0.04;
@@ -892,7 +892,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9011;
 			text = "TP vers lui";
 			
-			onButtonClick = "[] spawn life_am_fnc_tpToTarget;";
+			onButtonClick = "[] spawn life_fnc_tpToTarget;";
 			y = -0.16;
 		};
 
@@ -901,7 +901,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9012;
 			text = "TP à moi";
 			
-			onButtonClick = "[] spawn life_am_fnc_targetToMe;";
+			onButtonClick = "[] spawn life_fnc_targetToMe;";
 			y = -0.10;
 		};
 
@@ -911,7 +911,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9013;
 			text = "Tuer Cible";
 			
-			onButtonClick = "[] spawn life_am_fnc_killTarget;";
+			onButtonClick = "[] spawn life_fnc_killTarget;";
 			y = -0.04;
 		};
 
@@ -920,7 +920,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9014;
 			text = "Menotter";
 			
-			onButtonClick = "[] spawn life_am_fnc_restrainTarget;";
+			onButtonClick = "[] spawn life_fnc_restrainTarget;";
 			x = 0.79;
 			y = -0.22;
 		};
@@ -930,7 +930,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9015;
 			text = "TP véhicule";
 			
-			onButtonClick = "[] spawn life_am_fnc_getInTargetVehicle";
+			onButtonClick = "[] spawn life_fnc_getInTargetVehicle";
 			y = -0.16;
 		};
 
@@ -940,7 +940,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9016;
 			text = "Prison Troll";
 			
-			onButtonClick = "[] spawn life_am_fnc_putIntoJail";
+			onButtonClick = "[] spawn life_fnc_putIntoJail";
 			y = -0.10;
 		};
 
@@ -950,7 +950,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9017;
 			text = "PoteauTroll";
 			
-			onButtonClick = "[] spawn life_am_fnc_troll";
+			onButtonClick = "[] spawn life_fnc_troll";
 			y = -0.04;
 		};
 
@@ -960,7 +960,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9018;
 			text = "Rafraichir";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn life_am_fnc_refresh";
+			onButtonClick = "[] spawn life_fnc_refresh";
 			x = -0.25;
 			y = 0.50;
 			w = 0.28;
@@ -973,7 +973,7 @@ class life_admin_tools_advancedMenu {
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Close";
-			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
+			onButtonClick = "[] spawn life_fnc_closeMenu; closeDialog 0;";
 			x = -0.25;
 			y = 0.55;
 			w = 0.28;
