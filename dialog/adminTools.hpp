@@ -31,7 +31,7 @@ class life_admin_tools_main {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 4001;
-			text = "$STR_Admin_Tools_Title";
+			text = "Admin Menu - Accueil";
 			x = -0.3;
 			y = -0.34;
 			w = 0.8;
@@ -167,7 +167,7 @@ class life_admin_tools_TPmenu {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 4101;
-			text = "$STR_Admin_Tools_Title";
+			text = "Admin Menu - Remboursements";
 			x = -0.3;
 			y = -0.34;
 			w = 0.8;
@@ -177,7 +177,7 @@ class life_admin_tools_TPmenu {
 		class TPmap : Life_RscButtonMenu 
 		{
 			idc = 4102;
-			text = "$STR_Admin_Tools_TeleportSurveillance";
+			text = "Téléportation Map";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_gangNewLeader";
 			x = -0.2625;
@@ -193,7 +193,7 @@ class life_admin_tools_TPmenu {
 		class TPPlayer : TPmap
 		{
 			idc = 4103;
-			text = "$STR_Gang_Demote";
+			text = "TP Joueur";
 			onButtonClick = "createDialog 'life_admin_tools_advancedMenu'; closeDialog 0;";
 			y = -0.22;
 		};
@@ -201,7 +201,7 @@ class life_admin_tools_TPmenu {
 		class TPtoPlayer : TPmap
 		{
 			idc = 4104;
-			text = "$STR_Invite_Player";
+			text = "TP to player";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = -0.16;
 		};
@@ -209,7 +209,7 @@ class life_admin_tools_TPmenu {
 		class Spectator : TPmap
 		{
 			idc = 4105;
-			text = "$STR_Invite_Player";
+			text = "Spectateur";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = -0.1;
 		};
@@ -217,7 +217,7 @@ class life_admin_tools_TPmenu {
 		class GoIntoVehicule : TPmap
 		{
 			idc = 4106;
-			text = "$STR_Invite_Player";
+			text = "Monter véhicule";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = -0.04;
 		};
@@ -225,7 +225,7 @@ class life_admin_tools_TPmenu {
 		class ESPon : TPmap
 		{
 			idc = 4107;
-			text = "$STR_Invite_Player";
+			text = "ESP On";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = 0.02;
 		};
@@ -233,7 +233,7 @@ class life_admin_tools_TPmenu {
 		class ESPoff : TPmap
 		{
 			idc = 4108;
-			text = "$STR_Invite_Player";
+			text = "ESP Off";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = 0.08;
 		};
@@ -285,7 +285,7 @@ class life_admin_tools_remboursements {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 4201;
-			text = "$STR_Admin_Tools_Title";
+			text = "Admin Menu - remboursements";
 			x = -0.3;
 			y = -0.34;
 			w = 0.8;
@@ -295,7 +295,7 @@ class life_admin_tools_remboursements {
 		class resetLiquide : Life_RscButtonMenu 
 		{
 			idc = 4202;
-			text = "$STR_Admin_Tools_TeleportSurveillance";
+			text = "Reset Liquide";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_gangNewLeader";
 			x = -0.2625;
@@ -395,7 +395,7 @@ class life_admin_tools_godMenu {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 4301;
-			text = "$STR_Admin_Tools_Title";
+			text = "Admin Menu - God modes";
 			x = -0.3;
 			y = -0.34;
 			w = 0.8;
@@ -405,7 +405,7 @@ class life_admin_tools_godMenu {
 		class GodModOn : Life_RscButtonMenu 
 		{
 			idc = 4302;
-			text = "$STR_Admin_Tools_TeleportSurveillance";
+			text = "God mod ON";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_gangNewLeader";
 			x = -0.2625;
@@ -421,7 +421,7 @@ class life_admin_tools_godMenu {
 		class GodModOff : GodModOn
 		{
 			idc = 4303;
-			text = "$STR_Gang_Demote";
+			text = "God Mod OFF";
 			onButtonClick = "[] spawn life_fnc_gangGroupGestion; closeDialog 0;";
 			y = -0.22;
 		};
@@ -429,7 +429,7 @@ class life_admin_tools_godMenu {
 		class CarGodModOn : GodModOn
 		{
 			idc = 4304;
-			text = "$STR_Invite_Player";
+			text = "Car God mod ON";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = -0.16;
 		};
@@ -437,7 +437,7 @@ class life_admin_tools_godMenu {
 		class CarGodModOff : GodModOn
 		{
 			idc = 4305;
-			text = "$STR_Invite_Player";
+			text = "Car god mod OFF";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = -0.1;
 		};
@@ -445,7 +445,7 @@ class life_admin_tools_godMenu {
 		class InvisibleOn : GodModOn
 		{
 			idc = 4306;
-			text = "$STR_Invite_Player";
+			text = "Invisible ON";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = -0.04;
 		};
@@ -453,7 +453,7 @@ class life_admin_tools_godMenu {
 		class InvisibleOff : GodModOn
 		{
 			idc = 4307;
-			text = "$STR_Invite_Player";
+			text = "Invisible OFF";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = 0.02;
 		};
@@ -461,7 +461,7 @@ class life_admin_tools_godMenu {
 		class PousseMousse : GodModOn
 		{
 			idc = 4308;
-			text = "$STR_Invite_Player";
+			text = "Pousse mousse";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = 0.08;
 		};
@@ -469,7 +469,7 @@ class life_admin_tools_godMenu {
 		class SupprimerCible : GodModOn
 		{
 			idc = 4309;
-			text = "$STR_Invite_Player";
+			text = "Supprimer Cible";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = 0.14;
 		};
@@ -477,7 +477,7 @@ class life_admin_tools_godMenu {
 		class DestroyTarget : GodModOn
 		{
 			idc = 4310;
-			text = "$STR_Invite_Player";
+			text = "Detruire Cible";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = 0.20;
 		};
@@ -485,7 +485,7 @@ class life_admin_tools_godMenu {
 		class HealTarget : GodModOn
 		{
 			idc = 4311;
-			text = "$STR_Invite_Player";
+			text = "Reparer Cible";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = 0.26;
 		};
@@ -493,7 +493,7 @@ class life_admin_tools_godMenu {
 		class ReviveSelf : GodModOn
 		{
 			idc = 4312;
-			text = "$STR_Invite_Player";
+			text = "Se réanimer";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = 0.32;
 		};
@@ -501,7 +501,7 @@ class life_admin_tools_godMenu {
 		class Superman : GodModOn
 		{
 			idc = 4313;
-			text = "$STR_Invite_Player";
+			text = "Superman";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = 0.38;
 		};
@@ -555,7 +555,7 @@ class life_admin_tools_trollMenu {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 4401;
-			text = "$STR_Admin_Tools_Title";
+			text = "Admin Menu - Troll Menu";
 			x = -0.3;
 			y = -0.34;
 			w = 0.8;
@@ -565,7 +565,7 @@ class life_admin_tools_trollMenu {
 		class TPTrollAttach : Life_RscButtonMenu 
 		{
 			idc = 4402;
-			text = "$STR_Admin_Tools_TeleportSurveillance";
+			text = "Attacher troll";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_gangNewLeader";
 			x = -0.2625;
@@ -581,7 +581,7 @@ class life_admin_tools_trollMenu {
 		class DetachTarget : TPTrollAttach
 		{
 			idc = 4403;
-			text = "$STR_Gang_Demote";
+			text = "Détacher Troll";
 			onButtonClick = "[] spawn life_fnc_gangGroupGestion; closeDialog 0;";
 			y = -0.22;
 		};
@@ -589,7 +589,7 @@ class life_admin_tools_trollMenu {
 		class RestrainTarget : TPTrollAttach
 		{
 			idc = 4404;
-			text = "$STR_Invite_Player";
+			text = "Arreter Cible";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = -0.16;
 		};
@@ -597,7 +597,7 @@ class life_admin_tools_trollMenu {
 		class UnrestrainTarget : TPTrollAttach
 		{
 			idc = 4405;
-			text = "$STR_Invite_Player";
+			text = "Demenotter Cible";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = -0.1;
 		};
@@ -605,7 +605,7 @@ class life_admin_tools_trollMenu {
 		class SendToJail : TPTrollAttach
 		{
 			idc = 4406;
-			text = "$STR_Invite_Player";
+			text = "Envoyer en prison";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = -0.04;
 		};
@@ -613,7 +613,7 @@ class life_admin_tools_trollMenu {
 		class UnrestrainSelf : TPTrollAttach
 		{
 			idc = 4407;
-			text = "Démenotter";
+			text = "Se Démenotter";
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = 0.02;
 		};
@@ -665,7 +665,7 @@ class life_admin_tools_vehiculeMenu {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 4501;
-			text = "$STR_Admin_Tools_Title";
+			text = "Admin Menu - Spawn Véhicule";
 			x = -0.3;
 			y = -0.34;
 			w = 0.8;
@@ -715,7 +715,7 @@ class life_admin_tools_vehiculeMenu {
 		class SpawnButton : Life_RscButtonMenu 
 		{
 			idc = 4504;
-			text = "$STR_Admin_Tools_TeleportSurveillance";
+			text = "Spawner !";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_gangNewLeader";
 			x = -0.2625;
@@ -751,7 +751,7 @@ class life_admin_tools_advancedMenu {
 	name= "life_admin_tools_advancedMenu";
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] spawn life_am_fnc_loading;";
+	onLoad = "[] spawn life_am_fnc_loading; hint 'Lancement MENU';";
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
