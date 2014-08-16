@@ -22,3 +22,5 @@ lbClear _list;
 	_list lbSetdata [(lbSize _list)-1,str(_x)];
 } foreach playableUnits;
 if(__GETC__(life_adminlevel) < 1) exitWith {closeDialog 0;};
+
+ctrlSetText[9030,"Rafraichissement terminé"];

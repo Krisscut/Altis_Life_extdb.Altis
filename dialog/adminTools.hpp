@@ -797,6 +797,16 @@ class life_admin_tools_advancedMenu {
 			h = (1 / 25);
 		};
 
+		class Title : Life_RscTitle {
+			colorBackground[] = {0, 0, 0, 0};
+			idc = 9030;
+			text = "Interface Information";
+			x = 0.41;
+			y = -0.34;
+			w = 0.8;
+			h = (1 / 25);
+		};
+
 		class ListeJoueurs : Life_RscText
 		{
 			idc = 9003;
@@ -834,7 +844,7 @@ class life_admin_tools_advancedMenu {
 		class PlayerBInfo : Life_RscStructuredText
 		{
 			idc = 9006;
-			text = "TEST STRUCTUTRED TEXT ...............................................................................................................................................................................................................................................................";
+			text = "TO BE DONE";
 			x = 0.12;
 			y = -0.22;
 			w = 0.41;
