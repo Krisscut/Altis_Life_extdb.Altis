@@ -3,20 +3,21 @@
 	Author: S.lambert
 
 	Description:
-	Delete var on player about usingAdminMenu
+	Spectator of the player
 */
 
 private["_unit","_mycv"];
 
-if (!isNil {player getVariable ["am_unitTargeted"]}) then
+if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 {
-	_unit = player getVariable ["am_unitTargeted"];
+	_unit = player getVariable ["am_unitTargeted",false];
 	_mycv = cameraView;
 	F3_EH = (findDisplay 46) displayAddEventHandler ["KeyDown","if ((_this select 1) == 0x3D) then {spectate = false;};"];
-	(vehicle _x) switchCamera "EXTERNAL";
+	(vehicle _unit) switchCamera "EXTERNAL";
+	spectate = true;
 	titleText ["Observation... Appuyer sur F3 pour quitter","PLAIN DOWN"];
 	titleFadeOut 10;
-	waitUntil { !(alive _x) or !(alive player) or !(spectate)};
+	waitUntil { !(alive _unit) or !(alive player) or !(spectate)};
 	(findDisplay 46) displayRemoveEventHandler ["KeyDown", F3_EH];
 	player switchCamera _mycv;
 
