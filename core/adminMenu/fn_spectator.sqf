@@ -7,11 +7,10 @@
 */
 
 private["_unit","_mycv"];
-_unit = player getVariable ["am_unitTargeted",false];
 
-if (_unit != false) then
+if (!isNil {player getVariable ["am_unitTargeted"]}) then
 {
-
+	_unit = player getVariable ["am_unitTargeted"];
 	_mycv = cameraView;
 	F3_EH = (findDisplay 46) displayAddEventHandler ["KeyDown","if ((_this select 1) == 0x3D) then {spectate = false;};"];
 	(vehicle _x) switchCamera "EXTERNAL";
@@ -24,6 +23,7 @@ if (_unit != false) then
 	spectate = false;
 	if (!spectate) then
 	{
-		titleText ["Retour au joueur...","PLAIN DOWN"];titleFadeOut 4;
+		titleText ["Retour au joueur...","PLAIN DOWN"];
+		titleFadeOut 4;
 	};
 };
