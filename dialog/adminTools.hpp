@@ -43,7 +43,7 @@ class life_admin_tools_main {
 			idc = 4002;
 			text = "TP / Observation";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "createDialog 'life_admin_tools_TPmenu'; closeDialog 0;";
+			onButtonClick = "closeDialog 0; createDialog 'life_admin_tools_TPmenu';";
 			x = -0.2625;
 			y = -0.28;
 			w = (9 / 40);
@@ -194,7 +194,7 @@ class life_admin_tools_TPmenu {
 		{
 			idc = 4103;
 			text = "TP Joueur";
-			onButtonClick = "createDialog 'life_admin_tools_advancedMenu'; closeDialog 0;";
+			onButtonClick = "closeDialog 0; createDialog 'life_admin_tools_advancedMenu'; ";
 			y = -0.22;
 		};
 
