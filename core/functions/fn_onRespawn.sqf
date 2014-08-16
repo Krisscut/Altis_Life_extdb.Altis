@@ -23,7 +23,6 @@ switch(playerSide) do
 	{
 
 		player setVariable ["FAR_isUnconscious", 0, true];//added 04/26/2014
-		[] spawn life_fnc_loadgear;
 	};
 
 	case civilian:
@@ -46,7 +45,6 @@ switch(playerSide) do
 		if(headGear player != "") then {removeHeadgear player;};
 		if(goggles player != "") then {removeGoggles player;};
 		if (license_civ_depanneur && (str player) in ["Depanneur_1","Depanneur_2","Depanneur_3","Depanneur_4","Depanneur_5"]) Then {[] execVM "core\initDepaneur.sqf"};
-		[] spawn life_fnc_loadgear;
 	};
 	case independent:
 	{
@@ -80,5 +78,5 @@ _unit addRating 100000;
 [] call life_fnc_hudUpdate;
 cutText ["","BLACK IN"];
 
-
+[] call life_fnc_civFetchGear;
 [] execVM "admintools\activate.sqf";
