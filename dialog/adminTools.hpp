@@ -751,7 +751,7 @@ class life_admin_tools_advancedMenu {
 	name= "life_admin_tools_advancedMenu";
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] spawn life_fnc_loading; hint 'Lancement MENU';";
+	onLoad = "[] spawn life_fnc_loading;";
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {

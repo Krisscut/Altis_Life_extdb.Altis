@@ -79,7 +79,7 @@ class Life_Client_Core
 		file = "core\adminMenu";
 
 		class loading {};
-		class adminInfo {};
+		class parseradmininfo {};
 		class queryPlayerInfo {};
 		class spectator {};
 		class tpToTarget {};
