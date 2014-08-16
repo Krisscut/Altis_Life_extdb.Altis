@@ -55,7 +55,7 @@ switch(playerSide) do {
 		__CONST__(life_medicLevel,0);
 		life_houses = _this select 9;
 		//__CONST__(life_serveur,parseNumber(_this select 9));
-
+		[] spawn life_fnc_civLoadGear;
 
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);

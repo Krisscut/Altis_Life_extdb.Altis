@@ -44,7 +44,7 @@ life_inv_crystal_meth = ObjNull;//added 05/11/2014
 life_inv_crystal_meth_pur = ObjNull;//added 05/11/2014
 
 //Persistent Saving
-__CONST__(life_save_civ,TRUE); //Save weapons for civs?
+__CONST__(life_save_civ,FALSE); //Save weapons for civs?
 __CONST__(life_save_yinv,TRUE); //Save Y-Inventory for civs and cops? (Medics excluded for now)
 
 //Revive constant variables.
