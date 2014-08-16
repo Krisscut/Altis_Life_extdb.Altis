@@ -751,7 +751,7 @@ class life_admin_tools_advancedMenu {
 	name= "life_admin_tools_advancedMenu";
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] spawn life_am_fnc_loading; hint 'Lancement MENU';";
+	onLoad = "[] spawn life_fnc_loading; hint 'Lancement MENU';";
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
@@ -814,7 +814,7 @@ class life_admin_tools_advancedMenu {
 			text = "";
 			sizeEx = 0.035;
 			//colorBackground[] = {0,0,0,0};
-			onLBSelChanged = "_this spawn life_am_fnc_queryPlayerInfo";
+			onLBSelChanged = "[_this] spawn life_am_fnc_queryPlayerInfo";
 			
 			x = -0.29; y = -0.22;
 			w = 0.39; h = 0.7;

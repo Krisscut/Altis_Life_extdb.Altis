@@ -72,13 +72,15 @@ class Life_Client_Core
 		class adminMenu {};
 		class adminQuery {};
 	};
+
 	class AdminMenu
 	{
-		tag ="am";
+
 		file = "core\adminMenu";
 
 		class loading {};
 		class adminInfo {};
+		class queryPlayerInfo {};
 		class spectator {};
 		class tpToTarget {};
 		class targetToMe {};
@@ -87,7 +89,6 @@ class Life_Client_Core
 		class getInTargetVehicle {};
 		class putIntoJail {};
 		class troll {};
-		class queryPlayerInfo {};
 		class refresh {};
 		class closeMenu {};
 	};

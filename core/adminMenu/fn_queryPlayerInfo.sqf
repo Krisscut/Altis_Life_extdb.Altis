@@ -15,6 +15,6 @@ _info = lbData[9004,lbCurSel (9004)];
 _info = call compile format["%1", _info];
 if(isNil "_info") exitWith {_text ctrlSetText "Joueur a disparu?";};
 if(isNull _info) exitWith {_text ctrlSetText "Joueur a disparu?";};
-[[player],"am_fnc_player_query",_info,false] spawn life_fnc_MP;
+[[player],"fnc_adminMenu_player_query",_info,false] spawn life_fnc_MP;
 _text ctrlSetText "Recherche joueur......";
 

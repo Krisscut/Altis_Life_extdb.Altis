@@ -1,5 +1,5 @@
 /*
-	File: fn_admininfo.sqf  and content from  spawnPointSelected.sqf
+	File: fn_admininfo.sqf  and content from  fn_admininfo.sqf && spawnPointSelected.sqf
 	Author: Bryan "Tonic" Boardwine && S.Lambert
 
 	Description:
