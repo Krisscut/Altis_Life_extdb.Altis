@@ -1,31 +1,33 @@
 /*
-    File: fn_civLoadGear.sqf
+    File: fn_loadGear.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:
     Loads saved civilian gear, this is limited for a reason and that's balance.
 */
 private["_itemArray","_uniform","_vest","_backpack","_goggles","_headgear","_items","_prim","_seco","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_bMags","_vMags","_handle"];
-_itemArray = civ_gear;
+_itemArray = life_gear;
 waitUntil {!(isNull (findDisplay 46))};
+
+_handle = [] spawn life_fnc_stripDownPlayer;
+waitUntil {scriptDone _handle};
+
 if(count _itemArray == 0) exitWith
 {
-    if(headGear player != "") then {removeHeadgear player;};
-    if(goggles player != "") then {removeGoggles player;};
-};
+    switch(playerSide) do {
+        case west: {
+            [] call life_fnc_copLoadout;
+        };
 
-//Strip the unit down
-RemoveAllWeapons player;
-{player removeMagazine _x;} foreach (magazines player);
-removeUniform player;
-removeVest player;
-removeBackpack player;
-removeGoggles player;
-removeHeadGear player;
-{
-    player unassignItem _x;
-    player removeItem _x;
-} foreach (assignedItems player);
+        case civilian: {
+            [] call life_fnc_civLoadout;
+        };
+
+        case independent: {
+            [] call life_fnc_medicLoadout;
+        };
+    };
+};
 
 _uniform = [_itemArray,0,"",[""]] call BIS_fnc_param;
 _vest = [_itemArray,1,"",[""]] call BIS_fnc_param;
@@ -69,9 +71,12 @@ if(_backpack != "") then {_handle = [_backpack,true,false,false,false] spawn lif
 {(vestContainer player) addItemCargoGlobal [_x,1];} foreach (_vMags);
 {player addItemToBackpack _x;} foreach (_bItems);
 {(backpackContainer player) addItemCargoGlobal [_x,1];} foreach (_bMags);
+life_maxWeight = 100;
+life_maxWeightT = 100;
 
 {
     _item = [_x,1] call life_fnc_varHandle;
     [true,_item,1] call life_fnc_handleInv;
 } foreach (_yItems);
-
+life_maxWeight = 24;
+life_maxWeightT = 24;

@@ -13,6 +13,8 @@ _flag = switch(playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case 
 } foreach life_licenses;
 
 _packet set[count _packet,_array];
+[] call life_fnc_saveGear;
+_packet set[count _packet, life_gear];
 switch (playerSide) do {
 	case west: {_packet set[count _packet,cop_gear];};
 	case civilian: {

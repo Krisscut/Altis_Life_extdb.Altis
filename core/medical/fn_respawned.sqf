@@ -1,17 +1,17 @@
 /*
 	File: fn_respawned.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Sets the player up if he/she used the respawn option.
 */
-
+private["_handle"];
 //Reset our weight and other stuff
 life_use_atm = TRUE;
 life_hunger = 100;
 life_thirst = 100;
 life_carryWeight = 0;
-life_liquide = 0; //Make sure we don't get our cash back.
+life_cash = 0; //Make sure we don't get our cash back.
 life_respawned = false;
 player playMove "amovpercmstpsnonwnondnon";
 
@@ -25,13 +25,16 @@ player setVariable["Reviving",nil,TRUE];
 //Load gear for a 'new life'
 switch(playerSide) do
 {
-	case west: {[] spawn life_fnc_loadGear;};
+	case west: {
+		_handle = [] spawn life_fnc_copLoadout;
+	};
 	case civilian: {
-		[] call life_fnc_civFetchGear;
+		_handle = [] spawn life_fnc_civLoadout;
 	};
 	case independent: {
-		[] call life_fnc_medicLoadout;
+		_handle = [] spawn life_fnc_medicLoadout;
 	};
+	waitUntil {scriptDone _handle};
 };
 
 //Cleanup of weapon containers near the body & hide it.
@@ -67,4 +70,4 @@ if(life_removeWanted) then {
 };
 
 [] call SOCK_fnc_updateRequest;
-[] call life_fnc_hudUpdate; //Request update of hud.
+[] call life_fnc_hudUpdate; //Request update of hud.<

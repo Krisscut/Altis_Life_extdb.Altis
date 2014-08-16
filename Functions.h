@@ -190,7 +190,7 @@ class Life_Client_Core
 		class eatFood {};
 		class varHandle {};
 		class varToStr {};
-		class copDefault {};
+
 		class impoundPrice {};
 		class itemWeight {};
 		class taxRate {};
@@ -249,7 +249,7 @@ class Life_Client_Core
 		class handleInv {};
 		class hudSetup {};
 		class hudUpdate {};
-		class fetchGear{};
+
 		class tazeSound {};
 		class animSync {};
 		class simDisable {};
@@ -281,7 +281,9 @@ class Life_Client_Core
 		class inventoryClosed {};
 		class inventoryOpened {};
 		class isUIDActive {};
-
+		class saveGear {};
+		class loadGear {};
+		class stripDownPlayer {};
 		class playSound {};//added 05/11/2014
 		class delLicense {};//added 05/11/2014
 		class sendCivilMsg {};//added 05/11/2014
@@ -333,7 +335,7 @@ class Life_Client_Core
 		class removeLicenses {};
 		class zoneCreator {};
 		class demoChargeTimer {};
-		
+		class civLoadout {};
 		class houseSoundClose {};
 		class houseSoundOpen {};
 		class sendCommercialMsg {};
@@ -387,7 +389,7 @@ class Life_Client_Core
 		class repairDoor {};
 		class doorAnimate {};
 		class fedCamDisplay {};
-		
+		class copLoadout {};
 		class copBeep {};
 		class waitSound {};
 

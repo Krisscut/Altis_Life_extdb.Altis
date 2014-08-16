@@ -82,8 +82,7 @@ if(_val) then {removeGoggles player;_onceDelete = true;};
 
 //we refresh the player
 //[] call life_fnc_sessionUpdate;
-[] call life_fnc_civFetchGear;
-[] call life_fnc_civLoadGear;
+[] call life_fnc_saveGear;
 [] call SOCK_fnc_updateRequest; //call our silent sync.
 
 if(_onceDelete) then {titleText["Vos habits et objets ont été saisies par la police comme pieces à convictions.","PLAIN"];};

@@ -29,7 +29,7 @@ switch(playerSide) do
 {
 	case west:
 	{
-		[] spawn life_fnc_loadGear;
+
 		player setVariable ["FAR_isUnconscious", 0, true];//added 04/26/2014
 	};
 

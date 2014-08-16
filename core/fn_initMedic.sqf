@@ -15,7 +15,7 @@ waitUntil {!(isNull (findDisplay 46))};
 		sleep 35;
 	};
 
-[] call life_fnc_medicLoadout;
+
 [] call life_fnc_spawnMenu;
 [] execVM "admintools\activate.sqf";
 
