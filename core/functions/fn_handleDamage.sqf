@@ -33,8 +33,9 @@ if(!isNull _source) then {
 					if(!life_istazed && !(_unit getVariable["restrained",false])) then {
 						if(_isVehicle && _isQuad) then {
 							player action ["Eject",vehicle player];
-							[_unit,_source] spawn life_fnc_tazed;
-						} else {
+							[_unit,_source] spawn life_fnc_tazed;};
+						if(_isVehicle) exitWith {};
+						if (!_isVehicle && !_isQuad) then {
 							[_unit,_source] spawn life_fnc_tazed;
 						};
 					};
