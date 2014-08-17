@@ -9,6 +9,7 @@ class life_admin_tools_main {
 		class Life_RscTitleBackground:Life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
+			moving = 1;  
 			x = -0.3;
 			y = -0.34;
 			w = 0.3;
@@ -18,6 +19,7 @@ class life_admin_tools_main {
 		class MainBackground:Life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
+			moving = 1;  
 			x = -0.3;
 			y = -0.34 + (11 / 250);
 			w = 0.3;
@@ -143,6 +145,7 @@ class life_admin_tools_TPmenu {
 		class Life_RscTitleBackground:Life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
+			moving = 1;  
 			x = -0.3;
 			y = -0.34;
 			w = 0.3;
@@ -155,7 +158,7 @@ class life_admin_tools_TPmenu {
 			x = -0.3;
 			y = -0.34 + (11 / 250);
 			w = 0.3;
-			h = 0.38;
+			h = 0.30;
 		};
 	};
 	
@@ -856,9 +859,10 @@ class life_admin_tools_advancedMenu {
 		class Life_RscTitleBackground:Life_RscText {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
+			moving = 1;  
 			x = -0.3;
 			y = -0.34;
-			w = 1.3;
+			w = 1.0;
 			h = (1 / 25);
 		};
 		
@@ -869,6 +873,7 @@ class life_admin_tools_advancedMenu {
 			y = -0.34 + (11 / 250);
 			w = 1.3;
 			h = 0.9;
+			moving = 1;  
 		};
 
 		class MapView : Life_RscMapControl 
@@ -1017,7 +1022,7 @@ class life_admin_tools_advancedMenu {
 		class Deplacer : Spectateur 
 		{
 			idc = 9050;
-			text = "Deplacer Cible";
+			text = "Deplacer";
 			
 			onButtonClick = "hint 'Not implemented yet'";
 			y = -0.04;
@@ -1038,7 +1043,7 @@ class life_admin_tools_advancedMenu {
 			text = "Reanimer";
 			
 			onButtonClick = "hint 'Not implemented yet';";
-			y = 0.02;
+			y = 0.08;
 		};
 
 		class Soigner : Spectateur 
@@ -1047,7 +1052,7 @@ class life_admin_tools_advancedMenu {
 			text = "Soigner";
 			
 			onButtonClick = "hint 'Not implemented yet';";
-			y = 0.02;
+			y = 0.14;
 		};
 
 
@@ -1084,7 +1089,7 @@ class life_admin_tools_advancedMenu {
 		class EjectFromVehicle : Menotter 
 		{
 			idc = 9054;
-			text = "TP véhicule";
+			text = "Eject véhicule";
 			
 			onButtonClick = "hint 'Not implemented yet';";
 			y = -0.04;
@@ -1103,20 +1108,20 @@ class life_admin_tools_advancedMenu {
 		class ExtractFromJail : Menotter 
 		{
 			idc = 9055;
-			text = "Sortir de prison";
+			text = "Sortir Prison";
 			
 			onButtonClick = "hint 'Not implemented yet';";
-			y = 0.02;
+			y = 0.08;
 		};
 
 
 		class Troll : Menotter 
 		{
 			idc = 9017;
-			text = "PoteauTroll";
+			text = "Poteau Troll";
 			
 			onButtonClick = "[] spawn life_fnc_troll";
-			y = 0.06;
+			y = 0.14;
 		};
 
 

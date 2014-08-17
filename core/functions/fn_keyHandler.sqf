@@ -337,6 +337,7 @@ switch (_code) do
 	{
 		if(__GETC__(life_adminlevel) != 0) then {
 			//Launch Admin menu
+			hint 'DETRUIRE CIBLE KEY HANDLER';
 			player execVM 'admintools\tools\DestroyIT.sqf';
 		};
 
