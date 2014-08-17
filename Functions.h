@@ -84,10 +84,16 @@ class Life_Client_Core
 		class spectator {};
 		class tpToTarget {};
 		class targetToMe {};
+		class moveTarget {};
 		class killTarget {};
+		class reviveTarget {};
+		class healTarget {};
 		class restrainTarget {};
+		class unrestrainTarget {};
 		class getInTargetVehicle {};
+		class ejectTargetFromVehicle {};
 		class putIntoJail {};
+		class extractFromJail {};
 		class troll {};
 		class refresh {};
 		class closeMenu {};

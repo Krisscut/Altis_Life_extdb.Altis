@@ -155,10 +155,11 @@ class life_admin_tools_TPmenu {
 		class MainBackground:Life_RscText {
 			colorBackground[] = {0, 0, 0, 0.7};
 			idc = -1;
+			moving = 1;  
 			x = -0.3;
 			y = -0.34 + (11 / 250);
 			w = 0.3;
-			h = 0.30;
+			h = 0.32;
 		};
 	};
 	
@@ -252,6 +253,7 @@ class life_admin_tools_remboursements {
 			y = -0.34;
 			w = 0.3;
 			h = (1 / 25);
+			moving = 1;  
 		};
 		
 		class MainBackground:Life_RscText {
@@ -261,6 +263,7 @@ class life_admin_tools_remboursements {
 			y = -0.34 + (11 / 250);
 			w = 0.3;
 			h = 0.38;
+			moving = 1;  
 		};
 	};
 	
@@ -361,6 +364,7 @@ class life_admin_tools_altisMenu {
 			y = -0.34;
 			w = 0.3;
 			h = (1 / 25);
+			moving = 1;  
 		};
 		
 		class MainBackground:Life_RscText {
@@ -370,6 +374,7 @@ class life_admin_tools_altisMenu {
 			y = -0.34 + (11 / 250);
 			w = 0.3;
 			h = 0.44;
+			moving = 1;  
 		};
 	};
 	
@@ -479,6 +484,7 @@ class life_admin_tools_godMenu {
 			y = -0.34;
 			w = 0.3;
 			h = (1 / 25);
+			moving = 1;  
 		};
 		
 		class MainBackground:Life_RscText {
@@ -488,6 +494,7 @@ class life_admin_tools_godMenu {
 			y = -0.34 + (11 / 250);
 			w = 0.3;
 			h = 0.726;
+			moving = 1;  
 		};
 	};
 	
@@ -639,6 +646,7 @@ class life_admin_tools_trollMenu {
 			y = -0.34;
 			w = 0.3;
 			h = (1 / 25);
+			moving = 1;  
 		};
 		
 		class MainBackground:Life_RscText {
@@ -648,6 +656,7 @@ class life_admin_tools_trollMenu {
 			y = -0.34 + (11 / 250);
 			w = 0.3;
 			h = 0.38;
+			moving = 1;  
 		};
 	};
 	
@@ -749,6 +758,7 @@ class life_admin_tools_vehiculeMenu {
 			y = -0.34;
 			w = 0.3;
 			h = (1 / 25);
+			moving = 1;  
 		};
 		
 		class MainBackground:Life_RscText {
@@ -758,6 +768,7 @@ class life_admin_tools_vehiculeMenu {
 			y = -0.34 + (11 / 250);
 			w = 0.3;
 			h = 0.31;
+			moving = 1;  
 		};
 	};
 	
@@ -862,7 +873,7 @@ class life_admin_tools_advancedMenu {
 			moving = 1;  
 			x = -0.3;
 			y = -0.34;
-			w = 1.0;
+			w = 1.3;
 			h = (1 / 25);
 		};
 		
@@ -991,7 +1002,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9010;
 			text = "Observer";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn life_fnc_spectator;";
+			onButtonClick = "[] spawn life_fnc_spectator; closeDialog 0; createDialog 'life_admin_tools_spectatorMenu'; ";
 			x = 0.61; y = -0.22;
 			w = 0.17;
 			h = 0.04;
@@ -1024,7 +1035,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9050;
 			text = "Deplacer";
 			
-			onButtonClick = "hint 'Not implemented yet'";
+			onButtonClick = "[] spawn life_fnc_moveTarget;";
 			y = -0.04;
 		};
 
@@ -1042,7 +1053,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9051;
 			text = "Reanimer";
 			
-			onButtonClick = "hint 'Not implemented yet';";
+			onButtonClick = "[] spawn life_fnc_reviveTarget;";
 			y = 0.08;
 		};
 
@@ -1051,7 +1062,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9052;
 			text = "Soigner";
 			
-			onButtonClick = "hint 'Not implemented yet';";
+			onButtonClick = "[] spawn life_fnc_healTarget;";
 			y = 0.14;
 		};
 
@@ -1071,7 +1082,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9053;
 			text = "Demenotter";
 			
-			onButtonClick = "hint 'Not implemented yet';";
+			onButtonClick = "[] spawn life_fnc_unrestrainTarget;";
 			x = 0.79;
 			y = -0.16;
 		};
@@ -1091,7 +1102,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9054;
 			text = "Eject véhicule";
 			
-			onButtonClick = "hint 'Not implemented yet';";
+			onButtonClick = "[] spawn life_fnc_ejectTargetFromVehicle;";
 			y = -0.04;
 		};
 
@@ -1110,7 +1121,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9055;
 			text = "Sortir Prison";
 			
-			onButtonClick = "hint 'Not implemented yet';";
+			onButtonClick = "[] spawn life_fnc_extractFromJail;";
 			y = 0.08;
 		};
 
@@ -1153,6 +1164,111 @@ class life_admin_tools_advancedMenu {
 			{
 				align = "center";
 			};
+		};
+	};
+};
+
+
+
+//###############################################
+class life_admin_tools_spectatorMenu{
+	idd = 4600;
+	name= "life_admin_tools_spectatorMenu";
+	movingEnable = true;
+	enableSimulation = true;
+	onLoad = "";
+	
+	class controlsBackground {
+		class Life_RscTitleBackground:Life_RscText {
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			idc = -1;
+			moving = 1;  
+			x = 0.7;
+			y = 0.66;
+			w = 0.3;
+			h = (1 / 25);
+		};
+		
+		class MainBackground:Life_RscText {
+			colorBackground[] = {0, 0, 0, 0.7};
+			idc = -1;
+			moving = 1;  
+			x = 0.7;
+			y = 0.66 + (11 / 250);
+			w = 0.3;
+			h = 0.32;
+		};
+	};
+	
+	class controls {
+
+		
+		class Title : Life_RscTitle {
+			colorBackground[] = {0, 0, 0, 0};
+			idc = 4601;
+			text = "Admin Menu - Spectator Menu";
+			x = 0.7;
+			y = 0.66;
+			w = 0.8;
+			h = (1 / 25);
+		};
+
+		class Menotter : Life_RscButtonMenu 
+		{
+			idc = 4602;
+			text = "Menotter";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			onButtonClick = "[] spawn life_fnc_restrainTarget;";
+			x = 0.7375;
+			y = 0.72;
+			w = (9 / 40);
+			h = (1 / 25);
+			class Attributes
+			{
+				align = "center";
+			};
+		};
+
+		class Tuer : Menotter
+		{
+			idc = 4603;
+			text = "Tuer";
+			onButtonClick = "[] spawn life_fnc_killTarget; closeDialog 0; ";
+			y = 0.78;
+		};
+
+		class TPToMe : Menotter
+		{
+			idc = 4604;
+			text = "Tp to me";
+			onButtonClick = "[] spawn life_fnc_targetToMe;";
+			y = 0.84;
+		};
+
+		class TPToTarget : Menotter
+		{
+			idc = 4605;
+			text = "TP to target";
+			onButtonClick = "[] spawn life_fnc_tpToTarget;";
+			y = 0.90;
+		};
+
+		class Prison : Menotter
+		{
+			idc = 4606;
+			text = "Prison";
+			onButtonClick = "[] spawn life_fnc_putIntoJail;";
+			y = 0.96;
+		};
+
+		class CloseButtonKey : Life_RscButtonMenu {
+			idc = -1;
+			text = "$STR_Global_Close";
+			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
+			x = 0.7;
+			y = 1.02;
+			w = (6.25 / 40);
+			h = (1 / 25);
 		};
 	};
 };
