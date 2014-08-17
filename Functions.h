@@ -97,7 +97,6 @@ class Life_Client_Core
 		class troll {};
 		class mapRefresh {};
 		class refresh {};
-		class mapRefresh {};
 		class closeMenu {};
 
 	};
