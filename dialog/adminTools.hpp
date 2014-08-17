@@ -41,7 +41,7 @@ class life_admin_tools_main {
 		class Teleport : Life_RscButtonMenu 
 		{
 			idc = 4002;
-			text = "TP / Observation";
+			text = "Moderation";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "closeDialog 0; createDialog 'life_admin_tools_TPmenu';";
 			x = -0.2625;
@@ -81,24 +81,24 @@ class life_admin_tools_main {
 		class Vehicules : Teleport
 		{
 			idc = 4006;
-			text = "Véhicules";
-			onButtonClick = "closeDialog 0;";
+			text = "Spawn Véhicules";
+			onButtonClick = "hint 'Not implemented yet'";
 			y = -0.04;
 		};
 
 		class Armes : Teleport
 		{
 			idc = 4007;
-			text = "Armes";
-			onButtonClick = "closeDialog 0;";
+			text = "Spawn Armes";
+			onButtonClick = "hint 'Not implemented yet'";
 			y = 0.02;
 		};
 
 		class Equipements : Teleport
 		{
 			idc = 4008;
-			text = "Equipements";
-			onButtonClick = "closeDialog 0;";
+			text = "Spawn Equipements";
+			onButtonClick = "hint 'Not implemented yet'";
 			y = 0.08;
 		};
 
@@ -106,7 +106,7 @@ class life_admin_tools_main {
 		{
 			idc = 4009;
 			text = "Events";
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "hint 'Not implemented yet'";
 			y = 0.14;
 		};
 
@@ -114,7 +114,7 @@ class life_admin_tools_main {
 		{
 			idc = 4010;
 			text = "Construction";
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "hint 'Not implemented yet'";
 			y = 0.20;
 		};
 
@@ -129,8 +129,6 @@ class life_admin_tools_main {
 		};
 	};
 };
-
-
 
 
 //###############################################
@@ -157,7 +155,7 @@ class life_admin_tools_TPmenu {
 			x = -0.3;
 			y = -0.34 + (11 / 250);
 			w = 0.3;
-			h = 0.245;
+			h = 0.38;
 		};
 	};
 	
@@ -167,7 +165,7 @@ class life_admin_tools_TPmenu {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 4101;
-			text = "Admin Menu - Remboursements";
+			text = "Admin Menu - Moderation Menu";
 			x = -0.3;
 			y = -0.34;
 			w = 0.8;
@@ -193,7 +191,7 @@ class life_admin_tools_TPmenu {
 		class InterfaceSurveillance : TPmap
 		{
 			idc = 4103;
-			text = "Menu Moderation Avancé";
+			text = "Moderation Joueur";
 			onButtonClick = "closeDialog 0; createDialog 'life_admin_tools_advancedMenu'; ";
 			y = -0.22;
 		};
@@ -445,7 +443,7 @@ class life_admin_tools_altisMenu {
 		{
 			idc = 4207;
 			text = "Life Objets Menu";
-			onButtonClick = "";
+			onButtonClick = "hint 'Not implemented yet'";
 			y = 0.08;
 		};
 
@@ -717,7 +715,7 @@ class life_admin_tools_trollMenu {
 			text = "Se Démenotter";
 			onButtonClick = "player execVM 'admintools\troll\SeDemenotter.sqf';";
 			y = 0.02;
-		};SeDemenotter
+		};
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
@@ -945,7 +943,7 @@ class life_admin_tools_advancedMenu {
 		class PlayerBInfo : Life_RscStructuredText
 		{
 			idc = 9006;
-			text = "TO BE DONE";
+			text = "";
 			x = 0.12;
 			y = -0.22;
 			w = 0.41;
@@ -967,7 +965,7 @@ class life_admin_tools_advancedMenu {
 		class Aliases : PlayerBInfo
 		{
 			idc = 9008;
-			text = "TEST STRUCTUTRED TEXT autres pseudos.................................................................................................................................................................";
+			text = "Not Implemented yet";
 			x = 0.12;
 			y = 0.48;
 			h = 0.2;
@@ -1016,6 +1014,14 @@ class life_admin_tools_advancedMenu {
 			y = -0.10;
 		};
 
+		class Deplacer : Spectateur 
+		{
+			idc = 9050;
+			text = "Deplacer Cible";
+			
+			onButtonClick = "hint 'Not implemented yet'";
+			y = -0.04;
+		};
 
 		class KillTarget : Spectateur 
 		{
@@ -1023,8 +1029,27 @@ class life_admin_tools_advancedMenu {
 			text = "Tuer Cible";
 			
 			onButtonClick = "[] spawn life_fnc_killTarget;";
-			y = -0.04;
+			y = 0.02;
 		};
+
+		class Reanimer : Spectateur 
+		{
+			idc = 9051;
+			text = "Reanimer";
+			
+			onButtonClick = "hint 'Not implemented yet';";
+			y = 0.02;
+		};
+
+		class Soigner : Spectateur 
+		{
+			idc = 9052;
+			text = "Soigner";
+			
+			onButtonClick = "hint 'Not implemented yet';";
+			y = 0.02;
+		};
+
 
 		class Menotter : Spectateur 
 		{
@@ -1036,13 +1061,33 @@ class life_admin_tools_advancedMenu {
 			y = -0.22;
 		};
 
+		class Demenotter : Spectateur 
+		{
+			idc = 9053;
+			text = "Demenotter";
+			
+			onButtonClick = "hint 'Not implemented yet';";
+			x = 0.79;
+			y = -0.16;
+		};
+
 		class GetInTargetVehicle : Menotter 
 		{
 			idc = 9015;
 			text = "TP véhicule";
 			
 			onButtonClick = "[] spawn life_fnc_getInTargetVehicle";
-			y = -0.16;
+			y = -0.10;
+		};
+
+
+		class EjectFromVehicle : Menotter 
+		{
+			idc = 9054;
+			text = "TP véhicule";
+			
+			onButtonClick = "hint 'Not implemented yet';";
+			y = -0.04;
 		};
 
 
@@ -1052,7 +1097,16 @@ class life_admin_tools_advancedMenu {
 			text = "Prison Troll";
 			
 			onButtonClick = "[] spawn life_fnc_putIntoJail";
-			y = -0.10;
+			y = 0.02;
+		};
+
+		class ExtractFromJail : Menotter 
+		{
+			idc = 9055;
+			text = "Sortir de prison";
+			
+			onButtonClick = "hint 'Not implemented yet';";
+			y = 0.02;
 		};
 
 
@@ -1062,7 +1116,7 @@ class life_admin_tools_advancedMenu {
 			text = "PoteauTroll";
 			
 			onButtonClick = "[] spawn life_fnc_troll";
-			y = -0.04;
+			y = 0.06;
 		};
 
 
