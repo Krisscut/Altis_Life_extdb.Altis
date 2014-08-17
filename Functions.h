@@ -91,6 +91,7 @@ class Life_Client_Core
 		class troll {};
 		class refresh {};
 		class closeMenu {};
+
 	};
 	class Medical_System
 	{

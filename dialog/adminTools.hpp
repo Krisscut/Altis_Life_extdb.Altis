@@ -58,7 +58,7 @@ class life_admin_tools_main {
 		{
 			idc = 4003;
 			text = "Remboursement";
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "closeDialog 0; createDialog 'life_admin_tools_remboursements';";
 			y = -0.22;
 		};
 
@@ -66,7 +66,7 @@ class life_admin_tools_main {
 		{
 			idc = 4004;
 			text = "God mods";
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "closeDialog 0;  createDialog 'life_admin_tools_godMenu';";
 			y = -0.16;
 		};
 
@@ -74,7 +74,7 @@ class life_admin_tools_main {
 		{
 			idc = 4005;
 			text = "Altis Menu";
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "closeDialog 0; createDialog 'life_admin_tools_altisMenu';";
 			y = -0.1;
 		};
 
@@ -157,7 +157,7 @@ class life_admin_tools_TPmenu {
 			x = -0.3;
 			y = -0.34 + (11 / 250);
 			w = 0.3;
-			h = 0.425;
+			h = 0.245;
 		};
 	};
 	
@@ -179,7 +179,7 @@ class life_admin_tools_TPmenu {
 			idc = 4102;
 			text = "Téléportation Map";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn life_fnc_gangNewLeader";
+			onButtonClick = "[] spawn life_fnc_teleport";
 			x = -0.2625;
 			y = -0.28;
 			w = (9 / 40);
@@ -190,52 +190,36 @@ class life_admin_tools_TPmenu {
 			};
 		};
 
-		class TPPlayer : TPmap
+		class InterfaceSurveillance : TPmap
 		{
 			idc = 4103;
-			text = "TP Joueur";
+			text = "Menu Moderation Avancé";
 			onButtonClick = "closeDialog 0; createDialog 'life_admin_tools_advancedMenu'; ";
 			y = -0.22;
-		};
-
-		class TPtoPlayer : TPmap
-		{
-			idc = 4104;
-			text = "TP to player";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
-			y = -0.16;
-		};
-
-		class Spectator : TPmap
-		{
-			idc = 4105;
-			text = "Spectateur";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
-			y = -0.1;
 		};
 
 		class GoIntoVehicule : TPmap
 		{
 			idc = 4106;
 			text = "Monter véhicule";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
-			y = -0.04;
+			onButtonClick = "player moveInAny cursorTarget;";
+			y = -0.16;
 		};
 
 		class ESPon : TPmap
 		{
 			idc = 4107;
 			text = "ESP On";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
-			y = 0.02;
+			onButtonClick = "player execVM 'admintools\tools\ESP.sqf';";
+			y = -0.10;
 		};
 
 		class ESPoff : TPmap
 		{
 			idc = 4108;
 			text = "ESP Off";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
-			y = 0.08;
+			onButtonClick = "player execVM 'admintools\tools\ESPoff.sqf';";
+			y = -0.04;
 		};
 
 		class CloseButtonKey : Life_RscButtonMenu {
@@ -243,7 +227,7 @@ class life_admin_tools_TPmenu {
 			text = "$STR_Global_Close";
 			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
 			x = -0.3;
-			y = 0.13;
+			y = 0.02;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
@@ -257,7 +241,7 @@ class life_admin_tools_remboursements {
 	name= "life_admin_tools_remboursements";
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] spawn life_fnc_adminMenu;";
+	onLoad = "";
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
@@ -297,7 +281,7 @@ class life_admin_tools_remboursements {
 			idc = 4202;
 			text = "Reset Liquide";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn life_fnc_gangNewLeader";
+			onButtonClick = "player execVM 'admintools\tools\moneyReset.sqf';";
 			x = -0.2625;
 			y = -0.28;
 			w = (9 / 40);
@@ -311,40 +295,40 @@ class life_admin_tools_remboursements {
 		class give200k : resetLiquide
 		{
 			idc = 4203;
-			text = "$STR_Gang_Demote";
-			onButtonClick = "[] spawn life_fnc_gangGroupGestion; closeDialog 0;";
+			text = "Donner 200k";
+			onButtonClick = "player execVM 'admintools\tools\money200.sqf';";
 			y = -0.22;
 		};
 
 		class give400k : resetLiquide
 		{
 			idc = 4204;
-			text = "$STR_Invite_Player";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			text = "Donner 400k";
+			onButtonClick = "player execVM 'admintools\tools\money400.sqf';";
 			y = -0.16;
 		};
 
 		class give800k : resetLiquide
 		{
 			idc = 4205;
-			text = "$STR_Invite_Player";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			text = "Donner 800k";
+			onButtonClick = "player execVM 'admintools\tools\money800.sqf';";
 			y = -0.1;
 		};
 
 		class atmOn : resetLiquide
 		{
 			idc = 4206;
-			text = "$STR_Invite_Player";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			text = "ATM ON";
+			onButtonClick = "player execVM 'admintools\life\ATMadminON.sqf';";
 			y = -0.04;
 		};
 
 		class atmOff : resetLiquide
 		{
 			idc = 4207;
-			text = "$STR_Invite_Player";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			text = "ATM OFF";
+			onButtonClick = "player execVM 'admintools\life\ATMadminOFF.sqf';";
 			y = 0.02;
 		};
 
@@ -360,6 +344,123 @@ class life_admin_tools_remboursements {
 	};
 };
 
+//###############################################
+class life_admin_tools_altisMenu {
+	idd = 4200;
+	name= "life_admin_tools_AltisMenu";
+	movingEnable = true;
+	enableSimulation = true;
+	onLoad = "";
+	
+	class controlsBackground {
+		class Life_RscTitleBackground:Life_RscText {
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			idc = -1;
+			x = -0.3;
+			y = -0.34;
+			w = 0.3;
+			h = (1 / 25);
+		};
+		
+		class MainBackground:Life_RscText {
+			colorBackground[] = {0, 0, 0, 0.7};
+			idc = -1;
+			x = -0.3;
+			y = -0.34 + (11 / 250);
+			w = 0.3;
+			h = 0.44;
+		};
+	};
+	
+	class controls {
+
+		
+		class Title : Life_RscTitle {
+			colorBackground[] = {0, 0, 0, 0};
+			idc = 4201;
+			text = "Admin Menu - Altis Menu";
+			x = -0.3;
+			y = -0.34;
+			w = 0.8;
+			h = (1 / 25);
+		};
+
+		class TrollMenu : Life_RscButtonMenu 
+		{
+			idc = 4202;
+			text = "Troll Menu";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			onButtonClick = "closeDialog 0; createDialog 'life_admin_tools_trollMenu';";
+			x = -0.2625;
+			y = -0.28;
+			w = (9 / 40);
+			h = (1 / 25);
+			class Attributes
+			{
+				align = "center";
+			};
+		};
+
+		class MettreEnFourriere : TrollMenu
+		{
+			idc = 4203;
+			text = "Mettre en fourriere";
+			onButtonClick = "player execVM 'admintools\life\impoundAction.sqf';";
+			y = -0.22;
+		};
+
+		class PlacerVendeurPerso : TrollMenu
+		{
+			idc = 4204;
+			text = "Placer Vendeur Perso";
+			onButtonClick = "player execVM 'admintools\life\spawnMarket.sqf';";
+			y = -0.16;
+		};
+
+		class ResetMarche : TrollMenu
+		{
+			idc = 4205;
+			text = "Reset marche";
+			onButtonClick = "player execVM 'admintools\life\resetmarche.sqf';";
+			y = -0.1;
+		};
+
+		class Revive : TrollMenu
+		{
+			idc = 4206;
+			text = "Réanimer Cible";
+			onButtonClick = "player execVM 'admintools\life\Revive.sqf';";
+			y = -0.04;
+		};
+
+		class LockUnlock : TrollMenu
+		{
+			idc = 4207;
+			text = "Lock/Unlock";
+			onButtonClick = "player execVM 'admintools\life\Unlock.sqf';";
+			y = 0.02;
+		};
+
+		class objetsInventaire : TrollMenu
+		{
+			idc = 4207;
+			text = "Life Objets Menu";
+			onButtonClick = "";
+			y = 0.08;
+		};
+
+
+		class CloseButtonKey : Life_RscButtonMenu {
+			idc = -1;
+			text = "$STR_Global_Close";
+			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
+			x = -0.3;
+			y = 0.14;
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+	};
+};
 
 //###############################################
 class life_admin_tools_godMenu {
@@ -367,7 +468,7 @@ class life_admin_tools_godMenu {
 	name= "life_admin_tools_godMenu";
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] spawn life_fnc_adminMenu;";
+	onLoad = "";
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
@@ -407,7 +508,7 @@ class life_admin_tools_godMenu {
 			idc = 4302;
 			text = "God mod ON";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn life_fnc_gangNewLeader";
+			onButtonClick = "player execVM 'admintools\tools\AdminON.sqf';";
 			x = -0.2625;
 			y = -0.28;
 			w = (9 / 40);
@@ -422,7 +523,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4303;
 			text = "God Mod OFF";
-			onButtonClick = "[] spawn life_fnc_gangGroupGestion; closeDialog 0;";
+			onButtonClick = "player execVM 'admintools\tools\AdminOFF.sqf';";
 			y = -0.22;
 		};
 
@@ -430,7 +531,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4304;
 			text = "Car God mod ON";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\tools\cargodON.sqf';";
 			y = -0.16;
 		};
 
@@ -438,7 +539,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4305;
 			text = "Car god mod OFF";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\tools\cargodOFF.sqf';";
 			y = -0.1;
 		};
 
@@ -446,7 +547,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4306;
 			text = "Invisible ON";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\tools\Invisible.sqf';";
 			y = -0.04;
 		};
 
@@ -454,7 +555,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4307;
 			text = "Invisible OFF";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\tools\InvisibleOFF.sqf';";
 			y = 0.02;
 		};
 
@@ -462,7 +563,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4308;
 			text = "Pousse mousse";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\tools\pushIT.sqf';";
 			y = 0.08;
 		};
 
@@ -470,7 +571,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4309;
 			text = "Supprimer Cible";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\tools\DeleteIT.sqf';";
 			y = 0.14;
 		};
 
@@ -478,7 +579,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4310;
 			text = "Detruire Cible";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\tools\DestroyIT.sqf';";
 			y = 0.20;
 		};
 
@@ -486,7 +587,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4311;
 			text = "Reparer Cible";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\tools\RepairIT.sqf';";
 			y = 0.26;
 		};
 
@@ -494,7 +595,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4312;
 			text = "Se réanimer";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\tools\Rez.sqf';";
 			y = 0.32;
 		};
 
@@ -502,7 +603,7 @@ class life_admin_tools_godMenu {
 		{
 			idc = 4313;
 			text = "Superman";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\tools\Superman.sqf';";
 			y = 0.38;
 		};
 
@@ -527,7 +628,7 @@ class life_admin_tools_trollMenu {
 	name= "life_admin_tools_trollMenu";
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] spawn life_fnc_adminMenu;";
+	onLoad = "";
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
@@ -567,7 +668,7 @@ class life_admin_tools_trollMenu {
 			idc = 4402;
 			text = "Attacher troll";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn life_fnc_gangNewLeader";
+			onButtonClick = "player execVM 'admintools\troll\AntiTrollon.sqf;";
 			x = -0.2625;
 			y = -0.28;
 			w = (9 / 40);
@@ -582,7 +683,7 @@ class life_admin_tools_trollMenu {
 		{
 			idc = 4403;
 			text = "Détacher Troll";
-			onButtonClick = "[] spawn life_fnc_gangGroupGestion; closeDialog 0;";
+			onButtonClick = "player execVM 'admintools\troll\AntiTrolloff.sqf';";
 			y = -0.22;
 		};
 
@@ -590,7 +691,7 @@ class life_admin_tools_trollMenu {
 		{
 			idc = 4404;
 			text = "Arreter Cible";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\troll\Menotter.sqf';";
 			y = -0.16;
 		};
 
@@ -598,7 +699,7 @@ class life_admin_tools_trollMenu {
 		{
 			idc = 4405;
 			text = "Demenotter Cible";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\troll\Demenotter.sqf';";
 			y = -0.1;
 		};
 
@@ -606,7 +707,7 @@ class life_admin_tools_trollMenu {
 		{
 			idc = 4406;
 			text = "Envoyer en prison";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\troll\prison.sqf';";
 			y = -0.04;
 		};
 
@@ -614,9 +715,9 @@ class life_admin_tools_trollMenu {
 		{
 			idc = 4407;
 			text = "Se Démenotter";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			onButtonClick = "player execVM 'admintools\troll\SeDemenotter.sqf';";
 			y = 0.02;
-		};
+		};SeDemenotter
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
@@ -797,7 +898,7 @@ class life_admin_tools_advancedMenu {
 			h = (1 / 25);
 		};
 
-		class Title : Life_RscTitle {
+		class TitleInfo : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 9030;
 			text = "Interface Information";

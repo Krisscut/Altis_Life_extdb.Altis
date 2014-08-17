@@ -331,6 +331,16 @@ switch (_code) do
 			createDialog "life_admin_tools_main";
 		};
 	};
+
+	//SUPPR - Raccourci de destruction rapide
+	case 211:
+	{
+		if(__GETC__(life_adminlevel) != 0) then {
+			//Launch Admin menu
+			player execVM 'admintools\tools\DestroyIT.sqf';
+		};
+
+	};
 };
 
 _handled;

@@ -11,7 +11,7 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 {
 	_unit = player getVariable ["am_unitTargeted",false];
 
-	if (vehicle _unit != _unit) //unité dans un véhicule
+	if (vehicle _unit != _unit) then//unité dans un véhicule
 	{
 		(vehicle _unit) setPos (getPos player);
 	}
