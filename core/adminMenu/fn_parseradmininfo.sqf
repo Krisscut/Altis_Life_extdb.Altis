@@ -41,3 +41,6 @@ _map = _display displayCtrl 9001;
 
 /* MAJ local var to _unit */
 player setVariable ["am_unitTargeted",_unit,false];
+
+/* Launch auto-update */
+[] spawn life_fnc_mapRefresh;

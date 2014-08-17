@@ -226,8 +226,8 @@ class life_admin_tools_TPmenu {
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
+			text = "Retour";
+			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0; createDialog 'life_admin_tools_main';";
 			x = -0.3;
 			y = 0.02;
 			w = (6.25 / 40);
@@ -338,8 +338,8 @@ class life_admin_tools_remboursements {
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
+			text = "Retour";
+			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0; createDialog 'life_admin_tools_main';";
 			x = -0.3;
 			y = 0.08;
 			w = (6.25 / 40);
@@ -458,8 +458,8 @@ class life_admin_tools_altisMenu {
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
+			text = "Retour";
+			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0; createDialog 'life_admin_tools_main';";
 			x = -0.3;
 			y = 0.14;
 			w = (6.25 / 40);
@@ -617,8 +617,8 @@ class life_admin_tools_godMenu {
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
+			text = "Retour";
+			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0; createDialog 'life_admin_tools_main';";
 			x = -0.3;
 			y = 0.43;
 			w = (6.25 / 40);
@@ -731,8 +731,8 @@ class life_admin_tools_trollMenu {
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
+			text = "Retour";
+			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0; createDialog 'life_admin_tools_altisMenu';";
 			x = -0.3;
 			y = 0.08;
 			w = (6.25 / 40);
@@ -843,8 +843,8 @@ class life_admin_tools_vehiculeMenu {
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
+			text = "Retour";
+			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0; createDialog 'life_admin_tools_main';";
 			x = -0.3;
 			y = 0.02;
 			w = (6.25 / 40);
@@ -1135,7 +1135,6 @@ class life_admin_tools_advancedMenu {
 			y = 0.14;
 		};
 
-
 		class Refresh : Life_RscButtonMenu 
 		{
 			idc = 9018;
@@ -1153,8 +1152,8 @@ class life_admin_tools_advancedMenu {
 		};
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "[] spawn life_fnc_closeMenu; closeDialog 0;";
+			text = "Retour";
+			onButtonClick = "[] spawn life_fnc_closeMenu; closeDialog 0; createDialog 'life_admin_tools_TPmenu';";
 			x = -0.25;
 			y = 0.55;
 			w = 0.28;
@@ -1196,7 +1195,7 @@ class life_admin_tools_spectatorMenu{
 			x = 0.7;
 			y = 0.66 + (11 / 250);
 			w = 0.3;
-			h = 0.32;
+			h = 0.38;
 		};
 	};
 	
@@ -1261,14 +1260,12 @@ class life_admin_tools_spectatorMenu{
 			y = 0.96;
 		};
 
-		class CloseButtonKey : Life_RscButtonMenu {
-			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;";
-			x = 0.7;
+		class EjecterVehicule : Menotter
+		{
+			idc = 4607;
+			text = "Prison";
+			onButtonClick = "[] spawn life_fnc_ejectTargetFromVehicle;";
 			y = 1.02;
-			w = (6.25 / 40);
-			h = (1 / 25);
 		};
 	};
 };

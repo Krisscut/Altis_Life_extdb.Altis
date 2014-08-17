@@ -95,7 +95,9 @@ class Life_Client_Core
 		class putIntoJail {};
 		class extractFromJail {};
 		class troll {};
+		class mapRefresh {};
 		class refresh {};
+		class mapRefresh {};
 		class closeMenu {};
 
 	};

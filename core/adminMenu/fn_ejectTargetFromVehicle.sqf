@@ -14,7 +14,7 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 
 	if (vehicle _unit != _unit) then
 	{
-		_crew = crew _vehicle;
+		_crew = crew (vehicle _unit);
 		{
 			_x setVariable ["transporting",false,true];
 			_x setVariable ["Escorting",false,true];
