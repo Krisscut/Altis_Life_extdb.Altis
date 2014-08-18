@@ -16,7 +16,7 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 
 	_map = _display displayCtrl 9001;
 	[_map,1,0.1,getPos _unit] call life_fnc_setMapPosition;
-	_markerstr = [format["%1",name _unit]];
+	_markerstr = format["%1",name _unit];
 	_marker = createMarkerLocal [_markerstr, getPos _unit];
 	_marker setMarkerShapeLocal "ICON";
 	_marker setMarkerTypeLocal "mil_triangle";

@@ -99,7 +99,7 @@ class Life_Client_Core
 		class refresh {};
 		class closeMenu {};
 
-		class launchRedCode {};
+		class launchCode {};
 
 	};
 	class Medical_System

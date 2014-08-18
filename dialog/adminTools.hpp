@@ -108,7 +108,7 @@ class life_admin_tools_main {
 		{
 			idc = 4009;
 			text = "Events";
-			onButtonClick = "hint 'Not implemented yet'";
+			onButtonClick = "createDialog 'life_admin_tools_eventsMenu'";
 			y = 0.14;
 		};
 
@@ -811,7 +811,7 @@ class life_admin_tools_eventsMenu {
 		class CodeRouge : Haillon
 		{
 			idc = 524;
-			text = "Arreter Cible";
+			text = "Code Rouge";
 			onButtonClick = "[1] spawn life_fnc_launchCode;";
 			y = -0.16;
 		};
@@ -819,7 +819,7 @@ class life_admin_tools_eventsMenu {
 		class CodeFrini : Haillon
 		{
 			idc = 5205;
-			text = "Demenotter Cible";
+			text = "Code Frini";
 			onButtonClick = "[2] spawn life_fnc_launchCode;";
 			y = -0.1;
 		};
@@ -828,7 +828,7 @@ class life_admin_tools_eventsMenu {
 		{
 			idc = 5206;
 			text = "Stopper Code";
-			onButtonClick = "spawn fn_desactivateMsg.sqf;";
+			onButtonClick = "spawn fn_desactivateMsg;";
 			y = -0.04;
 		};
 
