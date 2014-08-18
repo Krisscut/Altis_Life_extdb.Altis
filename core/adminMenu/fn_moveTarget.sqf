@@ -27,7 +27,9 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 		};
 		onMapSingleClick "";
 			ctrlSetText[9030,format["Joueur %1 envoyé aux coordonénes %2/%3/%4", name _unit,_pos select 0,_pos select 1,_pos select 2]];
+		openMap[false,false];
 	};
 
 	onMapSingleClick "[_pos select 0, _pos select 1, _pos select 2] call moveTarget";
+	openMap[true,false];
 };

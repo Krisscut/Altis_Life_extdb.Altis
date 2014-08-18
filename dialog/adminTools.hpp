@@ -732,7 +732,118 @@ class life_admin_tools_trollMenu {
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
 			text = "Retour";
-			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0; createDialog 'life_admin_tools_altisMenu';";
+			onButtonClick = "[] spawn life_fnc_closeMenu; closeDialog 0; createDialog 'life_admin_tools_altisMenu';";
+			x = -0.3;
+			y = 0.08;
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+	};
+};
+
+//###############################################
+class life_admin_tools_eventsMenu {
+	idd = 5200;
+	name= "life_admin_tools_eventsMenu";
+	movingEnable = true;
+	enableSimulation = true;
+	onLoad = "";
+	
+	class controlsBackground {
+		class Life_RscTitleBackground:Life_RscText {
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			idc = -1;
+			x = -0.3;
+			y = -0.34;
+			w = 0.3;
+			h = (1 / 25);
+			moving = 1;  
+		};
+		
+		class MainBackground:Life_RscText {
+			colorBackground[] = {0, 0, 0, 0.7};
+			idc = -1;
+			x = -0.3;
+			y = -0.34 + (11 / 250);
+			w = 0.3;
+			h = 0.38;
+			moving = 1;  
+		};
+	};
+	
+	class controls {
+
+		
+		class Title : Life_RscTitle {
+			colorBackground[] = {0, 0, 0, 0};
+			idc = 5201;
+			text = "Admin Menu - Events Menu";
+			x = -0.3;
+			y = -0.34;
+			w = 0.8;
+			h = (1 / 25);
+		};
+
+		class Haillon : Life_RscButtonMenu 
+		{
+			idc = 5202;
+			text = "Placer Haillons";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			onButtonClick = "player execVM 'admintools\event\hatchback.sqf.sqf;";
+			x = -0.2625;
+			y = -0.28;
+			w = (9 / 40);
+			h = (1 / 25);
+			class Attributes
+			{
+				align = "center";
+			};
+		};
+
+		class Chiens : Haillon
+		{
+			idc = 5203;
+			text = "Animaux";
+			onButtonClick = "hint 'Not implemented Yet';";
+			y = -0.22;
+		};
+
+		class CodeRouge : Haillon
+		{
+			idc = 524;
+			text = "Arreter Cible";
+			onButtonClick = "[1] spawn life_fnc_launchCode;";
+			y = -0.16;
+		};
+
+		class CodeFrini : Haillon
+		{
+			idc = 5205;
+			text = "Demenotter Cible";
+			onButtonClick = "[2] spawn life_fnc_launchCode;";
+			y = -0.1;
+		};
+
+		class DesactiverAlerte : Haillon
+		{
+			idc = 5206;
+			text = "Stopper Code";
+			onButtonClick = "spawn fn_desactivateMsg.sqf;";
+			y = -0.04;
+		};
+
+		class MouvementsMenu : Haillon
+		{
+			idc = 5207;
+			text = "Mouvements";
+			onButtonClick = "hint 'Not implemented yet';";
+			y = 0.02;
+		};
+
+		class CloseButtonKey : Life_RscButtonMenu {
+			idc = -1;
+			text = "Retour";
+			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;  createDialog 'life_admin_tools_main';";
 			x = -0.3;
 			y = 0.08;
 			w = (6.25 / 40);

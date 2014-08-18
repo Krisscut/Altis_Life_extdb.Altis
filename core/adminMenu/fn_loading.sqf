@@ -25,3 +25,21 @@ lbClear _list;
 if(__GETC__(life_adminlevel) < 1) exitWith {closeDialog 0;};
 
 ctrlSetText[9030,"Chargement interface terminé"];
+
+/* disable all buttons */
+ctrlEnable[9010,false];		//spectateur
+ctrlEnable[9011,false];		//tpToTarget
+ctrlEnable[9012,false];		//targetToMe
+ctrlEnable[9050,false];		//Deplacer
+ctrlEnable[9013,false];		//KillTarget
+ctrlEnable[9051,false];		//Réanimer
+ctrlEnable[9052,false];		//Soigner
+
+ctrlEnable[9014,false];		//menotter
+ctrlEnable[9053,false];		//Demenotter
+ctrlEnable[9015,false];		//GetInTargetVehicle
+ctrlEnable[9054,false];		//EjectFrom Vehicle
+ctrlEnable[9016,false];		//Put IntoJail
+ctrlEnable[9055,false];		//extractFrom Jail
+ctrlEnable[9017,false];		//Troll
+

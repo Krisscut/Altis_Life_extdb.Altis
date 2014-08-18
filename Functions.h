@@ -99,6 +99,8 @@ class Life_Client_Core
 		class refresh {};
 		class closeMenu {};
 
+		class launchRedCode {};
+
 	};
 	class Medical_System
 	{
@@ -323,7 +325,8 @@ class Life_Client_Core
 		class RadarAuto {};// ajout GreeFine
 		class randomRound {}; //ajout Serrat
 		class fatigueReset {}; //ajout Serrat rien
-        
+        	
+        class displayCode {};
 
 		
 	};
