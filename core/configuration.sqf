@@ -576,6 +576,7 @@ life_price_insurance =
     ["I_Truck_02_medical_F",18000],
     ["O_Truck_03_medical_F",20000],
     ["B_Truck_01_medical_F",22000],
-    ["O_Truck_03_device_F",80000]
+    ["O_Truck_03_device_F",80000],
+    ["O_Truck_02_Ammo_F",5000000] //Komodo: assurance existante, mais au prix d'achat ;)
 ];
 __CONST__(life_price_insurance,life_price_insurance);
