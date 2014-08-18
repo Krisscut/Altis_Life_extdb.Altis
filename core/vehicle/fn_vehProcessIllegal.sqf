@@ -22,7 +22,7 @@ if((_weight select 1) == 0) exitWith {hint "Ce véhicule est vide."; life_action
 //Number of players in the Lab. Should be 2 or more.
 _objectsInVehicle = attachedObjects _vehicle;
 _playersInVehicle = "Man" countType _objectsInVehicle;
-if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum."; life_action_inUse = false;};
+//if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum."; life_action_inUse = false;};
 if (fuel _vehicle < 0.50) exitWith {hint "Il n'y a pas assez d'essence pour permettre au labo de fonctionner.";};
 
 //Getting Trunk content
@@ -76,8 +76,8 @@ while{true} do
 		if(isEngineOn _vehicle) exitWith {hint "Allumer le moteur a arrêté le travail en cours."; deleteVehicle _smoke;};
 		_objectsInVehicle = attachedObjects _vehicle;
 		_playersInVehicle = "Man" countType _objectsInVehicle;
-		if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites."; deleteVehicle _smoke;};
-		
+		//if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites."; deleteVehicle _smoke;};
+
 		sleep  0.3;
 		_cP = _cP + 0.01;
 		_progress progressSetPosition _cP;

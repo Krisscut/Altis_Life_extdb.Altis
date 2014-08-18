@@ -25,7 +25,7 @@ if((_vehicle isKindOf "Car") && (currentWeapon player) == "rangefinder") then
 		};
 	};
 };
-if((!isNull cursortarget && (currentWeapon player) && == "rangefinder")) then{
+if((!isNull cursortarget && (currentWeapon player) == "rangefinder")) then{
 
 hint parseText format ["<t color='#ffffff'><t size='2'><t align='center'>Resultat Analyse Faciale <br/><t color='#FF0000'><t align='center'><t size='1'> %1",cursortarget getVariable ["realname",name cursortarget]];
 

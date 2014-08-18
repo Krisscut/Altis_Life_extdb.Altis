@@ -13,6 +13,7 @@
 #define Btn5 37454
 #define Btn6 37455
 #define Btn7 37456
+#define Btn8 37457
 #define Title 37401
 private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
 if(!dialog) then {
@@ -86,11 +87,11 @@ if(playerSide == west) then {
 	} else {
 		_Btn7 ctrlShow false;
 	};
-	
+
 	//Zamak Labo
 	if(typeOf _curTarget == "O_Truck_02_Ammo_F") then {
 		_Btn8 ctrlSetText "Process";
-		_Btn8 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_vehProcessIllega";
+		_Btn8 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_vehProcessIllegal";
 		/* Komodo: Commenté, aucune idée de ce que ça fait!
 		if(!isNil {(_curTarget getVariable "mining")} OR !local _curTarget && {_curTarget in life_vehicles}) then {
 			_Btn8 ctrlEnable false;
