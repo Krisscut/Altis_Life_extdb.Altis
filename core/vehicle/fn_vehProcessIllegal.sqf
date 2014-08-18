@@ -32,11 +32,11 @@ _space = _vInv select 1;
 
 //--------- Get the resource to be transformed in vehicle invetory. Each time a process is launched, only one type is process if there is several.
 _itemInfo = switch(true) do {
-	case (["kitmeth",_items] call fnc_index > -1): {["kitmeth","poudrehydroxyde",2500,"Traitement de la Meth","Poudre Hydroxyde Sodium"],["kitmeth",_items] call fnc_index};
-	case (["poudrehydroxyde",_items] call fnc_index > -1): {["poudrehydroxyde","crystalmeth",3000,"Traitement de la Poudre Hydroxyde","Cristal de Meth"],["poudrehydroxyde",_items] call fnc_index};
-	case (["crystalmeth",_items] call fnc_index > -1): {["crystalmeth","crystalmethpur",3500,"Purification Cristal de Meth","Cristal de Meth Pur"],["crystalmeth",_items] call fnc_index};
-	case (["heroinu",_items] call fnc_index > -1): {["heroinu","heroinp",1720,"Traitement de l'Héroïne","Héroïne"],["heroinu",_items] call fnc_index};
-	case (["cannabis",_items] call fnc_index > -1): {["cannabis","marijuana",500,"Traitement de la Marijuana","Feuille de Cannabis"],["cannabis",_items] call fnc_index};
+	case (["kitmeth",_items] call fnc_index > -1): {["kitmeth","poudrehydroxyde",2500,"Traitement de la Meth","Poudre Hydroxyde Sodium",["kitmeth",_items] call fnc_index]};
+	case (["poudrehydroxyde",_items] call fnc_index > -1): {["poudrehydroxyde","crystalmeth",3000,"Traitement de la Poudre Hydroxyde","Cristal de Meth",["poudrehydroxyde",_items] call fnc_index]};
+	case (["crystalmeth",_items] call fnc_index > -1): {["crystalmeth","crystalmethpur",3500,"Purification Cristal de Meth","Cristal de Meth Pur",["crystalmeth",_items] call fnc_index]};
+	case (["heroinu",_items] call fnc_index > -1): {["heroinu","heroinp",1720,"Traitement de l'Héroïne","Héroïne",["heroinu",_items] call fnc_index]};
+	case (["cannabis",_items] call fnc_index > -1): {["cannabis","marijuana",500,"Traitement de la Marijuana","Feuille de Cannabis",["cannabis",_items] call fnc_index]};
 	case (["cocaine",_items] call fnc_index > -1): {["cocaine","cocainep",1500,"Traitement de la Cocaïne","Feuille de Coca",["cocaine",_items] call fnc_index]};
 	default {[]};
 };
@@ -81,13 +81,15 @@ while{true} do
 		_progress progressSetPosition _cP;
 		_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
 		if(_cP >= 1) exitWith {};
+		if(!alive player) exitWith {};
 	};
+5 cutText ["","PLAIN"];
+deleteVehicle _smoke;
 
 //All selected item are transformed. so we simply change the name of the item in the Trunk variable.
 _value = _items select _itemIndex select 1;
 _items set[_itemIndex,[_newItem,_value]];
 _vehicle setVariable["Trunk",[_items,_space - (_weightDiff * _value)],true];
-
 
 //Locality checks... & fuel.
 if(local _vehicle) then {
@@ -96,5 +98,4 @@ if(local _vehicle) then {
 	[[_vehicle,(fuel _vehicle)-0.5],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
 };
 //Might need to delete this smoke at another time in case script ends before end.
-deleteVehicle _smoke;
 _vehicle setVariable["process",nil,true];
