@@ -82,7 +82,7 @@ while{true} do
 		_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
 		if(_cP >= 1) exitWith {};
 		if(!alive player) exitWith {};
-		if((_vehicle distance player ) > 10) exitWith(hint "Tu es trop loin du laboratoire")
+		if((_vehicle distance player ) > 10) exitWith{(hint "Tu es trop loin du laboratoire")};
 	};
 5 cutText ["","PLAIN"];
 
