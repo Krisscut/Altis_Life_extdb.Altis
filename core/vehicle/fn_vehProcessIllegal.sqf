@@ -66,27 +66,26 @@ _cP = 0.01;
 
 hint "Les laborantins sont en action, attention aux fumées nocives!";
 
-//Might need here a better method for controling process time.
-_smoke = "test_EmptyObjectForSmoke" createVehicle getPos _vehicle;
-_smoke setPos getPos_vehicule; //Necessary line to get accurate positionning.
+/
 
 while{true} do
 	{
-		if(!alive _vehicle OR isNull _vehicle) exitWith {deleteVehicle _smoke;};
-		if(isEngineOn _vehicle) exitWith {hint "Allumer le moteur a arrêté le travail en cours."; deleteVehicle _smoke;};
+		if(!alive _vehicle OR isNull _vehicle) exitWith {d};
+		if(isEngineOn _vehicle) exitWith {hint "Allumer le moteur a arrêté le travail en cours.";};
 		_objectsInVehicle = attachedObjects _vehicle;
 		_playersInVehicle = "Man" countType _objectsInVehicle;
-		//if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites."; deleteVehicle _smoke;};
+		if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites.";};
 
-		sleep  0.3;
+		sleep  0.6;
 		_cP = _cP + 0.01;
 		_progress progressSetPosition _cP;
 		_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
 		if(_cP >= 1) exitWith {};
 		if(!alive player) exitWith {};
+		if((_vehicle distance player ) > 10) exitWith(hint "Tu es trop loin du laboratoire")
 	};
 5 cutText ["","PLAIN"];
-deleteVehicle _smoke;
+
 
 //All selected item are transformed. so we simply change the name of the item in the Trunk variable.
 _value = _items select _itemIndex select 1;
