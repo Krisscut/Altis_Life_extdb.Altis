@@ -15,7 +15,19 @@ private["_code"];
 _code = _this select 0;
 
 switch (_code) do {
-    case 0: { 3 cutText ["", "PLAIN"]; };	//Delete
-    case 1: { 3 cutRsc ["codeRed","PLAIN"]; };
-    case 2: { 3 cutRsc ["codeFrini","PLAIN"]; }
+    case 0:	//Delete
+    {
+     	3 cutText ["", "PLAIN"];
+     	playSound "bankalarm";
+    };
+    case 1:	//CodeRed
+    {
+    	3 cutRsc ["codeRed","PLAIN"];
+    	playSound "bankalarm";
+    };
+    case 2:	//CodeFrini
+    {
+    	3 cutRsc ["codeFrini","PLAIN"];
+    	playSound "bankalarm";
+    };
 };

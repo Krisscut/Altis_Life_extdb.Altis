@@ -80,7 +80,7 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 		};
 
 		//Menottage
-		if (_unit getVariable["restrained",false] == true) then
+		if (_unit getVariable "restrained") then
 		{
 			ctrlEnable[9053,true];		//Demenotter
 			ctrlEnable[9014,false];		//menotter

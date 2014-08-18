@@ -276,7 +276,7 @@ class Life_Group_Gang_Diag {
 		class GangPromote : Life_RscButtonMenu 
 		{
 			idc = 2725;
-			text = "$STR_Gang_Promote";
+			text = "Promouvoir";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_gangNewLeader";
 			x = 0.72;
@@ -292,7 +292,7 @@ class Life_Group_Gang_Diag {
 		class GroupDemote : GangPromote
 		{
 			idc = 2730;
-			text = "$STR_Gang_Demote";
+			text = "Retrograder";
 			onButtonClick = "[] spawn life_fnc_gangGroupGestion";
 			x = 0.72;
 			y = .46;
@@ -310,7 +310,7 @@ class Life_Group_Gang_Diag {
 		class DisbandGang : InviteMember
 		{
 			idc = 2731;
-			text = "$STR_Disband_Gang";
+			text = "Dissoudre le gang";
 			onButtonClick = "[] spawn life_fnc_gangDisband";
 			x = 0.72;
 			y = .56;
