@@ -68,6 +68,8 @@ hint "Les laborantins sont en action, attention aux fumées nocives!";
 
 //Might need here a better method for controling process time.
 _smoke = "test_EmptyObjectForSmoke" createVehicle getPos _vehicle;
+_smoke setPos getPos_vehicule; //Necessary line to get accurate positionning.
+
 while{true} do
 	{
 		if(!alive _vehicle OR isNull _vehicle) exitWith {deleteVehicle _smoke;};
