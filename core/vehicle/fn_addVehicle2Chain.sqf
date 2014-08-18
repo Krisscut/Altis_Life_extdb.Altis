@@ -1,6 +1,6 @@
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	A short function for telling the player to add a vehicle to his keychain.
 */
@@ -10,3 +10,4 @@ if(!(_vehicle in life_vehicles)) then
 {
 	life_vehicles set[count life_vehicles,_vehicle];
 };
+_vehicle disableTIEquipment true;
