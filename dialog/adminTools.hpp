@@ -1374,7 +1374,7 @@ class life_admin_tools_spectatorMenu{
 		class EjecterVehicule : Menotter
 		{
 			idc = 4607;
-			text = "Prison";
+			text = "Ejecter Véhicule";
 			onButtonClick = "[] spawn life_fnc_ejectTargetFromVehicle;";
 			y = 1.02;
 		};

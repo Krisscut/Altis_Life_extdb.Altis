@@ -24,7 +24,7 @@ lbClear _list;
 } foreach playableUnits;
 if(__GETC__(life_adminlevel) < 1) exitWith {closeDialog 0;};
 
-ctrlSetText[9030,"Chargement interface terminé"];
+ctrlSetText[9030,"Chargement interface terminé - En attente du choix d'un joueur"];
 
 /* disable all buttons */
 ctrlEnable[9010,false];		//spectateur

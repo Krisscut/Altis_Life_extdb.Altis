@@ -33,7 +33,6 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 		[_map,1,0.1,getPos _unit] call life_fnc_setMapPosition;
 		_marker setMarkerPosLocal (getPos _unit);
 		_marker setMarkerDirLocal (getDir _unit);
-		sleep 0.5;
 
 		//Réanimer
 		if (_unit getVariable "FAR_isUnconscious" == 1) then
@@ -90,6 +89,8 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 			ctrlEnable[9014,true];		//menotter
 			ctrlEnable[9053,false];		//Demenotter
 		};
+
+		sleep 1.0;
 	};
 	ctrlSetText[9030,format["L'unité selectionné est morte ou déconnectée"]];
 
