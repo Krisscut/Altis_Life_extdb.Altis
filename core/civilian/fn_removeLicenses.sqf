@@ -26,6 +26,7 @@ switch (_state) do
 		license_civ_gun = false;
 		license_civ_gangster = false;
 		license_civ_driver = false;
+		license_civ_rebel = false;
 	};
 
 	//Remove motor vehicle licenses
