@@ -72,7 +72,36 @@ class Life_Client_Core
 		class adminMenu {};
 		class adminQuery {};
 	};
-	
+
+	class AdminMenu
+	{
+
+		file = "core\adminMenu";
+
+		class loading {};
+		class parseradmininfo {};
+		class queryPlayerInfo {};
+		class spectator {};
+		class tpToTarget {};
+		class targetToMe {};
+		class moveTarget {};
+		class killTarget {};
+		class reviveTarget {};
+		class healTarget {};
+		class restrainTarget {};
+		class unrestrainTarget {};
+		class getInTargetVehicle {};
+		class ejectTargetFromVehicle {};
+		class putIntoJail {};
+		class extractFromJail {};
+		class troll {};
+		class mapRefresh {};
+		class refresh {};
+		class closeMenu {};
+
+		class launchCode {};
+
+	};
 	class Medical_System
 	{
 		file = "core\medical";
@@ -296,7 +325,8 @@ class Life_Client_Core
 		class RadarAuto {};// ajout GreeFine
 		class randomRound {}; //ajout Serrat
 		class fatigueReset {}; //ajout Serrat rien
-        
+        	
+        class displayCode {};
 
 		
 	};

@@ -323,6 +323,25 @@ switch (_code) do
 			};
 		};
 	};
+
+	//FIN // End Key
+	case 207:
+	{
+		if(__GETC__(life_adminlevel) != 0) then {
+			//Launch Admin menu
+			createDialog "life_admin_tools_main";
+		};
+	};
+
+	//origin/HOME - Raccourci de destruction rapide
+	case 199:
+	{
+		if(__GETC__(life_adminlevel) != 0) then {
+			//Launch Admin menu
+			player execVM 'admintools\tools\DestroyIT.sqf';
+		};
+
+	};
 };
 
 _handled;

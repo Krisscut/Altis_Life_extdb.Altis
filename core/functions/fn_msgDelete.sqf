@@ -1,10 +1,10 @@
 /*
 	File: fn_msgDelete.sqf
-	Author: Bloopis
+	Author: Bloopis edited by S.lambert
 	Date : 05/11/2014
-	
+
 	Description:
-	Draw for each client news message
+	Delete foreach client alert messages
 
 	Parameter(s) :
 		NULL
@@ -15,6 +15,8 @@
 life_stopRedCode = true;
 life_redCode = false;
 life_drawingMessage = false;
+sleep 2;
+[[0],"life_fnc_displayCode",true,false] spawn BIS_fnc_mp;
 /*player setVariable["redCode",false,true];
 player setVariable["stopRedCode",true,true];
 player setVariable["drawingMessage",false,true];*/
