@@ -36,7 +36,7 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 		sleep 0.5;
 
 		//Réanimer
-		if (_unit getVariable ["FAR_isUnconscious", 0] == 1) then
+		if (_unit getVariable "FAR_isUnconscious" == 1) then
 		{
 			ctrlEnable[9051,true];
 		}
@@ -92,6 +92,7 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 		};
 	};
 	ctrlSetText[9030,format["L'unité selectionné est morte ou déconnectée"]];
+
 	deleteMarkerLocal _markerstr;
 	/* disable all buttons */
 	ctrlEnable[9010,false];		//spectateur

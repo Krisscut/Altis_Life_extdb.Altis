@@ -85,8 +85,8 @@ class Life_My_Gang_Diag {
 
 		class GroupeLeader : Life_RscButtonMenu 
 		{
-			idc = 2624;
-			text = "$STR_Gang_SetGroupLeader";
+			idc = 2650;
+			text = "Passer Chef de groupe";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_gangKick";
 			x = 0.47;
@@ -98,8 +98,8 @@ class Life_My_Gang_Diag {
 		class GangGestion : Life_RscButtonMenu 
 		{
 			idc = 2630;
-			text = "$STR_Gang_GangGestion";
-			onButtonClick = "[] spawn life_fnc_gangGroupGestion";
+			text = "Gestion Gang";
+			onButtonClick = "createDialog 'life_group_gang_diag';";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			x = 0.47;
 			y = 0.41;

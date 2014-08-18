@@ -828,7 +828,7 @@ class life_admin_tools_eventsMenu {
 		{
 			idc = 5206;
 			text = "Stopper Code";
-			onButtonClick = "spawn fn_desactivateMsg;";
+			onButtonClick = "[] spawn life_fnc_desactivateMsg;";
 			y = -0.04;
 		};
 
