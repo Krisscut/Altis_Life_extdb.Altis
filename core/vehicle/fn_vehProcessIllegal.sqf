@@ -66,8 +66,6 @@ _cP = 0.01;
 
 hint "Les laborantins sont en action, attention aux fumées nocives!";
 
-/
-
 while{true} do
 	{
 		if(!alive _vehicle OR isNull _vehicle) exitWith {d};
