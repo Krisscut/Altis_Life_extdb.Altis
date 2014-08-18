@@ -163,7 +163,7 @@ class Life_Group_Gang_Diag {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 2729;
-			text = "Interface de Gestion du gang";
+			text = "Interface de Gestion du gang - WORK IN PROGRESS";
 			x = 0.1;
 			y = 0.2;
 			w = 0.6;
@@ -197,7 +197,7 @@ class Life_Group_Gang_Diag {
 		class CloseLoadMenu : Life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Global_Close";
-			onButtonClick = "closeDialog 0;[] call life_fnc_p_updateMenu";
+			onButtonClick = "hint 'Not implemented YET';";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
@@ -260,9 +260,9 @@ class Life_Group_Gang_Diag {
 		class GangKick : Life_RscButtonMenu 
 		{
 			idc = 2724;
-			text = "$STR_Gang_GestionKick";
+			text = "Kicker Joueur";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call life_fnc_gangKick";
+			onButtonClick = "hint 'Not implemented YET';";
 			x = 0.51;
 			y = 0.66;
 			w = 0.400;
@@ -278,7 +278,7 @@ class Life_Group_Gang_Diag {
 			idc = 2725;
 			text = "Promouvoir";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] spawn life_fnc_gangNewLeader";
+			onButtonClick = "hint 'Not implemented YET';";
 			x = 0.72;
 			y = 0.41;
 			w = (9 / 40);
@@ -293,7 +293,7 @@ class Life_Group_Gang_Diag {
 		{
 			idc = 2730;
 			text = "Retrograder";
-			onButtonClick = "[] spawn life_fnc_gangGroupGestion";
+			onButtonClick = "hint 'Not implemented YET';";
 			x = 0.72;
 			y = .46;
 		};
@@ -301,8 +301,8 @@ class Life_Group_Gang_Diag {
 		class InviteMember : GangPromote
 		{
 			idc = 2737;
-			text = "$STR_Invite_Player";
-			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
+			text = "Inviter Joueur";
+			onButtonClick = "hint 'Not implemented YET';";
 			x = 0.72;
 			y = 0.51;
 		};
@@ -311,7 +311,7 @@ class Life_Group_Gang_Diag {
 		{
 			idc = 2731;
 			text = "Dissoudre le gang";
-			onButtonClick = "[] spawn life_fnc_gangDisband";
+			onButtonClick = "hint 'Not implemented YET';";
 			x = 0.72;
 			y = .56;
 		};
