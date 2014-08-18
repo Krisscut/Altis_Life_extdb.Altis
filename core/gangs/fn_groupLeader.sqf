@@ -1,11 +1,11 @@
 #include <macro.h>
 /*
-	Author: Bryan "Tonic" Boardwine
+	Author: S.Lambert
 
 	Description:
-	Something about being a quitter.
+	Change group Leader
 */
-private["_unit","_unitID","_members","_action","_index"];
+private["_unit","_action"];
 disableSerialization;
 
 if((lbCurSel 2621) == -1) exitWith {hint "Vous devez d'abord choisir une personne !"};
@@ -22,7 +22,6 @@ _action = [
 
 if(_action) then {
 	(group player) selectLeader _unit;
-
 } else {
 	hint "Changement de group leader annulé.";
 };
