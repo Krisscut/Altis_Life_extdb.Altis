@@ -10,4 +10,5 @@ if(!(_vehicle in life_vehicles)) then
 {
 	life_vehicles set[count life_vehicles,_vehicle];
 };
+if(_vehicle isKindof "Air") exitWith {};
 _vehicle disableTIEquipment true;
