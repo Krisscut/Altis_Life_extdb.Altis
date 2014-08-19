@@ -766,7 +766,7 @@ class life_admin_tools_eventsMenu {
 			x = -0.3;
 			y = -0.34 + (11 / 250);
 			w = 0.3;
-			h = 0.38;
+			h = 0.22;
 			moving = 1;  
 		};
 	};
@@ -808,28 +808,12 @@ class life_admin_tools_eventsMenu {
 			y = -0.22;
 		};
 
-		class CodeRouge : Haillon
+		class MenuCode : Haillon
 		{
-			idc = 524;
+			idc =5024;
 			text = "Code Rouge";
-			onButtonClick = "[1] spawn life_fnc_launchCode;";
+			onButtonClick = "createDialog 'life_admin_tools_codesMenu';";
 			y = -0.16;
-		};
-
-		class CodeFrini : Haillon
-		{
-			idc = 5205;
-			text = "Code Frini";
-			onButtonClick = "[2] spawn life_fnc_launchCode;";
-			y = -0.1;
-		};
-
-		class DesactiverAlerte : Haillon
-		{
-			idc = 5206;
-			text = "Stopper Code";
-			onButtonClick = "[] spawn life_fnc_desactivateMsg;";
-			y = -0.04;
 		};
 
 		class MouvementsMenu : Haillon
@@ -837,7 +821,7 @@ class life_admin_tools_eventsMenu {
 			idc = 5207;
 			text = "Mouvements";
 			onButtonClick = "hint 'Not implemented yet';";
-			y = 0.02;
+			y = -0.12;
 		};
 
 		class CloseButtonKey : Life_RscButtonMenu {
@@ -845,13 +829,114 @@ class life_admin_tools_eventsMenu {
 			text = "Retour";
 			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;  createDialog 'life_admin_tools_main';";
 			x = -0.3;
-			y = 0.08;
+			y = -0.06;
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
 	};
 };
 
+//###############################################
+class life_admin_tools_codesMenu {
+	idd = 5300;
+	name= "life_admin_tools_codesMenu";
+	movingEnable = true;
+	enableSimulation = true;
+	onLoad = "";
+	
+	class controlsBackground {
+		class Life_RscTitleBackground:Life_RscText {
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			idc = -1;
+			x = -0.3;
+			y = -0.34;
+			w = 0.3;
+			h = (1 / 25);
+			moving = 1;  
+		};
+		
+		class MainBackground:Life_RscText {
+			colorBackground[] = {0, 0, 0, 0.7};
+			idc = -1;
+			x = -0.3;
+			y = -0.34 + (11 / 250);
+			w = 0.3;
+			h = 0.32;
+			moving = 1;  
+		};
+	};
+	
+	class controls {
+
+		
+		class Title : Life_RscTitle {
+			colorBackground[] = {0, 0, 0, 0};
+			idc = 5301;
+			text = "Admin Menu - Codes Menu";
+			x = -0.3;
+			y = -0.34;
+			w = 0.8;
+			h = (1 / 25);
+		};
+
+		class CodeRed : Life_RscButtonMenu 
+		{
+			idc = 5302;
+			text = "Attaque kavala";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			onButtonClick = "[1] spawn life_fnc_launchCode;";
+			x = -0.2625;
+			y = -0.28;
+			w = (9 / 40);
+			h = (1 / 25);
+			class Attributes
+			{
+				align = "center";
+			};
+		};
+
+		class FriniCode : CodeRed
+		{
+			idc = 5303;
+			text = "Frini Code";
+			onButtonClick = "[2] spawn life_fnc_launchCode;";
+			y = -0.22;
+		};
+
+		class BlackCode : CodeRed
+		{
+			idc = 5304;
+			text = "Troll Code";
+			onButtonClick = "[3] spawn life_fnc_launchCode;";
+			y = -0.16;
+		};
+
+		class SiraCode : CodeRed
+		{
+			idc = 5305;
+			text = "Sira Code";
+			onButtonClick = "[4] spawn life_fnc_launchCode;";
+			y = -0.1;
+		};
+
+		class DesactiverAlerte : CodeRed
+		{
+			idc = 5306;
+			text = "Stopper Code";
+			onButtonClick = "[] spawn life_fnc_desactivateMsg;";
+			y = -0.04;
+		};
+		class CloseButtonKey : Life_RscButtonMenu {
+			idc = -1;
+			text = "Retour";
+			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;  createDialog 'life_admin_tools_eventsMenu';";
+			x = -0.3;
+			y = 0.02;
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+	};
+};
 
 //###############################################
 class life_admin_tools_vehiculeMenu {

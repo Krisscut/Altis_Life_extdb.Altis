@@ -86,7 +86,7 @@ class Life_My_Gang_Diag {
 		class GroupeLeader : Life_RscButtonMenu 
 		{
 			idc = 2650;
-			text = "Passer Chef de groupe";
+			text = "Chef de Groupe";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_groupLeader";
 			x = 0.47;
@@ -257,12 +257,12 @@ class Life_Group_Gang_Diag {
 		};
 
 		
-		class GangKick : Life_RscButtonMenu 
+		class GangDisband : Life_RscButtonMenu 
 		{
 			idc = 2724;
-			text = "Kicker Joueur";
+			text = "Dissoudre le gang";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "hint 'Not implemented YET';";
+			onButtonClick = "[] spawn life_fnc_gangDisband";
 			x = 0.51;
 			y = 0.66;
 			w = 0.400;
@@ -307,10 +307,10 @@ class Life_Group_Gang_Diag {
 			y = 0.51;
 		};
 		
-		class DisbandGang : InviteMember
+		class KickerGang : InviteMember
 		{
 			idc = 2731;
-			text = "Dissoudre le gang";
+			text = "Kicker Joueur";
 			onButtonClick = "hint 'Not implemented YET';";
 			x = 0.72;
 			y = .56;
