@@ -83,12 +83,12 @@ class Life_My_Gang_Diag {
 			h = (1 / 25);
 		};
 
-		class GroupLeader : Life_RscButtonMenu 
+		class GangLeader : Life_RscButtonMenu 
 		{
 			idc = 2650;
-			text = "Chef de Groupe";
+			text = "Chef de Gang";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call life_fnc_groupLeader;";
+			onButtonClick = "[] call life_fnc_gangNewLeader;";
 			x = 0.47;
 			y = 0.36;
 			w = (9 / 40);
@@ -99,7 +99,7 @@ class Life_My_Gang_Diag {
 		{
 			idc = 2630;
 			text = "Gestion Gang";
-			onButtonClick = "createDialog 'life_group_gang_diag';";
+			onButtonClick = "hint 'Not implemented YET';";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			x = 0.47;
 			y = 0.41;
