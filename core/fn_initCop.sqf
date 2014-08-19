@@ -85,7 +85,8 @@ player setVariable["coplevel", __GETC__(life_coplevel), true]; // Rang Anzeige
  };
 };
 [] execVM "admintools\activate.sqf";
-
+[player] execVM "scripts\groupsMenu\initGroups.sqf"; //gestion de groupe
 
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
+
