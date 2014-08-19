@@ -725,7 +725,7 @@ class life_admin_tools_trollMenu {
 		{
 			idc = 4407;
 			text = "Se Démenotter";
-			onButtonClick = "player execVM 'admintools\troll\SeDemenotter.sqf';";
+			onButtonClick = "player execVM 'admintools\tools\SeDemenotter.sqf';";
 			y = 0.02;
 		};
 
@@ -766,7 +766,7 @@ class life_admin_tools_eventsMenu {
 			x = -0.3;
 			y = -0.34 + (11 / 250);
 			w = 0.3;
-			h = 0.24;
+			h = 0.25;
 			moving = 1;  
 		};
 	};
@@ -828,7 +828,7 @@ class life_admin_tools_eventsMenu {
 			idc = -1;
 			text = "Retour";
 			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;  createDialog 'life_admin_tools_main';";
-			x = -0.4;
+			x = -0.3;
 			y = -0.06;
 			w = (6.25 / 40);
 			h = (1 / 25);
