@@ -79,3 +79,4 @@ _name = name player;
 		life_vehicles set[count life_vehicles, _x];
 	};
 } foreach _allVeh;
+[] execVM "core\functions\tm4_fuelUptake.sqf"

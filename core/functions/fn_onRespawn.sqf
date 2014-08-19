@@ -81,3 +81,4 @@ cutText ["","BLACK IN"];
 
 [] call life_fnc_civFetchGear;
 [] execVM "admintools\activate.sqf";
+[] execVM "core\functions\tm4_fuelUptake.sqf"
