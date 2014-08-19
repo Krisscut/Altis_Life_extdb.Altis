@@ -90,7 +90,7 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 			ctrlEnable[9053,false];		//Demenotter
 		};
 
-		sleep 1.0;
+		sleep 0.25;
 	};
 	ctrlSetText[9030,format["L'unité selectionné est morte ou déconnectée"]];
 
