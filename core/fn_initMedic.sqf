@@ -24,3 +24,4 @@ waitUntil {!(isNull (findDisplay 46))};
 
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
+[] execVM "core\functions\tm4_fuelUptake.sqf"

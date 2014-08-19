@@ -23,6 +23,7 @@ switch(playerSide) do
 	{
 		[] spawn life_fnc_loadGear;
 		player setVariable ["FAR_isUnconscious", 0, true];//added 04/26/2014
+		[player] execVM "scripts\groupsMenu\initGroups.sqf";
 	};
 
 	case civilian:
@@ -80,3 +81,4 @@ cutText ["","BLACK IN"];
 
 [] call life_fnc_civFetchGear;
 [] execVM "admintools\activate.sqf";
+[] execVM "core\functions\tm4_fuelUptake.sqf"

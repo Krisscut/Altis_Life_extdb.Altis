@@ -5,7 +5,7 @@
 life_firstSpawn = true;
 life_session_completed = false;
 private["_handle","_timeStamp"];
-0 cutText["Setting up client, please wait...","BLACK FADED"];
+0 cutText["Chargement des données joueur en cours...","BLACK FADED"];
 0 cutFadeOut 9999999;
 _timeStamp = diag_tickTime;
 diag_log "------------------------------------------------------------------------------------------------------";
@@ -41,7 +41,7 @@ waitUntil {life_session_completed};
 0 cutFadeOut 9999999;
 
 //diag_log "::Life Client:: Group Base Execution";
-if (__GETC__(life_adminlevel) == 0) then {
+if (__GETC__(life_adminlevel) < 2) then {
 
 [] spawn life_fnc_escInterupt;
 };

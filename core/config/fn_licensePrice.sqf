@@ -43,5 +43,6 @@ switch (_type) do
 	case "liquor":{100000};
 	case "bottler":{100000};
 	case "mash":{100000};
+	case "gangster":{300000};
 
 };

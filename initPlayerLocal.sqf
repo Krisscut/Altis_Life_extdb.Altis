@@ -1,6 +1,6 @@
 /*
 	File: initPlayerLocal.sqf
-	
+
 	Description:
 	Starts the initialization of the player.
 */
@@ -13,3 +13,4 @@ __CONST__(BIS_fnc_endMission,BIS_fnc_endMission);
 if((_this select 1)) then {
 	[] execVM "core\jip.sqf";
 };
+[] execVM "core\functions\tm4_fuelUptake.sqf"

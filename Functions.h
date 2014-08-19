@@ -368,7 +368,7 @@ class Life_Client_Core
 		class houseSoundOpen {};
 		class sendCommercialMsg {};
 		class civInteractionMenu {};//added 05/04/2014
-
+		class civilmarkers {};
 		class defibrillateur_son {};
 		
 	};
@@ -387,7 +387,7 @@ class Life_Client_Core
 		class vehicleWeight {};
 		class deviceMine {};
 		class addVehicle2Chain {};
-
+		class vehProcessIllegal {};
 		class vehInsure {};//added bloopis
 	};
 	

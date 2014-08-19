@@ -112,7 +112,7 @@ switch (_var) do
 	case "license_cop_air": {"Brevet de Pilote"};
 	case "license_cop_swat": {"Diplôme des Forces Spéciales"};
 	case "license_cop_cg": {"Garde Cote"};
-	case "license_civ_rebel": {"Entrainnement Rebelle"};
+	case "license_civ_rebel": {"Licence de rebellion"};
 	case "license_civ_truck": {"Permis Poids Lourd"};
 	case "license_civ_diamond": {"Joallier"};
 	case "license_civ_copper": {"Fondeur de Cuivre"};
@@ -133,5 +133,6 @@ switch (_var) do
 	case "license_civ_stiller": {"Licence de distilleur"};
 	case "license_civ_liquor": {"Fabriquant de liqueur"};
 	case "license_civ_bottler": {"Licence de mise en bouteille"};
+	case "license_civ_rebel": {"Licence Gangster"};
 
 };
