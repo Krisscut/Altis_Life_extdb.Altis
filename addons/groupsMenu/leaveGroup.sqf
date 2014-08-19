@@ -10,6 +10,6 @@ _caller removeAction GRPMNU_quitLead;
 _curGroup = group _caller;
 [_caller] join grpNull;
 hint format ['Left Group %1', _curGroup];
-GRPMNU_groupActions = _caller addAction["<t color='#EB7FAF'>Groups Menu</t>", "scripts\groupsMenu\groupActions.sqf", nil, -200, false, false, "", "_target == vehicle _this || _target == _this"];
+GRPMNU_groupActions = _caller addAction["<t color='#EB7FAF'>Groups Menu</t>", "addons\groupsMenu\groupActions.sqf", nil, -200, false, false, "", "_target == vehicle _this || _target == _this"];
 
 if true exitWith {};

@@ -766,7 +766,7 @@ class life_admin_tools_eventsMenu {
 			x = -0.3;
 			y = -0.34 + (11 / 250);
 			w = 0.3;
-			h = 0.22;
+			h = 0.24;
 			moving = 1;  
 		};
 	};
@@ -811,7 +811,7 @@ class life_admin_tools_eventsMenu {
 		class MenuCode : Haillon
 		{
 			idc =5024;
-			text = "Code Rouge";
+			text = "Menu Code";
 			onButtonClick = "createDialog 'life_admin_tools_codesMenu';";
 			y = -0.16;
 		};
@@ -821,14 +821,14 @@ class life_admin_tools_eventsMenu {
 			idc = 5207;
 			text = "Mouvements";
 			onButtonClick = "hint 'Not implemented yet';";
-			y = -0.12;
+			y = -0.10;
 		};
 
 		class CloseButtonKey : Life_RscButtonMenu {
 			idc = -1;
 			text = "Retour";
 			onButtonClick = "[] spawn life_am_fnc_closeMenu; closeDialog 0;  createDialog 'life_admin_tools_main';";
-			x = -0.3;
+			x = -0.4;
 			y = -0.06;
 			w = (6.25 / 40);
 			h = (1 / 25);
