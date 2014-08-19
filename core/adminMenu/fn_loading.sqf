@@ -42,4 +42,3 @@ ctrlEnable[9054,false];		//EjectFrom Vehicle
 ctrlEnable[9016,false];		//Put IntoJail
 ctrlEnable[9055,false];		//extractFrom Jail
 ctrlEnable[9017,false];		//Troll
-

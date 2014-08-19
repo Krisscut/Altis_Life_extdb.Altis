@@ -24,3 +24,6 @@ lbClear _list;
 if(__GETC__(life_adminlevel) < 1) exitWith {closeDialog 0;};
 
 ctrlSetText[9030,"Rafraichissement terminé - Attente Choix joueur"];
+
+/* MAJ local var to self ( disable map refresh) */
+player setVariable ["am_unitTargeted",player,false];
