@@ -65,7 +65,7 @@ switch (_vehicle) do
 			["textures\vehicules\offroad_police.jpg","cop"],
 			["#(argb,8,8,3)color(0.6,0.3,0.01,1)","civ"],
 			["textures\vehicules\med_offroad.jpg","med"],
-			["textures\vehicules\offroad_depannage.jpg","civ"],
+			//["textures\vehicules\offroad_depannage.jpg","civ"],
 			["textures\vehicules\offroad_cyan.jpg","civ"]
 
 

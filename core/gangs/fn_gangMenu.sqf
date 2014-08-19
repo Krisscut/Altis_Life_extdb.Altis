@@ -17,12 +17,24 @@ _gangName = grpPlayer getVariable "gang_name";
 _gangBank = grpPlayer getVariable "gang_bank";
 _gangMax = grpPlayer getVariable "gang_maxMembers";
 
-if(_ownerID != steamid) then {
-	(getControl(2620,2622)) ctrlEnable false; //Upgrade
+if(_ownerID != steamid) then {			// s'il n'est pas le leader
+
 	(getControl(2620,2624)) ctrlEnable false; // Kick
-	(getControl(2620,2625)) ctrlEnable false; //Set New Leader
-	(getControl(2620,2630)) ctrlEnable false; //Invite Player
-	(getControl(2620,2631)) ctrlEnable false; //Disband Gang
+	(getControl(2620,2650)) ctrlEnable false; //CdG
+	(getControl(2620,2630)) ctrlEnable false; //Gestion gang
+	(getControl(2620,2637)) ctrlEnable false; //Invite Player
+
+	(getControl(2720,2722)) ctrlEnable false; //Upgrade
+	(getControl(2720,2725)) ctrlEnable false; //Promote
+	(getControl(2720,2730)) ctrlEnable false; //Demote
+	(getControl(2720,2737)) ctrlEnable false; //Invite
+	(getControl(2720,2731)) ctrlEnable false; //Kick
+	(getControl(2720,2724)) ctrlEnable false; //Disband Gang
+};
+
+if (leader group player == player ) then		//si le chef de groupe est le joueur... il peut selectionner le chef de groupe
+{
+	(getControl(2620,2650)) ctrlEnable true; //CdG
 };
 
 (getControl(2620,2629)) ctrlSetText _gangName;

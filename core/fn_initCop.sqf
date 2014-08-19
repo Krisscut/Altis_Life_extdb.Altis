@@ -63,7 +63,6 @@ if((str(player) in ["cop_1","cop_2","cop_3","cop_4","cop_5","cop_6","cop_7","cop
 player setVariable["coplevel", __GETC__(life_coplevel), true]; // Rang Anzeige
 
 
-
 [] call life_fnc_spawnMenu;
 [] spawn    //basic cop
 {

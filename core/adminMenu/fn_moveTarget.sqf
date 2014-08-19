@@ -16,7 +16,7 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 
 	moveTarget={
 		_pos = [_this select 0, _this select 1, _this select 2];
-		_unit = _this select 3;
+		_unit = player getVariable "am_unitTargeted";
 		if (vehicle _unit != _unit) then
 		{
 
@@ -31,6 +31,6 @@ if (!isNil {player getVariable ["am_unitTargeted",false]}) then
 		openMap[false,false];
 	};
 
-	onMapSingleClick "[_pos select 0, _pos select 1, _pos select 2, _unit] call moveTarget";
+	onMapSingleClick "[_pos select 0, _pos select 1, _pos select 2] call moveTarget";
 	openMap[true,false];
 };

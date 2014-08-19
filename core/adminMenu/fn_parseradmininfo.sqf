@@ -43,7 +43,7 @@ _map = _display displayCtrl 9001;
 player setVariable ["am_unitTargeted",_unit,false];
 
 //Wait for the auto-update to change
-sleep 2;
+sleep 1;
 
 /* Launch auto-update */
 [] spawn life_fnc_mapRefresh;

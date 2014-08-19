@@ -16,7 +16,7 @@ life_stopRedCode = true;
 life_redCode = false;
 life_drawingMessage = false;
 sleep 2;
-[[0],"life_fnc_displayCode",true,false] spawn BIS_fnc_mp;
+[[0],"life_fnc_displayCode",true,false] spawn BIS_fnc_mp;	// delete all messages
 /*player setVariable["redCode",false,true];
 player setVariable["stopRedCode",true,true];
 player setVariable["drawingMessage",false,true];*/

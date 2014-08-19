@@ -23,4 +23,4 @@ lbClear _list;
 } foreach playableUnits;
 if(__GETC__(life_adminlevel) < 1) exitWith {closeDialog 0;};
 
-ctrlSetText[9030,"Rafraichissement terminé"];
+ctrlSetText[9030,"Rafraichissement terminé - Attente Choix joueur"];
