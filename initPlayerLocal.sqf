@@ -13,4 +13,4 @@ __CONST__(BIS_fnc_endMission,BIS_fnc_endMission);
 if((_this select 1)) then {
 	[] execVM "core\jip.sqf";
 };
-[] execVM "core\fuctions\tm4_fuelUptake.sqf"
+[] execVM "core\functions\tm4_fuelUptake.sqf"
