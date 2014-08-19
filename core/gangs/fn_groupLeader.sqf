@@ -14,7 +14,7 @@ if(isNull _unit) exitWith {}; //Bad unit?
 if(_unit == player) exitWith {hint "Vous êtes déjà leader!"};
 
 _action = [
-	format["Vous êtes sur le point de transférer le grade de chef de groupe a %1.",_unit getVariable ["realname",name _unit]],
+	format["Vous êtes sur le point de transférer le grade de chef de groupe à %1.",_unit getVariable ["realname",name _unit]],
 	"Changer de GroupLeader",
 	"Oui",
 	"Non"

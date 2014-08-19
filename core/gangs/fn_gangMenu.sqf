@@ -19,7 +19,7 @@ _gangMax = grpPlayer getVariable "gang_maxMembers";
 
 if(_ownerID != steamid) then {			// s'il n'est pas le leader
 
-	(getControl(2620,2624)) ctrlEnable false; // Kick
+	(getControl(2620,2624)) ctrlEnable false; //Kick
 	(getControl(2620,2650)) ctrlEnable false; //CdG
 	(getControl(2620,2630)) ctrlEnable false; //Gestion gang
 	(getControl(2620,2637)) ctrlEnable false; //Invite Player
@@ -32,10 +32,12 @@ if(_ownerID != steamid) then {			// s'il n'est pas le leader
 	(getControl(2720,2724)) ctrlEnable false; //Disband Gang
 };
 
+/*		NEED MORE TESTS
 if (leader group player == player ) then		//si le chef de groupe est le joueur... il peut selectionner le chef de groupe
 {
 	(getControl(2620,2650)) ctrlEnable true; //CdG
 };
+*/
 
 (getControl(2620,2629)) ctrlSetText _gangName;
 (getControl(2620,601)) ctrlSetText format["Compte: $%1",[_gangBank] call life_fnc_numberText];

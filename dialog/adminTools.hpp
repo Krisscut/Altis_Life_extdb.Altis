@@ -181,7 +181,7 @@ class life_admin_tools_TPmenu {
 			idc = 4102;
 			text = "Téléportation Map";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "player execVM 'admintools\tools\teleport.sqf';";
+			onButtonClick = "player execVM 'admintools\tools\teleport.sqf'; closeDialog 0;";
 			x = -0.2625;
 			y = -0.28;
 			w = (9 / 40);
