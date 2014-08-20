@@ -222,6 +222,7 @@ switch(_shop) do
 						["Binocular",nil,150],
 						["ToolKit",nil,250],
 						["FirstAidKit",nil,150],
+						["16Rnd_9x21_Mag","Munition pistolet",50],
 						//["Medikit",nil,500],
 						["NVGoggles",nil,1200],
 						["Chemlight_yellow",nil,255],
