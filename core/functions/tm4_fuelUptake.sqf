@@ -13,7 +13,7 @@ waitUntil {!isNull player && player == player};
 if (isNil "tm4_handler_fuelUptake") then {
    tm4_handler_fuelUptake = [] spawn {
       if (isNil "tm4_prom_spotrebaPaliva") then {
-         tm4_prom_spotrebaPaliva = [[] call {(0.00066314157*1.00619)}, [] call {((0.0026314157+0.00014159)/(pi*2))}, [] call {((0.0036314157+0.00026159)/(pi*2))}, [] call {((0.0056314157+0.00026159)/(pi*2))}, [] call {((0.0086314157+0.00029159)/(pi*2))} ];
+         tm4_prom_spotrebaPaliva = [[] call {(0.00066314157*1.00619)}, [] call {((0.0016314157+0.00014159)/(pi*2))}, [] call {((0.0026314157+0.00025159)/(pi*2))}, [] call {((0.0036314157+0.00026159)/(pi*2))}, [] call {((0.0056314157+0.00029159)/(pi*2))} ];
       };
       while {alive player} do   {
          //diag_log ["LOG:", __filename, diag_tickTime, "THREAD STARTED"];
@@ -30,7 +30,7 @@ if (isNil "tm4_handler_fuelUptake") then {
                while {isEngineOn _vh && alive player} do {
                   if !(driver _vh == player || alive player || alive _vh) exitWith {};
                   _vh setFuel ((fuel _vh) - (tm4_prom_spotrebaPaliva select 0));
-                  if (_vh isKindOf "Truck" || _vh isKindOf "car") Then {
+                  if (_vh isKindOf "car") Then {
                      if (speed _vh > 10 && speed _vh < 91) then {
                         _vh setFuel ((fuel _vh) - (tm4_prom_spotrebaPaliva select 1));
                      };

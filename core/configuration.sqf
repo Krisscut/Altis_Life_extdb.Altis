@@ -434,6 +434,8 @@ buy_array =
 	["acideahlorhydrique",2500],//added by asurion
 	["hydrogenchloride",250],//added by asurion
 	["hydroxydesodiumanhydre",100],//added by asurion
+	["poudrehydroxyde",3600],
+	["crystalmethpur",10750],
 	["kitmeth",2000]//added by asurion
 
 ];
