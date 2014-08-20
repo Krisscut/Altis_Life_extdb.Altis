@@ -24,6 +24,10 @@ if(_ownerID != steamid) then {			// s'il n'est pas le leader
 	(getControl(2620,2630)) ctrlEnable false; //Gestion gang
 	(getControl(2620,2637)) ctrlEnable false; //Invite Player
 
+	/* TEMP */
+	(getControl(2620,2638)) ctrlEnable false;	//Augmenter Gang
+	(getControl(2620,2639)) ctrlEnable false;	//Dissoudre Gang
+
 	(getControl(2720,2722)) ctrlEnable false; //Upgrade
 	(getControl(2720,2725)) ctrlEnable false; //Promote
 	(getControl(2720,2730)) ctrlEnable false; //Demote
