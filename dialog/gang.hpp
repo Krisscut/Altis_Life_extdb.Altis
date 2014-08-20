@@ -121,6 +121,22 @@ class Life_My_Gang_Diag {
 			x = 0.47; y = 0.51;
 			w = (9 / 40); h = 0.03;
 		};
+
+		class AugmenterGangTemp : GangGestion
+		{
+			idc = 2638;
+			text = "Augmenter slots";
+			onButtonClick = "[] spawn life_fnc_gangUpgrade";
+			y = .58;
+		};
+
+		class DisbandGangTemp : GangGestion
+		{
+			idc = 2639;
+			text = "Dissoudre Gang";
+			onButtonClick = "[] spawn life_fnc_gangDisband";
+			y = .64;
+		};
 		
 		class GangBank : Title {
 			idc = 601;
@@ -223,7 +239,7 @@ class Life_Group_Gang_Diag {
 			y = 0.30;
 			w = 0.1;
 			h = 0.05;
-			text = "1";
+			text = "XXX";
 			colorBackground[] = {0, 0, 0, 0};
 			colorText[] = {1, 1, 1, 1.0};
 		};
@@ -235,7 +251,7 @@ class Life_Group_Gang_Diag {
 			y = 0.30;
 			w = 0.1;
 			h = 0.05;
-			text = "/10";
+			text = "/XXX";
 			colorBackground[] = {0, 0, 0, 0};
 			colorText[] = {1, 1, 1, 1.0};
 		};
