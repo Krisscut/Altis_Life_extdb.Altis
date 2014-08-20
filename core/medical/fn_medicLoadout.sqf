@@ -46,10 +46,12 @@ player addWeapon "hgun_P07_snds_F";
 
 
 player setObjectTextureGlobal [0,"textures\medic_uniform.jpg"];
+//player setObjectTextureGlobal [0,"textures\depa_uniform.jpg"];
 switch(uniform player) do
 	{
 		//case "U_I_CombatUniform" : {player setObjectTextureGlobal [0,"textures\medic_uniform.jpg"]};
 		case "U_I_CombatUniform" : {[[player,0,"textures\medic_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;};
+		//case "U_I_CombatUniform" : {[[player,0,"textures\depa_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;};
 
 		default{};
 	};

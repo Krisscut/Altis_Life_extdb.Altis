@@ -92,6 +92,8 @@ switch (_vehicle) do
 			case 14: {_color = "Dona Wood";};
 			case 15: {_color = "Dona Ferrari";};
 			case 16: {_color = "Dona Orange";};
+			case 17: {_color = "test001";};
+			case 18: {_color = "test002";};
 		};
 	};
 
