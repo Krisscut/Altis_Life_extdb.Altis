@@ -29,6 +29,7 @@ if (isNil "tm4_handler_fuelUptake") then {
                //diag_log ["LOG:", __filename, "isEngineOn vehicle player == TRUE"];
                while {isEngineOn _vh && alive player} do {
                   if !(driver _vh == player || alive player || alive _vh) exitWith {};
+                  if(_vh isKindOf "Air") exitWith{};
                   _vh setFuel ((fuel _vh) - (tm4_prom_spotrebaPaliva select 0));
                   if (_vh isKindOf "car") Then {
                      if (speed _vh > 10 && speed _vh < 91) then {
