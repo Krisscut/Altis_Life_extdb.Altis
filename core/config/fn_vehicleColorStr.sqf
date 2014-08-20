@@ -26,7 +26,8 @@ switch (_vehicle) do
 			case 7: {_color = "Gendarmerie"};
 			case 8: {_color = "Jaune"};
 			case 9: {_color = "Medic"};
-			case 10: {_color = "Cyan Dragon"};
+			case 10: {_color = "Depannage"};
+			case 11: {_color = "Cyan Dragon"};
 		};
 	};
 
@@ -63,7 +64,7 @@ switch (_vehicle) do
 			case 10: {_color = "Banalisée verte";};
 			case 11: {_color = "Banalisée bleu";};
 			case 12: {_color = "Banalisée bleu foncé";};
-			case 13: {_color = "Banalisée jaune"};
+			case 13: {_color = "Banalisée jaune";};
 			case 14: {_color = "Banalisée blanche"};
 			case 15: {_color = "Banalisée grise"};
 			case 16: {_color = "Banalisée noir"};
