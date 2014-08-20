@@ -26,7 +26,7 @@ if((typeOf _vehicle) in ["I_MRAP_03_F","B_MRAP_01_F","O_MRAP_02_F","B_MRAP_01_hm
 	if((count crew _vehicle) == 0) then
 	{
 		[[_vehicle,true,player],"TON_fnc_vehicleStore",false,false] spawn life_fnc_MP;
-		//hint "Vehicule mis en fourrière";
+		hint "Vous devez posseder la licence rebelle pour utiliser ce véhicule";
 	}
 		else
 	{
