@@ -20,7 +20,7 @@ switch (_code) do {
     	3 cutText ["", "PLAIN"];
     	playSound "CodeAlerte";
     	3 cutRsc ["whiteCode","PLAIN"];
-    	sleep 10;
+    	sleep 20;
      	3 cutText ["", "PLAIN"];
     };
     case 1:	//CodeRed
