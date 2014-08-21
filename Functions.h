@@ -41,6 +41,7 @@ class Life_Client_Core
 		class initCiv {};
 		class initCop {};
 		class initMedic {};
+		class initDepan {};
 		class welcomeNotification {};
 		class welcomeNotification_bluefor {};
 		class welcomeNotification_independant {};
@@ -120,6 +121,26 @@ class Life_Client_Core
 		class medicSiren {};
 		class RadioKick {};
 	};
+	
+	class Depan_System
+	{
+		file = "core\depan";
+		class onPlayerKilled {};
+		class onPlayerRespawn {};
+		class respawned {};
+		class revivePlayer {};
+		class revived {};
+		class depanMarkers {};
+		class requestDepan {};
+		class depanRequest {};
+		class deathScreen {};
+		class depanLoadout {};
+		class depanSirenLights {};
+		class depanLights {};
+		class depanSiren {};
+		class RadioKick {};
+	};
+	
 	
 	class Actions
 	{

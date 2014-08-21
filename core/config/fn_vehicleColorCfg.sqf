@@ -110,7 +110,8 @@ switch (_vehicle) do
 			["textures\vehicules\suv_1.jpg","fed"],
 			["textures\vehicules\suv_dona_orange.jpg","fed"],
 			["textures\vehicules\test001.jpg","fed"],
-			["textures\vehicules\test002.jpg","fed"]
+			["textures\vehicules\test002.jpg","fed"],
+			["textures\vehicules\test003.jpg","fed"]
 		];
 	};
 

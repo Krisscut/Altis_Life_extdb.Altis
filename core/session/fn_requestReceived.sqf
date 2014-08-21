@@ -44,6 +44,7 @@ switch(playerSide) do {
 		[] spawn life_fnc_loadGear;
 		life_blacklisted = _this select 9;
 		__CONST__(life_medicLevel,0);
+		__CONST__(life_depanLevel,0);
 	};
 
 	case civilian: {
@@ -52,6 +53,7 @@ switch(playerSide) do {
 		civ_gear = _this select 8;
 		__CONST__(life_coplevel,0);
 		__CONST__(life_medicLevel,0);
+		__CONST__(life_depanLevel,0);
 		life_houses = _this select 9;
 		//__CONST__(life_serveur,parseNumber(_this select 9));
 		[] spawn life_fnc_civLoadGear;
@@ -69,7 +71,9 @@ switch(playerSide) do {
 	};
 
 	case independent: {
+		
 		__CONST__(life_medicLevel,parseNumber(_this select 7));
+		__CONST__(life_depanLevel,parseNumber(_this select 8));
 		__CONST__(life_copLevel,0);
 	};
 };
