@@ -99,6 +99,8 @@ class Life_Client_Core
 		class mapRefresh {};
 		class refresh {};
 		class closeMenu {};
+		class modoGetID {};
+		class parseID {};
 
 		class launchCode {};
 

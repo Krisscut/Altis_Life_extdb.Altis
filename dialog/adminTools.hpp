@@ -1159,7 +1159,7 @@ class life_admin_tools_advancedMenu {
 			x = 0.12;
 			y = -0.22;
 			w = 0.41;
-			h = 0.6;
+			h = 0.3;
 		};
 
 
@@ -1169,7 +1169,7 @@ class life_admin_tools_advancedMenu {
 			text = "Autres pseudos";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.15;
-			y = 0.42;
+			y = 0.12;
 			w = 0.35;
 			h = (1 / 25);
 		};
@@ -1179,8 +1179,46 @@ class life_admin_tools_advancedMenu {
 			idc = 9008;
 			text = "Not Implemented yet";
 			x = 0.12;
-			y = 0.48;
+			y = 0.18;
 			h = 0.2;
+		};
+
+		class Autresinfos
+		{
+			idc = 9161;
+			text = "Autres Informations";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.15;
+			y = 0.38;
+			w = 0.35;
+			h = (1 / 25);
+		};
+
+		class ID : PlayerBInfo
+		{
+			idc = 9162;
+			text = "link tools ID";
+			x = 0.12;
+			y = 0.18;
+			h = 0.1;
+			w = 0.15;
+		};
+
+		class GestionVehicule : Life_RscButtonMenu 
+		{
+			idc = 9163;
+			text = "Observer";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			onButtonClick = "hint 'Not implemented YET'";
+			x = 0.30;
+			y = 0.18;
+			w = 0.17;
+			h = 0.1;
+			
+			class Attributes
+			{
+				align = "center";
+			};
 		};
 
 		class TitreModeration : Life_RscText
