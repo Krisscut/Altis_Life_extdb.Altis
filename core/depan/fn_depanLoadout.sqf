@@ -39,19 +39,16 @@ removeGoggles player;
 removeHeadGear player;
 player addBackpack "B_Bergen_blk";
 player addUniform "U_I_CombatUniform";
-player addItem "FirstAidKit";
-player addMagazine "16Rnd_9x21_Mag";
-player addMagazine "16Rnd_9x21_Mag";
-player addWeapon "hgun_P07_snds_F";
+player addItem "Toolkit";
 
 
-player setObjectTextureGlobal [0,"textures\medic_uniform.jpg"];
-//player setObjectTextureGlobal [0,"textures\depan_uniform.jpg"];
+//player setObjectTextureGlobal [0,"textures\medic_uniform.jpg"];
+player setObjectTextureGlobal [0,"textures\depan_uniform.jpg"];
 switch(uniform player) do
 	{
 		//case "U_I_CombatUniform" : {player setObjectTextureGlobal [0,"textures\medic_uniform.jpg"]};
-		case "U_I_CombatUniform" : {[[player,0,"textures\medic_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;};
-		//case "U_I_CombatUniform" : {[[player,0,"textures\depan_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;};
+		//case "U_I_CombatUniform" : {[[player,0,"textures\medic_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;};
+		case "U_I_CombatUniform" : {[[player,0,"textures\depan_uniform.jpg"],"life_fnc_setTexture",true,false] spawn life_fnc_MP;};
 
 		default{};
 	};

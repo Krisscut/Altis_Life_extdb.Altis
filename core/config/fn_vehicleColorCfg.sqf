@@ -65,7 +65,7 @@ switch (_vehicle) do
 			["textures\vehicules\offroad_police.jpg","cop"],
 			["#(argb,8,8,3)color(0.6,0.3,0.01,1)","civ"],
 			["textures\vehicules\med_offroad.jpg","med"],
-			//["textures\vehicules\offroad_depannage.jpg","civ"],
+			["textures\vehicules\offroad_depannage.jpg","civ"],
 			["textures\vehicules\offroad_cyan.jpg","civ"]
 
 
@@ -109,8 +109,9 @@ switch (_vehicle) do
 			["textures\vehicules\suv_2.jpg","fed"],
 			["textures\vehicules\suv_1.jpg","fed"],
 			["textures\vehicules\suv_dona_orange.jpg","fed"],
-			["textures\vehicules\med_suv2.jpg","med"],
-			["textures\vehicules\suv_chef_police.jpg","cop"]
+			["textures\vehicules\test001.jpg","fed"],
+			["textures\vehicules\test002.jpg","fed"],
+			["textures\vehicules\test003.jpg","fed"]
 		];
 	};
 

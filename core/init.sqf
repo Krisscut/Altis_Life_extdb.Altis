@@ -64,8 +64,29 @@ switch (playerSide) do
 	case independent:
 	{
 		//Initialize Medics and blah
-		_handle = [] spawn life_fnc_initMedic;
-		waitUntil {scriptDone _handle};
+		//_handle = [] spawn life_fnc_initMedic;
+		//waitUntil {scriptDone _handle};
+		
+		switch(true) do
+		{
+			case (__GETC__(life_medicLevel) > 0) :
+			{
+				_handle = [] spawn life_fnc_initMedic;
+				waitUntil {scriptDone _handle};
+			};
+			case (__GETC__(life_depanLevel) > 0) :
+			{
+				_handle = [] spawn life_fnc_initDepan;
+				waitUntil {scriptDone _handle};
+			};
+
+			default
+			{
+				["Notwhitelisted",FALSE,TRUE] call BIS_fnc_endMission;
+				sleep 35;
+			};
+		};
+		
 	};
 };
 
