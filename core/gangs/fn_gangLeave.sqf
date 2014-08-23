@@ -10,7 +10,7 @@ if(steamid == (grpPlayer getVariable "gang_owner")) exitWith {hint "Tu dois d'ab
 
 _grp = grpPlayer;
 _grpMembers = grpPlayer getVariable "gang_members";
-_grpMembers = _grpMembers - [steamid, name player, 0]];
+_grpMembers = _grpMembers - [steamid, name player, 0];
 _grp setVariable["gang_members",_grpMembers,true];
 [player] joinSilent (createGroup civilian);
 
