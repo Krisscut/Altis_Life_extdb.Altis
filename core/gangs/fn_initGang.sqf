@@ -60,7 +60,7 @@ if(!isNil "_group") then {
 			_listMembers set [_x,[_idPlayer, name player, 0]];
 
 			// memorise information about the rank of the player
-			player setVariable["gang_rank",(_listMembers select _x) select 2),false];
+			player setVariable["gang_rank",(_listMembers select _x) select 2,false];
 		};
 	};
 
