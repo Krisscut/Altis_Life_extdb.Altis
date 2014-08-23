@@ -48,7 +48,7 @@ if(!isNil "_group") then {
 
 		if( typeName _currentElement == "ARRAY") then// si ce n'est pas un tableau --> ancienne version passage en nouvelle version
 		{
-			_listMembers set [_x,[_currentElement, "name to be determined", 0];
+			_listMembers set [_x,[_currentElement, "name to be determined", 0]];
 		};
 	};
 
@@ -62,7 +62,7 @@ if(!isNil "_group") then {
 		//searching for settigng name of the player
 		if( _idPlayer == (_currentElement select 0)) then
 		{
-			_listMembers set [_x,[_currentElement, name player, 0];
+			_listMembers set [_x,[_currentElement, name player, 0]];
 		};
 	};
 
