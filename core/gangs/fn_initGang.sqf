@@ -27,7 +27,8 @@ _exitLoop = false;
 
 
 //Si un groupe a été détecté
-if(!isNil "_group") then {
+if(!isNil "_group") then
+{
 	diag_log "---GANG INIT--- EXISTANT GROUP USED";
 
 	[player] join _group;

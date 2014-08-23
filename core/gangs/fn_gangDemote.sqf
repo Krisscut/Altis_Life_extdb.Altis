@@ -5,7 +5,7 @@
 	Description:
 	Demote the selected player to the inferior rank
 */
-private["_index","_group","_grpMembers","_selectedMember","_uid","_rank","_name","_sentence","_rankString"];
+private["_index","_group","_grpMembers","_selectedMember","_uid","_rank","_name","_sentence","_rankString","_ownerID"];
 disableSerialization;
 
 if((lbCurSel 2721) == -1) exitWith {hint "Vous devez d'abord choisir une personne !"};
@@ -13,14 +13,15 @@ _index = lbCurSel 2721;
 
 _group = group player;
 _grpMembers = _group getVariable "gang_members";
+_ownerID = _group getVariable["gang_owner"];
 _selectedMember = _grpMembers select _index;
 _uid = getPlayerUID player;
 _name= (_selectedMember select 1);
 _rank = (_selectedMember select 2);
 
 if(_uid == (_selectedMember select 0)) exitWith {hint "Vous ne pouvez pas vous retrograder vous-même!";};
+if ((_rank == 3) || ((getPlayerUID _selectedMember) == _ownerID )) exitWith {hint "Vous ne pouvez pas dégrader le chef de clan";};
 if( _rank == (player getVariable "gang_rank")) exitWith {hint "Vous ne pouvez pas dégrader une personne du même rang que vous";};
-if (_rank == 3) exitWith {hint "Vous ne pouvez pas dégrader le chef de clan";};
 if (_rank == 0) exitWith {hint "Vous ne pouvez pas le dégrader car le joueur selectionné est déja au grade le plus bas";};
 
 _rankString = "";
