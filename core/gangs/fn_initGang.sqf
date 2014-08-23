@@ -43,8 +43,6 @@ if(!isNil "_group") then {
 	_group setVariable["gang_bank",(life_gangData select 4),true];
 
 	_group setVariable["gang_members",(life_gangData select 5),true];
-
-
 };
 
 sleep 2;
@@ -52,7 +50,8 @@ sleep 2;
 /* ADDED BY Kriss  */
 // parse members information to format it in the new format [[uid, name, rank], [uid,name,rank]] from [uid,uid,uid]
 private["_listMembers","_myCount","_idPlayer"];
-_listMembers =  _group getVariable "gang_members";
+_listMembers =  (group Player) getVariable "gang_members";
+
 _myCount = count _listMembers;
 for "_x" from 0 to _myCount do
 {
@@ -116,7 +115,7 @@ while { _continue } do
 	if (!_changed) then {_continue = false; };
 
 };
-_group setVariable["gang_members",(_listMembers),true];
+(group Player) setVariable["gang_members",(_listMembers),true];
 
 sleep 2;
-[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
+[[4,(group Player)],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
