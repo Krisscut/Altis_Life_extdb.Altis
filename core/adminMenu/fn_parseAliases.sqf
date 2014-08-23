@@ -13,6 +13,8 @@ private["_display","_text","_idJoueur","_aliases","_displayAliasesList","_textID
 _idJoueur = _this select 0;
 _aliases = _this select 1;			//array
 
+diag_log format["%1 - %2",_idJoueur , _aliases];
+
 disableSerialization;
 _display = findDisplay 9000;
 _textID = _display displayCtrl 9162;
