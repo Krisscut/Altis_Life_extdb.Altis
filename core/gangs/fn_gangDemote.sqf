@@ -18,10 +18,10 @@ _uid = getPlayerUID player;
 _name= (_selectedMember select 1);
 _rank = (_selectedMember select 2);
 
-if(_uid == (_selectedMember select 0)) exitWith {hint "Vous ne pouvez pas vous promouvoir vous-même!"};
-if( _rank == (player getVariable "gang_rank")) exitWith {hint "Vous ne pouvez pas dégrader une personne du même rang que vous"};
-if (_rank == 3) exitWith {hint "Vous ne pouvez pas dégrader le chef de clan"};
-if (_rank == 0) exitWith {hint "Vous ne pouvez pas le dégrader car le joueur selectionné est déja au grade le plus bas"};
+if(_uid == (_selectedMember select 0)) exitWith {hint "Vous ne pouvez pas vous promouvoir vous-même!";};
+if( _rank == (player getVariable "gang_rank")) exitWith {hint "Vous ne pouvez pas dégrader une personne du même rang que vous";};
+if (_rank == 3) exitWith {hint "Vous ne pouvez pas dégrader le chef de clan";};
+if (_rank == 0) exitWith {hint "Vous ne pouvez pas le dégrader car le joueur selectionné est déja au grade le plus bas";};
 
 _rankString = "";
 _sentence = "";

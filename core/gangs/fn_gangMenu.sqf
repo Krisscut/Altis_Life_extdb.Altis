@@ -17,7 +17,8 @@ _gangName = grpPlayer getVariable "gang_name";
 _gangBank = grpPlayer getVariable "gang_bank";
 _gangMax = grpPlayer getVariable "gang_maxMembers";
 
-if((_ownerID != steamid) && (player getVariable "gang_rank" != 2) ) then {			// s'il n'est pas le leader
+if((_ownerID != steamid) && (player getVariable "gang_rank" != 2) ) then
+{			// s'il n'est pas le leader
 
 	(getControl(2620,2624)) ctrlEnable false; //Kick
 	(getControl(2620,2650)) ctrlEnable false; //CdG

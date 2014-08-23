@@ -19,10 +19,10 @@ _name= (_selectedMember select 1);
 _rank = (_selectedMember select 2);
 
 
-if(_uid == (_selectedMember select 0)) exitWith {hint "Vous ne pouvez pas vous Retrograder vous-même!"};
-if( _rank == 2) exitWith {hint "Le joueur est déja promu au rang maximum sans prendre la place de leader."};
-if ( (_rank + 1) == (player getVariable "gang_rank")) exitWith {hint "Vous ne pouvez promouvoir quelqu'un au même niveau que vous!"}
-if (_rank == 3) exitWith {hint "Vous ne pouvez pas dégrader le chef de clan"};
+if(_uid == (_selectedMember select 0)) exitWith {hint "Vous ne pouvez pas vous Retrograder vous-même!";};
+if( _rank == 2) exitWith {hint "Le joueur est déja promu au rang maximum sans prendre la place de leader.";};
+if ( (_rank + 1) == (player getVariable "gang_rank")) exitWith {hint "Vous ne pouvez promouvoir quelqu'un au même niveau que vous!";};
+if (_rank == 3) exitWith {hint "Vous ne pouvez pas dégrader le chef de clan";};
 
 _rankString = "";
 _sentence = "";

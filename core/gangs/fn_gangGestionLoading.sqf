@@ -48,7 +48,7 @@ _groupMembers = grpPlayer getVariable "gang_members";
 for "_i" from 0 to ((count _groupMembers) -1) do
 {
 	_rank = "";
-	if (((_groupMembers select _i) select 0) == _ownerID)
+	if (((_groupMembers select _i) select 0) == _ownerID) then
 	{
 		_rank = "Chef de Clan";
 	}
