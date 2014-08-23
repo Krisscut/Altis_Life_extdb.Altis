@@ -76,12 +76,12 @@ if(!isNil "_group") then {
 		diag_log "Begin inside While";
 		_changed = false;
 		_count = count _listMembers;
-		for "_i" from 0 to _count do
+		for "_i" from 0 to (_count-1) do
 		{
 			_idSelect = (_listMembers select _i) select 0;
 			diag_log format["ID select : %1 ",_idSelect];
 
-			for "_j" from 0 to _count do
+			for "_j" from 0 to (_count-1) do
 			{
 				_idCurrent = (_listMembers select _j) select 0;
 				diag_log format["ID current : %1 ",_idCurrent];
@@ -105,4 +105,5 @@ if(!isNil "_group") then {
 
 	};
 	_group setVariable["gang_members",(_listMembers),true];
+	[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 };

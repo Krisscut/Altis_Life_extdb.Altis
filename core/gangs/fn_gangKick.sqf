@@ -5,7 +5,7 @@
 	Description:
 	32 hours...
 */
-private["_unit","_unitID","_members"];
+private["_unit","_unitID","_members","_myCount","_idPlayer"];
 disableSerialization;
 
 if((lbCurSel 2621) == -1) exitWith {hint "Tu dois sélectionné une personne a kick"};
@@ -19,7 +19,20 @@ if(isNil "_members") exitWith {};
 if(typeName _members != "ARRAY") exitWith {};
 
 //TODO : détect rank of the unit
-_members = _members - [_unitID, name player, 0];
+//search for the entry corresponding to the player
+_idPlayer = getPlayerUID player;
+_myCount = count _members;
+for "_x" from 0 to _myCount do
+{
+	//searching for setting name of the player
+	if( _idPlayer == (_myCount select _x) select 0) then
+	{
+		_myCount set [_x,[1]];
+
+		_members = _members - [1];
+	};
+};
+//_members = _members - [_unitID, name player, 0];
 
 grpPlayer setVariable["gang_members",_members,true];
 

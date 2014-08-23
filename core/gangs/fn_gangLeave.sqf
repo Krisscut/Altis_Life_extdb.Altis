@@ -10,7 +10,18 @@ if(steamid == (grpPlayer getVariable "gang_owner")) exitWith {hint "Tu dois d'ab
 
 _grp = grpPlayer;
 _grpMembers = grpPlayer getVariable "gang_members";
-_grpMembers = _grpMembers - [steamid, name player, 0];
+
+_idPlayer = getPlayerUID player;
+_myCount = count _grpMembers;
+for "_x" from 0 to _myCount do
+{
+	//searching for deleting player entry
+	if( _idPlayer == (_myCount select _x) select 0) then
+	{
+		_myCount set [_x,[1]];
+		_grpMembers = _grpMembers - [1];
+	};
+};
 _grp setVariable["gang_members",_grpMembers,true];
 [player] joinSilent (createGroup civilian);
 
