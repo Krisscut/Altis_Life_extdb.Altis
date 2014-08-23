@@ -39,14 +39,14 @@ if(!isNil "_group") then {
 
 	// parse members information to format it in the new format [[uid, name, rank], [uid,name,rank]] from [uid,uid,uid]
 
-	private["_listMembers","_myCount","_currentElement"];
+	private["_listMembers","_myCount","_currentElement","_idPlayer"];
 	_listMembers =  (life_gangData select 5);
 	_myCount = count _listMembers;
 	for "_x" from 0 to _myCount do
 	{
 		_currentElement = _listMembers select _x;
 
-		if( typeName _currentElement == "ARRAY") then// si ce n'est pas un tableau --> ancienne version passage en nouvelle version
+		if( !(typeName _currentElement == "ARRAY")) then// si ce n'est pas un tableau --> ancienne version passage en nouvelle version
 		{
 			_listMembers set [_x,[_currentElement, "name to be determined", 0]];
 		};
