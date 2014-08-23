@@ -17,7 +17,10 @@ _unitID = getPlayerUID _unit;
 _members = grpPlayer getVariable "gang_members";
 if(isNil "_members") exitWith {};
 if(typeName _members != "ARRAY") exitWith {};
-_members = _members - [_unitID];
+
+//TODO : détect rank of the unit
+_members = _members - [_unitID, name player, 0];
+
 grpPlayer setVariable["gang_members",_members,true];
 
 [[_unit,grpPlayer],"clientGangKick",_unit,false] spawn life_fnc_MP; //Boot that bitch!

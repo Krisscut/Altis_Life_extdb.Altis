@@ -27,6 +27,8 @@ if(count (_aliases) > 0) then {
 	};
 };
 
+diag_log format["%1",_displayAliasesList];
+
 _text = _display displayCtrl 9008;
 _text ctrlSetStructuredText parseText format["%1",_displayAliasesList];
 
