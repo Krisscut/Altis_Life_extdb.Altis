@@ -72,7 +72,7 @@ while{true} do
 		if(isEngineOn _vehicle) exitWith {hint "Allumer le moteur a arrêté le travail en cours.";};
 		_objectsInVehicle = attachedObjects _vehicle;
 		_playersInVehicle = "Man" countType _objectsInVehicle;
-		if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites.";};
+		//if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites.";};
 
 		sleep  0.6;
 		_cP = _cP + 0.01;
