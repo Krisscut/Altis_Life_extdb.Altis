@@ -72,10 +72,10 @@ if(!isNil "_group") then {
 
 		for "_i" from 0 to _myCount do
 		{
-			_idSelect = (_listMembers select _i) select 0);
+			_idSelect = (_listMembers select _i) select 0;
 			for "_j" from 0 to _myCount do
 			{
-				_idCurrent = (_listMembers select _j) select 0);
+				_idCurrent = (_listMembers select _j) select 0;
 				//Si les indices sont differents
 				if( _i != _j) then
 				{
@@ -83,14 +83,13 @@ if(!isNil "_group") then {
 					if ( _idSelect == _idCurrent) then
 					{
 						diag_log format["Duplicate entries of %1, deleting entry %2",_idSelect, _j ];
-						_listMembers set [_j,-1];
-						_listMembers = _array - [-1];
+						_listMembers set [_j,1];
+						_listMembers = _listMembers - [1];
 						breakTo "loop1";
 					};
 				};
 			};
 		};
-
 		_continue = false;
 	};
 	_group setVariable["gang_members",(_listMembers),true];
