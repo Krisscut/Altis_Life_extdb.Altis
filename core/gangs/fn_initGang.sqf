@@ -55,7 +55,7 @@ if(!isNil "_group") then {
 	for "_x" from 0 to _myCount do
 	{
 		//searching for setting name of the player
-		if( _idPlayer == (_listMembers select _x)) then
+		if( _idPlayer == (_listMembers select _x) select 0) then
 		{
 			_listMembers set [_x,[_idPlayer, name player, 0]];
 		};
@@ -68,6 +68,9 @@ if(!isNil "_group") then {
 	while { _continue } do
 	{
 		_count = count _listMembers;
+
+
+
 
 
 	};
