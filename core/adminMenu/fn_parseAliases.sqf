@@ -12,6 +12,7 @@ _ret = _this select 0;
 _idJoueur = _ret select 0;
 _aliases = _ret select 1;
 
+diag_log format["%1 - %2",_idJoueur,_aliases ]
 _displayAliasesList = "";
 
 if(count (_aliases) > 0) then {

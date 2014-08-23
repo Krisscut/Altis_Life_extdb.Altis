@@ -1177,10 +1177,10 @@ class life_admin_tools_advancedMenu {
 		class Aliases : PlayerBInfo
 		{
 			idc = 9008;
-			text = "Not Implemented yet";
+			text = "Waiting for player selection";
 			x = 0.12;
 			y = 0.23;
-			h = 0.2;
+			h = 0.12;
 		};
 
 		class Autresinfos : Life_RscText
@@ -1189,7 +1189,7 @@ class life_admin_tools_advancedMenu {
 			text = "Autres Informations";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.15;
-			y = 0.48;
+			y = 0.40;
 			w = 0.35;
 			h = (1 / 25);
 		};
@@ -1199,7 +1199,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9162;
 			text = "link tools ID";
 			x = 0.12;
-			y = 0.54;
+			y = 0.46;
 			h = 0.1;
 			w = 0.15;
 		};
@@ -1210,10 +1210,10 @@ class life_admin_tools_advancedMenu {
 			text = "Gestion véhicule";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "hint 'Not implemented YET'";
-			x = 0.30;
-			y = 0.54;
+			x = 0.32;
+			y = 0.47;
 			w = 0.17;
-			h = 0.1;
+			h = 0.04;
 			
 			class Attributes
 			{
