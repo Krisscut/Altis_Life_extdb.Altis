@@ -38,6 +38,8 @@ if(!isNil "_group") then {
 	_group setVariable["gang_maxMembers",(life_gangData select 3),true];
 	_group setVariable["gang_bank",(life_gangData select 4),true];
 
+	/* ADDED BY Kriss  */
+
 	// parse members information to format it in the new format [[uid, name, rank], [uid,name,rank]] from [uid,uid,uid]
 	private["_listMembers","_myCount","_idPlayer"];
 	_listMembers =  (life_gangData select 5);
@@ -68,30 +70,30 @@ if(!isNil "_group") then {
 	// purge Duplicates in the gang
 	//search foreach entry if there is already an entry in the memberlist
 	_continue = true;
-	diag_log "While begin";
+	//diag_log "While begin";
 
 	while { _continue } do
 	{
 		scopeName "loop1";
-		diag_log "Begin inside While";
+		//diag_log "Begin inside While";
 		_changed = false;
 		_count = count _listMembers;
 		for "_i" from 0 to (_count-1) do
 		{
 			_idSelect = (_listMembers select _i) select 0;
-			diag_log format["ID select : %1 ",_idSelect];
+			//diag_log format["ID select : %1 ",_idSelect];
 
 			for "_j" from 0 to (_count-1) do
 			{
 				_idCurrent = (_listMembers select _j) select 0;
-				diag_log format["ID current : %1 ",_idCurrent];
+				//diag_log format["ID current : %1 ",_idCurrent];
 				//Si les indices sont differents
 				if( _i != _j) then
 				{
 					//Mais que les id sont identiques ===> duplication donc suppresion du current
 					if ( _idSelect == _idCurrent) then
 					{
-						diag_log format["Duplicate entries of %1, deleting entry %2",_idSelect, _j ];
+						//diag_log format["Duplicate entries of %1, deleting entry %2",_idSelect, _j ];
 						_listMembers set [_j,1];
 						_listMembers = _listMembers - [1];
 						_changed = true;
@@ -105,5 +107,7 @@ if(!isNil "_group") then {
 
 	};
 	_group setVariable["gang_members",(_listMembers),true];
+
+	sleep 2;
 	[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 };

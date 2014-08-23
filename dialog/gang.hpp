@@ -83,10 +83,10 @@ class Life_My_Gang_Diag {
 			h = (1 / 25);
 		};
 
-		class GangLeader : Life_RscButtonMenu 
+		class GroupLeader : Life_RscButtonMenu 
 		{
 			idc = 2650;
-			text = "Chef de Gang";
+			text = "Chef de Groupe";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] call life_fnc_gangNewLeader;";
 			x = 0.47;
@@ -99,7 +99,7 @@ class Life_My_Gang_Diag {
 		{
 			idc = 2630;
 			text = "Gestion Gang";
-			onButtonClick = "hint 'Not implemented YET';";
+			onButtonClick = "createDialog 'Life_Group_Gang_Diag';";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			x = 0.47;
 			y = 0.41;
@@ -151,7 +151,7 @@ class Life_Group_Gang_Diag {
 	name= "life_group_gang_diag";
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "";
+	onLoad = "[] spawn life_fnc_gangGestionLoading;";
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
@@ -244,18 +244,6 @@ class Life_Group_Gang_Diag {
 			colorText[] = {1, 1, 1, 1.0};
 		};
 
-		class MaxGangSlot : Life_RscLine {
-			idc = -1;
-			style = 0;
-			x = 0.82;
-			y = 0.30;
-			w = 0.1;
-			h = 0.05;
-			text = "/XXX";
-			colorBackground[] = {0, 0, 0, 0};
-			colorText[] = {1, 1, 1, 1.0};
-		};
-
 		class GangUpgrade : Life_RscButtonMenu {
 			idc = 2722;
 			text = "$STR_Gang_UpgradeSlots";
@@ -280,7 +268,7 @@ class Life_Group_Gang_Diag {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_gangDisband";
 			x = 0.51;
-			y = 0.66;
+			y = 0.69;
 			w = 0.400;
 			h = (1 / 25);
 			class Attributes
@@ -330,6 +318,15 @@ class Life_Group_Gang_Diag {
 			onButtonClick = "hint 'Not implemented YET';";
 			x = 0.72;
 			y = .56;
+		};
+
+		class PromoteLeader : InviteMember
+		{
+			idc = 2738;
+			text = "Mettre Leader";
+			onButtonClick = "hint 'Not implemented YET';";
+			x = 0.72;
+			y = .61;
 		};
 		
 		class ColorList : Life_RscCombo

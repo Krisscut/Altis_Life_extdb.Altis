@@ -467,6 +467,9 @@ class Life_Client_Core
 		class gangDisband {};
 		class gangDisbanded {};
 		class groupLeader {};
+
+		//added by Kriss
+		class gangGestionLoading {};
 	};
 	
 	class Shops

@@ -28,29 +28,21 @@ if((_ownerID != steamid) && (player getVariable "gang_rank" != 2) ) then {			// 
 	(getControl(2620,2638)) ctrlEnable false;	//Augmenter Gang
 	(getControl(2620,2639)) ctrlEnable false;	//Dissoudre Gang
 
-	(getControl(2720,2722)) ctrlEnable false; //Upgrade
-	(getControl(2720,2725)) ctrlEnable false; //Promote
-	(getControl(2720,2730)) ctrlEnable false; //Demote
-	(getControl(2720,2737)) ctrlEnable false; //Invite
-	(getControl(2720,2731)) ctrlEnable false; //Kick
-	(getControl(2720,2724)) ctrlEnable false; //Disband Gang
 };
 
 if (player getVariable "gang_rank" == 2) then
 {
 	(getControl(2620,2650)) ctrlEnable false; //CdG
 	(getControl(2620,2639)) ctrlEnable false; //Dissoudre Gang
-	(getControl(2720,2724)) ctrlEnable false; //Disband Gang
+
 };
 
-
-
-/*		NEED MORE TESTS
-if (leader group player == player ) then		//si le chef de groupe est le joueur... il peut selectionner le chef de groupe
+//NEED MORE TEST
+if (leader (group player) == player ) then		//si le chef de groupe est le joueur... il peut selectionner le chef de groupe
 {
 	(getControl(2620,2650)) ctrlEnable true; //CdG
 };
-*/
+
 
 (getControl(2620,2629)) ctrlSetText _gangName;
 (getControl(2620,601)) ctrlSetText format["Compte: $%1",[_gangBank] call life_fnc_numberText];
