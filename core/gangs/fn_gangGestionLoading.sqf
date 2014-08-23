@@ -14,7 +14,7 @@ if(isNull (findDisplay 2720)) then {
 _ownerID = grpPlayer getVariable["gang_owner",""];
 _gangRank = player getVariable "gang_rank";
 
-if((_ownerID != getPlayerUID player) || (_gangRank != 2)) exitWith {closeDialog 0;}; //Bad juju
+if((_ownerID != getPlayerUID player) && (_gangRank != 2)) exitWith {closeDialog 0;}; //Bad juju
 _gangName = grpPlayer getVariable "gang_name";
 _gangBank = grpPlayer getVariable "gang_bank";
 _gangMax = grpPlayer getVariable "gang_maxMembers";
