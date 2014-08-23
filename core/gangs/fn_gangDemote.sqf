@@ -18,7 +18,7 @@ _uid = getPlayerUID player;
 _name= (_selectedMember select 1);
 _rank = (_selectedMember select 2);
 
-if(_uid == (_selectedMember select 0)) exitWith {hint "Vous ne pouvez pas vous promouvoir vous-même!";};
+if(_uid == (_selectedMember select 0)) exitWith {hint "Vous ne pouvez pas vous retrograder vous-même!";};
 if( _rank == (player getVariable "gang_rank")) exitWith {hint "Vous ne pouvez pas dégrader une personne du même rang que vous";};
 if (_rank == 3) exitWith {hint "Vous ne pouvez pas dégrader le chef de clan";};
 if (_rank == 0) exitWith {hint "Vous ne pouvez pas le dégrader car le joueur selectionné est déja au grade le plus bas";};
@@ -57,8 +57,8 @@ _action =
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
-	_selectedMember set [2, _rank -1];
-	_grpMembers set [_index, _selectedMembers];
+	(_grpMembers select _index) set [2, _rank -1];
+	_grpMembers set [_index, (_grpMembers select _index)];
 
 	_group setVariable["gang_members",_grpMembers,true];
 	[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;	//UPDATE DATABASE

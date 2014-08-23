@@ -215,7 +215,7 @@ class Life_Group_Gang_Diag {
 		class CloseLoadMenu : Life_RscButtonMenu {
 			idc = -1;
 			text = "Retour";
-			onButtonClick = "closeDialog 0; createDialog 'Life_My_Gang_Diag';";
+			onButtonClick = "closeDialog 0; if(isNil ""life_action_gangInUse"") then {if(isNil {(group player) getVariable ""gang_owner""}) then {createDialog ""Life_Create_Gang_Diag"";} else {[] spawn life_fnc_gangMenu;};};";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);

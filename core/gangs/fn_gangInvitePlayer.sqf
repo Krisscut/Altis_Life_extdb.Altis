@@ -17,7 +17,7 @@ if(count(grpPlayer getVariable ["gang_members",8]) == (grpPlayer getVariable ["g
 if (!isnil {(group _unit) getVariable "gang_name"}) exitWith {hint "Ce joueur a déjà un gang"};
 _action = [
 	format["Vous êtes sur le point d'inviter %1 a votre gang, si il accepte, il aura acces au compte en banque du gang",_unit getVariable ["realname",name _unit]],
-	"Transfer Gang Leadership",
+	"Transfert Gang Leadership",
 	"Yes",
 	"No"
 ] call BIS_fnc_guiMessage;

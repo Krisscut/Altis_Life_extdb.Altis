@@ -24,19 +24,21 @@ if(_action) then {
 	[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 } else {
 	_grpMembers = grpPlayer getVariable "gang_members";
-	_grpMembers = _grpMembers - [steamid, name player, 0];
 
+
+	//search for the entry corresponding to the player
 	_idPlayer = getPlayerUID player;
 	_myCount = count _grpMembers;
 	for "_x" from 0 to _myCount do
 	{
-		//searching for deleting player entry
+		//searching for setting name of the player
 		if( _idPlayer == (_myCount select _x) select 0) then
 		{
 			_myCount set [_x,[1]];
 			_grpMembers = _grpMembers - [1];
 		};
 	};
+
 	grpPlayer setVariable["gang_members",_grpMembers,true];
 	[[4,_grpMembers],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 };
