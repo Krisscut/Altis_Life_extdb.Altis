@@ -1,6 +1,6 @@
 /*
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Main initialization for gangs?
 */
@@ -36,5 +36,35 @@ if(!isNil "_group") then {
 	_group setVariable["gang_name",(life_gangData select 2),true];
 	_group setVariable["gang_maxMembers",(life_gangData select 3),true];
 	_group setVariable["gang_bank",(life_gangData select 4),true];
-	_group setVariable["gang_members",(life_gangData select 5),true];
+
+	// parse members information to format it in the new format [[uid, name, rank], [uid,name,rank]] from [uid,uid,uid]
+
+	private["_listMembers","_myCount","_currentElement"];
+	_listMembers =  (life_gangData select 5);
+	_myCount = count _listMembers;
+	for "_x" from 0 to _myCount do
+	{
+		_currentElement = _listMembers select _x;
+
+		if( typeName _currentElement == "ARRAY") then// si ce n'est pas un tableau --> ancienne version passage en nouvelle version
+		{
+			_listMembers set [_x,[_currentElement, "name to be determined", 0];
+		};
+	};
+
+	//search for the entry corresponding to the player
+	_idPlayer = getPlayerUID player;
+
+	for "_x" from 0 to _myCount do
+	{
+		_currentElement = _listMembers select _x;
+
+		//searching for settigng name of the player
+		if( _idPlayer == (_currentElement select 0)) then
+		{
+			_listMembers set [_x,[_currentElement, name player, 0];
+		};
+	};
+
+	_group setVariable["gang_members",(_listMembers),true];
 };
