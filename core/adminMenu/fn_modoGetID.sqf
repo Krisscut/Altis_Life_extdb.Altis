@@ -12,8 +12,10 @@ _unit = call compile format["%1", _unit];
 if(isNil "_unit") exitwith {};
 if(isNull _unit) exitWith {};
 
+/*
 diag_log format["%1", _unit];
 [[_unit,player],"INVO_fnc_getIDbis",false,false] spawn life_fnc_MP;
+*/
 
 _sender = player;
 _uid = getPlayerUID _unit;

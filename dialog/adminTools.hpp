@@ -1213,7 +1213,7 @@ class life_admin_tools_advancedMenu {
 			x = 0.32;
 			y = 0.47;
 			w = 0.17;
-			h = 0.04;
+			h = 0.08;
 			
 			class Attributes
 			{
