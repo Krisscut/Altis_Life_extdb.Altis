@@ -18,6 +18,7 @@ if(isNull _info) exitWith {_text ctrlSetText "Joueur a disparu?";};
 [[player],"fnc_adminMenu_player_query",_info,false] spawn life_fnc_MP;
 _text ctrlSetText "Recherche joueur......";
 
+
 // add id search
 [] spawn life_fnc_modoGetId;
 
