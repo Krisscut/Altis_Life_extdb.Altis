@@ -5,7 +5,7 @@
 	Description:
 	load the gestionGang UI
 */
-private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl", "_gangRank", "_groupMembers","_rank"];
+private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl", "_gangRank", "_groupMembers","_rank","_display","_slots"];
 disableSerialization;
 if(isNull (findDisplay 2720)) then {
 	if(!(createDialog "Life_Group_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
@@ -39,28 +39,6 @@ if (leader group player == player ) then		//si le chef de groupe est le joueur..
 
 //(getControl(2620,2629)) ctrlSetText _gangName;
 //(getControl(2620,601)) ctrlSetText format["Compte: $%1",[_gangBank] call life_fnc_numberText];
-
-_display = findDisplay 2720;
-_slots = _display displayCtrl 2775;
-
-_nbMembers = (count _groupMembers);
-//Filling number of slot
-if (_nbMembers  >= _gangMax)
-{
-	_slots ctrlSetStructuredText parseText format["<t color='#ff0000'>%1 / %2</t>",_nbMembers ,_gangMax];
-}
-else
-{
-	if (_nbMembers  > _gangMax-3 ) then	//orange
-	{
-		_slots ctrlSetStructuredText parseText format["<t color='#d16428'>%1 / %2</t>",_nbMembers ,_gangMax];
-	}
-	else			// green
-	{
-		_slots ctrlSetStructuredText parseText format["<t color='#00aa00'>%1 / %2</t>",_nbMembers ,_gangMax];
-	};
-};
-
 
 
 
@@ -119,3 +97,27 @@ lbClear _ctrl; //Purge the list
 	_ctrl lbAdd format["%1",_x getVariable["realname",name _x]];
 	_ctrl lbSetData [(lbSize _ctrl)-1,str(_x)];
 } foreach _allUnits;
+
+
+
+_display = findDisplay 2720;
+_slots = _display displayCtrl 2775;
+
+_nbMembers = (count _groupMembers);
+//Filling number of slot
+if (_nbMembers  >= _gangMax) then
+{
+	_slots ctrlSetStructuredText parseText format["<t color='#ff0000'>%1 / %2</t>",_nbMembers ,_gangMax];
+}
+else
+{
+	if (_nbMembers  > _gangMax-3 ) then	//orange
+	{
+		_slots ctrlSetStructuredText parseText format["<t color='#d16428'>%1 / %2</t>",_nbMembers ,_gangMax];
+	}
+	else			// green
+	{
+		_slots ctrlSetStructuredText parseText format["<t color='#00aa00'>%1 / %2</t>",_nbMembers ,_gangMax];
+	};
+};
+
