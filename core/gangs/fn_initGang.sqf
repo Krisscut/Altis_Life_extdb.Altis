@@ -65,13 +65,15 @@ if(!isNil "_group") then {
 	};
 
 
-	// purge Duplicates
+	// purge Duplicates in the gang
 	//search foreach entry if there is already an entry in the memberlist
 	_continue = true;
 	diag_log "While begin";
 
 	while { _continue } do
 	{
+		scopeName "loop1";
+		diag_log "Begin inside While";
 		_changed = false;
 		_count = count _listMembers;
 		for "_i" from 0 to _count do
@@ -92,8 +94,8 @@ if(!isNil "_group") then {
 						diag_log format["Duplicate entries of %1, deleting entry %2",_idSelect, _j ];
 						_listMembers set [_j,1];
 						_listMembers = _listMembers - [1];
-
 						_changed = true;
+						breakTo "loop1";
 					};
 				};
 			};
