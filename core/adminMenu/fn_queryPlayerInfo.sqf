@@ -19,6 +19,6 @@ if(isNull _info) exitWith {_text ctrlSetText "Joueur a disparu?";};
 _text ctrlSetText "Recherche joueur......";
 
 
-// add id search
+// add id search & aliases filing
 [] spawn life_fnc_modoGetId;
 
