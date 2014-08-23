@@ -128,6 +128,7 @@ class whiteCode
 		
 	};  
 
+};
 class breakingNews
 {
 	idd=-1;
