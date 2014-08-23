@@ -349,7 +349,7 @@ class Life_Create_Gang_Diag {
 	name= "life_my_gang_menu_create";
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "[] spawn {sleep 1; ((findDisplay 2520) displayCtrl 2523) ctrlSetText format[localize ""STR_Gang_PriceTxt"",[(call life_gangPrice)] call life_fnc_numberText]};";
+	onLoad = "[] spawn {waitUntil {!isNull (findDisplay 2520)}; ((findDisplay 2520) displayCtrl 2523) ctrlSetText format[localize ""STR_Gang_PriceTxt"",[(call life_gangPrice)] call life_fnc_numberText]};";
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
@@ -380,7 +380,8 @@ class Life_Create_Gang_Diag {
 			text = "";
 			x = 0.1;
 			y = 0.25;
-			w = 0.5; h = 0.32;
+			w = 0.5;
+			h = 0.1;
 		};
 		
 		class Title : Life_RscTitle {
