@@ -57,8 +57,8 @@ _action =
 ] call BIS_fnc_guiMessage;
 
 if(_action) then {
-	(_grpMembers select _index) set [2, _rank -1];
-	_grpMembers set [_index, (_grpMembers select _index)];
+	_selectedMember set [2, _rank -1];
+	_grpMembers set [_index, _selectedMember];
 
 	_group setVariable["gang_members",_grpMembers,true];
 	[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;	//UPDATE DATABASE
