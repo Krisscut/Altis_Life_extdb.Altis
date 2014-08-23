@@ -68,18 +68,21 @@ if(!isNil "_group") then {
 	// purge Duplicates
 	//search foreach entry if there is already an entry in the memberlist
 	_continue = true;
+	diag_log "While begin";
 
 	while { _continue } do
 	{
-		scopeName "loop1";
+		_changed = false;
 		_count = count _listMembers;
-
 		for "_i" from 0 to _count do
 		{
 			_idSelect = (_listMembers select _i) select 0;
+			diag_log format["ID select : %1 ",_idSelect];
+
 			for "_j" from 0 to _count do
 			{
 				_idCurrent = (_listMembers select _j) select 0;
+				diag_log format["ID current : %1 ",_idCurrent];
 				//Si les indices sont differents
 				if( _i != _j) then
 				{
@@ -89,12 +92,15 @@ if(!isNil "_group") then {
 						diag_log format["Duplicate entries of %1, deleting entry %2",_idSelect, _j ];
 						_listMembers set [_j,1];
 						_listMembers = _listMembers - [1];
-						breakTo "loop1";
+
+						_changed = true;
 					};
 				};
 			};
 		};
-		_continue = false;
+
+		if (!_changed) then {_continue = false; };
+
 	};
 	_group setVariable["gang_members",(_listMembers),true];
 };

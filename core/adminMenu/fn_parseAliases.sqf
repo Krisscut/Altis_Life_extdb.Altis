@@ -20,6 +20,7 @@ _display = findDisplay 9000;
 _textID = _display displayCtrl 9162;
 _textID ctrlSetStructuredText parseText format["<a color='#FFFFFF' href='http://ts.involved-gaming.com/admin/player_detail.php?uid=%1'>Tools link : ID %1</a>",_idJoueur];
 
+/*
 _displayAliasesList = "";
 if(count (_aliases) > 1) then {
 {
@@ -33,6 +34,8 @@ else
 	_displayAliasesList = "Pas d'alias detecté";
 };
 
-_text = _display displayCtrl 9008;
-_text ctrlSetStructuredText parseText format["%1",_displayAliasesList];
+*/
+
+_text = _display displayCtrl 9170;
+_text ctrlSetStructuredText parseText format["%1",_aliases];
 

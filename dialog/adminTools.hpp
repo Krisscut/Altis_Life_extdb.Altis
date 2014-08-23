@@ -1176,7 +1176,7 @@ class life_admin_tools_advancedMenu {
 
 		class Aliases : PlayerBInfo
 		{
-			idc = 9008;
+			idc = 9170;
 			text = "Waiting for player selection";
 			x = 0.12;
 			y = 0.23;
