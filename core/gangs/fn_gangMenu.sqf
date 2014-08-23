@@ -25,9 +25,10 @@ if((_ownerID != steamid) && (player getVariable "gang_rank" != 2) ) then {			// 
 	(getControl(2620,2637)) ctrlEnable false; //Invite Player
 
 	/* TEMP */
+	/*
 	(getControl(2620,2638)) ctrlEnable false;	//Augmenter Gang
 	(getControl(2620,2639)) ctrlEnable false;	//Dissoudre Gang
-
+	*/
 };
 
 if (player getVariable "gang_rank" == 2) then

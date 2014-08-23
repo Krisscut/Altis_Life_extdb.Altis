@@ -122,6 +122,7 @@ class Life_My_Gang_Diag {
 			w = (9 / 40); h = 0.03;
 		};
 
+/*
 		class AugmenterGangTemp : GangGestion
 		{
 			idc = 2638;
@@ -137,6 +138,7 @@ class Life_My_Gang_Diag {
 			onButtonClick = "[] spawn life_fnc_gangDisband";
 			y = .64;
 		};
+*/
 		
 		class GangBank : Title {
 			idc = 601;
