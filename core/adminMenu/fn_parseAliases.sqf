@@ -23,6 +23,6 @@ if(count (_aliases) > 0) then {
 };
 
 _display = findDisplay 9000;
-_text = _display displayCtrl 9162;
+_text = _display displayCtrl 9008;
 
 _text ctrlSetStructuredText parseText format["%1",_displayAliasesList];
