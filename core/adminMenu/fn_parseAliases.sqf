@@ -14,8 +14,12 @@ _idJoueur = _this select 0;
 _aliases = _this select 1;			//array
 
 diag_log format["%1 - %2",_idJoueur,_aliases ];
-_displayAliasesList = "";
 
+_display = findDisplay 9000;
+_textID = _display displayCtrl 9162;
+_textID ctrlSetStructuredText parseText format["<a color='#FFFFFF' href='http://ts.involved-gaming.com/admin/player_detail.php?uid=%1'>Tools link - ID %1</a>",_idJoueur];
+
+_displayAliasesList = "";
 if(count (_aliases) > 0) then {
 {
 	for "_i" from 0 to (count _aliases)-1 do
@@ -24,10 +28,6 @@ if(count (_aliases) > 0) then {
 	};
 };
 
-_display = findDisplay 9000;
 _text = _display displayCtrl 9008;
-
 _text ctrlSetStructuredText parseText format["%1",_displayAliasesList];
 
-_textID = _display displayCtrl 9162;
-_textID ctrlSetStructuredText parseText format["<a color='#FFFFFF' href='http://ts.involved-gaming.com/admin/player_detail.php?uid=%1'>Tools link - ID %1</a>",_idJoueur];
