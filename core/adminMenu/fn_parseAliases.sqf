@@ -5,11 +5,13 @@
 	Description:
 	Output information received to admin menu.
 */
-private["_display",,"_text","_idJoueur","_aliases","_displayAliasesList","_textID"];
+private["_display","_text","_idJoueur","_aliases","_displayAliasesList","_textID"];
 disableSerialization;
 
+//example of input : [12,["S.Lambert"]]
+
 _idJoueur = _this select 0;
-_aliases = _this select 1;
+_aliases = _this select 1;			//array
 
 diag_log format["%1 - %2",_idJoueur,_aliases ];
 _displayAliasesList = "";
