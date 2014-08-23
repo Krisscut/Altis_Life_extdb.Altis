@@ -25,10 +25,15 @@ _exitLoop = false;
 	};
 } foreach allGroups;
 
+
+//Si un groupe a été détecté
 if(!isNil "_group") then {
+	diag_log "---GANG INIT--- EXISTANT GROUP USED"
+
 	[player] join _group;
 
-	if((life_gangData select 1) == (getPlayerUID player)) then {
+	if((life_gangData select 1) == (getPlayerUID player)) then
+	{
 		_group selectLeader player;
 		[[player,_group],"clientGangLeader",(units _group),false] spawn life_fnc_MP;
 
@@ -104,11 +109,11 @@ if(!isNil "_group") then {
 
 		sleep 2;
 		[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
-
-
-
 	};
-} else {
+}
+else {				//Si aucun groupe on en crée un
+
+	diag_log "---GANG INIT--- NEW GROUP CREATED"
 	_group = group player;
 	_group setVariable["gang_id",(life_gangData select 0),true];
 	_group setVariable["gang_owner",(life_gangData select 1),true];
