@@ -39,13 +39,12 @@ if(!isNil "_group") then {
 	_group setVariable["gang_bank",(life_gangData select 4),true];
 
 	// parse members information to format it in the new format [[uid, name, rank], [uid,name,rank]] from [uid,uid,uid]
-
 	private["_listMembers","_myCount","_idPlayer"];
 	_listMembers =  (life_gangData select 5);
 	_myCount = count _listMembers;
 	for "_x" from 0 to _myCount do
 	{
-		if( !(typeName (_listMembers select _x) == "ARRAY")) then// si ce n'est pas un tableau --> ancienne version passage en nouvelle version
+		if( !(typeName (_listMembers select _x) == "ARRAY")) then// si ce n'est pas un tableau --> ancienne version transition en nouvelle version
 		{
 			_listMembers set [_x,[(_listMembers select _x), "name to be determined", 0]];
 		};
@@ -56,7 +55,7 @@ if(!isNil "_group") then {
 	for "_x" from 0 to _myCount do
 	{
 		//searching for setting name of the player
-		if( _idPlayer == (_listMembers select _x) then
+		if( _idPlayer == (_listMembers select _x)) then
 		{
 			_listMembers set [_x,[_idPlayer, name player, 0]];
 		};
