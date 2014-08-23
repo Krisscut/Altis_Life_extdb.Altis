@@ -11,14 +11,30 @@ private["_message","_vehicle","_vehicleList","_upp","_ui","_progress","_pgText",
 
 //Getting the closet vehicle of selected type. If several found, then the first is chosen.
 _vehicle = Null;
-_distanceMax = 500;
+_distanceMax = 1000;
 _vehicleList = nearestObjects [player, ["O_Truck_02_Ammo_F"], _distanceMax];
-if (count _vehicleList == 1) {_vehicle = _vehicleList select 0; _message = "Un laboratoire mobile a été repéré dans un rayon de 500m. Aide-toi de la barre ci-dessus pour le repérer.";};
-else if (count _vehicleList == 0) {_vehicle = Null; _message = "Aucun laboratoire trouvé dans un rayon de 500m.";};
-else if (count _vehicleList > 1) {_vehicle = _vehicleList select 0; _message = "plusieurs laboratoires repérés, l'appareil te donnera une indication sur le premier trouvé.";};
-if (_vehicle == Null) exitWith {_message;};
 
-//Setup our detection bat (re-used progress bar)
+switch (count _vehicleList) do
+{
+	case 0
+	{
+		_vehicle = Null;
+		exitWith {hint "Aucun labo trouvé dans un rayon de 1000m";};
+	};
+	case 1
+	{
+		_vehicle = _vehicleList select 0;
+		hint "Un seul laboratoire mobile a été repéré dans un rayon de 1000m. Aide-toi de la barre ci-dessus pour le repérer.";
+	};
+	default //Multiple Zamak founds
+	{
+		_vehicle = _vehicleList select 0;
+		hint "Plusieurs laboratoires ont été détectés. La distance d'un au hasard sera affichée.";
+	};
+};
+
+
+//Setup our detection bar (re-used progress bar)
 disableSerialization;
 5 cutRsc ["life_progress","PLAIN"];
 _upp = "Distance Laboratoire Mobile: ";
@@ -37,9 +53,9 @@ while{true} do
 	{
 		sleep  1;
 		if(!alive _vehicle OR isNull _vehicle) exitWith;
-		if(!alive player) exitWith {};
+		if(!alive player) exitWith;
 		//Objective is to check the player is still in his vehicle.
-		if (isNull attachedTo player) exitWith{};
+		 if(vehicle player == player) exitWith {};
 		_distance = player distance _vehicle;
 		if(_distance > _distanceMax) exitWith {hint "Tu t'es trop éloignée de la cible, le détecteur intégré s'est mis en veille. Relance les gyrophares pour relancer la détection.";};
 		_cP = _distance/_distanceMax;
