@@ -101,6 +101,7 @@ class Life_Client_Core
 		class closeMenu {};
 		class modoGetID {};
 		class parseID {};
+		class parseAliases {};
 
 		class launchCode {};
 

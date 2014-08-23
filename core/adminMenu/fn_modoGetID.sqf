@@ -12,4 +12,7 @@ _unit = call compile format["%1", _unit];
 if(isNil "_unit") exitwith {};
 if(isNull _unit) exitWith {};
 
-[[_unit,player],"TON_fnc_getIDbis",false,false] spawn life_fnc_MP;
+[[_unit,player],"INVO_fnc_getIDbis",false,false] spawn life_fnc_MP;
+
+// request for aliases
+[[_unit,player],"INVO_fnc_queryAliases",false,false] spawn life_fnc_MP;
