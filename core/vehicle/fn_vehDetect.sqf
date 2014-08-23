@@ -16,17 +16,17 @@ _vehicleList = nearestObjects [player, ["O_Truck_02_Ammo_F"], _distanceMax];
 
 switch (count _vehicleList) do
 {
-	case 0
+	case 0:
 	{
 		_vehicle = Null;
 		exitWith {hint "Aucun labo trouvé dans un rayon de 1000m";};
 	};
-	case 1
+	case 1:
 	{
 		_vehicle = _vehicleList select 0;
 		hint "Un seul laboratoire mobile a été repéré dans un rayon de 1000m. Aide-toi de la barre ci-dessus pour le repérer.";
 	};
-	default //Multiple Zamak founds
+	default: //Multiple Zamak founds
 	{
 		_vehicle = _vehicleList select 0;
 		hint "Plusieurs laboratoires ont été détectés. La distance d'un au hasard sera affichée.";
