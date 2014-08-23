@@ -21,4 +21,3 @@ _text ctrlSetText "Recherche joueur......";
 // add id search
 [] spawn life_fnc_modoGetId;
 
-//TODO add other name search

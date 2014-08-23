@@ -20,7 +20,7 @@ switch (_code) do {
     	3 cutText ["", "PLAIN"];
     	//playSound "CodeAlerte";
         3 cutRsc ["breakingNews","PLAIN"];
-        sleep 17;
+        sleep 16;
         3 cutText ["", "PLAIN"];
         3 cutRsc ["whiteCode","PLAIN"];
     	sleep 20;
@@ -29,7 +29,7 @@ switch (_code) do {
     case 1:	//CodeRed
     {
         3 cutRsc ["breakingNews","PLAIN"];
-        sleep 17;
+        sleep 16;
         3 cutText ["", "PLAIN"];
     	3 cutRsc ["codeRed","PLAIN"];
     	//playSound "CodeAlerte";
@@ -37,7 +37,7 @@ switch (_code) do {
     case 2:	//CodeFrini
     {
         3 cutRsc ["breakingNews","PLAIN"];
-        sleep 17;
+        sleep 16;
         3 cutText ["", "PLAIN"];
     	3 cutRsc ["codeFrini","PLAIN"];
     	//playSound "CodeAlerte";
@@ -45,7 +45,7 @@ switch (_code) do {
     case 3: //Troll code
     {
         3 cutRsc ["breakingNews","PLAIN"];
-        sleep 17;
+        sleep 16;
         3 cutText ["", "PLAIN"];
     	3 cutRsc ["trollCode","PLAIN"];
     	//playSound "CodeAlerte";
@@ -53,7 +53,7 @@ switch (_code) do {
     case 4:	//Siracode
     {
         3 cutRsc ["breakingNews","PLAIN"];
-        sleep 17;
+        sleep 16;
         3 cutText ["", "PLAIN"];
     	3 cutRsc ["siraCode","PLAIN"];
     	//playSound "CodeAlerte";

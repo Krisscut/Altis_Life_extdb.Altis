@@ -146,7 +146,7 @@ class breakingNews
 		
 			idc = -1;
 			text = "textures\breakingNews.ogv";
-			x = safeZoneX+safeZoneW-0.4; y = safeZoneY + 0.2;
+			x = safeZoneX+safeZoneW-0.5; y = safeZoneY + 0.2;
 			w = 0.5; h = 0.4;
 		    autoplay = 1;
 		    loops = 1;
