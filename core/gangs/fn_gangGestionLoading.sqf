@@ -5,7 +5,7 @@
 	Description:
 	load the gestionGang UI
 */
-private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl", "_gangRank"];
+private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl", "_gangRank", "_groupMembers","_rank"];
 disableSerialization;
 if(isNull (findDisplay 2720)) then {
 	if(!(createDialog "Life_Group_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
@@ -14,7 +14,7 @@ if(isNull (findDisplay 2720)) then {
 _ownerID = grpPlayer getVariable["gang_owner",""];
 _gangRank = player getVariable "gang_rank";
 
-if(_ownerID == "" || _gangRank == 2) exitWith {closeDialog 0;}; //Bad juju
+if(_ownerID != getPlayerUID || _gangRank != 2) exitWith {closeDialog 0;}; //Bad juju
 _gangName = grpPlayer getVariable "gang_name";
 _gangBank = grpPlayer getVariable "gang_bank";
 _gangMax = grpPlayer getVariable "gang_maxMembers";
@@ -48,29 +48,32 @@ _groupMembers = grpPlayer getVariable "gang_members";
 
 for "_i" from 0 to ((count _groupMembers) -1) do
 {
-	_rang = "";
-	if ((_groupMembers select _i) select 0 == _ownerID)
+	_rank = "";
+	if (((_groupMembers select _i) select 0) == _ownerID)
 	{
-		_rang = "Chef de Clan";
+		_rank = "Chef de Clan";
 	}
 	else
 	{
-
-		switch (_condition) do {
+		switch ((_groupMembers select _i) select 2) do {
 		    case 0:
 		    {
-		    	_rang = "Recrue";
+		    	_rank = "Recrue";
 		 	};
 		    case 1:
 		    {
-		    	_rang = "Membre";
+		    	_rank = "Membre";
+		    };
+		    case 2:
+		    {
+		    	_rank = "Officier";
 		    };
 		    default
 		    {
-		    	_rang = "Officier";
+		    	_rank = "Undefined...";
 		    };
 		};
 	};
-	_members lbAdd format["%1 - %2",(_groupMembers select _i) select 1),_rang];
+	_members lbAdd format["%1 - %2",(_groupMembers select _i) select 1),_rank];
 	_members lbSetData [(lbSize _members)-1,_groupMembers select _i];
 };

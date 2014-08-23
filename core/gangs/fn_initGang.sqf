@@ -59,7 +59,7 @@ if(!isNil "_group") then {
 		//searching for setting name of the player
 		if( _idPlayer == (_listMembers select _x) select 0) then
 		{
-			_listMembers set [_x,[_idPlayer, name player, 0]];
+			_listMembers set [_x,[_idPlayer, name player, (_listMembers select _x) select 2)]];
 
 			// memorise information about the rank of the player
 			player setVariable["gang_rank",(_listMembers select _x) select 2,false];
