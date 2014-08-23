@@ -470,6 +470,8 @@ class Life_Client_Core
 
 		//added by Kriss
 		class gangGestionLoading {};
+		class gangPromote {};
+		class gangDemote {};
 	};
 	
 	class Shops
