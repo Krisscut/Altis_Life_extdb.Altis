@@ -40,6 +40,30 @@ if (leader group player == player ) then		//si le chef de groupe est le joueur..
 //(getControl(2620,2629)) ctrlSetText _gangName;
 //(getControl(2620,601)) ctrlSetText format["Compte: $%1",[_gangBank] call life_fnc_numberText];
 
+_display = findDisplay 2720;
+_slots = _display displayCtrl 2775;
+
+_nbMembers = (count _groupMembers);
+//Filling number of slot
+if (_nbMembers  >= _gangMax)
+{
+	_slots ctrlSetStructuredText parseText format["<t color='#ff0000'>%1 / %2</t>",_nbMembers ,_gangMax];
+}
+else
+{
+	if (_nbMembers  > _gangMax-3 ) then	//orange
+	{
+		_slots ctrlSetStructuredText parseText format["<t color='#d16428'>%1 / %2</t>",_nbMembers ,_gangMax];
+	}
+	else			// green
+	{
+		_slots ctrlSetStructuredText parseText format["<t color='#00aa00'>%1 / %2</t>",_nbMembers ,_gangMax];
+	};
+};
+
+
+
+
 //Filling list of gang member
 _members = getControl(2720,2721);
 lbClear _members;
@@ -74,7 +98,7 @@ for "_i" from 0 to ((count _groupMembers) -1) do
 		};
 	};
 	_members lbAdd format["%1 - %2",(_groupMembers select _i) select 1,_rank];
-	_members lbSetData [(lbSize _members)-1,_groupMembers select _i];
+	//_members lbSetData [(lbSize _members)-1,_groupMembers select _i];
 };
 
 

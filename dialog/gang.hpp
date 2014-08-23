@@ -214,8 +214,8 @@ class Life_Group_Gang_Diag {
 
 		class CloseLoadMenu : Life_RscButtonMenu {
 			idc = -1;
-			text = "$STR_Global_Close";
-			onButtonClick = "hint 'Not implemented YET';";
+			text = "Retour";
+			onButtonClick = "closeDialog 0; createDialog 'Life_My_Gang_Diag';";
 			x = -0.06 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
@@ -234,8 +234,8 @@ class Life_Group_Gang_Diag {
 			colorText[] = {1, 1, 1, 1.0};
 		};
 
-		class ActualGangSlot : Life_RscLine {
-			idc = -1;
+		class ActualGangSlot : Life_RscStructuredText {
+			idc = 2775;
 			style = 0;
 			x = 0.80;
 			y = 0.30;
@@ -284,7 +284,7 @@ class Life_Group_Gang_Diag {
 			idc = 2725;
 			text = "Promouvoir";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "hint 'Not implemented YET';";
+			onButtonClick = "[] spawn life_fnc_gangPromote";
 			x = 0.72;
 			y = 0.41;
 			w = (9 / 40);
@@ -299,7 +299,7 @@ class Life_Group_Gang_Diag {
 		{
 			idc = 2730;
 			text = "Retrograder";
-			onButtonClick = "hint 'Not implemented YET';";
+			onButtonClick = "[] spawn life_fnc_gangDemote";
 			x = 0.72;
 			y = .46;
 		};
