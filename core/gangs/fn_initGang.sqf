@@ -58,8 +58,12 @@ if(!isNil "_group") then {
 		if( _idPlayer == (_listMembers select _x) select 0) then
 		{
 			_listMembers set [_x,[_idPlayer, name player, 0]];
+
+			// memorise information about the rank of the player
+			player setVariable["gang_rank",(_listMembers select _x) select 2),false];
 		};
 	};
+
 
 	// purge Duplicates
 	//search foreach entry if there is already an entry in the memberlist
@@ -70,10 +74,10 @@ if(!isNil "_group") then {
 		scopeName "loop1";
 		_count = count _listMembers;
 
-		for "_i" from 0 to _myCount do
+		for "_i" from 0 to _count do
 		{
 			_idSelect = (_listMembers select _i) select 0;
-			for "_j" from 0 to _myCount do
+			for "_j" from 0 to _count do
 			{
 				_idCurrent = (_listMembers select _j) select 0;
 				//Si les indices sont differents

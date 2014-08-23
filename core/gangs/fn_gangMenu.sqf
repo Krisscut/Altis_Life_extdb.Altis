@@ -17,7 +17,7 @@ _gangName = grpPlayer getVariable "gang_name";
 _gangBank = grpPlayer getVariable "gang_bank";
 _gangMax = grpPlayer getVariable "gang_maxMembers";
 
-if(_ownerID != steamid) then {			// s'il n'est pas le leader
+if((_ownerID != steamid) && (player getVariable "gang_rank" != 2) ) then {			// s'il n'est pas le leader
 
 	(getControl(2620,2624)) ctrlEnable false; //Kick
 	(getControl(2620,2650)) ctrlEnable false; //CdG
@@ -35,6 +35,15 @@ if(_ownerID != steamid) then {			// s'il n'est pas le leader
 	(getControl(2720,2731)) ctrlEnable false; //Kick
 	(getControl(2720,2724)) ctrlEnable false; //Disband Gang
 };
+
+if (player getVariable "gang_rank" == 2) then
+{
+	(getControl(2620,2650)) ctrlEnable false; //CdG
+	(getControl(2620,2639)) ctrlEnable false; //Dissoudre Gang
+	(getControl(2720,2724)) ctrlEnable false; //Disband Gang
+};
+
+
 
 /*		NEED MORE TESTS
 if (leader group player == player ) then		//si le chef de groupe est le joueur... il peut selectionner le chef de groupe
