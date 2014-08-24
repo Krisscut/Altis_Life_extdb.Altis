@@ -6,9 +6,9 @@
 	Prompts the player about a promotion.
 */
 private["_name","_group"];
-_name = [_this,0,"",[""]] call BIS_fnc_param;
-_rank = [_this,1,1] call BIS_fnc_param;
-if(_name == "" OR _rank == "") exitWith {}; //Fail horn anyone?
+_name = [_this,0,"Un des leader"] call BIS_fnc_param;
+_rank = [_this,1,0] call BIS_fnc_param;
+if(_name == "") exitWith {}; //Fail horn anyone?
 
 _rankString = "";
 switch (_rank) do

@@ -1,14 +1,14 @@
 #include <macro.h>
 /*
-	Author: Bryan "Tonic" Boardwine
+	Author: S.lambert
 
 	Description:
-	32 hours...
+	Kick from the gestion panel ---> so you can kick offline players !
 */
 private["_unit","_unitID","_members","_myCount","_idPlayer"];
 disableSerialization;
 
-if((lbCurSel 2621) == -1) exitWith {hint "Tu dois sélectionné une personne a kick"};
+if((lbCurSel 2721) == -1) exitWith {hint "Tu dois sélectionné une personne a kick"};
 _unit = call compile format["%1",getSelData(2621)];
 if(isNull _unit) exitWith {}; //Bad unit?
 if(_unit == player) exitWith {hint "Tu ne peux pas te kick!"};
@@ -24,7 +24,7 @@ _myCount = count _members;
 for "_x" from 0 to _myCount do
 {
 	//searching deleting selected Player
-	if( _unitID  == ((_members select _x) select 0)) then
+	if( _unitID == ((_members select _x) select 0)) then
 	{
 		_members set [_x,[1]];
 

@@ -475,6 +475,7 @@ class Life_Client_Core
 		class gangPromoted {};
 		class gangDemote {};
 		class gangDemoted {};
+		class gangKickGestion {};
 	};
 	
 	class Shops
