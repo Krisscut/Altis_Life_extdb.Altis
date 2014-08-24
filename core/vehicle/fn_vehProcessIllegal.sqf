@@ -16,7 +16,7 @@ if(!isNil {_vehicle getVariable "process"}) exitWith {hint localize "Ce laborato
 closeDialog 0; //Close the interaction menu.
 life_action_inUse = true; //Lock out the interaction menu for a bit..
 
-_processComplete = false
+_processComplete = false;
 _weight = [_vehicle] call life_fnc_vehicleWeight;
 if((_weight select 1) == 0) exitWith {hint "Ce véhicule est vide."; life_action_inUse = false;};
 
