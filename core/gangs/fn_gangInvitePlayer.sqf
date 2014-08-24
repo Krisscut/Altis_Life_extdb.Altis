@@ -27,7 +27,7 @@ if(_action) then {
 	_members = grpPlayer getVariable "gang_members";
 	_members set[count _members,[getPlayerUID _unit, name _unit, 0]];
 
-	player setVariable["gang_rank",0,false];		// rank de recrue
+
 	grpPlayer setVariable["gang_members",_members,true];
 	hint format["Tu as envoyé une invitation a %1",_unit getVariable["realname",name _unit]];
 } else {

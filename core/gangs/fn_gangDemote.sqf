@@ -30,17 +30,17 @@ switch (_rank -1 ) do {
 		    case 0:
 		    {
 		    	_rankString = "Recrue";
-		    	_sentence = format["Vous êtes sur le point de Retrograder %1 au rang de %2",_name,_rankString ];
+		    	_sentence = format["Vous êtes sur le point de Retrograder <t color='#00aa00'>%1 au rang de <t color='#d16428'>%2</t>",_name,_rankString ];
 		 	};
 		    case 1:
 		    {
 		    	_rankString = "Membre";
-		    	_sentence = format["Vous êtes sur le point de retrograder %1 au rang de %2, il ne pourra plus accéder aux fonctionnalités de gestion du gang",_name,_rankString ];
+		    	_sentence = format["Vous êtes sur le point de retrograder <t color='#00aa00'>%1 au rang de <t color='#d16428'>%2</t>, il <t color='#ff0000'>ne pourra plus accéder aux fonctionnalités de gestion du gang</t>",_name,_rankString ];
 		    };
 		    case 2:
 		    {
 		    	_rankString = "Officier";
-		    	_sentence = format["Vous êtes sur le point de retrograder %1 au rang de %2 - Il aura les permissions pour inviter/kicker des personnes dans le gang ",_name,_rankString ];
+		    	_sentence = format["Vous êtes sur le point de retrograder <t color='#00aa00'>%1 au rang de <t color='#d16428'>%2</t> - Il aura les permissions pour <t color='#ff0000'>inviter/kicker</t> des personnes dans le gang ",_name,_rankString ];
 		    };
 		    default
 		    {

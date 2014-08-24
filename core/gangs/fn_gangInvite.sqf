@@ -42,3 +42,4 @@ if(_action) then {
 	grpPlayer setVariable["gang_members",_grpMembers,true];
 	[[4,_grpMembers],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 };
+

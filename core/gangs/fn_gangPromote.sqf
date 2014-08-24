@@ -42,7 +42,7 @@ switch (_rank +1 ) do {
 		    case 2:
 		    {
 		    	_rankString = "Officier";
-		    	_sentence = format["Vous êtes sur le point de promouvoir <t color='#00aa00'>%1</t> au rang de <t color='#d16428'>%2</t> - Il aura les permissions pour inviter/kicker des personnes dans le gang ",_name,_rankString];
+		    	_sentence = format["Vous êtes sur le point de promouvoir <t color='#00aa00'>%1</t> au rang de <t color='#d16428'>%2</t> - Il aura les permissions pour <t color='#ff0000'>inviter/kicker</t> des personnes dans le gang ",_name,_rankString];
 		    };
 		    default
 		    {
