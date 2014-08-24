@@ -27,7 +27,7 @@ for "_x" from 0 to _myCount do
 	//searching deleting selected Player
 	if( _idPlayer == (_members select _x) select 0) then
 	{
-		_myCount set [_x,[1]];
+		_members set [_x,[1]];
 
 		_members = _members - [1];
 	};
