@@ -13,7 +13,7 @@ if(!isNil {(group player) getVariable "gang_name"}) exitWith {hint "Tu es déjà
 
 _gangName = _group getVariable "gang_name";
 _action = [
-	format["%1 vous a invité à un gang appelé %2<br/>Si vous acceptez l'invitation, vous serez ajouté a leur groupe et aurez accès aux cachettes de gangs si contrôlés.",_name,_gangName],
+	parseText format["<t color='#00aa00'>%1</t> vous a invité à un gang appelé <t color='#ff0000'>%2</t><br/>Si vous acceptez l'invitation, <t color='#00aa00'>vous serez ajouté a leur groupe et aurez accès aux cachettes de gangs si contrôlés.</t>",_name,_gangName],
 	"Invitation Gang",
 	"Oui",
 	"Non"
