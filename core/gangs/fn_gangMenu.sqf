@@ -107,7 +107,7 @@ lbClear _members;
 
 	_exportString = format["%1 - %2",(_x getVariable["realname",name _x]), _rank];
 
-	//Si group lader on le rajoute à son nom
+	//Si group leader on le rajoute à son nom
 	if (leader group _x == _x ) then
 	{
 		_exportString = _exportString + " - CdG";
@@ -119,7 +119,7 @@ lbClear _members;
 
 _grpMembers = units grpPlayer;
 _allUnits = playableUnits;
-//Clear out the list..
+//Clear out the list.. with group members
 {
 	if(_x in _grpMembers OR side _x != civilian && isNil {(group _x) getVariable "gang_id"}) then {
 		_allUnits set[_forEachIndex,-1];

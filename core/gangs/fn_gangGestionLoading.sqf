@@ -75,6 +75,9 @@ for "_i" from 0 to ((count _groupMembers) -1) do
 		    };
 		};
 	};
+
+	// Search for online players - TODO
+
 	_members lbAdd format["%1 - %2",(_groupMembers select _i) select 1,_rank];
 	//_members lbSetData [(lbSize _members)-1,_groupMembers select _i];
 };

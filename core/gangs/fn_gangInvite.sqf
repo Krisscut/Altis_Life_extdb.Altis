@@ -21,10 +21,10 @@ _action = [
 
 if(_action) then {
 	[player] join _group;
+	player setVariable["gang_rank",0,false];		// rank de recrue
 	[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
 } else {
 	_grpMembers = grpPlayer getVariable "gang_members";
-
 
 	//search for the entry corresponding to the player
 	_idPlayer = getPlayerUID player;
