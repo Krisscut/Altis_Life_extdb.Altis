@@ -17,7 +17,7 @@
 17.{
 18.        //Getting the closet vehicle of selected type. If several found, then the first is chosen.
 19.        _vehicle = objNull;
-20.        _distanceMax = 500;
+20.        _distanceMax = 1000;
 21.        _vehicleList = nearestObjects [player, ["O_Truck_02_Ammo_F"], _distanceMax];
 22. 
 23.        switch (true) do {
