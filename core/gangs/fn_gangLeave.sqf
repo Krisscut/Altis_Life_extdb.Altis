@@ -16,7 +16,7 @@ _myCount = count _grpMembers;
 for "_x" from 0 to _myCount do
 {
 	//searching for deleting player entry
-	if( _idPlayer == ((_myCount select _x) select 0)) then
+	if( _idPlayer == ((_grpMembers select _x) select 0)) then
 	{
 		_myCount set [_x,[1]];
 		_grpMembers = _grpMembers - [1];
