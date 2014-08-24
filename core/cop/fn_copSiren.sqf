@@ -12,7 +12,7 @@ if(isNull _vehicle) exitWith {};
 if(isNil {_vehicle getVariable "siren"}) exitWith {};
 
 //Zamak Labo - detect
-if ((typeOf _vehicle) == "B_MRAP_01_F") then
+if ((typeOf _vehicle) == "B_MRAP_01_F" || (typeOf _vehicle) == "I_MRAP_03_F") then
 {
 	[] spawn life_fnc_vehDetect; //Zamak Labo: activates detection script when siren is activated.
 };
