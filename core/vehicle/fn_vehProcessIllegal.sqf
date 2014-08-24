@@ -21,11 +21,10 @@ _weight = [_vehicle] call life_fnc_vehicleWeight;
 if((_weight select 1) == 0) exitWith {hint "Ce véhicule est vide."; life_action_inUse = false;};
 
 //Number of players in the Lab. Should be 2 or more.
-_objectsInVehicle = attachedObjects _vehicle;
-diag_log format ["ZAMAK LABO ----- _objectsInVehicle: %1 -----",_objectsInVehicle];
-_playersInVehicle = "Man" countType _objectsInVehicle;
+_objectsInVehicle = crew _vehicle;
+_playersInVehicle = count _objectsInVehicle;
 diag_log format ["ZAMAK LABO ----- _playersInVehicle: %1 -----",_playersInVehicle];
-//if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum."; life_action_inUse = false;};
+if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum."; life_action_inUse = false;};
 if (fuel _vehicle < 0.50) exitWith {hint "Il n'y a pas assez d'essence pour permettre au labo de fonctionner.";};
 
 //Getting Trunk content
@@ -73,11 +72,10 @@ while{true} do
 	{
 		if(!alive _vehicle OR isNull _vehicle) exitWith {d};
 		if(isEngineOn _vehicle) exitWith {hint "Allumer le moteur a arrêté le travail en cours.";};
-		_objectsInVehicle = attachedObjects _vehicle;
-		diag_log format ["ZAMAK LABO ----- _objectsInVehicle: %1 -----",_objectsInVehicle];
-		_playersInVehicle = "Man" countType _objectsInVehicle;
+		_objectsInVehicle = crew _vehicle;
+		_playersInVehicle = count _objectsInVehicle;
 		diag_log format ["ZAMAK LABO ----- _playersInVehicle: %1 -----",_playersInVehicle];
-		//if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites.";};
+		if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum."; life_action_inUse = false;};
 
 		sleep  0.6;
 		_cP = _cP + 0.01;
