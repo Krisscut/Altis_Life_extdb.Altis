@@ -10,6 +10,7 @@
 private["_message","_vehicle","_vehicleList","_upp","_ui","_progress","_pgText","_progress","_cP","_distance","_distanceMax"];
 
 diag_log "ZAMAK LABO ----- Init vehDetect -----";
+diag_log format ["ZAMAK LABO ----- life_ZamakSearch: %1 -----",player getVariable ["life_ZamakSearch",true]];
 if(player getVariable ["life_ZamakSearch",true]) exitWith {};
 player setVariable ["life_ZamakSearch", true, true];
 diag_log "ZAMAK LABO ----- lifeZamakSearch set -----";
@@ -21,6 +22,9 @@ while{true} do
         _distanceMax = 1000;
         _vehicleList = nearestObjects [player, ["O_Truck_02_Ammo_F"], _distanceMax];
 
+        //quits the loop if players exits the MRAP.
+        if(vehicle player == player) exitWith {player setVariable ["life_ZamakSearch", false, true];};
+
         switch (true) do {
             case (count _vehicleList == 1) : {_vehicle = _vehicleList select 0; _message = "Un laboratoire mobile a été repéré dans un rayon de 1000m. Aide-toi de la barre ci-dessus pour le repérer.";};
           //case (count _vehicleList == 0) : {_vehicle = objNull; _message = "Aucun laboratoire trouvé dans un rayon de 500m.";};
@@ -28,7 +32,7 @@ while{true} do
         };
         if (_message != "") exitWith {hint _message;};
 };
-diag_log ["ZAMAK LABO ----- %1 -----",_message];
+diag_log format ["ZAMAK LABO ----- %1 -----",_message];
 
 //Setup our detection bat (re-used progress bar)
 disableSerialization;
