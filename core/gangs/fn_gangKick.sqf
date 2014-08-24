@@ -18,13 +18,13 @@ _members = grpPlayer getVariable "gang_members";
 if(isNil "_members") exitWith {};
 if(typeName _members != "ARRAY") exitWith {};
 
-//TODO : détect rank of the unit
+
 //search for the entry corresponding to the player
 _idPlayer = getPlayerUID player;
 _myCount = count _members;
 for "_x" from 0 to _myCount do
 {
-	//searching for setting name of the player
+	//searching deleting selected Player
 	if( _idPlayer == (_myCount select _x) select 0) then
 	{
 		_myCount set [_x,[1]];

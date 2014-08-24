@@ -88,7 +88,7 @@ class Life_My_Gang_Diag {
 			idc = 2650;
 			text = "Chef de Groupe";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call life_fnc_gangNewLeader;";
+			onButtonClick = "[] call life_fnc_groupLeader;";
 			x = 0.47;
 			y = 0.36;
 			w = (9 / 40);
@@ -106,6 +106,7 @@ class Life_My_Gang_Diag {
 			w = (9 / 40);
 			h = (1 / 25);
 		};
+/*
 		class InviteMember : GangGestion
 		{
 			idc = 2637;
@@ -122,7 +123,7 @@ class Life_My_Gang_Diag {
 			w = (9 / 40); h = 0.03;
 		};
 
-/*
+
 		class AugmenterGangTemp : GangGestion
 		{
 			idc = 2638;
@@ -308,12 +309,12 @@ class Life_Group_Gang_Diag {
 		{
 			idc = 2737;
 			text = "Inviter Joueur";
-			onButtonClick = "hint 'Not implemented YET';";
+			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			x = 0.72;
 			y = 0.51;
 		};
 		
-		class KickerGang : InviteMember
+		class KickerGangGestion : InviteMember
 		{
 			idc = 2731;
 			text = "Kicker Joueur";

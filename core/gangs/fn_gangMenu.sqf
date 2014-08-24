@@ -5,7 +5,7 @@
 	Description:
 	31 hours of no sleep screw your description.
 */
-private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl"];
+private["_ownerID","_gangBank","_gangMax","_gangName","_members","_allUnits","_ctrl","_groupMembers","_myCount","_rank","_index"];
 disableSerialization;
 if(isNull (findDisplay 2620)) then {
 	if(!(createDialog "Life_My_Gang_Diag")) exitWith {}; //NOOOOOOOOOOOOOOOOOOOOOOOoooooooooooooOOOOOOOOOOOOOOOOOOOOOOOOOOOO00000000000000oooooo
@@ -51,15 +51,73 @@ if (leader (group player) == player ) then		//si le chef de groupe est le joueur
 
 //Loop through the players.
 _members = getControl(2620,2621);
+_groupMembers = grpPlayer getVariable "gang_members";
+_myCount = count _grpMembers;
+_rank = "";
+_index = 0;
 lbClear _members;
 {
-	if((getPlayerUID _x) == _ownerID) then {
+	/*
+	if((getPlayerUID _x) == _ownerID) then
+	{
 		_members lbAdd format["%1 (Gang Leader)",(_x getVariable["realname",name _x])];
-		_members lbSetData [(lbSize _members)-1,str(_x)];
-	} else {
+	}
+	else
+	{
 		_members lbAdd format["%1",(_x getVariable["realname",name _x])];
-		_members lbSetData [(lbSize _members)-1,str(_x)];
 	};
+	*/
+
+	//search for the entry corresponding to the player
+	_idPlayer = getPlayerUID _x;
+	for "_j" from 0 to _myCount do
+	{
+		//searching the index of the player
+		if( _idPlayer == (_groupMembers select _j) select 0) then
+		{
+			_index = _j;
+			breakOut;
+		};
+	};
+
+	//searching for the id of the player
+	if (((_groupMembers select _index) select 0) == _ownerID) then
+	{
+		_rank = "Chef de Clan";
+	}
+	else
+	{
+		switch ((_groupMembers select _index) select 2) do {
+		    case 0:
+		    {
+		    	_rank = "Recrue";
+		 	};
+		    case 1:
+		    {
+		    	_rank = "Membre";
+		    };
+		    case 2:
+		    {
+		    	_rank = "Officier";
+		    };
+		    default
+		    {
+		    	_rank = "Undefined...";
+		    };
+		};
+	};
+
+	_exportString = format["%1 - %2",(_x getVariable["realname",name _x]), _rank];
+
+	//Si group lader on le rajoute à son nom
+	if (leader group _x == _x ) then
+	{
+		_exportString = _exportString + " - CdG"
+
+	};
+
+	_members lbAdd _exportString ;
+	_members lbSetData [(lbSize _members)-1,str(_x)];
 } foreach (units grpPlayer);
 
 _grpMembers = units grpPlayer;

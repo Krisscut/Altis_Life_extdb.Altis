@@ -8,8 +8,8 @@
 private["_unit","_unitID","_members","_action","_index"];
 disableSerialization;
 
-if((lbCurSel 2621) == -1) exitWith {hint "Vous devez d'abord choisir une personne !"};
-_unit = call compile format["%1",getSelData(2621)];
+if((lbCurSel 2721) == -1) exitWith {hint "Vous devez d'abord choisir une personne !"};
+_unit = call compile format["%1",getSelData(2721)];
 if(isNull _unit) exitWith {}; //Bad unit?
 if(_unit == player) exitWith {hint "Vous êtes déjà leader!"};
 
