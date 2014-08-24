@@ -87,7 +87,7 @@ while{true} do
 	};
 5 cutText ["","PLAIN"];
 
-if (_processComplete == true) then {
+if (_processComplete) then {
 	//All selected item are transformed. so we simply change the name of the item in the Trunk variable.
 	_value = _items select _itemIndex select 1;
 	_items set[_itemIndex,[_newItem,_value]];
