@@ -9,11 +9,11 @@
 
 private["_message","_vehicle","_vehicleList","_upp","_ui","_progress","_pgText","_progress","_cP","_distance","_distanceMax"];
 
-diag_log "ZAMAK LABO ----- Init vehDetect -----";
-diag_log format ["ZAMAK LABO ----- life_ZamakSearch: %1 -----",player getVariable ["life_ZamakSearch",true]];
+//diag_log "ZAMAK LABO ----- Init vehDetect -----";
+//diag_log format ["ZAMAK LABO ----- life_ZamakSearch: %1 -----",player getVariable ["life_ZamakSearch",true]];
 if(player getVariable ["life_ZamakSearch",true]) exitWith {};
 player setVariable ["life_ZamakSearch", true, true];
-diag_log "ZAMAK LABO ----- lifeZamakSearch set -----";
+//diag_log "ZAMAK LABO ----- lifeZamakSearch set -----";
 _message = "";
 while{true} do
 {
@@ -32,16 +32,16 @@ while{true} do
         };
         if (_message != "") exitWith {hint _message;};
 };
-diag_log format ["ZAMAK LABO ----- %1 -----",_message];
+//diag_log format ["ZAMAK LABO ----- %1 -----",_message];
 
 //Setup our detection bat (re-used progress bar)
 disableSerialization;
-.5 cutRsc ["life_progress","PLAIN"];
-_upp = "Distance Laboratoire Mobile: ";
+5 cutRsc ["life_progress","PLAIN"];
+_upp = "Distance Laboratoire Mobile entre 0 et 1000m";
 _ui = uiNameSpace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
-_pgText ctrlSetText format["%2 (1%1)...","m",_upp];
+_pgText ctrlSetText format["%1",_upp];
 _progress progressSetPosition 0.01;
 _cP = 0.01;
 _distance = player distance _vehicle;
@@ -60,8 +60,9 @@ while{true} do
         if(_distance > _distanceMax) exitWith {hint "Tu t'es trop éloignée de la cible, le détecteur intégré s'est mis en veille. Relance les gyrophares pour relancer la détection.";player setVariable ["life_ZamakSearch", false, true];};
         _cP = _distance/_distanceMax;
         _progress progressSetPosition _cP;
-        _pgText ctrlSetText format["%3 (%1%2)...",_distance,"m",_upp];
+        //_pgText ctrlSetText format["%3 (%1%2)...",_distance,"m",_upp];
 };
 
-player setVariable ["life_ZamakSearch", false, true];
 5 cutText ["","PLAIN"];
+player setVariable ["life_ZamakSearch", false, true];
+//diag_log format ["ZAMAK LABO ----- %1 -----","fin"];
