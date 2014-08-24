@@ -134,7 +134,7 @@ else {				//Si aucun groupe on en crée un
 	{
 		if( !(typeName (_listMembers select _x) == "ARRAY")) then// si ce n'est pas un tableau --> ancienne version transition en nouvelle version
 		{
-			_listMembers set [_x,[(_listMembers select _x), "name to be determined", 0]];
+			_listMembers set [_x,[(_listMembers select _x), "nom Inconnu", 0]];
 		};
 	};
 

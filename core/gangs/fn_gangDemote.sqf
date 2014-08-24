@@ -61,6 +61,23 @@ if(_action) then {
 	_selectedMember set [2, _rank -1];
 	_grpMembers set [_index, _selectedMember];
 
+	_allUnits = playableUnits;
+	_unit = player;
+	//Searching if Unit is online
+	{
+		if( (getPlayerUID _x) == (_selectedMember select 0)) then
+		{
+			_unit = _x;
+		};
+	} foreach _allUnits;
+
+	//Si en ligne, broadcast de la dégradation
+	if (_unit != player ) then
+	{
+		[[profileName,_rank-1],"life_fnc_gangDemoted",_unit,false] spawn life_fnc_MP;
+	};
+
+
 	_group setVariable["gang_members",_grpMembers,true];
 	[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;	//UPDATE DATABASE
 } else {

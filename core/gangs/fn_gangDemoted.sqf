@@ -10,7 +10,7 @@ _name = [_this,0,"",[""]] call BIS_fnc_param;
 _rank = [_this,1,1] call BIS_fnc_param;
 if(_name == "" OR _rank == "") exitWith {}; //Fail horn anyone?
 
-_rankString =""
+_rankString ="";
 switch (_rank) do
 {
     case 0:
