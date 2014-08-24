@@ -20,7 +20,7 @@ _name= (_selectedMember select 1);
 _rank = (_selectedMember select 2);
 
 if(_uid == (_selectedMember select 0)) exitWith {hint "Vous ne pouvez pas vous retrograder vous-même!";};
-if ((_rank == 3) || ((getPlayerUID _selectedMember) == _ownerID )) exitWith {hint "Vous ne pouvez pas dégrader le chef de clan";};
+if ((_rank == 3) || ((_selectedMember select 0) == _ownerID )) exitWith {hint "Vous ne pouvez pas dégrader le chef de clan";};
 if( _rank == (player getVariable "gang_rank")) exitWith {hint "Vous ne pouvez pas dégrader une personne du même rang que vous";};
 if (_rank == 0) exitWith {hint "Vous ne pouvez pas le dégrader car le joueur selectionné est déja au grade le plus bas";};
 

@@ -36,7 +36,6 @@ if (player getVariable "gang_rank" == 2) then
 {
 	(getControl(2620,2650)) ctrlEnable false; //CdG
 	(getControl(2620,2639)) ctrlEnable false; //Dissoudre Gang
-
 };
 
 //NEED MORE TEST
@@ -112,7 +111,6 @@ lbClear _members;
 	if (leader group _x == _x ) then
 	{
 		_exportString = _exportString + " - CdG";
-
 	};
 
 	_members lbAdd _exportString ;

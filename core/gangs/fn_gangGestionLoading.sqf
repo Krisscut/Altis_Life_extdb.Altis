@@ -98,8 +98,6 @@ lbClear _ctrl; //Purge the list
 	_ctrl lbSetData [(lbSize _ctrl)-1,str(_x)];
 } foreach _allUnits;
 
-
-
 _display = findDisplay 2720;
 _slots = _display displayCtrl 2775;
 
