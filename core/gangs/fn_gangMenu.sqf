@@ -52,7 +52,7 @@ if (leader (group player) == player ) then		//si le chef de groupe est le joueur
 //Loop through the players.
 _members = getControl(2620,2621);
 _groupMembers = grpPlayer getVariable "gang_members";
-_myCount = count _grpMembers;
+_myCount = count _groupMembers;
 _rank = "";
 _index = 0;
 lbClear _members;
@@ -76,7 +76,6 @@ lbClear _members;
 		if( _idPlayer == (_groupMembers select _j) select 0) then
 		{
 			_index = _j;
-			breakOut;
 		};
 	};
 
