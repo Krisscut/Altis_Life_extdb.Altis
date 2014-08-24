@@ -73,7 +73,7 @@ lbClear _members;
 	for "_j" from 0 to _myCount do
 	{
 		//searching the index of the player
-		if( _idPlayer == (_groupMembers select _j) select 0) then
+		if( _idPlayer == ((_groupMembers select _j) select 0)) then
 		{
 			_index = _j;
 		};
