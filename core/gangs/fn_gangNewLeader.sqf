@@ -22,7 +22,7 @@ if(typeName _grpMembers != "ARRAY") exitWith {};
 if(_selectedMemberUID == getPlayerUID player) exitWith {hint "Vous êtes déjà leader!"};
 
 _action = [
-	parseText format["Vous êtes sur le point de transférer le <t color='#d16428'>grade de leader</t> à <t color='#00aa00'>%1</t><br/>En transférant le grade de leader <t color='#ff0000'>vous ne serez plus en mesure de contrôler le gang.</t>",_selectedMember select 1],
+	format["Vous êtes sur le point de transférer le <t color='#d16428'>grade de leader</t> à <t color='#00aa00'>%1</t><br/>En transférant le grade de leader <t color='#ff0000'>vous ne serez plus en mesure de contrôler le gang.</t>",_selectedMember select 1],
 	"Changer de leader",
 	"Oui",
 	"Non"
