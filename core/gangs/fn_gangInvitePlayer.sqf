@@ -28,7 +28,10 @@ if(_action) then {
 	_members set[count _members,[getPlayerUID _unit, name _unit, 0]];
 
 	grpPlayer setVariable["gang_members",_members,true];
-	hint format["Tu as envoyé une invitation a %1",_unit getVariable["realname",name _unit]];
+	hint format["Tu as envoyé une invitation a %1. Attend un peu et rouvre ton interface pour s'avoir si le joueur à accepté.",_unit getVariable["realname",name _unit]];
+
+	//wait until Accept or refuse
+
 } else {
 	hint localize "Invitation annulé";
 };
