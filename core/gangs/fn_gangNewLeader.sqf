@@ -14,7 +14,7 @@ if(isNull _unit) exitWith {}; //Bad unit?
 if(_unit == player) exitWith {hint "Vous êtes déjà leader!"};
 
 _action = [
-	format["Vous êtes sur le point de transférer le grade de leader a %1<br/>En transférant le grade de leader vous ne serez plus en msure de contrôler le gang.",_unit getVariable ["realname",name _unit]],
+	parseText format["Vous êtes sur le point de transférer le <t color='#d16428'>grade de leader</t> à <t color='#00aa00'>%1</t><br/>En transférant le grade de leader <t color='#ff0000'>vous ne serez plus en mesure de contrôler le gang.</t>",_unit getVariable ["realname",name _unit]],
 	"Changer de leader",
 	"Oui",
 	"Non"
@@ -28,6 +28,6 @@ if(_action) then {
 	[[_unit,grpPlayer],"clientGangLeader",_unit,false] spawn life_fnc_MP; //Boot that bitch!
 	[[3,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP; //Update the database.
 } else {
-	hint "Changement de leader du gang annulé.";
+	hint parseText "<t color='#00aa00'>Changement de leader du gang annulé.</t>";
 };
 [] call life_fnc_gangMenu;
