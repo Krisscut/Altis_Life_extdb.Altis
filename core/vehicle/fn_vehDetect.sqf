@@ -10,7 +10,7 @@
 private["_message","_vehicle","_vehicleList","_upp","_ui","_progress","_pgText","_progress","_cP","_distance","_distanceMax"];
 
 //Getting the closet vehicle of selected type. If several found, then the first is chosen.
-_vehicle = Null;
+
 _distanceMax = 1000;
 _vehicleList = nearestObjects [player, ["O_Truck_02_Ammo_F"], _distanceMax];
 
@@ -18,7 +18,6 @@ switch (count _vehicleList) do
 {
 	case 0:
 	{
-		_vehicle = objNull;
 		exitWith {hint "Aucun labo trouvé dans un rayon de 1000m";};
 	};
 	case 1:
