@@ -13,7 +13,7 @@ _grpMembers = grpPlayer getVariable "gang_members";
 
 _idPlayer = getPlayerUID player;
 _myCount = count _grpMembers;
-for "_x" from 0 to _myCount do
+for "_x" from 0 to (_myCount-1) do
 {
 	//searching for deleting player entry
 	if( _idPlayer == ((_grpMembers select _x) select 0)) then

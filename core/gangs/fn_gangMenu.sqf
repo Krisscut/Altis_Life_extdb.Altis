@@ -69,7 +69,7 @@ lbClear _members;
 
 	//search for the entry corresponding to the player
 	_idPlayer = getPlayerUID _x;
-	for "_j" from 0 to _myCount do
+	for "_j" from 0 to (_myCount-1) do
 	{
 		//searching the index of the player
 		if( _idPlayer == ((_groupMembers select _j) select 0)) then

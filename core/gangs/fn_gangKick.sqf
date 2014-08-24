@@ -21,20 +21,19 @@ if(typeName _members != "ARRAY") exitWith {};
 
 //search for the entry corresponding to the player
 _myCount = count _members;
-for "_x" from 0 to _myCount do
+for "_x" from 0 to (_myCount-1) do
 {
 	//searching deleting selected Player
 	if( _unitID  == ((_members select _x) select 0)) then
 	{
 		_members set [_x,[1]];
-
 		_members = _members - [1];
 	};
 };
-//_members = _members - [_unitID, name player, 0];
-
+_members = _members - [1];
 grpPlayer setVariable["gang_members",_members,true];
 
 [[_unit,grpPlayer],"clientGangKick",_unit,false] spawn life_fnc_MP; //Boot that bitch!
 [[4,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP; //Update the database.
+
 [] call life_fnc_gangMenu;

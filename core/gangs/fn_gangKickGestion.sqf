@@ -1,6 +1,6 @@
 #include <macro.h>
 /*
-	Author: S.lambert
+	Author: S.Lambert
 
 	Description:
 	Kick from the gestion panel ---> so you can kick offline players !
@@ -27,10 +27,11 @@ for "_x" from 0 to _myCount do
 	if( _unitID == ((_members select _x) select 0)) then
 	{
 		_members set [_x,[1]];
-
 		_members = _members - [1];
 	};
 };
+
+_members = _members - [1];
 //_members = _members - [_unitID, name player, 0];
 
 grpPlayer setVariable["gang_members",_members,true];
