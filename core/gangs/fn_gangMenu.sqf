@@ -112,7 +112,7 @@ lbClear _members;
 	//Si group lader on le rajoute à son nom
 	if (leader group _x == _x ) then
 	{
-		_exportString = _exportString + " - CdG"
+		_exportString = _exportString + " - CdG";
 
 	};
 
