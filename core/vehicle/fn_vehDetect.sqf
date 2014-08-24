@@ -18,7 +18,7 @@ switch (count _vehicleList) do
 {
 	case 0:
 	{
-		_vehicle = Null;
+		_vehicle = objNull;
 		exitWith {hint "Aucun labo trouvé dans un rayon de 1000m";};
 	};
 	case 1:
