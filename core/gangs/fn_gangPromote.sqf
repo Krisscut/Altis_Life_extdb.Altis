@@ -13,7 +13,7 @@ _index = lbCurSel 2721;
 
 _group = group player;
 _grpMembers = _group getVariable "gang_members";
-_ownerID = _group getVariable["gang_owner"];
+_ownerID = _group getVariable["gang_owner",""];
 _selectedMember = _grpMembers select _index;
 _uid = getPlayerUID player;
 _name= (_selectedMember select 1);
