@@ -18,6 +18,7 @@ _members = grpPlayer getVariable "gang_members";
 _ownerID = _group getVariable["gang_owner",""];
 
 _myCount = count _members;
+_index = 0;
 for "_j" from 0 to (_myCount-1) do
 {
 	//searching the index of the player
@@ -36,11 +37,11 @@ if(typeName _members != "ARRAY") exitWith {};
 
 //search for the entry corresponding to the player
 
-diag_log format["Avant : %1", _members];
+diag_log format["Avant operation: %1 ", _members];
 _members set [_index,[1]];
-diag_log format["Après : %1", _members];
+diag_log format["Après operation de mise à 1 de l'index %1: %2", _index, _members];
 _members = _members - [1];
-diag_log format["Final : %1", _members];
+diag_log format["Final après suppression avant MAJ gang: %1", _members];
 
 grpPlayer setVariable["gang_members",_members,true];
 

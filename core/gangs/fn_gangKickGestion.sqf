@@ -34,7 +34,6 @@ for "_x" from 0 to (_myCount-1) do
 		_grpMembers = _grpMembers-[1];
 	};
 };
-
 _grpMembers = _grpMembers - [1];
 
 grpPlayer setVariable["gang_members",_grpMembers,true];

@@ -318,7 +318,7 @@ class Life_Group_Gang_Diag {
 		{
 			idc = 2731;
 			text = "Kicker Joueur";
-			onButtonClick = "hint 'Not implemented YET';";
+			onButtonClick = "[] call life_fnc_gangKickGestion";
 			x = 0.72;
 			y = .56;
 		};
@@ -327,7 +327,7 @@ class Life_Group_Gang_Diag {
 		{
 			idc = 2738;
 			text = "Mettre Leader";
-			onButtonClick = "hint 'Not implemented YET';";
+			onButtonClick = "[] call life_fnc_gangNewLeader";
 			x = 0.72;
 			y = .61;
 		};
