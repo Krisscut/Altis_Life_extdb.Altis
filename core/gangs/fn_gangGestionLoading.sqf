@@ -50,12 +50,9 @@ _groupMembers = grpPlayer getVariable "gang_members";
 for "_i" from 0 to ((count _groupMembers) -1) do
 {
 	_rank = "";
-	_preString = "";
-	_endString = "<t/>";
 	if (((_groupMembers select _i) select 0) == _ownerID) then
 	{
 		_rank = "Chef de Clan";
-		_preString = "<t color='#9D3E0C'>";
 	}
 	else
 	{
@@ -63,32 +60,25 @@ for "_i" from 0 to ((count _groupMembers) -1) do
 		    case 0:
 		    {
 		    	_rank = "Recrue";
-		    	_preString = "<t color='#568203'>";
 		 	};
 		    case 1:
 		    {
 		    	_rank = "Membre";
-		    	_preString = "<t color='#357AB7'>";
 		    };
 		    case 2:
 		    {
 		    	_rank = "Officier";
-		    	_preString = "<t color='#AE642D'>";
 		    };
 		    default
 		    {
 		    	_rank = "Undefined...";
-		    	_preString = "<t color='#5A5E6B'>";
 		    };
 		};
 	};
 
 	// Search for online players - TODO
 
-
-	_exportString = format["%1 - %2",(_groupMembers select _i) select 1,_rank];
-	_exportString = _preString + _exportString + _endString;
-	_members lbAdd (parseText _exportString);
+	_members lbAdd format["%1 - %2",(_groupMembers select _i) select 1,_rank];
 	//_members lbSetData [(lbSize _members)-1,_groupMembers select _i];
 };
 

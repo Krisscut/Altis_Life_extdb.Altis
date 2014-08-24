@@ -78,13 +78,10 @@ lbClear _members;
 		};
 	};
 
-	_preString = "";
-	_endString = "<t/>";
 	//searching for the id of the player
 	if (((_groupMembers select _index) select 0) == _ownerID) then
 	{
 		_rank = "Chef de Clan";
-		_preString = "<t color='#9D3E0C'>";
 	}
 	else
 	{
@@ -92,36 +89,31 @@ lbClear _members;
 		    case 0:
 		    {
 		    	_rank = "Recrue";
-		    	_preString = "<t color='#568203'>";
 		 	};
 		    case 1:
 		    {
 		    	_rank = "Membre";
-		    	_preString = "<t color='#357AB7'>";
 		    };
 		    case 2:
 		    {
 		    	_rank = "Officier";
-		    	_preString = "<t color='#AE642D'>";
 		    };
 		    default
 		    {
 		    	_rank = "Undefined...";
-		    	_preString = "<t color='#5A5E6B'>";
 		    };
 		};
 	};
 
 	_exportString = format["%1 - %2",(_x getVariable["realname",name _x]), _rank];
-	_exportString = _preString + _exportString + _endString;
 
 	//Si group leader on le rajoute à son nom
 	if (leader group _x == _x ) then
 	{
-		_exportString = _exportString + "- <t color='#1560BD'>CdG</t>";
+		_exportString = _exportString + " - CdG";
 	};
 
-	_members lbAdd (parseText (_exportString));
+	_members lbAdd _exportString ;
 	_members lbSetData [(lbSize _members)-1,str(_x)];
 } foreach (units grpPlayer);
 

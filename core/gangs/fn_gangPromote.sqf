@@ -63,6 +63,8 @@ if(_action) then {
 	_selectedMember set [2, _rank +1];
 	_grpMembers set [_index, _selectedMember];
 
+	[[profileName,_rank],"life_fnc_gangPromoted",_unit,false] spawn life_fnc_MP;
+
 	_group setVariable["gang_members",_grpMembers,true];
 	[[4,_group],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;	//UPDATE DATABASE
 } else {
