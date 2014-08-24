@@ -340,8 +340,9 @@ switch (_code) do
 			//Launch Admin menu
 			player execVM 'admintools\tools\DestroyIT.sqf';
 		};
-
 	};
+
+
 };
 
 _handled;
