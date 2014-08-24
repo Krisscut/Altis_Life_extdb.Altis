@@ -24,6 +24,9 @@ _action = [
 if(_action) then {
 	(group player) selectLeader _unit;
 	[[_unit,grpPlayer],"clientGroupLeader",_unit,false] spawn life_fnc_MP; //Boot that bitch!
+
+[] call life_fnc_gangMenu;
+
 } else {
 	hint "Changement de group leader annulé.";
 };

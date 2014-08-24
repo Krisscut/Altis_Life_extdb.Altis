@@ -50,6 +50,7 @@ if(_action) then {
 		[[_unitOnline,grpPlayer],"clientGangLeader",_unitOnline,false] spawn life_fnc_MP; //Boot that bitch!
 	};
 
+	player setVariable["gang_rank",2,false];
 	[[3,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP; //Update the database.
 } else {
 	hint parseText "<t color='#00aa00'>Changement de leader du gang annulé.</t>";
