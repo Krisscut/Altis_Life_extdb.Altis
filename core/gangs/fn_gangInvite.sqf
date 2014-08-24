@@ -29,7 +29,7 @@ if(_action) then {
 	//search for the entry corresponding to the player
 	_idPlayer = getPlayerUID player;
 	_myCount = count _grpMembers;
-	for "_x" from 0 to _myCount do
+	for "_x" from 0 to (_myCount-1) do
 	{
 		//searching for setting name of the player
 		if( _idPlayer == (_myCount select _x) select 0) then

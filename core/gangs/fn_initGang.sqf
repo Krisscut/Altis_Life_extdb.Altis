@@ -45,7 +45,7 @@ if(!isNil "_group") then
 	private["_listMembers","_myCount","_idPlayer"];
 	_listMembers =  _group getVariable "gang_members";
 	_myCount = count _listMembers;
-	for "_x" from 0 to _myCount do
+	for "_x" from 0 to (_myCount-1) do
 	{
 		if( !(typeName (_listMembers select _x) == "ARRAY")) then// si ce n'est pas un tableau --> ancienne version transition en nouvelle version
 		{
@@ -55,7 +55,7 @@ if(!isNil "_group") then
 
 	//search for the entry corresponding to the player
 	_idPlayer = getPlayerUID player;
-	for "_x" from 0 to _myCount do
+	for "_x" from 0 to (_myCount-1) do
 	{
 		//searching for setting name of the player
 		if( _idPlayer == (_listMembers select _x) select 0) then
@@ -130,7 +130,7 @@ else {				//Si aucun groupe on en crée un
 	private["_listMembers","_myCount","_idPlayer"];
 	_listMembers = (life_gangData select 5);
 	_myCount = count _listMembers;
-	for "_x" from 0 to _myCount do
+	for "_x" from 0 to (_myCount-1) do
 	{
 		if( !(typeName (_listMembers select _x) == "ARRAY")) then// si ce n'est pas un tableau --> ancienne version transition en nouvelle version
 		{
@@ -140,7 +140,7 @@ else {				//Si aucun groupe on en crée un
 
 	//search for the entry corresponding to the player
 	_idPlayer = getPlayerUID player;
-	for "_x" from 0 to _myCount do
+	for "_x" from 0 to (_myCount-1) do
 	{
 		//searching for setting name of the player
 		if( _idPlayer == (_listMembers select _x) select 0) then

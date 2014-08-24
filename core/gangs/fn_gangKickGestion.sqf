@@ -21,7 +21,7 @@ if(typeName _members != "ARRAY") exitWith {};
 
 //search for the entry corresponding to the player
 _myCount = count _members;
-for "_x" from 0 to _myCount do
+for "_x" from 0 to (_myCount-1) do
 {
 	//searching deleting selected Player
 	if( _unitID == ((_members select _x) select 0)) then
