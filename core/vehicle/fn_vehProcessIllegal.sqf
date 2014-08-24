@@ -7,7 +7,7 @@
 	Here I assume that transformation doesn't increases the weight taken by items to simplify code.
 */
 
-private["_vehicle","_zone","_weight","_vInv","_items","_space","_itemInfo","_itemIndex","_value","_oldItem","_oldItemName","_newItem","_objectsInVehicle","_playersInVehicle","_upp","_itemIndex","_ui","_progress","_pgText","_progress","_cP","_smoke"];
+private["_vehicle","_zone","_weight","_vInv","_items","_space","_itemInfo","_itemIndex","_value","_oldItem","_oldItemName","_newItem","_objectsInVehicle","_playersInVehicle","_upp","_itemIndex","_ui","_progress","_pgText","_progress","_cP","_smoke","_processComplete"];
 _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 //-------- Section to check if process is feasible.
@@ -16,13 +16,14 @@ if(!isNil {_vehicle getVariable "process"}) exitWith {hint localize "Ce laborato
 closeDialog 0; //Close the interaction menu.
 life_action_inUse = true; //Lock out the interaction menu for a bit..
 
+_processComplete = false
 _weight = [_vehicle] call life_fnc_vehicleWeight;
 if((_weight select 1) == 0) exitWith {hint "Ce véhicule est vide."; life_action_inUse = false;};
 
 //Number of players in the Lab. Should be 2 or more.
 _objectsInVehicle = attachedObjects _vehicle;
 _playersInVehicle = "Man" countType _objectsInVehicle;
-//if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum."; life_action_inUse = false;};
+if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum."; life_action_inUse = false;};
 if (fuel _vehicle < 0.50) exitWith {hint "Il n'y a pas assez d'essence pour permettre au labo de fonctionner.";};
 
 //Getting Trunk content
@@ -72,29 +73,30 @@ while{true} do
 		if(isEngineOn _vehicle) exitWith {hint "Allumer le moteur a arrêté le travail en cours.";};
 		_objectsInVehicle = attachedObjects _vehicle;
 		_playersInVehicle = "Man" countType _objectsInVehicle;
-		//if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites.";};
+		if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum. Les pauses toilettes sont interdites.";};
 
 		sleep  0.6;
 		_cP = _cP + 0.01;
 		_progress progressSetPosition _cP;
 		_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
-		if(_cP >= 1) exitWith {};
+		if(_cP >= 1) exitWith {_processComplete = true;};
 		if(!alive player) exitWith {};
 		if((_vehicle distance player ) > 10) exitWith{(hint "Tu es trop loin du laboratoire")};
 	};
 5 cutText ["","PLAIN"];
 
+if (_processComplete == true) then {
+	//All selected item are transformed. so we simply change the name of the item in the Trunk variable.
+	_value = _items select _itemIndex select 1;
+	_items set[_itemIndex,[_newItem,_value]];
+	_vehicle setVariable["Trunk",[_items,_space - (_weightDiff * _value)],true];
 
-//All selected item are transformed. so we simply change the name of the item in the Trunk variable.
-_value = _items select _itemIndex select 1;
-_items set[_itemIndex,[_newItem,_value]];
-_vehicle setVariable["Trunk",[_items,_space - (_weightDiff * _value)],true];
-
-//Locality checks... & fuel.
-if(local _vehicle) then {
-	_vehicle setFuel (fuel _vehicle)-0.5;
-} else {
-	[[_vehicle,(fuel _vehicle)-0.5],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
+	//Locality checks... & fuel.
+	if(local _vehicle) then {
+		_vehicle setFuel (fuel _vehicle)-0.5;
+	} else {
+		[[_vehicle,(fuel _vehicle)-0.5],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
+	};
 };
-//Might need to delete this smoke at another time in case script ends before end.
+
 _vehicle setVariable["process",nil,true];
