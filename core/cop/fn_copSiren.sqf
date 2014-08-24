@@ -14,6 +14,7 @@ if(isNil {_vehicle getVariable "siren"}) exitWith {};
 //Zamak Labo - detect
 if ((typeOf _vehicle) == "B_MRAP_01_F" || (typeOf _vehicle) == "I_MRAP_03_F") then
 {
+	diag_log "ZAMAK LABO ----- Flic dans Strider -----";
 	[] spawn life_fnc_vehDetect; //Zamak Labo: activates detection script when siren is activated.
 };
 
