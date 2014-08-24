@@ -54,4 +54,4 @@ if(_action) then {
 } else {
 	hint parseText "<t color='#00aa00'>Changement de leader du gang annulé.</t>";
 };
-[] call life_fnc_gangMenu;
+[] call life_fnc_gangGestionLoading;

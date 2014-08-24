@@ -30,11 +30,10 @@ for "_x" from 0 to (_myCount-1) do
 	//searching deleting selected Player
 	if( _selectedMemberUID == ((_grpMembers select _x) select 0)) then
 	{
-		_grpMembers set [_x,[1]];
-		_grpMembers = _grpMembers-[1];
+		_grpMembers set [_x,1];
+		_grpMembers = _grpMembers- [1];
 	};
 };
-_grpMembers = _grpMembers - [1];
 
 grpPlayer setVariable["gang_members",_grpMembers,true];
 
@@ -56,4 +55,5 @@ if (_unitOnline != player ) then
 };
 
 [[4,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP; //Update the database.
-[] call life_fnc_gangMenu;
+
+[] call life_fnc_gangGestionLoading;
