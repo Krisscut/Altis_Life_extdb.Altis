@@ -11,6 +11,12 @@ _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _vehicle) exitWith {};
 if(isNil {_vehicle getVariable "siren"}) exitWith {};
 
+//Zamak Labo - detect
+if ((typeOf _vehicle) == "B_MRAP_01_F") then
+{
+	[] spawn life_fnc_vehDetect; //Zamak Labo: activates detection script when siren is activated.
+};
+
 while {true} do
 {
 	if(!(_vehicle getVariable "siren")) exitWith {};
