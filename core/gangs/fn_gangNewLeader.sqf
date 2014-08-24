@@ -15,7 +15,7 @@ _group = (group player );
 _grpMembers = _group getVariable "gang_members";
 _ownerID = _group getVariable["gang_owner",""];
 _selectedMember = _grpMembers select _index;
-_selectedMemberUID = _selectedMemberUID select 0;
+_selectedMemberUID = _selectedMember select 0;
 
 if(isNil "_grpMembers") exitWith {};
 if(typeName _grpMembers != "ARRAY") exitWith {};

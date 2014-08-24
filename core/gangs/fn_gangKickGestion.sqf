@@ -15,7 +15,7 @@ _group = (group player );
 _grpMembers = _group getVariable "gang_members";
 _ownerID = _group getVariable["gang_owner",""];
 _selectedMember = _grpMembers select _index;
-_selectedMemberUID = _selectedMemberUID select 0;
+_selectedMemberUID = _selectedMember select 0;
 
 if(_selectedMemberUID  == getPlayerUID player) exitWith {hint "Tu ne peux pas te kick!"};
 if (((_selectedMember select 2) == 2) && (getPlayerUID player )!= _ownerID ) exitWith {hint "Tu ne peux pas kicker un officier sans etre chef de gang!"};
