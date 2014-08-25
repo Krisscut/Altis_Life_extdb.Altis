@@ -20,7 +20,7 @@ _gFund = (group player) getVariable ["gang_bank",0];
 _gFund = _gFund - _value;
 (group player) setVariable ["gang_bank",_gFund,true];
 
-hint format["Tu as retiré $%1 sur le compte en banque du gang",[_value] call life_fnc_numberText];
+hint parseText format["Tu as retiré <t color='#d16428'>$%1</t> sur le compte en banque du gang",[_value] call life_fnc_numberText];
 [] call life_fnc_atmMenu;
 [] call SOCK_fnc_updateRequest; //Silent Sync
 [[1,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP;
