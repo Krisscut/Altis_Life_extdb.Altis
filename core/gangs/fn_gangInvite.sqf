@@ -32,9 +32,9 @@ if(_action) then {
 	for "_x" from 0 to (_myCount-1) do
 	{
 		//searching for setting name of the player
-		if( _idPlayer == (_myCount select _x) select 0) then
+		if( _idPlayer == (_grpMembers select _x) select 0) then
 		{
-			_myCount set [_x,[1]];
+			_grpMembers set [_x,1];
 			_grpMembers = _grpMembers - [1];
 		};
 	};

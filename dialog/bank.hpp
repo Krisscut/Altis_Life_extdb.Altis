@@ -3,6 +3,7 @@ class Life_atm_management {
 	name= "life_atm_menu";
 	movingEnable = false;
 	enableSimulation = true;
+	onLoad = "[] spawn life_fnc_bankLoad;";
 
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
