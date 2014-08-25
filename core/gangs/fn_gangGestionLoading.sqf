@@ -19,7 +19,8 @@ _gangName = grpPlayer getVariable "gang_name";
 _gangBank = grpPlayer getVariable "gang_bank";
 _gangMax = grpPlayer getVariable "gang_maxMembers";
 
-if ( {player getVariable "gang_rank" == 2} && {getPlayerUID player != _ownerID}) then
+//Si ce n'est pas le chef
+if ( ((player getVariable "gang_rank") == 2) && ((getPlayerUID player) != _ownerID) ) then
 {
 
 	(getControl(2720,2738)) ctrlEnable false; //Mettre chef
