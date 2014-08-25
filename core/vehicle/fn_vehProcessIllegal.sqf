@@ -7,7 +7,7 @@
 	Here I assume that transformation doesn't increases the weight taken by items to simplify code.
 */
 
-private["_vehicle","_zone","_weight","_vInv","_items","_space","_itemInfo","_itemIndex","_value","_oldItem","_oldItemName","_newItem","_objectsInVehicle","_playersInVehicle","_upp","_itemIndex","_ui","_progress","_pgText","_progress","_cP","_smoke","_processComplete"];
+private["_vehicle","_zone","_weight","_vInv","_items","_space","_itemInfo","_itemIndex","_value","_oldItem","_oldItemName","_newItem","_objectsInVehicle","_playersInVehicle","_upp","_itemIndex","_ui","_progress","_pgText","_progress","_cP","_smoke","_processComplete","_countAllWest"];
 _vehicle = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 //-------- Section to check if process is feasible.
@@ -26,6 +26,16 @@ _playersInVehicle = count _objectsInVehicle;
 diag_log format ["ZAMAK LABO ----- _playersInVehicle: %1 -----",_playersInVehicle];
 if (_playersInVehicle < 2) exitWith {hint "Il faut deux laborantins à bord minimum."; life_action_inUse = false;};
 if (fuel _vehicle < 0.50) exitWith {hint "Il n'y a pas assez d'essence pour permettre au labo de fonctionner.";};
+/*
+_countAllWest=0;
+{
+   if ((side _x) == West) then
+   {
+	  _countAllWest=_countAllWest+1;// magic
+   };
+} forEach playableUnits;
+if (_countAllWest < 4) exitWith {hint "Il n'y a pas assez de gendarmes sur l'île pour utiliser un Zamak Lab.";};
+*/
 
 //Getting Trunk content
 _vInv = _vehicle getVariable ["Trunk",[[],0]];
