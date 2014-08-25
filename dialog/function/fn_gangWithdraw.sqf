@@ -12,7 +12,7 @@ _value = parseNumber(ctrlText 2702);
 if(_value > 999999) exitWith {hint localize "STR_ATM_GreaterThan";};
 if(_value < 0) exitWith {};
 if(!([str(_value)] call life_fnc_isnumeric)) exitWith {hint localize "STR_AIM_notnumeric"};
-if (grpPlayer getVariable "gang_owner" != steamid) exitWith {hint "Tu n'est pas le leader du groupe"};
+if ( ((grpPlayer getVariable "gang_owner") != steamid) || ((player getVariable "gang_rank") < 2) ) exitWith {hint parseText "Tu n'est pas l'un des cadres du groupe. <br/><br/> Il faut être un <t color='#d16428'>officier</t> ou le <t color='#d16428'>leader du clan</t> pour retirer de l'argent."};
 if(_value > grpPlayer getVariable "gang_bank") exitWith {hint "Il n'y as pas assez d'argent sur le compte du gang"};
 
 __ADD__(life_dabliquide,_value);

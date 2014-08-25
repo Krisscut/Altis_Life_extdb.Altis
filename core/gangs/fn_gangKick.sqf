@@ -30,7 +30,7 @@ for "_j" from 0 to (_myCount-1) do
 
 _selectedMember = _members select _index;
 
-if (_ownerID  == _unitID) exitWith {hint "Vous ne pouvez pas kicker le chef de clan";};
+if (_ownerID  == (_selectedMember select 0)) exitWith {hint "Vous ne pouvez pas kicker le chef de clan";};
 if (((_selectedMember select 2) == 2) && (getPlayerUID player )!= _ownerID ) exitWith {hint "Tu ne peux pas kicker un officier sans etre chef de gang!"};
 if(isNil "_members") exitWith {};
 if(typeName _members != "ARRAY") exitWith {};

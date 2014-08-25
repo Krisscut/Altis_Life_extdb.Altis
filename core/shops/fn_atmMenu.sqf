@@ -54,7 +54,7 @@ lbSetCurSel [2703,0];
 
 if (!isnil {(group player) getVariable "gang_name"}) then {
 	_rank = player getVariable["gang_rank",-10];
-	if (_rank < 2) then
+	if ((_rank < 2) && (getPlayerUID player != (group player) getVariable "gang_owner")) then
 	{
 		(getControl(2700,2706)) ctrlEnable false; //WithDraw
 	};
