@@ -43,10 +43,34 @@ _text ctrlSetStructuredText parseText format["<img size='1.7' image='icons\bank.
 
 lbSetCurSel [2703,0];
 
+
+/*
+	File: fn_bankLoad.sqf
+	Author: S.Lambert
+
+	Description:
+	incorporated into atm managment
+*/
+
+if (!isnil {(group player) getVariable "gang_name"}) then {
+	_rank = player getVariable["gang_rank",-10];
+	if ((_rank < 2) && (getPlayerUID player != (group player) getVariable "gang_owner")) then
+	{
+		(getControl(2700,2706)) ctrlEnable false; //WithDraw
+	};
+
+}
+else
+{
+	(getControl(2700,2705)) ctrlEnable false;
+	(getControl(2700,2706)) ctrlEnable false; //WithDraw
+};
+
+/*
 if (isNil {(grpPlayer getVariable "gang_bank")}) then {
 	(getControl(2700,2705)) ctrlEnable false;
 	if (grpPlayer getVariable "gang_owner" != steamid) Then {
 		(getControl(2700,2706)) ctrlEnable false;
 	};
-
 };
+*/

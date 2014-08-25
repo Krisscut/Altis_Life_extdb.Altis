@@ -99,6 +99,9 @@ class Life_Client_Core
 		class mapRefresh {};
 		class refresh {};
 		class closeMenu {};
+		class modoGetID {};
+		class parseID {};
+		class parseAliases {};
 
 		class launchCode {};
 
@@ -408,7 +411,8 @@ class Life_Client_Core
 		class vehicleWeight {};
 		class deviceMine {};
 		class addVehicle2Chain {};
-		class vehProcessIllegal {};
+		class vehProcessIllegal {}; //Zamak Labo - Process
+		class vehDetect {}; //Zamak Labo - Detect
 		class vehInsure {};//added bloopis
 	};
 	
@@ -464,6 +468,14 @@ class Life_Client_Core
 		class gangDisband {};
 		class gangDisbanded {};
 		class groupLeader {};
+
+		//added by Kriss
+		class gangGestionLoading {};
+		class gangPromote {};
+		class gangPromoted {};
+		class gangDemote {};
+		class gangDemoted {};
+		class gangKickGestion {};
 	};
 	
 	class Shops

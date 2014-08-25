@@ -18,7 +18,9 @@ _badChar = false;
 if(_badChar) exitWith {hint "Vous avez des caractères non valides dans le nom de votre gang. Il ne peut être constitué que de chiffres, lettres et espaces";};
 if(life_dabliquide < (__GETC__(life_gangPrice))) exitWith {hint format["Il vous manque: $%1",[((__GETC__(life_gangPrice))-life_dabliquide)] call life_fnc_numberText];};
 
-[[player,getPlayerUID player,_gangName],"TON_fnc_insertGang",false,false] spawn life_fnc_MP;
+player setVariable["gang_rank",2,false];
+
+[[player,getPlayerUID player,_gangName, name player],"TON_fnc_insertGang",false,false] spawn life_fnc_MP;
 hint "Envoi des informations au serveur.....";
 
 closeDialog 0;

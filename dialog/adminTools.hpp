@@ -1069,7 +1069,7 @@ class life_admin_tools_advancedMenu {
 			moving = 1;  
 			x = -0.3;
 			y = -0.34;
-			w = 1.3;
+			w = 1.67;
 			h = (1 / 25);
 		};
 		
@@ -1078,7 +1078,7 @@ class life_admin_tools_advancedMenu {
 			idc = -1;
 			x = -0.3;
 			y = -0.34 + (11 / 250);
-			w = 1.3;
+			w = 1.67;
 			h = 0.9;
 			moving = 1;  
 		};
@@ -1086,7 +1086,7 @@ class life_admin_tools_advancedMenu {
 		class MapView : Life_RscMapControl 
 		{
 			idc = 9001;
-			x = 0.59; y = 0.19;
+			x = 0.54; y = 0.19;
 			w = 0.4;
 			h = 0.4;
 			maxSatelliteAlpha = 0.75;//0.75;
@@ -1101,7 +1101,7 @@ class life_admin_tools_advancedMenu {
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = 9002;
-			text = "Menu de Modération Avancé";
+			text = "Menu de Modération Avancé V1.3 - Work In Progress";
 			x = -0.3;
 			y = -0.34;
 			w = 1.3;
@@ -1159,7 +1159,7 @@ class life_admin_tools_advancedMenu {
 			x = 0.12;
 			y = -0.22;
 			w = 0.41;
-			h = 0.6;
+			h = 0.35;
 		};
 
 
@@ -1169,18 +1169,73 @@ class life_admin_tools_advancedMenu {
 			text = "Autres pseudos";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			x = 0.15;
-			y = 0.42;
+			y = 0.17;
 			w = 0.35;
 			h = (1 / 25);
 		};
 
 		class Aliases : PlayerBInfo
 		{
-			idc = 9008;
-			text = "Not Implemented yet";
+			idc = 9170;
+			text = "Waiting for player selection";
 			x = 0.12;
+			y = 0.23;
+			h = 0.12;
+		};
+
+		class Autresinfos : Life_RscText
+		{
+			idc = 9161;
+			text = "Autres Informations & outils";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.15;
+			y = 0.40;
+			w = 0.35;
+			h = (1 / 25);
+		};
+
+		class ID : PlayerBInfo
+		{
+			idc = 9162;
+			text = "link tools ID";
+			x = 0.12;
+			y = 0.46;
+			h = 0.1;
+			w = 0.15;
+		};
+
+		class Kicker : Life_RscButtonMenu 
+		{
+			idc = 9163;
+			text = "Kicker";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			onButtonClick = "hint 'Not implemented YET'";
+			x = 0.32;
 			y = 0.48;
-			h = 0.2;
+			w = 0.17;
+			h = ( 1 / 25 );
+			
+			class Attributes
+			{
+				align = "center";
+			};
+		};
+
+		class CreerTicket : Life_RscButtonMenu 
+		{
+			idc = 9163;
+			text = "Creer Ticket";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			onButtonClick = "hint 'Not implemented YET'";
+			x = 0.32;
+			y = 0.53;
+			w = 0.17;
+			h = ( 1 / 25 );
+			
+			class Attributes
+			{
+				align = "center";
+			};
 		};
 
 		class TitreModeration : Life_RscText
@@ -1188,7 +1243,7 @@ class life_admin_tools_advancedMenu {
 			idc = 9009;
 			text = "Actions modérations";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
-			x = 0.61; y = -0.28;
+			x = 0.57; y = -0.28;
 			w = 0.35;
 			h = (1 / 25);
 		};
@@ -1199,7 +1254,7 @@ class life_admin_tools_advancedMenu {
 			text = "Observer";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_spectator; closeDialog 0; createDialog 'life_admin_tools_spectatorMenu'; ";
-			x = 0.61; y = -0.22;
+			x = 0.57; y = -0.22;
 			w = 0.17;
 			h = 0.04;
 			class Attributes
@@ -1269,17 +1324,16 @@ class life_admin_tools_advancedMenu {
 			text = "Menotter";
 			
 			onButtonClick = "[] spawn life_fnc_restrainTarget;";
-			x = 0.79;
+			x = 0.75;
 			y = -0.22;
 		};
 
-		class Demenotter : Spectateur 
+		class Demenotter : Menotter 
 		{
 			idc = 9053;
 			text = "Demenotter";
 			
 			onButtonClick = "[] spawn life_fnc_unrestrainTarget;";
-			x = 0.79;
 			y = -0.16;
 		};
 
@@ -1329,6 +1383,90 @@ class life_admin_tools_advancedMenu {
 			
 			onButtonClick = "[] spawn life_fnc_troll";
 			y = 0.14;
+		};
+
+		class TicketsSystem : Life_RscText
+		{
+			idc = 9164;
+			text = "Tickets in-game";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.98; y = -0.28;
+			w = 0.35;
+			h = (1 / 25);
+		};
+
+		class TicketsLists : Life_RscListBox 
+		{
+			idc = 9165;
+			text = "";
+			sizeEx = 0.035;
+			//colorBackground[] = {0,0,0,0};
+			onLBSelChanged = "[_this] spawn life_fnc_queryPlayerInfo";
+			
+			x = 0.96; y = -0.22;
+			w = 0.39; h = 0.37;
+		};
+
+		class TitreTickets : Life_RscText
+		{
+			idc = 9167;
+			text = "Infos Ticket Selectionné";
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			x = 0.98;
+			y = 0.17;
+			w = 0.35;
+			h = (1 / 25);
+		};
+
+		class DateTicket : Life_RscStructuredText
+		{
+			idc = 9170;
+			text = "Date émission : DATE_TICKET";
+			colorBackground[] = {0.28,0.28,0.28,0.28};
+			x = 0.96;
+			y = 0.23;
+			w = 0.39;
+			h = (1 / 25);
+		};
+
+		class ModoTicket : DateTicket
+		{
+			idc = 9171;
+			text = "De : Nom_Modérateur";
+			x = 0.96;
+			y = 0.28;
+			w = 0.23;
+			h = (1 / 25);
+		};
+
+		class StatuTicket : DateTicket
+		{
+			idc = 9173;
+			text = "Status : STATUS_SUJET";
+			x = 1.20;
+			y = 0.28;
+			w = 0.15;
+			h = (1 / 25);
+		};
+
+		class SujetTicket : DateTicket
+		{
+			idc = 9172;
+			text = "Sujet : SUJET_TICKET";
+			x = 0.96;
+			y = 0.33;
+			w = 0.39;
+			h = (1 / 25);
+		};
+
+		class ContentTicket : DateTicket
+		{
+			idc = 9174;
+			text = "Contenu du sujet : <br/><br/> Le contenu du ticket selectionné s'affichera ici";
+			x = 0.96;
+			y = 0.38;
+			w = 0.39;
+			h = 0.21;
 		};
 
 		class Refresh : Life_RscButtonMenu 

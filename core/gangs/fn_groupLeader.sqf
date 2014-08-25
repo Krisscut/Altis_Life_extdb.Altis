@@ -8,6 +8,7 @@
 private["_unit","_action"];
 disableSerialization;
 
+//if (true) exitWith {hint "Fonction en cours de developpement!"};
 if((lbCurSel 2621) == -1) exitWith {hint "Vous devez d'abord choisir une personne !"};
 _unit = call compile format["%1",getSelData(2621)];
 if(isNull _unit) exitWith {}; //Bad unit?
@@ -22,6 +23,10 @@ _action = [
 
 if(_action) then {
 	(group player) selectLeader _unit;
+	[[_unit,grpPlayer],"clientGroupLeader",_unit,false] spawn life_fnc_MP; //Boot that bitch!
+
+[] call life_fnc_gangMenu;
+
 } else {
 	hint "Changement de group leader annulé.";
 };

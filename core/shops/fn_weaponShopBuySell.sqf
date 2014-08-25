@@ -35,9 +35,9 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 	else
 {
 
-	if(!isNil {grpPlayer getVariable "gang_bank"} && {(grpPlayer getVariable "gang_bank") >= _price}) then {
+	if(!isNil {grpPlayer getVariable "gang_bank"} && {(grpPlayer getVariable "gang_bank") >= _price} && {player getVariable "gang_rank" >= 2}) then {
 		_action = [
-			format["La banque du gang a assez pour payer cet objet, veux tu utiliser l'argent du gang ou le tiens ??<br/><br/>Argent du gang: <t color='#8cff9b'>$%1</t><br/>Ton argent: <t color='#8cff9b'>$%2</t>",
+			format["Le gang a assez d'argent pour payer cette objet, et vous êtes suffisamment gradé pour utiliser l'argent du gang<br/><br/>Voulez vous payer avec le compte en banque du gang ou avec le votre ?<br/><br/>Argent du gang: <t color='#8cff9b'>$%1</t><br/>Ton argent: <t color='#8cff9b'>$%2</t>",
 				[(grpPlayer getVariable "gang_bank")] call life_fnc_numberText,
 				[life_liquide] call life_fnc_numberText
 			],
