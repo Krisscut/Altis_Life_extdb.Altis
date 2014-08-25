@@ -96,7 +96,8 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 					if ((_selectedMember select 0) == _ownerID) then
 					{
 						_rank = "Leader";
-						_icon = "icons\ranks\leader.paa";
+						_icon = "a3\UI_F\data\GUI\Cfg\Ranks\general_gs.paa";
+						//_icon = "icons\ranks\leader.paa";
 					}
 					else
 					{
@@ -104,17 +105,20 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 						    case 0:
 						    {
 						    	_rank = "Recrue";
-						    	_icon = "icons\ranks\recrue.paa";
+						    	_icon = "a3\UI_F\data\GUI\Cfg\Ranks\private_gs.paa";
+						    	//_icon = "icons\ranks\recrue.paa";
 						 	};
 						    case 1:
 						    {
 						    	_rank = "Membre";
-						    	_icon = "icons\ranks\membre.paa";
+						    	_icon = "a3\UI_F\data\GUI\Cfg\Ranks\sergeant_gs.paa";};
+						    	//_icon = "icons\ranks\membre.paa";
 						    };
 						    case 2:
 						    {
 						    	_rank = "Officier";
-						    	_icon = "icons\ranks\officier.paa";
+						    	_icon = "a3\UI_F\data\GUI\Cfg\Ranks\lieutenant_gs.paa";};
+						    	//_icon = "icons\ranks\officier.paa";
 						    };
 						    default
 						    {
