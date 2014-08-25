@@ -62,13 +62,13 @@
 	</Package>
 	<Package name="Cell_Phone">
 		<Key ID="STR_CELL_Title">
-			<Original>Rocco SMS</Original>
+			<Original>Message à envoyer :</Original>
 		</Key>
 		<Key ID="STR_CELL_TextToSend">
 			<Original>Message à envoyer:</Original>
 		</Key>
 		<Key ID="STR_CELL_TextMSGBtn">
-			<Original>Envoyer:</Original>
+			<Original>Envoyer</Original>
 		</Key>
 		<Key ID="STR_CELL_TextPolice">
 			<Original>Gendarmerie</Original>
@@ -86,10 +86,10 @@
 			<Original>Msg Ambu.</Original>
 		</Key>
 		<Key ID="STR_CELL_LastContact">
-			<Original>Dernier contact:</Original>
+			<Original>Dernier contact :</Original>
 		</Key>
 		<Key ID="STR_CELL_FastReply">
-			<Original>Réponse rapide</Original>
+			<Original>Réponse rapide à</Original>
 		</Key>
 	</Package>
 	<Package name="Chop_Shop">
