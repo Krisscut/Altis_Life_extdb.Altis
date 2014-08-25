@@ -23,7 +23,7 @@ _rank = (_selectedMember select 2);
 if(_uid == (_selectedMember select 0)) exitWith {hint "Vous ne pouvez pas vous promouvoir vous-même!";};
 if ((_rank == 3) || ((_selectedMember select 0) == _ownerID )) exitWith {hint "Vous ne pouvez pas promouvoir le chef de clan";};
 if( _rank == 2) exitWith {hint "Le joueur est déja promu au rang maximum sans prendre la place de leader.";};
-if ( (_rank + 1) == (player getVariable "gang_rank")) exitWith {hint "Vous ne pouvez promouvoir quelqu'un au même niveau que vous!";};
+if ( (_rank + 1) == (player getVariable "gang_rank") && ((getPlayerUID player) != _ownerID) ) exitWith {hint "Vous ne pouvez promouvoir quelqu'un au même niveau que vous!";};
 
 
 _rankString = "";
