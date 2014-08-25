@@ -189,7 +189,7 @@ class vInteraction_Menu
 			x = BGX;
 			y = BGY + (11 / 250);
 			w = BGW;
-			h = 0.49 - (22 / 250);
+			h = 0.55 - (22 / 250);
 		};
 		
 		class Title : life_RscTitle
@@ -213,7 +213,7 @@ class vInteraction_Menu
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = BGX;
-			y = 0.69 - (1 / 25);
+			y = 0.75 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
