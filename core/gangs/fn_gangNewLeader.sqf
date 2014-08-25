@@ -50,6 +50,17 @@ if(_action) then {
 		[[_unitOnline,grpPlayer],"clientGangLeader",_unitOnline,false] spawn life_fnc_MP; //Boot that bitch!
 	};
 
+	//Mise de l'ancien chef en officier
+	_myCount = count _grpMembers;
+	for "_x" from 0 to (_myCount-1) do
+	{
+		//searching for setting name of the player
+		if( getPlayerUID player  == (_grpMembers select _x) select 0) then
+		{
+			_grpMembers set [_x,[(_grpMembers select _x) select 0,(_grpMembers select _x) select 1),2]];
+		};
+	};
+
 	player setVariable["gang_rank",2,false];
 	[[3,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP; //Update the database.
 } else {
