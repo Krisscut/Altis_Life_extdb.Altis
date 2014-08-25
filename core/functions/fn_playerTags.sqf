@@ -123,7 +123,7 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 						};
 					};
 					_GangName = format["%1 - %2", ((group _x) getVariable "gang_name"),_rank];
-					drawIcon3D [_icon,[0.3,0,0.8,1],_position2,_width,_height,0,_GangName,0,0.06];
+					drawIcon3D [MISSION_ROOT + _icon,[0.3,0,0.8,1],_position2,_width,_height,0,_GangName,0,0.06];
 				};
 			};
 		};
