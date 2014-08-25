@@ -66,7 +66,6 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 
 
 
-				drawIcon3D [_icon,[1,1,1,1],_position,_width,_height,0,_name,0,0.04];
 
 				if (!isnil {(group _x) getVariable "gang_name"}) Then {
 					_position2 = visiblePosition _x;
@@ -129,7 +128,21 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 					_GangName = format["%1 - %2", ((group _x) getVariable "gang_name"),_rank];
 					//_icon = MISSION_ROOT + _icon;
 					//diag_log _icon;
-					drawIcon3D [_icon,[0.3,0,0.8,1],_position2,_width,_height,0,_GangName,0,0.06];
+
+					//display Logo + name
+
+					_width = 0.85;
+					_height = 0.85;
+					drawIcon3D [_icon,[1,1,1,1],_position,_width,_height,0,_name,0,0.04];
+
+					_width = 0.0;
+					_height = 0.0;
+					//display Gang name + Grade
+					drawIcon3D ["",[0.3,0,0.8,1],_position2,_width,_height,0,_GangName,0,0.06];
+				}
+				else
+				{
+					drawIcon3D [_icon,[1,1,1,1],_position,_width,_height,0,_name,0,0.04];
 				};
 			};
 		};
