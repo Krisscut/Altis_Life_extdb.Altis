@@ -57,7 +57,7 @@ if(_action) then {
 		//searching for setting name of the player
 		if( getPlayerUID player  == (_grpMembers select _x) select 0) then
 		{
-			_grpMembers set [_x,[(_grpMembers select _x) select 0,(_grpMembers select _x) select 1),2]];
+			_grpMembers set [_x,[(_grpMembers select _x) select 0,(_grpMembers select _x) select 1,2]];
 		};
 	};
 

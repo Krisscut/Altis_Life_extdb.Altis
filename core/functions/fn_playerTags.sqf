@@ -111,13 +111,13 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 						    case 1:
 						    {
 						    	_rank = "Membre";
-						    	_icon = "a3\UI_F\data\GUI\Cfg\Ranks\sergeant_gs.paa";};
+						    	_icon = "a3\UI_F\data\GUI\Cfg\Ranks\sergeant_gs.paa";
 						    	//_icon = "icons\ranks\membre.paa";
 						    };
 						    case 2:
 						    {
 						    	_rank = "Officier";
-						    	_icon = "a3\UI_F\data\GUI\Cfg\Ranks\lieutenant_gs.paa";};
+						    	_icon = "a3\UI_F\data\GUI\Cfg\Ranks\lieutenant_gs.paa";
 						    	//_icon = "icons\ranks\officier.paa";
 						    };
 						    default
