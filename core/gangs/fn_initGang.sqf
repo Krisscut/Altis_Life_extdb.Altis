@@ -138,7 +138,7 @@ else {				//Si aucun groupe on en crée un
 		};
 	};
 
-	//search for the entry corresponding to the player
+	//search for the entry corresponding to the player ffor updating information ( name )
 	_idPlayer = getPlayerUID player;
 	for "_x" from 0 to (_myCount-1) do
 	{
@@ -151,7 +151,6 @@ else {				//Si aucun groupe on en crée un
 			player setVariable["gang_rank",(_listMembers select _x) select 2,false];
 		};
 	};
-
 
 	// purge Duplicates in the gang
 	//search foreach entry if there is already an entry in the memberlist
