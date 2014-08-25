@@ -61,8 +61,15 @@ if(_action) then {
 		};
 	};
 
+	//Mise du nouveau au rang 3
+	_selectedMember set [2,3];
+	_grpMembers set [_index, _selectedMember];
+
 	player setVariable["gang_rank",2,false];
+	grpPlayer setVariable["gang_members",_grpMembers,true];
 	[[3,grpPlayer],"TON_fnc_updateGang",false,false] spawn life_fnc_MP; //Update the database.
+
+
 } else {
 	hint parseText "<t color='#00aa00'>Changement de leader du gang annulé.</t>";
 };
