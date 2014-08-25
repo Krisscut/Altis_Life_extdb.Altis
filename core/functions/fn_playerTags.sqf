@@ -86,10 +86,9 @@ _nearUnits = (visiblePosition player) nearEntities ["Man",10];
 						//searching for setting name of the player
 						if( _idPlayer == (_grpMembers select _i) select 0) then
 						{
-							_selectedMember == (_grpMembers select _i);
+							_selectedMember = (_grpMembers select _i);
 						};
 					};
-
 
 					_rankTarget = _selectedMember select 2;
 					_icon = "";
