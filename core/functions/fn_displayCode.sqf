@@ -18,29 +18,44 @@ switch (_code) do {
     case 0:	//Delete		---> whitecode
     {
     	3 cutText ["", "PLAIN"];
-    	playSound "bankalarm";
-    	3 cutRsc ["whiteCode","PLAIN"];
-    	sleep 10;
+    	//playSound "CodeAlerte";
+        3 cutRsc ["breakingNews","PLAIN"];
+        sleep 15;
+        3 cutText ["", "PLAIN"];
+        3 cutRsc ["whiteCode","PLAIN"];
+    	sleep 20;
      	3 cutText ["", "PLAIN"];
     };
     case 1:	//CodeRed
     {
+        3 cutRsc ["breakingNews","PLAIN"];
+        sleep 15;
+        3 cutText ["", "PLAIN"];
     	3 cutRsc ["codeRed","PLAIN"];
-    	playSound "bankalarm";
+    	//playSound "CodeAlerte";
     };
     case 2:	//CodeFrini
     {
+        3 cutRsc ["breakingNews","PLAIN"];
+        sleep 15;
+        3 cutText ["", "PLAIN"];
     	3 cutRsc ["codeFrini","PLAIN"];
-    	playSound "bankalarm";
+    	//playSound "CodeAlerte";
     };
     case 3: //Troll code
     {
+        3 cutRsc ["breakingNews","PLAIN"];
+        sleep 15;
+        3 cutText ["", "PLAIN"];
     	3 cutRsc ["trollCode","PLAIN"];
-    	playSound "bankalarm";
+    	//playSound "CodeAlerte";
     };
     case 4:	//Siracode
     {
+        3 cutRsc ["breakingNews","PLAIN"];
+        sleep 15;
+        3 cutText ["", "PLAIN"];
     	3 cutRsc ["siraCode","PLAIN"];
-    	playSound "bankalarm";
+    	//playSound "CodeAlerte";
     };
 };

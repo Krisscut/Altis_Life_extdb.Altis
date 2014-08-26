@@ -28,3 +28,10 @@ if(isDedicated && isNil("life_market_prices")) then
 //[] execVM "core\inventory\init.sqf";
 
 StartProgress = true;
+
+MISSION_ROOT = call {
+    private "_arr";
+    _arr = toArray str missionConfigFile;
+    _arr resize (count _arr - 15);
+    toString _arr
+};
