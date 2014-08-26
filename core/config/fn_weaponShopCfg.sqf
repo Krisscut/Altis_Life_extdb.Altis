@@ -24,7 +24,7 @@ switch(_shop) do
 	{
 		switch(true) do
 		{
-			case (playerSide != west): {"Interdit aux civils !"};
+			case (playerSide != west): {"Vous n'etes pas un membre des forces de l'ordre !"};
 			case (__GETC__(life_coplevel) == 2):
 			{
 				["Armurerie Gendarmes",
@@ -183,7 +183,7 @@ switch(_shop) do
 			{
 				["Armurerie Bleu",
 					[
-						["hgun_Pistol_Signal_F","Pistolet Lumière",10000],
+						["hgun_Pistol_Signal_F","Lance Fusée",10000],
 						["6Rnd_GreenSignal_F","Munitions verte",250],
 						["6Rnd_RedSignal_F","Munitions rouge",250],
 						["hgun_P07_snds_F","Pistolet Taser",2000],
@@ -214,8 +214,9 @@ switch(_shop) do
 	{
 		switch (true) do
 		{
-			case (playerSide != independent): {"Tu n'es pas ambuluancier"};
-			default {
+			case (playerSide != independent): {"Vous n'etes pas un indépendant !"};
+			case ((__GETC__(life_medicLevel)) > 0) :
+			{
 				["Hospital EMS Shop",
 					[
 						["ItemGPS",nil,100],
@@ -237,14 +238,14 @@ switch(_shop) do
 	{
 		switch(true) do
 		{
-			case (playerSide != civilian): {"Interdit aux civils !"};
+			case (playerSide != civilian): {"Vous n'etes pas un civil !"};
 			case (!license_civ_rebel): {"Tu n'as pas ta licence d'entrainement Rebelle!"};
 			case (__GETC__(life_donator) == 1) :
 			{
 				["Mohammed's Jihadi Shop 1",
 					[
 						["hgun_Rook40_F",nil,2000],
-						["hgun_Pistol_Signal_F","Pistolet Lumière",10000],
+						["hgun_Pistol_Signal_F","Lance Fusée",10000],
 						["hgun_PDW2000_F",nil,14000],
 						["hgun_Pistol_heavy_02_F","Pistolet Zbur",500000],
 						//["LMG_Zafir_F",nil,722000],
@@ -316,7 +317,7 @@ switch(_shop) do
 					[
 						["hgun_Rook40_F",nil,1750],
 						["hgun_Pistol_heavy_01_F","Pistolet",8000],
-						["hgun_Pistol_Signal_F","Pistolet Lumière",10000],
+						["hgun_Pistol_Signal_F","Lance Fusée",10000],
 						["hgun_PDW2000_F",nil,10500],
 						["hgun_Pistol_heavy_01_snds_F","Pistolet silencieux",12000],
 						["hgun_Pistol_heavy_01_MRD_F","Pistolet + viseur",16000],
@@ -388,7 +389,7 @@ switch(_shop) do
 						["hgun_Rook40_F",nil,1500],
 						["hgun_Pistol_heavy_01_F","Pistolet",7500],
 						["hgun_PDW2000_F",nil,9000],
-						["hgun_Pistol_Signal_F","Pistolet Lumière",10000],
+						["hgun_Pistol_Signal_F","Lance Fusée",10000],
 						["hgun_Pistol_heavy_01_snds_F","Pistolet silencieux",15000],
 						["hgun_Pistol_heavy_01_MRD_F","Pistolet + viseur",20000],
 						["hgun_Pistol_heavy_02_F","Pistolet Zbur",50000],
@@ -454,9 +455,9 @@ switch(_shop) do
 			{
 				["Mohammed's Jihadi Shop",
 					[
-							["hgun_Pistol_Signal_F","Pistolet Lumière",10000],
-							["6Rnd_GreenSignal_F","Munitions verte",250],
-							["6Rnd_RedSignal_F","Munitions rouge",250],
+						["hgun_Pistol_Signal_F","Lance fusée",10000],
+						["6Rnd_GreenSignal_F","Munitions verte",250],
+						["6Rnd_RedSignal_F","Munitions rouge",250],
 						//["LMG_Zafir_F",nil,850000],
 						//["srifle_GM6_F",nil,1200000],
 						["arifle_Mk20_F",nil,150000],
@@ -520,14 +521,14 @@ switch(_shop) do
 	{
 		switch(true) do
 		{
-			case (playerSide != civilian): {"Interdit aux civils !"};
+			case (playerSide != civilian): {"Vous n'etes pas un civil !"};
 			case (!license_civ_gun): {"Tu n'a pas le Permis de Port d'Armes !"};
 
 			default
 			{
 				["Armes a Feu De Billy Joe",
 					[
-							["hgun_Pistol_Signal_F","Pistolet Lumière",10000],
+							["hgun_Pistol_Signal_F","Lance Fusée",10000],
 							["6Rnd_GreenSignal_F","Munitions verte",250],
 							["6Rnd_RedSignal_F","Munitions rouge",250],
 						["hgun_Rook40_F",nil,2500],
@@ -667,7 +668,7 @@ switch(_shop) do
 	{
 		switch(true) do
 		{
-			case (__GETC__(life_donator) == 0): {"You are not a donator!"};
+			case (__GETC__(life_donator) == 0): {"Vous n'etes pas un donateur !"};
 			case (__GETC__(life_donator) == 1):
 			{
 				["Magasin de la Communauté grade 1",
@@ -770,9 +771,8 @@ switch(_shop) do
 	{
 		switch(true) do
 		{
-			case (playerSide != civilian): {"You are not a civilian!"};
-			case (!license_civ_depanneur): {"Tu n'es pas un dépanneur!"};
-			default
+			case (playerSide != independent): {"Vous n'etes pas un indépendant !"};
+			case ((__GETC__(life_depanLevel)) > 0) :
 			{
 				["Magasin dépanneur",
 					[

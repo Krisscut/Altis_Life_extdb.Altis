@@ -126,7 +126,7 @@ switch (_var) do
     case "license_civ_home": {"Licence proprio"};
 
 	case "license_civ_meth": {"Formation De Meth."};
-	case "license_civ_depanneur": {"Brevet de Dépanneur"};
+	//case "license_civ_depanneur": {"Brevet de Dépanneur"};
 	case "license_civ_archeologie": {"License D'Archeologie"};
 	case "license_civ_papiers": {"Papiers d'identitées"};
 

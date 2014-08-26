@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_onRespawn.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -54,8 +55,19 @@ switch(playerSide) do
 		_unit setVariable["transporting",false,true];
 		player setVariable ["FAR_isUnconscious", 0, true];//added 04/26/2014
 		life_istazed = false;//added 04/26/2014
-		[] spawn life_fnc_medicLoadout;
-		3 radioChannelAdd [player];
+		switch(true) do
+		{
+			case (__GETC__(life_medicLevel) > 0) :
+			{
+				[] spawn life_fnc_medicLoadout;
+				3 radioChannelAdd [player];
+			};
+			case (__GETC__(life_depanLevel) > 0) :
+			{
+				[] spawn life_fnc_depanLoadout;
+			};
+		};
+		
 	};
 };
 

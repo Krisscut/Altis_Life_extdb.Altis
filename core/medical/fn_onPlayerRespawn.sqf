@@ -50,7 +50,6 @@ switch(playerSide) do
 		_unit setVariable["transporting",false,true];
 		player setVariable ["FAR_isUnconscious", 0, true];//added 04/26/2014
 		life_istazed = false;//added 04/26/2014
-		[] spawn life_fnc_loadGearm;
 	};
 };
 

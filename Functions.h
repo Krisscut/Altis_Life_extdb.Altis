@@ -128,20 +128,10 @@ class Life_Client_Core
 	class Depan_System
 	{
 		file = "core\depan";
-		class onPlayerKilled {};
-		class onPlayerRespawn {};
-		class respawned {};
-		class revivePlayer {};
-		class revived {};
-		class depanMarkers {};
-		class requestDepan {};
-		class depanRequest {};
-		class deathScreen {};
 		class depanLoadout {};
 		class depanSirenLights {};
 		class depanLights {};
 		class depanSiren {};
-		class RadioKick {};
 	};
 	
 	
@@ -261,6 +251,7 @@ class Life_Client_Core
 		class clothing_dive {};
 		class clothing_kart {};
 		class clothing_med {};
+		class clothing_dep {};
 
 	};
 

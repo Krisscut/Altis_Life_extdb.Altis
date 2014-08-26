@@ -157,7 +157,7 @@ switch (playerSide) do
 	case civilian:
 	{
 			//Systeme de rémunération pour ceux qui sont sur le slot dépanneur
-
+		/*
 		if((str(player) in ["Depanneur_1","Depanneur_2","Depanneur_3","Depanneur_4","Depanneur_5"])) then {
 			life_dabliquide = 15000; //Starting Bank Money
 			life_paycheck = 5750;
@@ -165,11 +165,24 @@ switch (playerSide) do
 			life_dabliquide = 15000; //Starting Bank Money
 			life_paycheck = 3750;
 		};
+		*/
+		life_dabliquide = 15000; //Starting Bank Money
+		life_paycheck = 3750;
 	};
 
 	case independent: {
-		life_dabliquide = 15000;
-		life_paycheck = 5000;
+	
+		case (__GETC__(life_medicLevel) > 0) :
+			{
+				life_dabliquide = 15000;
+				life_paycheck = 5000;
+			};
+			case (__GETC__(life_depanLevel) > 0) :
+			{
+				life_dabliquide = 15000;
+				life_paycheck = 20000;
+			};
+		
 	};
 };
 
@@ -284,7 +297,7 @@ life_licenses =
 	["license_civ_salt","civ"],
 	["license_civ_cement","civ"],
 	["license_med_air","med"],
-	["license_civ_depanneur","civ"],//added by asurion
+	//["license_civ_depanneur","civ"],//added by asurion
   	["license_civ_home","civ"],//added by asurion
 	["license_civ_meth","civ"],//added by asurion
 	["license_civ_archeologie","civ"],//added by asurion
@@ -443,46 +456,46 @@ __CONST__(buy_array,buy_array);
 
 life_weapon_shop_array =
 [
-	["arifle_sdar_F",7500],
-	["hgun_P07_snds_F",650],
-	["hgun_P07_F",1500],
-	["ItemGPS",45],
-	["ToolKit",75],
-	["FirstAidKit",65],
-	["Medikit",450],
-	["NVGoggles",980],
-	["16Rnd_9x21_Mag",15],
-	["20Rnd_556x45_UW_mag",35],
-	["ItemMap",35],
-	["ItemCompass",25],
-	["Chemlight_blue",50],
-	["Chemlight_yellow",50],
-	["Chemlight_green",50],
-	["Chemlight_red",50],
-	["hgun_Rook40_F",500],
-	["arifle_Katiba_F",5000],
-	["30Rnd_556x45_Stanag",65],
-	["20Rnd_762x51_Mag",85],
-	["30Rnd_65x39_caseless_green",50],
-	["DemoCharge_Remote_Mag",7500],
-	["SLAMDirectionalMine_Wire_Mag",2575],
-	["optic_ACO_grn",250],
-	["acc_flashlight",100],
-	["srifle_EBR_F",15000],
-	["arifle_TRG21_F",3500],
-	["optic_MRCO",5000],
-	["optic_Aco",850],
-	["arifle_MX_F",7500],
-	["arifle_MXC_F",5000],
-	["arifle_MXM_F",8500],
-	["MineDetector",500],
-	["optic_Holosight",275],
-	["acc_pointer_IR",175],
-	["arifle_TRG20_F",2500],
-	["SMG_01_F",1500],
-	["arifle_Mk20C_F",4500],
-	["30Rnd_45ACP_Mag_SMG_01",60],
-	["30Rnd_9x21_Mag",30]
+	["arifle_sdar_F",0],
+	["hgun_P07_snds_F",0],
+	["hgun_P07_F",0],
+	["ItemGPS",0],
+	["ToolKit",0],
+	["FirstAidKit",0],
+	["Medikit",0],
+	["NVGoggles",0],
+	["16Rnd_9x21_Mag",0],
+	["20Rnd_556x45_UW_mag",0],
+	["ItemMap",0],
+	["ItemCompass",0],
+	["Chemlight_blue",0],
+	["Chemlight_yellow",0],
+	["Chemlight_green",0],
+	["Chemlight_red",0],
+	["hgun_Rook40_F",0],
+	["arifle_Katiba_F",0],
+	["30Rnd_556x45_Stanag",0],
+	["20Rnd_762x51_Mag",0],
+	["30Rnd_65x39_caseless_green",0],
+	["DemoCharge_Remote_Mag",0],
+	["SLAMDirectionalMine_Wire_Mag",0],
+	["optic_ACO_grn",0],
+	["acc_flashlight",0],
+	["srifle_EBR_F",0],
+	["arifle_TRG21_F",0],
+	["optic_MRCO",0],
+	["optic_Aco",0],
+	["arifle_MX_F",0],
+	["arifle_MXC_F",0],
+	["arifle_MXM_F",0],
+	["MineDetector",0],
+	["optic_Holosight",0],
+	["acc_pointer_IR",0],
+	["arifle_TRG20_F",0],
+	["SMG_01_F",0],
+	["arifle_Mk20C_F",0],
+	["30Rnd_45ACP_Mag_SMG_01",0],
+	["30Rnd_9x21_Mag",0]
 ];
 __CONST__(life_weapon_shop_array,life_weapon_shop_array);
 

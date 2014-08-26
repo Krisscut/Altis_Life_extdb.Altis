@@ -25,6 +25,7 @@ switch (_shop) do
 	case "cop": {["Magasin poulet",["donuts","coffee","spikeStrip","barriere","barriereStop","water","rabbit","apple","redgull","fuelF","defusekit"]]};
 	case "cement": {["Marchand de ciment",["cement"]]};
 	case "med": {["Marché medecin",["barriere","barriereStop"]]};
+	case "dep": {["Marché dépanneur",["water","rabbit","fuelF","redgull","barriere","barriereStop"]]};
 	case "pharmacie": {["Pharmacie d'Altis",["kitmeth"]]};
 	case "meth": {["Tuco",["crystalmeth","crystalmethpur"]]};
 	case "archeologie": {["Vendeur d'archeologie",["archeologie"]]};

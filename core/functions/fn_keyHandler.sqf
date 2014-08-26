@@ -218,6 +218,8 @@ switch (_code) do
 	//L Key?
 	case 38:
 	{
+		//OLD CODE MODIFIED BY SKY -- INCLUSION DEP //
+		/*
 		//If cop run checks for turning lights on.
 		if(_shift && playerSide in [west,independent]) then {
 			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","I_Truck_02_medical_F","O_Truck_03_medical_F","B_Truck_01_medical_F","B_Quadbike_01_F","C_Hatchback_01_F","C_Hatchback_01_sport_F","I_MRAP_03_F"]) then {
@@ -231,7 +233,31 @@ switch (_code) do
 				};
 			};
 		};
+		
+		*/
 
+		switch(true) do
+		{	
+			case (playerSide == west) :
+			{
+				if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","C_Offroad_01_repair_f","B_MRAP_01_F","C_SUV_01_F","I_Truck_02_medical_F","O_Truck_03_medical_F","B_Truck_01_medical_F","B_Quadbike_01_F","C_Hatchback_01_F","C_Hatchback_01_sport_F","I_MRAP_03_F"]) then {
+					if(!isNil {vehicle player getVariable "lights"}) then {
+						[vehicle player] call life_fnc_sirenLights;
+					};
+				};
+			};
+			case ((playerSide == independent) && (__GETC__(life_medicLevel) > 0)) :
+			{
+				[vehicle player] call life_fnc_medicSirenLights;
+			};
+			case ((playerSide == independent) && (__GETC__(life_depanLevel) > 0)) :
+			{
+				[vehicle player] call life_fnc_depanSirenLights;
+			};
+			default
+			{
+			};
+		};
 		if(!_alt && !_ctrlKey) then { [] call life_fnc_radar; };
 	};
 	//Y Player Menu
@@ -246,6 +272,8 @@ switch (_code) do
 	//F Key
 	case 33:
 	{
+		//OLD CODE MODIFIED BY SKY -- INCLUSION DEP //
+		/*
 		if(playerSide in [west,independent] && vehicle player != player && !life_siren_active && ((driver vehicle player) == player)) then
 		{
 			[] spawn
@@ -273,6 +301,83 @@ switch (_code) do
 				};
 			};
 		};
+		*/
+		
+		switch(true) do
+		{	
+			case (playerSide == west) :
+			{
+				[] spawn
+				{
+					life_siren_active = true;
+					sleep 4.7;
+					life_siren_active = false;
+				};
+				_veh = vehicle player;
+				if(isNil {_veh getVariable "siren"}) then {_veh setVariable["siren",false,true];};
+				if((_veh getVariable "siren")) then
+				{
+					titleText ["Sirenes Off","PLAIN"];
+					_veh setVariable["siren",false,true];
+				}
+				else
+				{
+					titleText ["Sirenes On","PLAIN"];
+					_veh setVariable["siren",true,true];
+					[[_veh],"life_fnc_copSiren",nil,true] spawn life_fnc_MP;
+				};
+			};
+			case ((playerSide == independent) && (__GETC__(life_medicLevel) > 0)) :
+			{
+				
+				[] spawn
+				{
+					life_siren_active = true;
+					sleep 4.7;
+					life_siren_active = false;
+				};
+				_veh = vehicle player;
+				if(isNil {_veh getVariable "siren"}) then {_veh setVariable["siren",false,true];};
+				if((_veh getVariable "siren")) then
+				{
+					titleText ["Sirenes Off","PLAIN"];
+					_veh setVariable["siren",false,true];
+				}
+				else
+				{
+					titleText ["Sirenes On","PLAIN"];
+					_veh setVariable["siren",true,true];
+					[[_veh],"life_fnc_medicSiren",nil,true] spawn life_fnc_MP;
+				};
+			};
+			case ((playerSide == independent) && (__GETC__(life_depanLevel) > 0)) :
+			{
+				[] spawn
+				{
+					life_siren_active = true;
+					sleep 4.7;
+					life_siren_active = false;
+				};
+				_veh = vehicle player;
+				if(isNil {_veh getVariable "siren"}) then {_veh setVariable["siren",false,true];};
+				if((_veh getVariable "siren")) then
+				{
+					titleText ["Sirenes Off","PLAIN"];
+					_veh setVariable["siren",false,true];
+				}
+				else
+				{
+					titleText ["Sirenes On","PLAIN"];
+					_veh setVariable["siren",true,true];
+					[[_veh],"life_fnc_depanSiren",nil,true] spawn life_fnc_MP;
+				};
+			};
+			default
+			{
+			};
+		};
+		
+		
 	};
 	//U Key
 	case 22:
@@ -340,9 +445,8 @@ switch (_code) do
 			//Launch Admin menu
 			player execVM 'admintools\tools\DestroyIT.sqf';
 		};
+
 	};
-
-
 };
 
 _handled;

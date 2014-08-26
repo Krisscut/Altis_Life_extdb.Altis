@@ -6,9 +6,10 @@
         Droit d'utilisation : involved-gaming.com
 ///////////////////////////////////////////////*/
 
-
+/*
 removeUniform player;
 player forceAddUniform "U_Competitor";
+*/
 
 player addAction ["<t color='#B40404'>Dépaneuse : Attacher</t>",{[] spawn fnc_DepaneuseR}
 ,0,0,true,true,'','(vehicle player) == player && count (nearestObjects [player, ["O_Truck_03_transport_F"], 7]) > 0 && cursorTarget isKindOf "CAR" && typeOf cursorTarget != "O_Truck_03_transport_F" && (count attachedObjects ((nearestObjects [player, ["O_Truck_03_transport_F"], 7]) select 0) == 0)'];

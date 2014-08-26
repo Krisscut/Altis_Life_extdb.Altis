@@ -31,11 +31,6 @@ switch (_side) do
 	{
 		_return = [];
 
-		if((str(player) in ["Depanneur_1","Depanneur_2","Depanneur_3","Depanneur_4","Depanneur_5"])) then {
-
-			_return  set [count _return, ["depannage","QG Dépannage","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"]];
-
-		} else {
 			if(license_civ_rebel) then {
 				_return  set [count _return, ["civ_spawn_6","Sira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 				_return  set [count _return, ["civ_spawn_8","Frini","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
@@ -48,7 +43,6 @@ switch (_side) do
 				_return  set [count _return, ["civ_spawn_3","Athira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 				_return  set [count _return, ["civ_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 			};
-		};
 
 		if((count life_houses > 0) && ((__GETC__(life_donator) != 0))) then {
 			{
@@ -64,10 +58,14 @@ switch (_side) do
 	case independent: {
 		_return = [];
 
+			if((__GETC__(life_depanLevel)) > 0) then {
+				_return  set [count _return, ["depannage","QG Dépannage","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"]];
+			}
+			else {
 			_return  set [count _return, ["medic_spawn_1","Hôpital Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
             _return  set [count _return, ["medic_spawn_2","Hôpital Athira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
             _return  set [count _return, ["medic_spawn_3","Hôpital Pygros","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
-
+			};
 
 	};
 };

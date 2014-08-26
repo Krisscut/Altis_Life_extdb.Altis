@@ -207,7 +207,7 @@ class CfgDebriefing
 	class NotWhitelisted
 	{
 		title = "Mission Terminé";
-		subtitle = "Tu n'es pas autorisé a utiliser ce slot";
+		subtitle = "Tu n'es pas autorisé à utiliser ce slot";
 		description = "Tu n'es pas whitelisté sur ce slot !";
 		pictureBackground = "";
 		picture = "";
@@ -218,7 +218,7 @@ class CfgDebriefing
 	{
 		title = "Mission Terminé";
 		subtitle = "Tu as été blacklisté des forces de l'ordre";
-		description = "Tu n'es plus autorisé a être un gendarme suite à tes actions préalables les administrateurs t'ont retiré le droit de jouer gendarme.";
+		description = "Tu n'es plus autorisé a étre un gendarme suite ? tes actions pr?alables les administrateurs t'ont retir? le droit de jouer gendarme.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -226,9 +226,9 @@ class CfgDebriefing
 
 	class SpyGlass
 	{
-		title = "The SpyGlass t'as trouvé";
+		title = "The SpyGlass t'as trouv?";
 		subTitle = "Tu as été détécté par spyGlass";
-		description = "Tu as été détécté par spyGlas pour hack et a été reporté aux administrateurs. Enjoy your day.";
+		description = "Tu as ét? détécté par spyGlas pour hack et a ?t? report? aux administrateurs. Enjoy your day.";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -237,8 +237,8 @@ class CfgDebriefing
 	class NotPremium
 	{
 		title = "Echec de la Mission";
-		subtitle = "Vous n'êtes pas autorisé a utiliser ce slot";
-		description = "Vous n'êtes pas autorisé à utiliser ce slot parce que vous n'êtes pas membre premium grade 2, essayez un autre emplacement";
+		subtitle = "Vous n'étes pas autorisé a utiliser ce slot";
+		description = "Vous n'etes pas autorisé à utiliser ce slot parce que vous n'etes pas membre premium grade 2, essayez un autre emplacement";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -247,7 +247,7 @@ class CfgDebriefing
 	{
 		title = "EXTRADITION";
 		subtitle = "Vous n'avez aucun papiers d'identité";
-		description = "Vous devez vous connecter sur le serveur Stratis Life d'Involved afin d'obtenir des papiers d'identité pour venir sur Altis";
+		description = "Vous devez vous connecter sur le serveur Stratis Life d'Involved afin d'obtenir des papiers d'identit? pour venir sur Altis";
 		pictureBackground = "";
 		picture = "";
 		pictureColor[] = {0,0.3,0.6,1};
@@ -265,7 +265,7 @@ class CfgDebriefing
   {
     title = "Direction Stratis !";
     subtitle = "Vous êtes en train de voyager vers l'île de Stratis";
-    description = "Tu te dirige vers l'île de Stratis. Tu peux te déconnecter et rejoindre l'autre serveur";
+    description = "Tu te dirige vers l'?le de Stratis. Tu peux te d?connecter et rejoindre l'autre serveur";
     pictureBackground = "";
     picture = "";
     pictureColor[] = {0,0.3,0.6,1};
@@ -340,7 +340,7 @@ class CfgNotifications
 
 	class AdminDispatch
 	{
-		title = "Requête Administrative";
+		title = "Requ?te Administrative";
 		iconPicture = "icons\messageadmin.paa";
 		description = "%1";
 		duration = 10;
