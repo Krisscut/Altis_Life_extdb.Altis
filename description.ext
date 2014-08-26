@@ -340,7 +340,7 @@ class CfgNotifications
 
 	class AdminDispatch
 	{
-		title = "Requ?te Administrative";
+		title = "Requète Administrative";
 		iconPicture = "icons\messageadmin.paa";
 		description = "%1";
 		duration = 10;
