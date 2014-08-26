@@ -12,6 +12,7 @@ life_shop_type = _shop;
 life_shop_npc = _this select 0;
 if(_shop == "cop" && playerSide != west) exitWith {hint "Tu n'es pas un gendarme."};
 if(_shop == "med" && playerSide != independent) exitWith {hint "Tu n'es pas un ambulancier."};
+if(_shop == "dep" && playerSide != independent) exitWith {hint "Tu n'es pas un dépanneur."};
 createDialog "shops_menu";
 
 [] call life_fnc_virt_update;

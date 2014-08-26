@@ -10,8 +10,8 @@ Private ["_vehicle","_lightRed","_lightBlue","_lightleft","_lightright","_leftRe
 _vehicle = _this select 0;
 
 if(isNil "_vehicle" OR isNull _vehicle OR !(_vehicle getVariable "lights")) exitWith {};
-_lightRed = [0.1, 0.1, 20];
-_lightBlue = [0.1, 0.1, 20];
+_lightRed = [255, 255, 0];
+_lightBlue = [255, 128, 0];
 
 _lightleft = "#lightpoint" createVehicle getpos _vehicle;
 sleep 0.2;
@@ -74,14 +74,14 @@ while{ (alive _vehicle)} do
 		_leftRed = false;
 		_lightright setLightBrightness 0.0;
 		sleep 0.05;
-		_lightleft setLightBrightness 6;
+		_lightleft setLightBrightness 2;
 	}
 		else
 	{
 		_leftRed = true;
 		_lightleft setLightBrightness 0.0;
 		sleep 0.05;
-		_lightright setLightBrightness 6;
+		_lightright setLightBrightness 2;
 	};
 	sleep (_this select 1);
 };

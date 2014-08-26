@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_vehicleShopBuy.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -69,7 +70,17 @@ switch(playerSide) do {
 	};
 
 	case independent: {
-		[_vehicle,"med_offroad",true] spawn life_fnc_vehicleAnimate;
+		switch(true) do
+		{
+			case (__GETC__(life_medicLevel) > 0) :
+			{
+				[_vehicle,"med_offroad",true] spawn life_fnc_vehicleAnimate;
+			};
+			case (__GETC__(life_depanLevel) > 0) :
+			{
+				[_vehicle,"dep_offroad",true] spawn life_fnc_vehicleAnimate;
+			};
+		};
 	};
 };
 

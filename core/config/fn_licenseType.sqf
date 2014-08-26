@@ -39,7 +39,7 @@ switch (_mode) do
 			case "copper": {_var = "license_civ_copper"};
 			case "cement": {_var = "license_civ_cement"};
 			case "ambulance": {_var = "license_civ_ambulance"};
-			case "depanneur": {_var = "license_civ_depanneur"};
+			//case "depanneur": {_var = "license_civ_depanneur"};
 			case "meth": {_var = "license_civ_meth"};
 			case "meth1": {_var = "license_civ_meth"};
 			case "meth2": {_var = "license_civ_meth"};
@@ -92,7 +92,7 @@ switch (_mode) do
 			case "license_civ_copper": {_var = "copper"};
 			case "license_civ_cement": {_var = "cement"};
 			case "license_civ_ambulance": {_var = "ambulance"};
-			case "license_civ_depanneur": {_var = "depanneur"};
+			//case "license_civ_depanneur": {_var = "depanneur"};
  			case "license_civ_home": {_var = "home"};
 			case "license_civ_meth": {_var = "meth"};
 			case "license_civ_archeologie": {_var = "archeologie"};

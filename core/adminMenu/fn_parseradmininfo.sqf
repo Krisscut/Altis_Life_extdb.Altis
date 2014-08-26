@@ -53,4 +53,5 @@ ctrlEnable[9011,true];		//tpToTarget
 ctrlEnable[9012,true];		//targetToMe
 ctrlEnable[9050,true];		//Deplacer
 ctrlEnable[9013,true];		//KillTarget
+
 ctrlEnable[9017,true];		//Troll

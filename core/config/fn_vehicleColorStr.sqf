@@ -30,6 +30,21 @@ switch (_vehicle) do
 			case 11: {_color = "Cyan Dragon"};
 		};
 	};
+	
+	case "C_Offroad_01_repair_f" :
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Depannage"};
+		};
+	};
+	case "B_G_Offroad_01_repair_F" :
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Depannage"};
+		};
+	};
 
 	case "C_Hatchback_01_F":
 	{

@@ -29,10 +29,13 @@ switch (playerSide) do
 	};
 	case independent:
 	{
+	/*
 	life_actions = life_actions + [player addAction["Voir les inconscient",life_fnc_med,"",0,false,false,"",' playerside == independent ']];
 	life_actions = life_actions + [player addAction["<t color='#FF0000'>Se soigner</t>",life_fnc_heal,"",99,false,false,"",' vehicle player == player && (damage player) > 0 && ("Medikit" in (items player)) ']];
 	life_actions = life_actions + [player addAction["<t color='#FF0000'>Soigner la personne</t>",life_fnc_heal_target,"",99,false,false,"",' !isNull cursorTarget && player distance cursorTarget < 3.5 && vehicle player == player && (damage cursorTarget) > 0 && ("Medikit" in (items player)) ']];
-};
+	*/
+	};
+	
 };
 
 /*

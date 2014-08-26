@@ -99,9 +99,6 @@ class Life_Client_Core
 		class mapRefresh {};
 		class refresh {};
 		class closeMenu {};
-		class modoGetID {};
-		class parseID {};
-		class parseAliases {};
 
 		class launchCode {};
 
@@ -128,20 +125,10 @@ class Life_Client_Core
 	class Depan_System
 	{
 		file = "core\depan";
-		class onPlayerKilled {};
-		class onPlayerRespawn {};
-		class respawned {};
-		class revivePlayer {};
-		class revived {};
-		class depanMarkers {};
-		class requestDepan {};
-		class depanRequest {};
-		class deathScreen {};
 		class depanLoadout {};
 		class depanSirenLights {};
 		class depanLights {};
 		class depanSiren {};
-		class RadioKick {};
 	};
 	
 	
@@ -261,6 +248,7 @@ class Life_Client_Core
 		class clothing_dive {};
 		class clothing_kart {};
 		class clothing_med {};
+		class clothing_dep {};
 
 	};
 
@@ -411,8 +399,7 @@ class Life_Client_Core
 		class vehicleWeight {};
 		class deviceMine {};
 		class addVehicle2Chain {};
-		class vehProcessIllegal {}; //Zamak Labo - Process
-		class vehDetect {}; //Zamak Labo - Detect
+		class vehProcessIllegal {};
 		class vehInsure {};//added bloopis
 	};
 	
@@ -468,14 +455,6 @@ class Life_Client_Core
 		class gangDisband {};
 		class gangDisbanded {};
 		class groupLeader {};
-
-		//added by Kriss
-		class gangGestionLoading {};
-		class gangPromote {};
-		class gangPromoted {};
-		class gangDemote {};
-		class gangDemoted {};
-		class gangKickGestion {};
 	};
 	
 	class Shops

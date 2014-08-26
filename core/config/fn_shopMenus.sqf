@@ -25,6 +25,15 @@ switch (_shop) do
 		ctrlShow[2513,false];
 		ctrlShow[2514,false];
 	};
+	
+	case "dep":
+	{
+		ctrlSetText[2505,"Magasin dépanneur"];
+		ctrlShow[2503,false];
+		ctrlShow[2513,false];
+		ctrlShow[2514,false];
+	};
+
 
 	case "cop":
 	{

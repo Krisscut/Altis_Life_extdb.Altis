@@ -18,9 +18,6 @@ _action = [
 if(_action) then {
 	hint "Suppression du gang....";
 	[[grpPlayer],"TON_fnc_removeGang",false,false] spawn life_fnc_MP;
-
-	//close current dialog
-	closeDialog 0;
 } else {
-	hint "Suppression annulée";
+	hint "Suppression annulé";
 };

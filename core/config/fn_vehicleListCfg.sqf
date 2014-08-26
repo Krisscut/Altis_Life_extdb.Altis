@@ -960,13 +960,15 @@ switch (_shop) do
 			_return =
 			[
 				["B_Quadbike_01_F",2100],
-				["C_Hatchback_01_F",8000],
-				["C_Offroad_01_F",10500],
+				["C_Hatchback_01_F",8000],			
 				["C_SUV_01_F",29500],
-				["O_Truck_03_transport_F",300000],
-				["C_Van_01_transport_F",34000]
+				["C_Offroad_01_F",60500],	
+				["C_Offroad_01_repair_f",60500],			
+				["C_Van_01_transport_F",100000],
+				["C_Van_01_fuel_F",100000],
+				["B_Truck_01_fuel_F",250000],
+				["B_Truck_01_mover_F",300000]				
 			];
-
 	};
 };
 

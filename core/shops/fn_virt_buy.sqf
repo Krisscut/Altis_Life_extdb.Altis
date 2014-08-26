@@ -30,9 +30,9 @@ _name = [([_type,0] call life_fnc_varHandle)] call life_fnc_varToStr;
 
 if(([true,_type,_amount] call life_fnc_handleInv)) then
 {
-	if(!isNil "_hideout" && {!isNil {grpPlayer getVariable "gang_bank"}} && {(grpPlayer getVariable "gang_bank") >= _price} && {player getVariable "gang_rank" >= 2}) then {
+	if(!isNil "_hideout" && {!isNil {grpPlayer getVariable "gang_bank"}} && {(grpPlayer getVariable "gang_bank") >= _price}) then {
 		_action = [
-			format["Le gang a assez d'argent pour payer cette objet, et vous êtes suffisamment gradé pour utiliser l'argent du gang<br/><br/>Voulez vous payer avec le compte en banque du gang ou avec le votre ?<br/><br/>Compte Gang: <t color='#8cff9b'>$%1</t><br/>Compte Perso: <t color='#8cff9b'>$%2</t>",
+			format["Le gang a assez d'argent pour payer cette objet, voulez vous payer avec le compte en banque du gang ou avec le votre ?<br/><br/>Compte Gang: <t color='#8cff9b'>$%1</t><br/>Compte Perso: <t color='#8cff9b'>$%2</t>",
 				[(grpPlayer getVariable "gang_bank")] call life_fnc_numberText,
 				[life_liquide] call life_fnc_numberText
 			],

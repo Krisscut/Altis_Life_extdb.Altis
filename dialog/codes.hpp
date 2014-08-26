@@ -127,30 +127,4 @@ class whiteCode
 		};
 		
 	};  
-
-};
-class breakingNews
-{
-	idd=-1;
-	movingEnable = 1;
-  	fadein =1;
-	duration = 16;
-  	fadeout =1;
-	name= "breakingNews";
-
-	class controlsBackground 
-	{
-		
-		class movie : Life_RscPictureKeepAspect
-		{
-		
-			idc = -1;
-			text = "textures\breakingNews.ogv";
-			x = safeZoneX+safeZoneW-0.5; y = safeZoneY + 0.2;
-			w = 0.5; h = 0.4;
-		    autoplay = 1;
-		    loops = 1;
-
-		};
-	};  
 };

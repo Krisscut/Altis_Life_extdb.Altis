@@ -2,7 +2,7 @@
 	Author: Bryan "Tonic" Boardwine
 
 	Description:
-	Start playing the siren for medics.
+	Start playing the siren for depans.
 
 	*NOTE I DO NOT HAVE A SOUND FOR THIS BUT I"M LEAVING THE CODE HERE FOR OTHER PEOPLE TO ADD IT*.
 */
